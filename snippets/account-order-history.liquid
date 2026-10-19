@@ -1,0 +1,62 @@
+<h1 class="account-order-history__title">Order History</h1>
+<span class="account-order-history__subtitle">Below are details on your prior purchase(s).</span>
+
+<div class="account-order-history">
+    {%- if customer.orders.size > 0 -%}
+
+    {%- for order in customer.orders -%}
+    {% render 'account-order' order: order %}
+    {% endfor %}
+
+    {% else %}
+    <p>{{ 'customer.orders.none' | t }}</p>
+    {%- endif -%}
+</div>
+
+<style>
+    .account-order-history {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .account-order-history__title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #000000;
+        margin-bottom: 8px;
+    }
+
+    .account-order-history__subtitle {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #000000;
+        display: block;
+        margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: 768px) {
+        .account-order-history {
+            gap: 48px;
+        }
+
+        .account-order-history__title {
+            font-size: 32px;
+            line-height: 116%;
+            letter-spacing: 0.02em;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .account-order-history__subtitle {
+            font-size: 16px;
+            text-align: left;
+        }
+    }
+</style>

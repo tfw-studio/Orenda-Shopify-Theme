@@ -1,0 +1,552 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "narrow": true,
+        "padding_top": 60,
+        "padding_bottom": 72
+      }
+    },
+    "0a020ee8-1f19-4eba-951d-edb05a0b629b": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14860141559889__0a020ee8-1f19-4eba-951d-edb05a0b629b-16867175121353d63a-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "USE YOUR HSA\/FSA TO SAVE",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "template--14860141559889__0a020ee8-1f19-4eba-951d-edb05a0b629b-16867175121353d63a-1": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Health isn't a luxury, it's the greatest investment you'll ever make.<\/strong><\/h2>",
+            "text_size": "typeset3",
+            "secondary_color": false
+          }
+        },
+        "template--14860141559889__0a020ee8-1f19-4eba-951d-edb05a0b629b-16867175121353d63a-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Shop All + Save 20%",
+            "button_link": "shopify:\/\/collections\/our-products",
+            "button_size": "large",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14860141559889__0a020ee8-1f19-4eba-951d-edb05a0b629b-16867175121353d63a-0",
+        "template--14860141559889__0a020ee8-1f19-4eba-951d-edb05a0b629b-16867175121353d63a-1",
+        "template--14860141559889__0a020ee8-1f19-4eba-951d-edb05a0b629b-16867175121353d63a-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/iStock-1139791323.jpg",
+        "image_position": "center center",
+        "text_box_position": "middle-center",
+        "text_alignment": "center",
+        "image_ratio": "500px",
+        "show_text_box": false,
+        "full_width": false,
+        "show_divider": false,
+        "mobile_text_alignment": "center",
+        "mobile_image_ratio": "auto",
+        "stack_images_on_mobile": true,
+        "show_text_below": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#6e1273",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#6e1273",
+        "colors_overlay_opacity": 20,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "7c896a02-ce08-4ed9-b00d-046b80780900": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "How it Works",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>01. Choose your supplements<\/p><p>02. Receive your monthly subscription<\/p><p>03. Consistency - The key to wellness<\/p>",
+            "text_size": "typeset3",
+            "secondary_color": false
+          }
+        },
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Choose your supplements",
+            "button_link": "shopify:\/\/collections\/our-products",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-0",
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-1",
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-2"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "horizontal_content": false,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "624058c6-20a9-48ad-ba3f-5661c47c2080": {
+      "type": "guarantees",
+      "blocks": {
+        "89381c13-6d1e-46f7-a4c1-88d5b2aa5d8e": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "price_tag",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "Save 20% on every order",
+            "title_size": "h3",
+            "text": "<p>That's right! With an active subscription, save on your subscription and on ad-hoc orders too.<\/p>"
+          }
+        },
+        "template--14860141559889__624058c6-20a9-48ad-ba3f-5661c47c2080-1686718682db4c2292-0": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "package",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "Control your delivery date",
+            "title_size": "h3",
+            "text": "<p><em><strong>Control your delivery date AND save 20% with each order <\/strong><\/em><em>- <\/em>Tell us when you need your subscription order, and we'll get it there.<\/p>"
+          }
+        },
+        "template--14860141559889__624058c6-20a9-48ad-ba3f-5661c47c2080-1686718682db4c2292-1": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "map_pin",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "Delivered Monthly - 'no empties' promise",
+            "title_size": "h3",
+            "text": "<p>Your subscription shows up monthly so you don't run out of your favorite products.<\/p>"
+          }
+        },
+        "4d436460-d9d5-4e22-a38c-bf88edbb0065": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "truck",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "Easy cancellation, anytime",
+            "title_size": "h3",
+            "text": "<p>Cancel your subscription at any time hassle-free.<\/p>"
+          }
+        },
+        "79ef85bb-bbab-470f-a366-40d0c00bf774": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shield",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "Friendly Reminders",
+            "title_size": "h3",
+            "text": "<p>We'll send you a heads-up email 4 days before each subscription processes so there are no surprises. Add or remove products, skip a month, or pause anytime.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "89381c13-6d1e-46f7-a4c1-88d5b2aa5d8e",
+        "template--14860141559889__624058c6-20a9-48ad-ba3f-5661c47c2080-1686718682db4c2292-0",
+        "template--14860141559889__624058c6-20a9-48ad-ba3f-5661c47c2080-1686718682db4c2292-1",
+        "4d436460-d9d5-4e22-a38c-bf88edbb0065",
+        "79ef85bb-bbab-470f-a366-40d0c00bf774"
+      ],
+      "settings": {
+        "layout": "default",
+        "column_alignment": "center",
+        "horizontal_content": true,
+        "full_width": false,
+        "show_divider": false,
+        "enable_set_section_max_width": false,
+        "set_section_max_width": 1200,
+        "heading": "Save 20% Making Health Simple",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "use_custom_colors": false,
+        "colors_icon": "#ffffff",
+        "colors_text": "#1a1b18",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "94b8932d-27e4-4a31-b2ce-8c1edce07a06": {
+      "type": "gallery",
+      "blocks": {
+        "template--14860141559889__94b8932d-27e4-4a31-b2ce-8c1edce07a06-16867192538741b92b-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Subscription_Dianne_J_Customer_Review_v1_Web_62023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "template--14860141559889__94b8932d-27e4-4a31-b2ce-8c1edce07a06-16867192538741b92b-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Subscription_Brandi_H_Customer_Review_v1_Web_62023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "2555e3db-2531-4317-a62b-96565e16204f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Subscription_Hailey_G_Customer_Review_v1_Web_62023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        }
+      },
+      "block_order": [
+        "template--14860141559889__94b8932d-27e4-4a31-b2ce-8c1edce07a06-16867192538741b92b-1",
+        "template--14860141559889__94b8932d-27e4-4a31-b2ce-8c1edce07a06-16867192538741b92b-0",
+        "2555e3db-2531-4317-a62b-96565e16204f"
+      ],
+      "settings": {
+        "per_row": 3,
+        "spacing_images": 20,
+        "image_height": 280,
+        "apply_overlay": false,
+        "full_width": false,
+        "show_divider": false,
+        "heading": "Supporting the health of customers for over two decades!",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "mobile_image_height": 160,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "5d5ae766-fdbd-4859-ac1d-b0e0ce25e451": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14860141559889__5d5ae766-fdbd-4859-ac1d-b0e0ce25e451-1686721941a8a53b7d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "My Account",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "template--14860141559889__5d5ae766-fdbd-4859-ac1d-b0e0ce25e451-1686721941a8a53b7d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Visit your account to make any changes to your subscription, check your rewards points, view your order history or update account and shopping information.<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        },
+        "template--14860141559889__5d5ae766-fdbd-4859-ac1d-b0e0ce25e451-1686721941a8a53b7d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Go to account",
+            "button_link": "https:\/\/buyorenda.com\/account\/login",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14860141559889__5d5ae766-fdbd-4859-ac1d-b0e0ce25e451-1686721941a8a53b7d-0",
+        "template--14860141559889__5d5ae766-fdbd-4859-ac1d-b0e0ce25e451-1686721941a8a53b7d-1",
+        "template--14860141559889__5d5ae766-fdbd-4859-ac1d-b0e0ce25e451-1686721941a8a53b7d-2"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "horizontal_content": false,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "445aaf76-1e6f-4966-8229-6fee0a3f57dd": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14860141559889__445aaf76-1e6f-4966-8229-6fee0a3f57dd-1686721941a8a53b7d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our most loved subscriptions",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "template--14860141559889__445aaf76-1e6f-4966-8229-6fee0a3f57dd-1686721941a8a53b7d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you could change one thing... Discover what you've been missing.<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        },
+        "template--14860141559889__445aaf76-1e6f-4966-8229-6fee0a3f57dd-1686721941a8a53b7d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Subscribe & Save 20%",
+            "button_link": "shopify:\/\/collections\/our-products",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14860141559889__445aaf76-1e6f-4966-8229-6fee0a3f57dd-1686721941a8a53b7d-0",
+        "template--14860141559889__445aaf76-1e6f-4966-8229-6fee0a3f57dd-1686721941a8a53b7d-1",
+        "template--14860141559889__445aaf76-1e6f-4966-8229-6fee0a3f57dd-1686721941a8a53b7d-2"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "horizontal_content": false,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8": {
+      "type": "collapsible-content",
+      "blocks": {
+        "42e2aa8f-4aba-4258-9045-9a9d493cb0ce": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What happens after I setup a subscription?",
+            "row_content": "<p>After you setup a subscription, you will receive an email confirming your subscription. This email will include a link to access the '<strong>MANAGE SUBSCRIPTIONS<\/strong>' section in your account where you can manage your future orders, items, and account information.<\/p><p>We will send you an email reminder 3 days before each scheduled subscription order. We will place your subscription orders automatically according to your selected frequency. You will be billed for your subscription order on each scheduled order date.<\/p><p>You will also receive email notifications regarding other important information related to your subscription account, including if you cancel your subscription, and confirmation when an order is placed successfully.<\/p>",
+            "page": ""
+          }
+        },
+        "template--14860141559889__5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8-168671941570c05c68-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I make changes to my subscription?",
+            "row_content": "<p>We will email you 3 days before your subscription is due to process a preshipment reminder so that any changes that you need to make can be done before the subscription processes.<\/p><p>You can easily modify, delay, change or cancel your delivery hassle-free in your account.<\/p>",
+            "page": ""
+          }
+        },
+        "template--14860141559889__5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8-168671941570c05c68-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I skip a month of my supplements?",
+            "row_content": "<p>Yes, by all means. Simply go to <strong>Account &gt; MANAGE SUBSCRIPTIONS<\/strong><\/p><p>Schedule and click Skip to skip this product for 30 days.<br\/>If you need a hand, please reach out to our Customer Care team via our 'Chat 💬' on site and they will be happy to help.<\/p>",
+            "page": ""
+          }
+        },
+        "f1d03068-39a0-4562-b3ea-a7324a23d2fc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I combine items to be in the same order?",
+            "row_content": "<p>Subscription program items that have the same order date, shipping address, and payment method will ship as one order.<\/p><p>If you have more than one subscription item and want the items to ship in the same order, simply visit '<strong>MANAGE SUBSCRIPTIONS<\/strong>'  in your account and change the next order dates to be the same. If they do not combine, confirm the orders are going to the same shipping address and have the same billing address and payment method.<\/p>",
+            "page": ""
+          }
+        },
+        "template--14860141559889__5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8-168671941570c05c68-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I add a product?",
+            "row_content": "<p>If you need to add a product to your subscription simply log into your account, select '<strong>MANAGE SUBSCRIPTIONS<\/strong>', and press ‘<strong>ADD A PRODUCT<\/strong>’ at the top right of your subscription screen. <\/p><p>You can also increase quantities of your products by pressing ‘<strong>MANAGE SUBSCRIPTIONS’<\/strong>, selecting the product and amending the quantity, press update and this will be updated\/saved in the system.<\/p>",
+            "page": ""
+          }
+        },
+        "template--14860141559889__5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8-168671941570c05c68-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I update my payment method?",
+            "row_content": "<p>To update your payment method - go to '<strong>MANAGE SUBSCRIPTIONS' then PAYMENT METHODS,<\/strong> update or add card and save by selecting '<strong>ADD PAYMENT METHOD<\/strong>'.<\/p><p>You can save multiple payment methods with the option to use a different card for a subscription or the same card for all subscriptions.<\/p><p>Please note cards must be registered to the billing address on your subscription.<\/p>",
+            "page": ""
+          }
+        },
+        "2da357bd-c702-4ea6-8a40-12b40fa34cbd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I change my method of payment for future orders?",
+            "row_content": "<p>Yes. In your account, find the '<strong>PAYMENT METHODS<\/strong>' section under '<strong>MANAGE SUBSCRIPTIONS<\/strong>', select '<strong>ADD PAYMENT METHOD<\/strong>' where you can enter further payment information. <\/p><p>Or select the drop down arrow 🔽 next to your current saved payment type, then select edit. <\/p><p>Once you have made your update or edits, you have the flexibility to save multiple payment methods with the option to use a different payment type for a subscription or the same payment type for all subscriptions. You can do this by  selecting the option ' <strong>MOVE SUBSCRIPTIONS HERE<\/strong>' to a payment type and this then changes the payment information for each one of your subscriptions at once.<\/p><p>Please note that payment types, cards, must be registered to the billing address on your subscription.<\/p>",
+            "page": ""
+          }
+        },
+        "927af67a-11c4-48b1-b1d2-f0e786f422b4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I change the frequency of my deliveries?",
+            "row_content": "<p>Yes, you can change the frequency of your orders to 30, 60 or 90 days. You can also select a specific day of the month for your subscription to process. This can be changed under 'Manage Subscription', then select 'Delivery Schedule'. Selet 'Update' to save.<\/p>",
+            "page": ""
+          }
+        },
+        "f3eb1660-3379-4759-9e6a-30424fbd608c": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I track my subscription once it has shipped?",
+            "row_content": "<p>Yes login to your account, go to '<strong>Order History<\/strong>', or '<strong>Latest Order<\/strong>', select the tracking number to track your order.<\/p>",
+            "page": ""
+          }
+        },
+        "975c4545-f20e-43cd-85e2-9c5bfaafbbdc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I cancel my subscription?",
+            "row_content": "<p>To cancel a subscription item, please visit 'MANAGE SUBSCRIPTIONS' within your account select the item and simply click the '<strong>Cancel Subscription' <\/strong>link at the bottom of the subscription details. You'll be prompted to confirm this action and indicate your reason for cancelling. Once you've selected a cancel reason and clicked the '<strong>CANCEL SUBSCRIPTION<\/strong>' button, your subscription will be cancelled and no further orders will be placed. You will receive an email notification confirming this action. Please note that if it is within 24 hours of your next scheduled billing date, it is too late for modifications or cancellations to be processed.<\/p>",
+            "page": ""
+          }
+        },
+        "0c3a100f-217a-401b-9e70-d86ff178c173": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Need help placing or managing your subscription order(s)?",
+            "row_content": "<p>Please contact us via Chat 💬 online or at cs@orendainternational.com for assistance. <\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "42e2aa8f-4aba-4258-9045-9a9d493cb0ce",
+        "template--14860141559889__5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8-168671941570c05c68-0",
+        "template--14860141559889__5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8-168671941570c05c68-1",
+        "f1d03068-39a0-4562-b3ea-a7324a23d2fc",
+        "template--14860141559889__5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8-168671941570c05c68-2",
+        "template--14860141559889__5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8-168671941570c05c68-3",
+        "2da357bd-c702-4ea6-8a40-12b40fa34cbd",
+        "927af67a-11c4-48b1-b1d2-f0e786f422b4",
+        "f3eb1660-3379-4759-9e6a-30424fbd608c",
+        "975c4545-f20e-43cd-85e2-9c5bfaafbbdc",
+        "0c3a100f-217a-401b-9e70-d86ff178c173"
+      ],
+      "settings": {
+        "open_first_collapsible_row": false,
+        "narrow": false,
+        "show_divider": false,
+        "heading": "Subscription FAQs",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1686721300866e0094": {
+      "type": "apps",
+      "blocks": {
+        "d76c8c5b-a5b6-495f-91b9-a602c84ba7f6": {
+          "type": "shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-widget\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "63144",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "d76c8c5b-a5b6-495f-91b9-a602c84ba7f6"
+      ],
+      "settings": {
+        "include_margins": true,
+        "show_divider": false,
+        "padding_top": 12,
+        "padding_bottom": 24
+      }
+    },
+    "25c1e1a3-8958-4e72-883f-ac23935a7448": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection": "our-products",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "show_divider": false,
+        "heading": "Some of our most subscribed products...",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "image_position": "center center",
+        "enable_image_fill": true,
+        "show_secondary_image": false,
+        "secondary_image_max": 1,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_quick_buy": true,
+        "enable_quick_view": false,
+        "enable_color_swatches": true,
+        "enable_countdown": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0a020ee8-1f19-4eba-951d-edb05a0b629b",
+    "7c896a02-ce08-4ed9-b00d-046b80780900",
+    "624058c6-20a9-48ad-ba3f-5661c47c2080",
+    "94b8932d-27e4-4a31-b2ce-8c1edce07a06",
+    "5d5ae766-fdbd-4859-ac1d-b0e0ce25e451",
+    "445aaf76-1e6f-4966-8229-6fee0a3f57dd",
+    "5cc3f4ac-a5d6-4bfe-80a4-b413711f5af8",
+    "1686721300866e0094",
+    "25c1e1a3-8958-4e72-883f-ac23935a7448"
+  ]
+}

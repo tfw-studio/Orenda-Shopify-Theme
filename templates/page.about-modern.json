@@ -1,0 +1,191 @@
+{
+  "sections": {
+    "image-banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Orenda",
+            "heading_size": "h2",
+            "heading_tag": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Celebrating our 24th Anniversary<\/strong><\/p>",
+            "text_size": "typeset3",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Orenda_Team.jpg",
+        "image_position": "center center",
+        "text_box_position": "top-left",
+        "text_alignment": "left",
+        "image_ratio": "600px",
+        "show_text_box": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "adapt",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "colors_button_label": "#1a1b18",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 20,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Orenda (n)",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"The spiritual power that flows through all things.\" (Iroquois)<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "custom_css": [
+        "h2 {font-family: ;}"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "mobile_text_alignment": "left",
+        "horizontal_content": false,
+        "page_width": "default",
+        "show_divider": false,
+        "use_custom_colors": true,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_heading": "#262625",
+        "colors_text": "#6e1273",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "section_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "e48e7062-e40c-4d95-9a40-f6c25dce4cea": {
+      "type": "rich-text",
+      "blocks": {
+        "f6030679-fc72-4564-aad4-04fa8d712171": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Orenda Story",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "41d2fa21-57af-4188-a331-2fc1892183d4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>I drove home — not sure how I got there, as I couldn't remember any of it — until I pulled into the drive, opened the garage, and just sat there.<\/p><p>A whole department gone without warning. A newborn at home. A new house. And me, sitting in that new blue minivan, trying to find the right words, trying to figure out what I was going to tell her. Was I a failure? Was I failing her, my daughter? What would people think of me, even though I didn't have a say in it?<\/p><p>Lost. Broken.<\/p><p>You know that feeling. Maybe not that exact moment. But the one where something you gave everything to — a job, a relationship, a role, your own body — made you feel like you simply didn't matter. Like you were invisible. Like what you had to offer wasn't enough. It leaves a scar.<\/p><p>What I found sitting in that new blue minivan, not right away, but eventually, has stayed with me every day since.<\/p><p>It wasn't me.<\/p><p>It took me a while to find my way to believe it. It wasn't easy to get to that point. But so glad I did.<\/p><p>And I made a vow that has shaped everything since. Nobody would treat me that way again. And I would never treat someone else that way either.<\/p><p>That vow brought me to Orenda. And Orenda gave it a place to live.<\/p><p>George and Bob Hall founded Orenda in 2002, carrying something similar. They'd watched their father, a talented, dedicated man, be treated as disposable by the company he gave himself to. So they built something different. A company rooted in a genuine passion for nutrition and proactive health, and an equally genuine belief that nobody who came through its doors would ever be made to feel that way.<\/p><p>Because what we've learned over twenty years, watching all the things that happen in people's lives, is that feeling — of being overlooked, dismissed, or simply not seen — doesn't only happen in a job. It happens in a doctor's office where you leave with a prescription but not an answer. It happens in your own body when it stops cooperating, and nobody can tell you why. It happens at 3 am when your mind is already running, and the exhaustion runs so deep you've forgotten what rested feels like. It happens when you've spent so long taking care of everyone else that somewhere along the way, you stopped feeling like yourself. And it happens to the practitioners who chose a different path in medicine because they believed their patients deserved more, and who sometimes find themselves out there largely on their own, fighting for an approach the mainstream hasn't caught up to yet.<\/p><p>They found Orenda, too. And they stayed.<\/p><p>People find us the way most people do. Not through an advertisement. Not through someone online promoting something today and something else tomorrow. Through someone they trusted — a physician, a friend, a partner, a sister, a grandmother — who saw something different, noticed a change, and when asked just said: I've been taking something. You should try it.<\/p><p>Nobody comes to Orenda expecting to tell anyone else. They come for themselves. And then something shifts. People notice. And then someone asks. And the ripple moves.<\/p><p>That ripple started in 2002 and hasn't stopped.<\/p><p>Today, my wife and three children are part of this work. And our customers — grandmothers and grandfathers, parents and partners, friends who told friends, people who found us on their own and are glad they did — keep coming back. And keep passing it on.<\/p><p>What shifts for them isn't accidental. Orenda's formulas are built to support your body's natural detoxification pathways and a healthy gut microbiome — two things that keep showing up in the research as central to how you sleep, how you think, and how you feel. Many of the people who recommend these products have used them for years. So have their families. That says more than we ever could.<\/p><p>There are still more people to reach. People who haven't found us yet. People who are tired in a way that sleep doesn't fix. People who have quietly stopped feeling like themselves and don't know why. Some of them are sitting somewhere right now with that same blank stare.<\/p><p>We know that feeling.<\/p><p>You should still feel like you. We built everything around that belief.<\/p><p>We're here to lift people. We always have. And we're not done.<\/p>",
+            "text_size": "typeset",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "f6030679-fc72-4564-aad4-04fa8d712171",
+        "41d2fa21-57af-4188-a331-2fc1892183d4"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "mobile_text_alignment": "center",
+        "horizontal_content": false,
+        "page_width": "default",
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_heading": "#262625",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "section_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "narrow": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "images-with-text-0": {
+      "type": "images-with-text",
+      "blocks": {
+        "images-with-text-0-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Layered images with text",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "images-with-text-0-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_size": "typeset",
+            "secondary_color": true
+          }
+        }
+      },
+      "block_order": [
+        "images-with-text-0-0",
+        "images-with-text-0-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "layout": "image_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "mobile_text_alignment": "left",
+        "full_width": false,
+        "show_divider": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image-banner",
+    "rich-text",
+    "e48e7062-e40c-4d95-9a40-f6c25dce4cea",
+    "main",
+    "images-with-text-0"
+  ]
+}

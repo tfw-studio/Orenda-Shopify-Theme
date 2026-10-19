@@ -1,0 +1,569 @@
+{
+  "sections": {
+    "empty-space": {
+      "type": "empty-space",
+      "settings": {
+        "desktop_height": 36,
+        "mobile_height": 16
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumb": {
+          "type": "breadcrumb",
+          "disabled": true,
+          "settings": {
+            "text_style": "uppercase",
+            "show_divider": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "h1",
+            "show_price": false,
+            "price_size": "medium"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "text": "60 capsules. 30-day supply.",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": "large",
+            "show_badges": true
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "heading": "Hurry up ! Sale end in:",
+            "number_size": "compact",
+            "colors_heading": "#da3f3f",
+            "colors_text": "#da3f3f",
+            "colors_background": "#ffeeee"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "swatch_type": "round",
+            "size_chart": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "746983cc-4acc-49dd-bc70-762f1ca0d60f": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "plant",
+            "heading": "KEY INGREDIENTS",
+            "content": "{{ product.metafields.custom.key_ingredients | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_tcUqBy": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "heading": "I'd love to learn a little bit more",
+            "content": "{{ product.metafields.custom.learn_more | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab-0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "clipboard",
+            "heading": "HOW TO TAKE",
+            "content": "{{ product.metafields.custom.how_to_take | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "0fb93065-f58a-4bd8-87d4-e63e44f1b052": {
+          "type": "collapsible_image",
+          "settings": {
+            "icon": "clipboard",
+            "heading": "VIEW SUPPLEMENT FACTS",
+            "image": "shopify:\/\/shop_images\/entercellular-nutrition.jpg",
+            "description": "Orenda Entercellular Supplement Facts"
+          }
+        },
+        "270304c7-3024-4b35-b74d-16fd9715461c": {
+          "type": "collapsible_image",
+          "disabled": true,
+          "settings": {
+            "icon": "clipboard",
+            "heading": "VIEW FULL LABEL",
+            "image": "shopify:\/\/shop_images\/Entercellular_Bottle_Label_web_G0881024_1.jpg",
+            "description": ""
+          }
+        },
+        "collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "check_mark",
+            "heading": "VIEW FULL LABEL",
+            "content": "<p>Learn more about the high-quality ingredients that make up Orenda's products. <\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G088_Entercellular_Bottle_Label_web_FA.pdf?v=1724971999\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G088_Entercellular_Bottle_Label_web_FA.pdf?v=1724971999\">View full Orenda Entercellular® Label<\/a><\/p>",
+            "page": ""
+          }
+        },
+        "8dac1e41-7265-4f3e-abde-1fc0bf71bb82": {
+          "type": "collapsible_video",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "heading": "Product video",
+            "description": "",
+            "video": "shopify:\/\/files\/videos\/1.mp4",
+            "youtube_src": "",
+            "vimeo_src": "https:\/\/player.vimeo.com\/video\/756930481?h=641c3bfec3&badge=0&autopause=0&player_id=0&app_id=58479"
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 20,
+            "show_inventory_transfer": true,
+            "color_scheme": "accent-3"
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "related_buttons": {
+          "type": "related_buttons",
+          "disabled": true,
+          "settings": {
+            "show_icons": false
+          }
+        },
+        "sticky_cart": {
+          "type": "sticky_cart",
+          "settings": {
+            "show_quantity_selector": true
+          }
+        },
+        "4d2baa0c-f60f-488f-9d8b-606e1b14e4e8": {
+          "type": "image",
+          "settings": {
+            "height": 20,
+            "link": ""
+          }
+        },
+        "98035d54-52ad-43d7-9d13-b93024ef55d8": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "heading": "Complementary Products",
+            "make_collapsible_row": true,
+            "product_list_limit": 3,
+            "image_ratio": "adapt",
+            "image_position": "center center",
+            "show_vendor": false,
+            "enable_image_fill": false
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb",
+        "title",
+        "rating",
+        "vendor",
+        "price",
+        "countdown",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "746983cc-4acc-49dd-bc70-762f1ca0d60f",
+        "collapsible_tab_tcUqBy",
+        "collapsible_tab-0",
+        "0fb93065-f58a-4bd8-87d4-e63e44f1b052",
+        "270304c7-3024-4b35-b74d-16fd9715461c",
+        "collapsible_tab-1",
+        "8dac1e41-7265-4f3e-abde-1fc0bf71bb82",
+        "inventory_status",
+        "share",
+        "related_buttons",
+        "sticky_cart",
+        "4d2baa0c-f60f-488f-9d8b-606e1b14e4e8",
+        "98035d54-52ad-43d7-9d13-b93024ef55d8"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_position": "left",
+        "media_size": "medium",
+        "gallery_layout": "thumbnail_slider",
+        "image_ratio": "adapt",
+        "show_thumbnails": true,
+        "hide_variants": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "mobile_image_ratio": "adapt",
+        "show_mobile_thumbnails": false,
+        "rc_custom_text": "<strong>Subscription Benefits <\/strong><br>✔︎ Delivered Monthly - 'no empties' promise<br>\n✔︎ Cancel, Pause, Delay, or Change Anytime, Hassle-Free<br>\n✔︎ No Surprises (We'll send you pre-shipment reminders)",
+        "padding_top": 0,
+        "padding_bottom": 44
+      }
+    },
+    "8ec935eb-935e-42be-8ee7-0d747ab3d6ff": {
+      "type": "logo-list",
+      "blocks": {
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-0": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gmo.png",
+            "link": ""
+          }
+        },
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gluten.png",
+            "link": ""
+          }
+        },
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__dairy.png",
+            "link": ""
+          }
+        },
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gmp.png",
+            "link": ""
+          }
+        },
+        "40de84a6-7318-462f-96b2-9b1b946f8feb": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__lab_tested.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-0",
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-1",
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-2",
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-3",
+        "40de84a6-7318-462f-96b2-9b1b946f8feb"
+      ],
+      "settings": {
+        "opacity": 100,
+        "background_color": "",
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "subheading": "Our Highest Quality Commitment",
+        "description": "Clean formulations backed by third-party testing.",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "2d27d66b-992d-4f08-b6cf-ef05f4cd85d5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Aronia Berry",
+            "row_content": "<p>Allow me to introduce you to a real game-changer, the Aronia Berry, often known as the Chokeberry. This North American native is anything but ordinary! Bursting with antioxidants and particularly rich in polyphenols, the Aronia Berry offers so much more than meets the eye. It's chock-full of powerful compounds like proanthocyanidins and anthocyanidins, making it a rich source of antioxidants for supporting the fight against free radicals. But the story doesn't end there. With its rich assortment of nutrients and unique plant compounds, the Aronia Berry provides unparalleled support for overall well-being. It's just another testament to how nature is always looking out for us!<\/p>",
+            "page": ""
+          }
+        },
+        "8f940c07-b93f-44f1-89f4-a4b4315fb610": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of BioPerine® Black Pepper Extract",
+            "row_content": "<p>Have you ever worried that you're not getting the full benefits from the food and supplements you take? Well, it's time you meet BioPerine® Black Pepper Extract, your body's new best friend for maximizing nutrient absorption! This little gem comes from natural black pepper, BioPerine® doesn't just sit in the background; it actively enhances the benefits of other nutrients.<\/p><p>BioPerine®'s superpower lies in its ability to boost the bioavailability of health-promoting compounds. Simply put, it's your champion for helping your body soak up more of the good stuff from your meals and supplements.* Picture BioPerine® as a skilled facilitator, ensuring you extract the max from your wellness efforts.<\/p><p>But BioPerine® isn't just any pepper extract. With extensive scientific research backing it, BioPerine® has proven its safety and effectiveness in optimizing nutrient absorption. So, don't let any nutrient go to waste. Act now and make BioPerine® Black Pepper Extract an integral part of your wellness routine, ensuring you're truly making the most of your healthful habits.<\/p>",
+            "page": ""
+          }
+        },
+        "09d65417-5b21-43bc-8494-d2d47608101d": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Pine Bark Extract",
+            "row_content": "<p>Let me tell you about one of nature's hidden gems: Pine Bark Extract. Sourced from the bark of pine trees, this incredible ingredient is a powerhouse of antioxidants. It's particularly rich in substances called oligomeric proanthocyanidin compounds, or OPCs, which are known for their exceptional free radical-fighting abilities. But that's not all! Pine Bark Extract also supports healthy blood circulation and contributes to skin health.* So, it's like giving a little helping hand to your body's well-being and vitality! It’s a touch of nature's magic that we could all benefit from.<\/p>",
+            "page": ""
+          }
+        },
+        "bdf3fe71-beba-4517-90c2-a5d34c60a0d4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Resveratrol",
+            "row_content": "<p>Say hello to Resveratrol, a compound found in the skin of grapes and in red wine, known for its remarkable health-supportive properties. Resveratrol is a powerful antioxidant, battling those unwanted free radicals that can affect our well-being. But the benefits don't stop there. Resveratrol also supports heart health, helps maintain a healthy aging process, and supports overall vitality.* It's like a little cheerleader for your health, offering support just when you need it. With Resveratrol, it's clear that nature is rooting for us!<\/p>",
+            "page": ""
+          }
+        },
+        "749c8c1a-fa92-4946-b220-5c0c9dfbaa54": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Grape Seed Extract",
+            "row_content": "<p>Get ready to meet another of nature's wonders: Grape Seed Extract. Originating from, you guessed it, the tiny seeds of grapes, this extract is a force to be reckoned with! It's filled to the brim with antioxidants, including a hefty dose of OPCs (oligomeric proanthocyanidins), which are known for their robust free radical-fighting prowess. But Grape Seed Extract isn't just a one-trick pony. It also supports a healthy cardiovascular system and contributes to radiant skin. So, Grape Seed Extract isn't just offering health benefits, it's nourishing your inner glow too! It's a testament to the power of nature, straight from the vine to you.<\/p>",
+            "page": ""
+          }
+        },
+        "6814e038-767e-4e4a-9d71-d5b732187310": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Bilberry",
+            "row_content": "<p>Say hello to Bilberry, a small but truly remarkable fruit. This tiny but mighty berry, often compared to the blueberry, is an antioxidant champion! Brimming with anthocyanidins, Bilberry helps combat those unwelcome free radicals. What's more, these berries have a long history of supporting eye health and vision.* Bilberry is nature's way of reminding us that great things often come in small packages.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4cg7AK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why Choose HPMC Capsules for Your Supplements?",
+            "row_content": "<p>Orenda chooses HPMC (Hydroxypropyl Methylcellulose) capsules for our supplements. HPMC, also known as hypromellose, is a safe and innovative material derived primarily from wood pulp. This plant-based source makes it an ideal choice for those who follow vegetarian or vegan lifestyles, ensuring that our products are inclusive and respectful of diverse dietary choices and needs.<\/p><p><strong>Why are HPMC capsules a superior choice?<\/strong><\/p><p>• <strong>Vegetarian and Vegan-Friendly<\/strong>: Unlike other capsules that may contain animal derivatives, HPMC capsules are 100% plant-based. This aligns with our commitment to vegetarian and vegan consumers, ensuring that our supplements are accessible to all.<br\/>• <strong>Free from Additives<\/strong>: In our quest to offer pure and natural supplements, Orenda's use of HPMC capsules allows us to avoid any unnecessary additives. This means you're consuming the supplement in its most natural form, without any artificial ingredients.<br\/>• <strong>Tasteless and Clear<\/strong>: To ensure that your focus remains solely on the benefits of the supplements, HPMC capsules are clear and tasteless. They provide a neutral delivery system that doesn't interfere with the efficacy or taste of the supplement inside.<br\/>• <strong>Sustainable Source<\/strong>: HPMC is primarily made by extracting from wood pulp, a renewable resource. This choice reflects our commitment to sustainability and environmental responsibility.<br\/><\/p><p>Our use of HPMC capsules is a testament to Orenda's dedication to purity, inclusivity, and environmental consciousness. By choosing these plant-based, additive-free capsules, we ensure that you receive your supplements in a form that is as close to nature as possible.<\/p>",
+            "page": ""
+          }
+        },
+        "9dce4aad-066b-4521-87ea-81f9cb93813c": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Should I take Orenda Entercellular® if I am on medication?",
+            "row_content": "<p>Orenda Entercellular® was formulated with careful attention to safety. That said, if you are currently under medical care or taking any medications, we recommend consulting with your healthcare provider before adding any new supplement to your routine. Your healthcare provider understands your full health picture and is the right person to make that call with you.<\/p>",
+            "page": ""
+          }
+        },
+        "8df2971d-265e-4b34-82a5-38167020aecf": {
+          "type": "collapsible_video",
+          "settings": {
+            "heading": "🎙️ Indepth Dive on Orenda Entercellular®",
+            "description": "🎙️ Indepth Dive on Orenda Entercellular® with co-Founder George Hall (13min)",
+            "youtube_src": "",
+            "vimeo_src": "https:\/\/player.vimeo.com\/video\/853844876?badge=0&autopause=0&player_id=0&app_id=58479"
+          }
+        }
+      },
+      "block_order": [
+        "2d27d66b-992d-4f08-b6cf-ef05f4cd85d5",
+        "8f940c07-b93f-44f1-89f4-a4b4315fb610",
+        "09d65417-5b21-43bc-8494-d2d47608101d",
+        "bdf3fe71-beba-4517-90c2-a5d34c60a0d4",
+        "749c8c1a-fa92-4946-b220-5c0c9dfbaa54",
+        "6814e038-767e-4e4a-9d71-d5b732187310",
+        "collapsible_row_4cg7AK",
+        "9dce4aad-066b-4521-87ea-81f9cb93813c",
+        "8df2971d-265e-4b34-82a5-38167020aecf"
+      ],
+      "settings": {
+        "open_first_collapsible_row": false,
+        "narrow": true,
+        "show_divider": false,
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "85abdddf-a94c-47a0-a16c-dd30904eed66": {
+      "type": "gallery",
+      "blocks": {
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ENTECELLULAR_Marge_W_Customer_Review_v1_Web_62023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ENTECELLULAR_Judith_L_Customer_Review_v1_Web_62023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ENTECELLULAR_LaFaughn_R_Customer_Review_v1_Web_62023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-0": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Active_Steven_F_Customer_Review_v3_Web_52023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        }
+      },
+      "block_order": [
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-3",
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2",
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1",
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-0"
+      ],
+      "settings": {
+        "per_row": 4,
+        "spacing_images": 2,
+        "image_height": 280,
+        "apply_overlay": true,
+        "full_width": false,
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "mobile_image_height": 160,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_divider": false,
+        "heading": "You're Gonna Like These Too...",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_image_fill": false,
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_quick_buy": true,
+        "enable_quick_view": false,
+        "enable_color_swatches": true,
+        "enable_countdown": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1686870448d3144abd": {
+      "type": "apps",
+      "blocks": {
+        "2daff2e8-0fbf-4253-b986-7cf86c2ab348": {
+          "type": "shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-widget\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "63144",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "2daff2e8-0fbf-4253-b986-7cf86c2ab348"
+      ],
+      "settings": {
+        "include_margins": true,
+        "show_divider": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "4206f4e5-3db7-4377-bf2f-6ccfb4326b9a": {
+      "type": "yotpo-reviews",
+      "settings": {}
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "disabled": true,
+      "settings": {
+        "show_divider": false,
+        "heading": "Recently Viewed",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_image_fill": true,
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "show_quick_buy": true,
+        "enable_quick_view": true,
+        "enable_color_swatches": true,
+        "enable_countdown": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "empty-space",
+    "main",
+    "8ec935eb-935e-42be-8ee7-0d747ab3d6ff",
+    "collapsible-content",
+    "85abdddf-a94c-47a0-a16c-dd30904eed66",
+    "product-recommendations",
+    "1686870448d3144abd",
+    "4206f4e5-3db7-4377-bf2f-6ccfb4326b9a",
+    "recently-viewed-products"
+  ]
+}

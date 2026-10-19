@@ -1,0 +1,305 @@
+{%- comment -%}
+  Awtomic Custom BaB Selector
+{%- endcomment -%}
+
+{%- assign bundle_id = product.metafields.custom.awtomic_bundle_id -%}
+{% if product.metafields.custom.bogo_free_product.value %}
+  {% assign free_product_id = product.metafields.custom.bogo_free_product.value.selected_or_first_available_variant.id %}
+{% else %}
+  {% assign free_product_id = null %}
+{% endif %}
+
+{%- capture preselection_ids_json -%}
+  {
+  {%- for variant in product.variants -%}
+    {%- assign preselection_id = variant.metafields.custom.awtomic_preselection_id -%}
+    {%- if preselection_id != blank -%}
+      {{ variant.id | json }}: {{ preselection_id | json }}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+  }
+{%- endcapture -%}
+
+<script>
+  (function() {
+    'use strict';
+
+    var PRODUCT_ID = {{ product.id | json }};
+    var PRODUCT_HANDLE = {{ product.handle | json }};
+    var PRODUCT_TITLE = {{ product.title | json }};
+    var BUNDLE_BOX_SIZE = {{ product.metafields.bundle.boxSize | default: 4 | json }};
+
+    var BUNDLE_ID = {{ bundle_id | json }};
+    var PRESELECTION_IDS = {{ preselection_ids_json }};
+    var FREE_VARIANT_ID = {{ free_product_id | default: null | json }};
+    var BOGO_FREE_PRESELECTION_ID = {{ product.metafields.custom.bogo_free_preselection_id | default: 'null' | json }};
+
+    console.log('[AWT DEBUG] BUNDLE_ID:', BUNDLE_ID);
+    console.log('[AWT DEBUG] PRESELECTION_IDS:', JSON.stringify(PRESELECTION_IDS));
+    console.log('[AWT DEBUG] FREE_VARIANT_ID:', FREE_VARIANT_ID);
+    console.log('[AWT DEBUG] BOGO_FREE_PRESELECTION_ID:', BOGO_FREE_PRESELECTION_ID);
+
+    function getVariantId() {
+      var input = document.querySelector('form[action*="/cart/add"] input[name="id"], form[action*="/cart/add"] select[name="id"]');
+      if (input && input.value) return input.value;
+      return new URLSearchParams(window.location.search).get('variant') || null;
+    }
+
+    function getSellingPlan() {
+      var input = document.querySelector('[data-bundleapp-wrapper] input[name="selling_plan"]');
+      return (input && input.value) ? input.value : null;
+    }
+
+    async function fetchBundle(bundleId) {
+      try {
+        var response = await fetch('/tools/bundle-subscriptions/api/bundle/' + bundleId);
+        if (!response.ok) return null;
+        var data = await response.json();
+        return data.bundle || null;
+      } catch (e) {
+        console.error('[Awtomic Custom BaB] API error:', e);
+        return null;
+      }
+    }
+
+    function parseSelections(selections) {
+      var items = [];
+      for (var parent in selections) {
+        if (!selections.hasOwnProperty(parent)) continue;
+        var group = selections[parent];
+        for (var variantGid in group) {
+          if (!group.hasOwnProperty(variantGid)) continue;
+          items.push({ variantId: variantGid.split('/').pop(), quantity: group[variantGid] });
+        }
+      }
+      return items;
+    }
+
+    function generateUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0;
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+      });
+    }
+
+    function buildBundlePayload(sellingPlan, preset, isFree, bogoGroupId) {
+      var bundleUid = generateUUID();
+      var variantGid = 'gid://shopify/ProductVariant/' + preset.variantId;
+      var productGid = 'gid://shopify/Product/' + preset.productId;
+      var label = preset.items.length + ' items';
+
+      var sharedProps = {
+        Bundle: preset.name,
+        _bundleUid: bundleUid,
+        _bundleHandle: preset.handle,
+        _bundleType: 'dynamicBaB',
+        _bundleLabel: label,
+        _bundleProductId: productGid,
+        _bundleName: preset.name,
+        _bundleBoxSize: preset.boxSize,
+        _variantId: variantGid
+      };
+
+      if (bogoGroupId) {
+        sharedProps['_bogoGroupId'] = bogoGroupId;
+      }
+
+      if (isFree) {
+        sharedProps['_bogo-free-bundle'] = 'true';
+      } else if (FREE_VARIANT_ID) {
+        sharedProps['_bogo-base-bundle'] = 'true';
+        sharedProps['_bogo-free-bundle-id'] = BUNDLE_ID;
+        sharedProps['_bogo-free-preselection-id'] = BOGO_FREE_PRESELECTION_ID;
+        sharedProps['_bogo-free-variant-id'] = String(FREE_VARIANT_ID);
+      }
+
+      return {
+        items: preset.items.map(function(item) {
+          var entry = {
+            id: item.variantId,
+            quantity: item.quantity || 1,
+            properties: Object.assign({}, sharedProps)
+          };
+          if (sellingPlan) entry.selling_plan = parseInt(sellingPlan, 10);
+          return entry;
+        })
+      };
+    }
+
+    async function addBundleToCart(payload, btn) {
+      btn.setAttribute('aria-disabled', 'true');
+      btn.classList.add('loading');
+
+      try {
+        var response = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          var errorData = await response.json().catch(function() { return {}; });
+          console.error('[Awtomic Custom BaB] Add to cart failed — status:', response.status, '— error:', JSON.stringify(errorData));
+          alert('Failed to add bundle to cart. Please try again.');
+          return false;
+        }
+
+        var result = await response.json();
+        console.log('[Awtomic Custom BaB] Bundle added to cart:', result);
+        return true;
+      } catch (err) {
+        console.error('[Awtomic Custom BaB] Fetch error:', err);
+        alert('Something went wrong adding the bundle to cart.');
+        return false;
+      } finally {
+        btn.removeAttribute('aria-disabled');
+        btn.classList.remove('loading');
+      }
+    }
+
+    // Resolves the correct preselection and preset for a given variantId + bundle.
+    // Called both at init time and on every click to always use the live variant.
+    function resolvePreset(bundle, variantId) {
+      var preselectionId = PRESELECTION_IDS[variantId] || PRESELECTION_IDS[String(variantId)] || null;
+      var resolvedId = preselectionId || (bundle && bundle.DefaultPreselectionId);
+      var preselection = bundle
+        ? (bundle.Preselections || []).find(function(p) { return p.Id === resolvedId; })
+        : null;
+
+      if (!preselection) return null;
+
+      return {
+        productId: bundle.ProductId ? bundle.ProductId.split('/').pop() : PRODUCT_ID,
+        handle: bundle.Handle || PRODUCT_HANDLE,
+        name: bundle.Name || PRODUCT_TITLE,
+        variantId: variantId,
+        boxSize: (bundle.Settings && bundle.Settings[0] && bundle.Settings[0].Size) || BUNDLE_BOX_SIZE,
+        sellingPlan: null,
+        items: parseSelections(preselection.Selections)
+      };
+    }
+
+    async function init() {
+      if (!BUNDLE_ID) return;
+
+      var form = document.querySelector('form[action*="/cart/add"]');
+      if (!form) return;
+
+      var origBtn = form.querySelector('button[type="submit"][name="add"], button[type="submit"]');
+      if (!origBtn) return;
+
+      origBtn.style.pointerEvents = 'none';
+      console.log('[Awtomic Custom BaB] Button disabled, fetching bundle', BUNDLE_ID);
+
+      var bundle = await fetchBundle(BUNDLE_ID);
+
+      // ✅ Read variant ID AFTER the async fetch resolves so we get the live DOM value,
+      // not whatever was in the form at script-parse time.
+      var variantId = getVariantId();
+      var preset = resolvePreset(bundle, variantId);
+
+      if (!preset) {
+        console.warn('[Awtomic Custom BaB] No preselection found — re-enabling button');
+        origBtn.style.pointerEvents = '';
+        return;
+      }
+
+      var paymentBtn = form.querySelector('.shopify-payment-button');
+      if (paymentBtn) paymentBtn.remove();
+
+      if (FREE_VARIANT_ID) {
+        function disableSubSelector() {
+          var wrapper = document.querySelector('fieldset[data-bundleapp-wrapper]');
+          if (!wrapper) return false;
+
+          var subGroups = wrapper.querySelectorAll('.bundleapp-plan-selector-group:not([data-one-time])');
+          if (!subGroups.length) return false;
+
+          subGroups.forEach(function(group) {
+            if (group.dataset.bogoDisabled) return;
+            group.dataset.bogoDisabled = 'true';
+            group.innerHTML = '<div style="padding: 12px 16px; font-size: 14px; color: #999; text-align: left; font-style: italic;">Subscription not available during BOGO sale</div>';
+          });
+
+          var oneTimeRadio = wrapper.querySelector('.bundleapp-plan-selector-group[data-one-time] input[type="radio"]');
+          if (oneTimeRadio && !oneTimeRadio.checked) {
+            oneTimeRadio.checked = true;
+            oneTimeRadio.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+
+          var spInput = wrapper.querySelector('input[name="selling_plan"]');
+          if (spInput) spInput.value = '';
+
+          return true;
+        }
+
+        if (!disableSubSelector()) {
+          var subObserver = new MutationObserver(function() {
+            if (disableSubSelector()) subObserver.disconnect();
+          });
+          subObserver.observe(form, { childList: true, subtree: true });
+          setTimeout(function() { subObserver.disconnect(); }, 10000);
+        }
+      }
+
+      var newBtn = origBtn.cloneNode(true);
+      newBtn.type = 'button';
+      newBtn.id = 'awt-custom-bab-btn';
+      newBtn.style.pointerEvents = '';
+      newBtn.removeAttribute('name');
+      newBtn.removeAttribute('@click.prevent');
+      newBtn.removeAttribute('x-show:');
+      newBtn.removeAttribute(':disabled');
+      newBtn.removeAttribute(':class');
+      newBtn.removeAttribute('href');
+      newBtn.disabled = false;
+
+      origBtn.parentNode.replaceChild(newBtn, origBtn);
+
+      newBtn.addEventListener('click', async function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // ✅ Re-read variant at click time so flavor switches after page load are respected.
+        var currentVariantId = getVariantId();
+        var currentPreset = resolvePreset(bundle, currentVariantId);
+
+        if (!currentPreset) {
+          console.warn('[Awtomic Custom BaB] No preselection found for variant', currentVariantId, '— aborting add to cart');
+          alert('Could not resolve bundle configuration. Please refresh and try again.');
+          return;
+        }
+
+        console.log('[Awtomic Custom BaB] Adding to cart — variantId:', currentVariantId, 'preset:', currentPreset.name);
+
+        var sellingPlan = getSellingPlan();
+        var bogoGroupId = FREE_VARIANT_ID ? generateUUID() : null;
+
+        // 1. Add the base bundle
+        var basePayload = buildBundlePayload(sellingPlan, currentPreset, false, bogoGroupId);
+        var baseAdded = await addBundleToCart(basePayload, newBtn);
+
+        // 2. If BOGO and base succeeded, add the free bundle with same components
+        if (baseAdded && FREE_VARIANT_ID) {
+          var freePreset = Object.assign({}, currentPreset, {
+            variantId: FREE_VARIANT_ID
+          });
+          var freePayload = buildBundlePayload(sellingPlan, freePreset, true, bogoGroupId);
+          await addBundleToCart(freePayload, newBtn);
+
+          // Force rollup to re-process now that BOTH bundles are in cart
+          setTimeout(function() {
+            document.dispatchEvent(new CustomEvent('cart:updated'));
+          }, 300);
+        }
+      });
+
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

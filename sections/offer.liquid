@@ -1,0 +1,686 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<div class="section--padding offers-wrapper">
+  {% for block in section.blocks %}
+    {% if block.settings.product != blank %}
+      <div class="offer-card" 
+        data-product-type="{{ block.type }}"  
+        data-product-price="{{ block.settings.product.price }}" 
+        data-variant-id="{{ block.settings.product.variants[0].id }}" 
+        data-discount-percentage="{{ block.settings.discount_percentage }}">
+        <div class="offer__tab">
+            <p class="offer__tab-text">{{ block.settings.tab }}</p>
+        </div>
+        <div class="offer__image-wrap">
+          {% if block.settings.image_badge != blank %}
+            <div class="offer__image-badge">{{ block.settings.image_badge }}</div>
+          {% endif %}
+          <img class="offer__image" src="{{ block.settings.product.featured_image | img_url: 'master' }}" loading="lazy" height="228" width="228">
+        </div>
+        <div class="offer__details-atc">
+          <div class="offer__details">
+              <h3 class="offer__details-title">
+                {% if block.settings.display_title == blank %}
+                  {{ block.settings.product.title }}
+                {% else %}
+                  {{ block.settings.display_title }}
+                {% endif %}
+              </h3>
+              <div class="offer__details-price-wrap">
+                  <div class="offer__details-price">{{ block.settings.product.price | money }}</div>
+                  <div class="offer__details-comparison">{{ block.settings.product.price | money }}</div>
+                  <div class="offer__details-percentage"></div>
+              </div>
+              {% if block.settings.free_ship %}
+                <div class="offer__details-free-ship">
+                  + Free Shipping
+                </div>
+              {% endif %}
+              <p class="offer__details-savings">You Save: <span></span></p>
+          </div>
+  
+          <div class="offer__atc">
+            {% if block.type == 'onetime-product' %}
+              {% if block.settings.purchase_quantity_label != blank %}
+                <p class="offer__quantity">{{ block.settings.purchase_quantity_label }}</p>
+              {% endif %}
+            {% elsif block.type == 'subscription-product' %}
+              <p class="offer__sub-interval">
+                {% if block.settings.subscription_interval == "1" %}
+                  Monthly Subscription
+                {% elsif block.settings.subscription_interval == "2" %}
+                  Bimonthly Subscription
+                {% elsif block.settings.subscription_interval == "3" %}
+                  Trimonthly Subscription
+                {% endif %}
+              </p>
+            {% endif %}
+  
+            <div class="button button--medium" 
+              data-discount-percentage="{{ block.settings.discount_percentage }}"
+              data-variant-id="{{ block.settings.product.variants[0].id }}" 
+
+              {% if block.type == 'onetime-product' %}
+                data-product-type="onetime" 
+                data-quantity="{{ block.settings.purchase_quantity }}"
+
+              {% elsif block.type == 'subscription-product' %}
+                data-product-type="subscription" 
+                {% assign selling_plan_index = block.settings.subscription_interval | minus: 1 %}
+                data-selling-plan-id="{{ block.settings.product.selling_plan_groups[0].selling_plans[selling_plan_index].id }}"
+
+              {% endif %}
+            >
+              {{ block.settings.atc_btn_text }}
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="offer-card offer-card-mobile" 
+        data-product-type="{{ block.type }}"  
+        data-product-price="{{ block.settings.product.price }}" 
+        data-variant-id="{{ block.settings.product.variants[0].id }}" 
+        data-discount-percentage="{{ block.settings.discount_percentage }}">
+        <div class="offer__tab">
+            <p class="offer__tab-text">{{ block.settings.tab }}</p>
+        </div>
+        <h3 class="offer__details-title">
+          {% if block.settings.display_title == blank %}
+            {{ block.settings.product.title }}
+          {% else %}
+            {{ block.settings.display_title }}
+          {% endif %}
+        </h3>
+        <div class="offer__image-details">
+          <div class="offer__image-wrap">
+            {% if block.settings.image_badge != blank %}
+              <div class="offer__image-badge">{{ block.settings.image_badge }}</div>
+            {% endif %}
+            <img class="offer__image" src="{{ block.settings.product.featured_image | img_url: 'master' }}" loading="lazy" height="120" width="120">
+          </div>
+          <div class="offer__details">
+              <div class="offer__details-price-wrap">
+                <div class="offer__details-price">{{ block.settings.product.price | money }}</div>
+                <div class="offer__details-percentage"></div>
+              </div>
+              <div class="offer__details-comparison">{{ block.settings.product.price | money }}</div>
+              {% if block.settings.free_ship %}
+                <div class="offer__details-free-ship">
+                  + Free Shipping
+                </div>
+              {% endif %}
+              <p class="offer__details-savings">Save: <span></span></p>
+          </div>
+        </div>
+  
+        <div class="offer__atc">
+          {% if block.type == 'onetime-product' %}
+            {% if block.settings.purchase_quantity_label != blank %}
+              <p class="offer__quantity">{{ block.settings.purchase_quantity_label }}</p>
+            {% endif %}
+          {% elsif block.type == 'subscription-product' %}
+            <p class="offer__sub-interval">
+              {% if block.settings.subscription_interval == "1" %}
+                Monthly Subscription
+              {% elsif block.settings.subscription_interval == "2" %}
+                Bimonthly Subscription
+              {% elsif block.settings.subscription_interval == "3" %}
+                Trimonthly Subscription
+              {% endif %}
+            </p>
+          {% endif %}
+          
+          <div class="button button--medium" 
+            data-discount-percentage="{{ block.settings.discount_percentage }}"
+            data-variant-id="{{ block.settings.product.variants[0].id }}" 
+
+            {% if block.type == 'onetime-product' %}
+              data-product-type="onetime" 
+              data-quantity="{{ block.settings.purchase_quantity }}"
+
+            {% elsif block.type == 'subscription-product' %}
+              data-product-type="subscription" 
+              {% assign selling_plan_index = block.settings.subscription_interval | minus: 1 %}
+              data-selling-plan-id="{{ block.settings.product.selling_plan_groups[0].selling_plans[selling_plan_index].id }}"
+
+            {% endif %}
+          >
+            {{ block.settings.atc_btn_text }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+  .offers-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 0 20px;
+  }
+  .offer-card {
+    border: 1px solid #E8E9EB;
+    display: flex;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+    max-width: 1100px;
+  }
+  .offer-card-mobile {
+    display: none;
+  }
+  .offer__tab {
+      padding: 0 20px;
+      background: #97D700;
+      display: flex;
+      align-items: center;
+      height: 100%;
+  }
+  .offer__tab-text {
+      writing-mode: vertical-lr;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0.96px;
+      text-transform: uppercase;
+      transform: rotate(-180deg);
+      margin: 0 !important;
+  }
+  .offer__image-wrap {
+      width: 228px;
+      height: 228px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 40px;
+      position: relative;
+  }   
+  .offer__image-badge {
+    background-color: #97D700;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--font-body-family) !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px; /* 100% */
+    letter-spacing: 0.48px;
+  }
+  .offer__image {
+      width: 228px;
+      object-fit: cover;
+  }   
+  .offer__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 32px;
+    max-width: 400px;
+  }
+  .offer__details-title {
+    font-family: var(--font-body-family) !important;
+    font-size: 24px;
+    font-style: 600;
+    font-weight: 400;
+    line-height: 32px; /* 133.333% */
+    letter-spacing: 0.72px;
+    margin: 0 !important;
+  }
+  .offer__details-price-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    font-family: var(--font-body-family);
+  }
+  .offer__details-percentage {
+    padding: 5px 15px 5px 8px;
+    clip-path: polygon(100% 0%, 80% 50%, 100% 100%, 0 100%, 0 0);
+    color: rgb(var(--color-button-text));
+    background-color: rgb(var(--color-button-background));
+    color: var(--white, #FFF);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0.48px;
+  }
+  .offer__details-price {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px; /* 177.778% */
+    letter-spacing: 0.54px;
+  }
+  .offer__details-comparison {
+    color:#585858;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px; /* 200% */
+    letter-spacing: 0.48px;
+    text-decoration: line-through;
+  }
+  .offer__details-free-ship {
+    color: #598000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: 0.54px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .offer__details-savings {
+    color: #1A1B18;
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: 0.54px;
+    margin: 0 !important;
+  }
+  .offer__details-savings span {
+    color: #598000;
+  }
+  .offer__atc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-left: auto;
+    padding-right: 32px;
+  }
+  .offer__sub-interval, .offer__quantity {
+    color:#585858;
+    text-align: center;
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.54px;
+    margin: 0 !important;
+  }
+  .offer__details-atc {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  @media screen and (max-width: 1024px){
+    .offer__image-wrap {
+      width: 100%;
+      height: auto;
+      max-width: 228px;
+      max-height: 90%;
+      aspect-ratio: 1;
+      margin: 0 20px;
+    }
+    .offer__image {
+      width: 100%;
+    } 
+  }
+  @media screen and (max-width: 768px){
+    .offer__tab {
+      padding: 0 12px;
+    }
+    .offer__image-wrap {
+      max-width: none;
+    }
+    .offer__image {
+      width: 100%;
+      height: 100%;
+    } 
+    .offer__details-atc {
+      flex-direction: column;
+      gap: 16px;
+      padding-right: 32px;
+      min-width: 350px;
+      margin-left: auto;
+    }
+    .offer__atc {
+      margin: 0;
+      flex-direction: column-reverse;
+      padding: 0;
+    }
+    .offer__details {
+      padding: 0;
+    }
+    .offer__atc .button {
+      width: 100% !important;
+    }
+  }
+  @media screen and (max-width: 680px){ 
+    .offer__image-wrap {
+      margin: 0 20px;
+    } 
+    .offer__details-atc {
+      min-width: 300px;
+    } 
+    .offer__details-percentage {
+      padding: 2px 15px 2px 5px;
+    }
+    .offer-card {
+      flex-direction: column;
+      height: fit-content;
+      width: 100%;
+      display: none;
+    }
+    .offer-card-mobile {
+      display: flex;
+    }
+    .offer__tab {
+      padding: 12px 20px;
+      justify-content: center;
+      width: 100%;
+   }
+    .offer__tab-text {
+      writing-mode: initial;
+      transform: rotate(0);
+      font-size: 24px;
+      line-height: 32px; /* 133.333% */
+    }
+    .offer__image-details {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0 16px;
+    }
+    .offer__atc .button {
+      margin-top: 8px;
+    }
+    .offer__image-wrap {
+      flex: 1;
+      margin: 0;
+    }
+    .offer__image-badge {
+      width: 48px;
+      height: 48px;
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: 0.42px;
+    }
+    .offer__details {
+      flex: 1;
+      gap: 0;
+    }
+    .offer__atc {
+      width: 100%;
+      padding: 0 16px 16px;
+    }
+    .offer__details-title {
+      margin-top: 16px !important;
+    }
+  }
+  @media screen and (max-width: 550px){ 
+    .offer__details-title {
+      display: block;
+      font-family: var(--font-body-family) !important;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.54px;
+      margin-bottom: 8px !important;
+    }
+    .offer__details-free-ship {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.48px;
+    }
+    .offer__details-comparison {
+      font-size: 14px;
+      line-height: 24px; /* 171.429% */
+      letter-spacing: 0.42px;
+    }
+    .offer__details-savings {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.48px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Offer",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "t:sections.all.padding.padding_top.unit",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "t:sections.all.padding.padding_bottom.unit",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "onetime-product",
+      "name": "Onetime Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "tab",
+          "label": "Tab",
+          "default": "Try"
+        },
+        {
+          "type": "text",
+          "id": "image_badge",
+          "label": "Badge",
+          "default": "Best Value",
+          "info": "Badge will not display if left blank."
+        }, 
+        {
+          "type": "text",
+          "id": "display_title",
+          "label": "Custom Title",
+          "info": "Displays default product title if left blank."
+        },
+        {
+          "type": "text",
+          "id": "discount_percentage",
+          "label": "Discount Percentage",
+          "default": "20"
+        },
+        {
+          "type": "text",
+          "id": "purchase_quantity_label",
+          "label": "Purchase Quantity Label",
+          "default": "One Month Supply"
+        },
+        {
+          "type": "text",
+          "id": "purchase_quantity",
+          "label": "Purchase Quantity",
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "atc_btn_text",
+          "label": "ATC Button Text",
+          "default": "Add to cart"
+        },
+        {
+          "type": "checkbox",
+          "id": "free_ship",
+          "label": "Display Free Shipping text",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "subscription-product",
+      "name": "Subscription Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "tab",
+          "label": "Tab",
+          "default": "Subscription"
+        },
+        {
+          "type": "text",
+          "id": "image_badge",
+          "label": "Badge",
+          "default": "Best Value",
+          "info": "Badge will not display if left blank."
+        }, 
+        {
+          "type": "text",
+          "id": "display_title",
+          "label": "Custom Title",
+          "info": "Displays default product title if left blank."
+        },
+        {
+          "type": "text",
+          "id": "discount_percentage",
+          "label": "Discount Percentage",
+          "default": "20"
+        },
+        {
+          "type": "select",
+          "id": "subscription_interval",
+          "label": "Subscription interval",
+          "options": [
+            {
+              "value": "1",
+              "label": "Monthly Subscription"
+            },
+            {
+              "value": "2",
+              "label": "Bimonthly Subscription"
+            },
+            {
+              "value": "3",
+              "label": "Trimonthly Subscription"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "atc_btn_text",
+          "label": "ATC Button Text",
+          "default": "Subscribe"
+        },
+        {
+          "type": "checkbox",
+          "id": "free_ship",
+          "label": "Display Free Shipping text",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    initATCButton()
+    updateOfferPrices()
+  })
+
+  function updateOfferPrices(){
+    const offers = document.querySelectorAll('.offer-card')
+    const discountPriceElem = document.querySelectorAll('.offer-card .offer__details-price')
+    const savingsElem = document.querySelectorAll('.offer-card .offer__details-savings span')
+    const discountPercentageElem = document.querySelectorAll('.offer-card .offer__details-percentage')
+
+    offers.forEach((offer, i) => {
+      const { productType, discountPercentage, productPrice } = offer.dataset
+      
+      const discountPercent = Math.max(theme.Discount.getDiscountPercent(), discountPercentage)
+      const discountedPrice = theme.Discount.applyDiscount(productPrice, discountPercentage)
+
+      discountPriceElem[i].innerText = theme.Currency.formatMoney(discountedPrice, window.shopSettings.moneyFormat)
+      discountPercentageElem[i].innerText = discountPercent + "%"
+      savingsElem[i].innerText = theme.Currency.formatMoney(productPrice - discountedPrice, window.shopSettings.moneyFormat)
+    })
+  }
+
+  function addItemToCart(productData){
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(productData)
+    })
+    .then(response => response.json())
+    .catch((error) => console.error('Error:', error));
+  }
+
+  function initATCButton(){
+    const atc_buttons = document.querySelectorAll('.offer__atc .button');
+
+    atc_buttons.forEach(btn => {
+      btn.addEventListener('click', event => {
+        const { productType, discountPercentage, variantId, sellingPlanId, quantity } = event.target.dataset;
+
+        const finalDiscount = Math.max(theme.Discount.getDiscountPercent(), +discountPercentage)
+
+        const productData = {
+          id: variantId,
+          quantity: productType === 'onetime' ? quantity : 1,
+          selling_plan: productType === 'subscription' ? sellingPlanId : undefined,
+          properties: {
+            _custom_discount_percent: finalDiscount 
+          }
+        };
+  
+        addItemToCart(productData);
+      })
+    })    
+  }
+</script>

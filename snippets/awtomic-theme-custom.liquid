@@ -1,0 +1,32 @@
+{{ 'awtomic-theme-custom.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'awtomic-theme-custom.js' | asset_url }}" async></script>
+<script src="{{ 'awtomic-cart-extras.js' | asset_url }}" async></script>
+
+
+<style>
+  /** custom colors */
+  :root {
+    --logo-image-url: url({{''|asset_url}});
+    --primary-btn-bg-color: #6e1273;
+    --primary-btn-color: #fff;
+    --primary-btn-border: 1px solid #000;
+    --primary-btn-bg-color-hover: rgba(110, 18, 115, 0.85);
+    --primary-btn-color-hover: #fff;
+    --primary-btn-border-hover: 1px solid #222;
+    --primary-btn-disabled-color: #828282;
+    --primary-btn-disabled-bg-color: #e9e9e9;
+    --primary-btn-disabled-border: 1px solid #e9e9e9;
+    --primary-btn-disabled-bg-color-hover: #e9e9e9;
+    --primary-btn-disabled-color-hover: #828282;
+    --primary-btn-disabled-border-hover: 1px solid #e9e9e9;
+    --btn-border-radius: 0;
+    --unselected-btn-border: 1px solid var(--primary-btn-disabled-color);
+    --unselected-btn-color: var(--primary-btn-disabled-color);
+    --unselected-btn-bg-color: transparent;
+    --progress-bar-bg-color: #eeeeee;
+    --progress-bar-completed-bg-color: #6e1273;
+    --progress-bar-color: #6e1273;
+    --progress-bar-completed-color: #fff;
+  }
+  /** end custom colors */
+</style>

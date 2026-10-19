@@ -1,0 +1,354 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "narrow": true,
+        "padding_top": 60,
+        "padding_bottom": 72
+      }
+    },
+    "image-with-text-0": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-0-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heart of Orenda",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "image-with-text-0-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>As a company committed to people lifting people, Orenda International created the Heart of Orenda Fund, which to date has donated hundreds of thousands of dollars in an effort to lend a hand to the less fortunate. From the day our doors opened, we have donated one-half percent of the full retail value of our products toward making our community a better place.<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-0-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Heart of Orenda Fund has recently supported:<\/p><ul><li><a href=\"https:\/\/www.smiletrain.org\" target=\"_blank\" title=\"https:\/\/www.smiletrain.org\">Smile Train<\/a><\/li><li><a href=\"https:\/\/wck.org\" target=\"_blank\" title=\"https:\/\/wck.org\">World Central Kitchen<\/a><\/li><li><a href=\"https:\/\/www.marbridge.org\" target=\"_blank\" title=\"https:\/\/www.marbridge.org\">Marbridge<\/a><\/li><li><a href=\"https:\/\/jausa.ja.org\/about\/index\" target=\"_blank\" title=\"https:\/\/jausa.ja.org\/about\/index\">Junior Achievement<\/a><\/li><li><a href=\"https:\/\/www.doctorswithoutborders.org\" target=\"_blank\" title=\"https:\/\/www.doctorswithoutborders.org\">Doctors Without Borders<\/a><\/li><\/ul>",
+            "text_size": "typeset",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-0-3": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-0-0",
+        "image-with-text-0-1",
+        "image-with-text-0-2",
+        "image-with-text-0-3"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/heart_of_orenda_fund_large_f7263111-d782-4a21-ae39-2e8110a1ff58.jpg",
+        "image_position": "center center",
+        "layout": "image_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "enlarge_content": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text-1": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-1-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Way of Orenda",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "image-with-text-1-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>“The Spiritual power that flows through all things.”<\/strong><\/em><br\/><br\/>Orenda exists to lift people by helping them to discover and develop their God-given power to enhance the quality of their health, their thoughts, and their lives and return to them control over their time, finances, and career.<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-1-2": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers.<\/p>",
+            "text_size": "typeset",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-1-3": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-1-0",
+        "image-with-text-1-1",
+        "image-with-text-1-2",
+        "image-with-text-1-3"
+      ],
+      "settings": {
+        "image_position": "center center",
+        "layout": "text_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "enlarge_content": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text-2": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "image-with-text-2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-2-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers.<\/p>",
+            "text_size": "typeset",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-2-3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-2-0",
+        "image-with-text-2-1",
+        "image-with-text-2-2",
+        "image-with-text-2-3"
+      ],
+      "settings": {
+        "image_position": "center center",
+        "layout": "image_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "enlarge_content": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text-3": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "image-with-text-3-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-3-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers.<\/p>",
+            "text_size": "typeset",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-3-3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-3-0",
+        "image-with-text-3-1",
+        "image-with-text-3-2",
+        "image-with-text-3-3"
+      ],
+      "settings": {
+        "image_position": "center center",
+        "layout": "text_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "enlarge_content": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "rich-text-0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+            "text_size": "typeset3",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "rich-text-0"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "mobile_text_alignment": "left",
+        "horizontal_content": false,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "newsletter-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_tag": "h2"
+          }
+        },
+        "newsletter-1": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "newsletter-2": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "newsletter-0",
+        "newsletter-1",
+        "newsletter-2"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "mobile_text_alignment": "left",
+        "full_width": false,
+        "show_divider": false,
+        "colors_text": "#1a1b18",
+        "colors_border": "#d2d5d9",
+        "colors_background": "#efefef",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image-with-text-0",
+    "image-with-text-1",
+    "image-with-text-2",
+    "image-with-text-3",
+    "rich-text",
+    "newsletter"
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "sections": {
+    "e7e72bc8-3382-4e24-a9f6-5320b472fc14": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14846180851793__e7e72bc8-3382-4e24-a9f6-5320b472fc14-168728133439f00d3a-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Referral Links",
+            "heading_size": "h0",
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "template--14846180851793__e7e72bc8-3382-4e24-a9f6-5320b472fc14-168728133439f00d3a-0"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/iStock-641976074_copy.png",
+        "image_position": "center center",
+        "text_box_position": "middle-left",
+        "text_alignment": "center",
+        "image_ratio": "400px",
+        "show_text_box": false,
+        "full_width": false,
+        "show_divider": false,
+        "mobile_text_alignment": "center",
+        "mobile_image_ratio": "200px",
+        "stack_images_on_mobile": true,
+        "show_text_below": false,
+        "colors_button_label": "#1a1b18",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 24,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "38eadfdc-5536-4ef7-baca-537ab5c2a831": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14869126348881__38eadfdc-5536-4ef7-baca-537ab5c2a831-16873073106ac5389d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Custom Orenda Referral Link",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "6af7809d-6fbe-4c33-b606-f6d77989e223": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Smart Link for sharing Orenda",
+            "subheading_size": "h4",
+            "secondary_color": false
+          }
+        },
+        "template--14869126348881__38eadfdc-5536-4ef7-baca-537ab5c2a831-16873073106ac5389d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Have you ever felt the joy of stumbling upon an amazing find and spreading the word to your friends? Orenda lets you do just that and rewards you for it, too! With our nifty little tool, the Refersion smart link, you can create a personalized gateway straight to the delightful offerings of Orenda. The moment anyone follows your link to our page, we'll know you sent them our way.<\/p><p>And here's the part that'll have you doing a happy dance: once your friends land on our page, they'll be linked to you for 30 whole days!* Yes, darling, that's an entire month when any sale can be attributed to you.* That's a heap of time for your friends to explore, fall in love, and make a purchase while you get credit for introducing them to their new favorite brand!<\/p><p>You might be thinking, \"Why should I do this?\" Because word-of-mount, especially recommendations from their friends and family, even their healthcare practitioner, are trusted more than what we see and or read online by nearly two-thirds of U.S. adults. So, not only do you get to share the love for great nutritional products, but you also get to be a part of a powerful marketing strategy that benefits you and them.<\/p><p>Here's the best part, you remain authentic to you. As you spread the word about Orenda, you are a part of our community, our story, and our journey toward helping our customers rediscover a sense of balance and wellness. And Orenda, with the help of Refersion's technology, is here to support you throughout this journey. From creating your unique link to managing and tracking purchases by those you’ve referred, we've got you covered!<\/p><p>So, here's my call to action for you: embrace the joy of sharing, take this chance to create your custom referral link, and join the Orenda community as we spread awareness and help people rediscover a sense of balance and wellness in their lives. You know, as the saying goes, \"The best gifts in life are the ones we share.\" So why wait? Let's start sharing today!?<\/p><p><em><strong>*Note:<\/strong><\/em><em> Keep in mind, when it comes to ‘click attribution,’ it's the 'last touch' that gets the credit. So if a friend clicks on multiple affiliate links, it's the last one they click that's linked to their order. The 30 days tracking (accomplished by cookies) only works when a customer uses the same device and browser in regular (non-Incognito or Private) mode and with the same cache intact.<\/em><\/p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        },
+        "template--14869126348881__38eadfdc-5536-4ef7-baca-537ab5c2a831-16873073106ac5389d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "SETUP MY SMART LINK",
+            "button_link": "https:\/\/orendainternational.refersion.com\/affiliate\/registration",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        },
+        "02c5bef1-0bd8-47a3-9bbd-ca7acca05a5e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Once you've set up your account, feel free to reach out to our friendly Orenda Customer Care team. We'd be more than happy to personalize your referral link with your name, adding that extra touch of uniqueness to your sharing journey.<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14869126348881__38eadfdc-5536-4ef7-baca-537ab5c2a831-16873073106ac5389d-0",
+        "6af7809d-6fbe-4c33-b606-f6d77989e223",
+        "template--14869126348881__38eadfdc-5536-4ef7-baca-537ab5c2a831-16873073106ac5389d-1",
+        "template--14869126348881__38eadfdc-5536-4ef7-baca-537ab5c2a831-16873073106ac5389d-2",
+        "02c5bef1-0bd8-47a3-9bbd-ca7acca05a5e"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "horizontal_content": false,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "narrow": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "e7e72bc8-3382-4e24-a9f6-5320b472fc14",
+    "38eadfdc-5536-4ef7-baca-537ab5c2a831",
+    "main"
+  ]
+}

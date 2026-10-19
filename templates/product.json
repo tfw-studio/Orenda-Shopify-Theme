@@ -1,0 +1,265 @@
+{
+  "sections": {
+    "empty-space": {
+      "type": "empty-space",
+      "settings": {
+        "desktop_height": 36,
+        "mobile_height": 16
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumb": {
+          "type": "breadcrumb",
+          "disabled": true,
+          "settings": {
+            "text_style": "uppercase",
+            "show_divider": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "h1",
+            "show_price": false,
+            "price_size": "medium"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "text": "60 tablets. 30 days supply.",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": "large",
+            "show_badges": true
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Our BOGO ends Sept 25th 8:00am",
+            "number_size": "compact",
+            "colors_heading": "#da3f3f",
+            "colors_text": "#da3f3f",
+            "colors_background": "#ffeeee"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "swatch_type": "round",
+            "size_chart": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "collapsible_tab_wh8tiG": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "bottle",
+            "heading": "I'd love to learn a little more",
+            "content": "{{ product.metafields.custom.learn_more | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "746983cc-4acc-49dd-bc70-762f1ca0d60f": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "plant",
+            "heading": "KEY INGREDIENTS",
+            "content": "{{ product.metafields.custom.key_ingredients | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab-0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "clipboard",
+            "heading": "HOW TO TAKE",
+            "content": "<p><\/p>{{ product.metafields.custom.how_to_take | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "leaf",
+            "heading": "SIMPLE & EFFECTIVE INGREDIENTS",
+            "content": "<p>Link to <a href=\"https:\/\/orendainternational.com\/wp-content\/uploads\/2022\/02\/G076_Immune_Web_Label_60ct_v1.pdf\" target=\"_blank\" title=\"https:\/\/orendainternational.com\/wp-content\/uploads\/2022\/02\/G076_Immune_Web_Label_60ct_v1.pdf\">see all ingredients<\/a><\/p>",
+            "page": ""
+          }
+        },
+        "8dac1e41-7265-4f3e-abde-1fc0bf71bb82": {
+          "type": "collapsible_video",
+          "settings": {
+            "icon": "stopwatch",
+            "heading": "60-Second Spotlight: Orenda",
+            "description": "60-Second Spotlight: Orenda",
+            "video": "shopify:\/\/files\/videos\/1.mp4",
+            "youtube_src": "",
+            "vimeo_src": "https:\/\/player.vimeo.com\/video\/756930481?h=641c3bfec3&badge=0&autopause=0&player_id=0&app_id=58479"
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 20,
+            "show_inventory_transfer": true,
+            "color_scheme": "accent-3"
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "related_buttons": {
+          "type": "related_buttons",
+          "disabled": true,
+          "settings": {
+            "show_icons": false
+          }
+        },
+        "sticky_cart": {
+          "type": "sticky_cart",
+          "settings": {
+            "show_quantity_selector": false
+          }
+        },
+        "98035d54-52ad-43d7-9d13-b93024ef55d8": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "heading": "Complementary Products",
+            "make_collapsible_row": true,
+            "product_list_limit": 3,
+            "image_ratio": "adapt",
+            "image_position": "center center",
+            "show_vendor": false,
+            "enable_image_fill": false
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb",
+        "title",
+        "rating",
+        "vendor",
+        "price",
+        "countdown",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "collapsible_tab_wh8tiG",
+        "746983cc-4acc-49dd-bc70-762f1ca0d60f",
+        "collapsible_tab-0",
+        "collapsible_tab-1",
+        "8dac1e41-7265-4f3e-abde-1fc0bf71bb82",
+        "inventory_status",
+        "share",
+        "related_buttons",
+        "sticky_cart",
+        "98035d54-52ad-43d7-9d13-b93024ef55d8"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_position": "left",
+        "media_size": "medium",
+        "gallery_layout": "thumbnail_slider",
+        "image_ratio": "adapt",
+        "show_thumbnails": true,
+        "hide_variants": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "mobile_image_ratio": "adapt_first",
+        "show_mobile_thumbnails": true,
+        "rc_custom_text": "<strong>Benefits of a Auto-ship Subscription<\/strong><br>\n✔︎ Convenient Monthly Delivery<br>\n✔︎ Cancel, Pause, Delay, or Change Anytime, Hassle-Free<br>\n✔︎ No Surprises (Pre-Shipment Reminders)",
+        "padding_top": 0,
+        "padding_bottom": 72
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_divider": false,
+        "heading": "You're Gonna Like These Too...",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_image_fill": false,
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_quick_buy": true,
+        "enable_quick_view": false,
+        "enable_color_swatches": true,
+        "enable_countdown": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "disabled": true,
+      "settings": {
+        "show_divider": false,
+        "heading": "Recently Viewed",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_image_fill": true,
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "show_quick_buy": true,
+        "enable_quick_view": true,
+        "enable_color_swatches": true,
+        "enable_countdown": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "empty-space",
+    "main",
+    "product-recommendations",
+    "recently-viewed-products"
+  ]
+}

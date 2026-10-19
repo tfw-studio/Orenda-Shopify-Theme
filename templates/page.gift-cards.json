@@ -1,0 +1,126 @@
+{
+  "sections": {
+    "e7e72bc8-3382-4e24-a9f6-5320b472fc14": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14846180851793__e7e72bc8-3382-4e24-a9f6-5320b472fc14-168728133439f00d3a-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "GIFT CARD",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "template--14846180851793__e7e72bc8-3382-4e24-a9f6-5320b472fc14-168728133439f00d3a-1": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Terms & Conditions<\/strong><\/h2>",
+            "text_size": "typeset3",
+            "secondary_color": false
+          }
+        },
+        "template--14846180851793__e7e72bc8-3382-4e24-a9f6-5320b472fc14-168728133439f00d3a-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14846180851793__e7e72bc8-3382-4e24-a9f6-5320b472fc14-168728133439f00d3a-0",
+        "template--14846180851793__e7e72bc8-3382-4e24-a9f6-5320b472fc14-168728133439f00d3a-1",
+        "template--14846180851793__e7e72bc8-3382-4e24-a9f6-5320b472fc14-168728133439f00d3a-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/iStock-1139791323.jpg",
+        "image_position": "center center",
+        "text_box_position": "middle-center",
+        "text_alignment": "center",
+        "image_ratio": "400px",
+        "show_text_box": false,
+        "full_width": false,
+        "show_divider": false,
+        "mobile_text_alignment": "center",
+        "mobile_image_ratio": "200px",
+        "stack_images_on_mobile": true,
+        "show_text_below": false,
+        "colors_button_label": "#1a1b18",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 16,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "narrow": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "7c896a02-ce08-4ed9-b00d-046b80780900": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "The FDA's Role in the Supplement Industry",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>TERMS & CONDITIONS for Orenda International eGift Cards:<\/strong><\/p><p>The Orenda International eGift Card program began for U.S. customers for purchase and redemption in November 2020.<\/p><p>“Gift Card” shall mean an eGift Card unless otherwise specified herein.<\/p><p><strong>E-Gift Cards<\/strong><\/p><ul><li>The Gift Card will be sent via email after purchase to you. You can then forward to your recipient.<\/li><li>The email address associated with a Gift Card does not have to be the email address of the intended recipient of the Gift Card.<\/li><li>The purchase of a Gift Card will be included towards the Independent Marketing Partners Group Volume Qualification (GV), it is not eligible for commissions or bonuses.<\/li><li>Upon redemption and purchase of Orenda products, normal commission payments will apply.<\/li><\/ul><p><strong>Redemption<\/strong><\/p><ul><li>Gift Cards may only be used online.<\/li><li>To use your Gift Card to make a purchase, enter in the Gift Card number at checkout<\/li><li>Any unused balance after purchase will remain on your Gift Card. If a purchase order exceeds the amount of the Gift Card, the balance must be paid with a valid credit card<\/li><li>You may not use more than one Gift Card for the same order<\/li><li>Any returned goods purchased with an Orenda International Gift Card will be returned to the Gift Card number used at checkout for the original purchase. Please see our Return Policy for more detail.<\/li><\/ul><p><strong>Limitations<\/strong><\/p><ul><li>Gift Cards cannot be returned or redeemed for cash value, reloaded with additional value, resold or transferred for value, except where required by law.<\/li><li>Gift Cards are issued in U.S. Dollars and may only be used for purchases in the United States, the country of issuance.<\/li><li>Gift Cards cannot be used to purchase other Gift Cards.<\/li><li>Promotions and other special offers may not be used to purchase Gift Cards.<\/li><li>Gift Cards are available in pre-set denominations. At this time, it is not possible to input a custom Gift Card value.<\/li><\/ul><p><strong>Expiration<\/strong><\/p><ul><li>Gift Cards purchased in the U.S. will never expire.<\/li><\/ul><p><strong>Risk of Loss<\/strong><\/p><ul><li>The risk of loss and title for Gift Cards pass to the purchaser upon delivery of the Gift Card to the purchaser or designated recipient, whichever is applicable. Orenda International will not replace lost, stolen or destroyed Gift Cards.<\/li><\/ul><p><strong>Fraud<\/strong><\/p><ul><li>Orenda International will have the right to close customer accounts and bill alternative forms of payment if Orenda International suspects that a fraudulently obtained Gift Card is redeemed and\/or used to make purchases.<\/li><\/ul><p><strong>Limitation of Liability<\/strong><\/p><ul><li>ORENDA INTERNATIONAL LLC MAKES NO WARRANTIES, EXPRESS OR IMPLIED, WITH RESPECT TO ORENDA INTERNATIONAL LLC GIFT CARDS, INCLUDING WITHOUT LIMITATION, ANY EXPRESS OR IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. IN THE EVENT A ORENDA INTERNATIONAL LLC GIFT CARD IS NON-FUNCTIONAL OR OTHERWISE NON-USABLE, YOUR SOLE REMEDY, AND OUR SOLE LIABILITY, SHALL BE THE REPLACEMENT OF SUCH ORENDA INTERNATIONAL LLC GIFT CARD. CERTAIN STATE LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS, EXCLUSIONS, OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MIGHT HAVE ADDITIONAL RIGHTS.<\/li><\/ul><p><strong>Disputes<\/strong><\/p><ul><li>Any dispute or claim relating in any way to your Orenda International Gift Card will be resolved exclusively through final and binding arbitration before a single arbitrator instead of filing a lawsuit in court. This arbitration agreement is governed by the Federal Arbitration Act (9 U.S.C. §§ 1-16).<\/li><li>To initiate arbitration, the initiating party must notify the other party in writing via certified mail, return receipt requested, or hand delivery within the applicable statute of limitations period. This demand for arbitration must include (1) the name and address of the party seeking arbitration, (2) a statement of the legal and factual basis of the claim, and (3) a description of the remedy sought. Any demand for arbitration by you must be delivered to Orenda International LLC, 6007 40th Street, Suite 3, Phoenix, AZ 85042, Attn: Legal Department.<\/li><li>Class Action Waiver. You and Orenda International LLC mutually agree that by entering into this agreement to arbitrate, both waive their right to have any dispute or claim brought, heard or arbitrated as a class action, collective action and\/or representative action, and an arbitrator shall not have any authority to hear or arbitrate any class, collective or representative action (“Class Action Waiver”). Notwithstanding any other clause contained in this Agreement or the JAMS Rules, as defined below, any claim that all or part of this Class Action Waiver is unenforceable, unconscionable, void or voidable may be determined only by a court of competent jurisdiction and not by an arbitrator.<\/li><li>Any arbitration shall be governed by the JAMS Comprehensive Arbitration Rules and Procedures (“JAMS Rules”), except as follows:<\/li><li>Regardless of any other terms in these Terms and Conditions, claims may be brought before, and remedies awarded by an administrative agency if applicable law permits access to such an agency notwithstanding the existence of an agreement to arbitrate.<\/li><\/ul><p><strong>General Terms<\/strong><\/p><ul><li>Orenda International Gift Cards are issued by Orenda International LLC, a Arizona limited liability company. When you purchase, receive or redeem a Orenda International Gift Card, you agree that the laws of the State of Arizona, without regard to principles of conflict of laws, will govern these Orenda International Gift Card terms and conditions. Orenda International LLC reserves the right to change these terms and conditions from time to time in its discretion. All terms and conditions are applicable to the extent permitted by law.<\/li><\/ul>",
+            "text_size": "typeset",
+            "secondary_color": false
+          }
+        },
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-0",
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-1",
+        "template--14846180851793__7c896a02-ce08-4ed9-b00d-046b80780900-1685121574a4f17ec9-2"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "mobile_text_alignment": "left",
+        "horizontal_content": false,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 24,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "e7e72bc8-3382-4e24-a9f6-5320b472fc14",
+    "main",
+    "7c896a02-ce08-4ed9-b00d-046b80780900"
+  ]
+}

@@ -1,0 +1,483 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<div class="customer order">
+  <div class="order__info">
+    <a class="order__return-btn" href="/account?view=orders">Return to Order History</a>
+    <h1 class="order__order-number">{{ 'customer.order.title' | t: name: order.name }}</h1>
+    {%- assign order_date = order.created_at | time_tag: format: "date_at_time" -%}
+    <p class="order__purchase-date">{{ 'customer.order.date_html' | t: date: order_date }}</p>
+  </div>
+
+  <div class="order__shipping-billing">
+    <div class="order__shipping-billing-item">
+      <h3 class="order__shipping-billing-item__heading">{{ 'customer.order.billing_address' | t }}</h3>
+      <div class="order__shipping-billing-item__address">{{ order.billing_address | format_address }}</div>
+    </div>
+    <div class="order__shipping-billing-item">
+      <h3 class="order__shipping-billing-item__heading">{{ 'customer.order.shipping_address' | t }}</h3>
+      <div class="order__shipping-billing-item__address">{{ order.shipping_address | format_address }}</div>
+    </div>
+    <div class="order__shipping-billing-item">
+      <div class="order__shipping-billing-financial">
+        <h3 class="order__shipping-billing-item__heading">{{ 'customer.order.payment_status' | t }}:</h3>
+        <p class="order__shipping-billing-item__financial">{{ order.financial_status_label }}</p>
+      </div>
+
+      <div class="order__shipping-billing-fulfillment">
+        <h3 class="order__shipping-billing-item__heading">{{ 'customer.order.fulfillment_status' | t }}:</h3>
+        <p class="order__shipping-billing-item__fulfillment">{{ order.fulfillment_status_label }}</p>
+      </div>
+      </p>
+    </div>
+  </div>
+
+  <div class="order__products-list">
+    {% for line_item in order.line_items %}
+      <div class="order__product">
+        <div class="order__product-image">
+          <img src="{{ line_item.image | img_url }}">
+        </div>
+        <div class="order__product-information">
+          <h2 class="order__product-information-title">{{ line_item.title }}</h2>
+          <p class="order__product-information-sku"><span>SKU: </span>{{ line_item.sku }}</p>
+          <p class="order__product-information-quantity"><span>Quantity: </span>{{ line_item.quantity }}</p>
+          <div class="order__product-information-subtotal">
+            <span>Subtotal: </span>
+            <p>
+              {% if line_item.original_price != line_item.final_price %}
+              <span style="color: #B40304;">{{ line_item.final_price | money }}</span>
+              {% endif %}
+               {{ line_item.original_price | money }}
+            </p>
+          </div>
+        </div>
+        <div class="order__product-tracking">
+          {% if line_item.fulfillment.tracking_url != blank %}
+            <a class="order__product-tracking-btn button" href="{{ line_item.fulfillment.tracking_url }}">TRACK SHIPMENT</a>
+          {% else %}
+            Tracking not yet available
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="order__summary">
+    <div class="order__summary-subtotal">
+      <div>Subtotal</div>
+      <div>{{ order.line_items_subtotal_price | money }}</div>
+    </div>
+    
+    {% for discount_application in order.discount_applications %}
+      <div class="order__summary-discount">
+          <div class="order__summary-discount-title">Discount: 
+            <div style="color: #B40304; display: flex; align-items: center;">
+              <svg style="margin-right: 4px;" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.0014 4.49785C14.6038 4.49785 14.2224 4.33989 13.9413 4.05872C13.6601 3.77755 13.5022 3.3962 13.5022 2.99857C13.5022 2.60094 13.6601 2.21959 13.9413 1.93843C14.2224 1.65726 14.6038 1.4993 15.0014 1.4993C15.3991 1.4993 15.7804 1.65726 16.0616 1.93843C16.3427 2.21959 16.5007 2.60094 16.5007 2.99857C16.5007 3.3962 16.3427 3.77755 16.0616 4.05872C15.7804 4.33989 15.3991 4.49785 15.0014 4.49785ZM15.0014 2.50593e-05H10.5036C10.3063 -0.00111573 10.1107 0.0367035 9.92803 0.111314C9.74536 0.185925 9.57922 0.29586 9.43912 0.434814L0.443483 9.43046C0.302958 9.56983 0.191421 9.73565 0.115304 9.91835C0.0391884 10.1011 0 10.297 0 10.4949C0 10.6929 0.0391884 10.8888 0.115304 11.0715C0.191421 11.2542 0.302958 11.42 0.443483 11.5594L6.44058 17.5565C6.57995 17.697 6.74577 17.8086 6.92847 17.8847C7.11118 17.9608 7.30714 18 7.50506 18C7.70298 18 7.89895 17.9608 8.08165 17.8847C8.26435 17.8086 8.43017 17.697 8.56954 17.5565C8.85441 17.2567 17.2653 8.84574 17.5652 8.56088C17.7041 8.42078 17.8141 8.25464 17.8887 8.07197C17.9633 7.88931 18.0011 7.69371 18 7.49639V2.99857C18 2.20331 17.6841 1.44062 17.1217 0.878279C16.5594 0.315942 15.7967 2.50593e-05 15.0014 2.50593e-05Z" fill="#B40304"/>
+              </svg>
+              {{ discount_application.title }}
+            </div>
+          </div>
+          <span>-{{ discount_application.total_allocated_amount | money }}</span>
+      </div>
+    {% endfor %}
+
+    <div class="order__summary-tax">
+      <div>Tax</div>
+      <div>{{ order.tax_price | money }}</div>
+    </div>
+
+    {%- for shipping_method in order.shipping_methods -%}
+    <div class="order__summary-shipping">
+      <div>{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</div>
+      <div>{{ shipping_method.price | money }}</div>
+    </div>
+    {% endfor %}
+
+    {% if order.total_refunded_amount != 0 %}
+    <div class="order__summary-refunded">
+      <div>Refund</div>
+      <div><span style="color: #B40304;">-{{ order.total_refunded_amount | money }}</span></div>
+    </div>
+    {% endif %}
+
+    <div class="order__summary-total">
+      <div>Total</div>
+      <div>{{ order.total_net_amount | money_with_currency }}</div>
+    </div>
+  </div>
+
+  
+  <div class="order__print">
+    <button onclick="window.print()" class="button">Print Order</button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-order.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "t:sections.all.padding.padding_top.unit",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "t:sections.all.padding.padding_bottom.unit",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 80
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  main {
+    padding-bottom: 40px !important;
+  } 
+  .order__return-btn {
+        font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    text-decoration: underline;
+    color: #000000;
+  }
+  .order__order-number {
+        font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 116%;  
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin-top: 32px !important;
+    margin-bottom: 12px;
+  }
+  .order__purchase-date {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    color: #000000;
+    margin-bottom: 32px;
+  }
+  .order__shipping-billing-item {
+    flex: 1;
+    min-width: 240px;
+  }
+  .order__shipping-billing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 42px !important;
+    margin-top: 0 !important;
+  }
+  .order__shipping-billing-item__heading {
+        font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: #000000;
+    margin: 0 0 16px 0;
+  }
+  .order__shipping-billing-item__address {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+  .order__shipping-billing-item__address p {
+    margin: 0;
+  }
+  .order__shipping-billing-item {
+    padding: 24px;
+    background-color: #FAFAFA;
+    flex-direction: column;
+  }
+  .order__shipping-billing-item p {
+    margin: 0;
+  }
+  .order__shipping-billing-item__financial, .order__shipping-billing-item__fulfillment {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    color: #6E1273;
+    text-transform: uppercase;
+  }
+  .order__products-list {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #E8E9EB;
+    padding: 32px 24px;
+    margin-bottom: 42px !important;
+  }
+  .order__product {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    position: relative;
+  }
+  .order__product:not(:first-child) {
+    border-top: 2px solid #E8E9EB;
+    padding-top: 32px;
+    margin-top: 32px;
+  }
+  .order__product-image {
+    width: 152px;
+    height: 152px;
+  }
+  .order__product-image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+  .order__product-information {
+    max-width: 290px !important;
+  }
+  .order__product-information-title {
+        font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: #000000;
+    margin: 0 0 8px 0 !important;
+  }
+  .order__product-information-subtotal, .order__product-information-quantity, .order__product-information-sku {
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    color: #000000;
+    margin-bottom: 8px !important;
+    display: flex;
+    gap: 4px;
+  }
+  .order__product-information-subtotal span, .order__product-information-quantity span, .order__product-information-sku span {
+    font-weight: 700;
+  }
+  .order__product-tracking {
+    position: absolute;
+    right: 0;
+  }
+  .order__product-tracking-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    width: 245px;
+    height: 46px;
+    font-weight: 500;
+    background-color: #1A1B18;
+    border: 1px solid #1A1B18;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 !important;
+  }
+  .order__product-tracking-btn:hover {
+    background-color: #1A1B18;
+  }
+  .order__summary-subtotal, 
+  .order__summary-tax, 
+  .order__summary-discount, 
+  .order__summary-shipping, 
+  .order__summary-refunded, 
+  .order__summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    color: #000000;
+    margin-bottom: 18px;
+  }
+  .order__summary-discount-title {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+  }
+  .order__summary-discount span {
+    color: #B40304; 
+  }
+  .order__summary-total {
+    font-weight: 700;
+    padding-top: 24px;
+    border-top: 2px solid #E8E9EB;
+  }
+  .main-page-account {
+    display: none !important;
+  }
+  .addresses__edit-address:after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transform: skew(-15deg);
+    background-image: linear-gradient(90deg,transparent,rgba(var(--color-button-text),.25),transparent);
+  }
+  .order__product-information-subtotal p {
+    margin: 0;
+  }
+  .order__shipping-billing-financial {
+    margin-bottom: 16px;
+  }
+  .order__print {
+    
+    width: fit-content;
+    margin-top: 4rem;
+    order: 5;
+  }
+  .order__print .button {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 1300px){
+    .order__product {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .order__product-tracking {
+      position: relative;
+      max-width: 290px;
+      width: 100%;
+      text-align: center;
+    }
+    .order__product-tracking-btn {
+      width: 100%;
+    }
+    .order__product-information-subtotal, .order__product-information-quantity, .order__product-information-sku {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      line-height: 120%;
+    }
+    .order__shipping-billing {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .order__shipping-billing-item {
+      flex: 1;
+      min-width: 240px;
+    }
+  }
+  @media screen and (max-width: 900px){
+    .order {
+      display: flex;
+      flex-direction: column;
+    }
+    .order__info {
+      order: 1;
+      text-align: center;
+    }
+    .order__product {
+      gap: 16px;
+    }
+    .order__products-list {
+      order: 2;
+    }
+    .order__products-list {
+      padding: 16px;
+    }
+    .order__product {
+      flex-direction: column;
+    }
+    .order__product-tracking {
+      position: relative;
+      max-width: 290px;
+      width: 100%;
+    }
+    .order__product-tracking-btn {
+      width: 100%;
+    }
+    .order__product-information-subtotal, .order__product-information-quantity, .order__product-information-sku {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      line-height: 120%;
+    }
+    .order__product-image {
+      margin: 0 auto;
+    }
+    .order__product-information-title {
+      text-align: center;
+      margin-bottom: 16px !important;
+    }
+    .order__shipping-billing {
+      display: flex;
+      flex-direction: column;
+      order: 3;
+      gap: 16px;
+    }
+    .order__shipping-billing-item__heading {
+      margin-bottom: 8px !important;
+    }
+    .order__shipping-billing-item {
+      background-color: #fff;
+      padding: 0 !important;
+    }
+    .order__summary {
+      order: 4;
+      border-radius: 2px;
+      background-color: #FAFAFA;
+      padding: 16px;
+    }
+    .order__order-number {
+      font-size: 24px;
+    }
+    .order__product-information {
+      max-width: none !important;
+    }
+    .page-width {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .order__summary-subtotal,
+    .order__summary-discount,
+    .order__summary-refund,
+    .order__summary-tax,
+    .order__summary-shipping,
+    .order__summary-total {
+      margin-bottom: 12px;
+    }
+    .order__summary-total {
+      padding-top: 16px;
+    }
+    .order__summary-discount-title {
+      flex-direction: column;
+    }
+  }
+</style>

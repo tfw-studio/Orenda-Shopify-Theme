@@ -1,0 +1,496 @@
+{%- style -%}
+  {% assign header_font = section.settings.header_font %}
+
+  {{ header_font | font_face }}
+
+  {% assign header_font_bold = header_font | font_modify: 'weight', 'bolder' %}
+  {% assign header_font_italic = header_font | font_modify: 'style', 'italic' %}
+  {% assign header_font_bold_and_italic = header_font_bold | font_modify: 'style', 'italic' %}
+
+  {{ header_font_bold | font_face }}
+  {{ header_font_italic | font_face }}
+  {{ header_font_bold_and_italic | font_face }}
+
+  .malomo-banner {
+    {%- if section.settings.background_color != blank -%}
+      background-color: {{ section.settings.background_color }};
+    {%- endif -%}
+
+    {%- if section.settings.background_image_enabled == true -%}
+      {%- if section.settings.background_image != blank -%}
+        background-image: url('{{ section.settings.background_image | image_url }}');
+        background-position: center;
+        background-repeat: {{ section.settings.background_repeat }};
+        background-size: {{ section.settings.background_size }};
+      {%- else -%}
+        {% comment %} show placeholder {% endcomment %}
+        background-image: url('https://cdn.gomalomo.com/images/theme_app_assets/malomo-bg-placeholder.png');
+        background-position: center;
+        background-repeat: {{ section.settings.background_repeat }};
+        background-size: {{ section.settings.background_size }};
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if section.settings.height != blank -%}
+      min-height: {{ section.settings.height }}px;
+    {%- endif -%}
+    
+    {%- if section.settings.padding != blank -%}
+      padding: {{ section.settings.padding }}px;
+    {%- endif -%}
+  }
+
+  .malomo-banner-align--center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .malomo-banner-align--left {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .malomo-banner-align--right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .malomo-banner-col {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .malomo-banner-col-img {
+    max-height: {{ section.settings.height }}px;
+  }
+
+  .malomo-banner-header {
+    font-family: {{ section.settings.header_font.family }};
+    font-size: {{ section.settings.header_font_size }}px;
+    font-style: {{ section.settings.header_font.style }};
+    font-weight: {{ section.settings.header_font.weight }};
+    margin: 0;
+    padding-bottom: {{ section.settings.header_padding_bottom }}px;
+    padding-top: {{ section.settings.header_padding_top }}px;
+    width: 100%;
+  }
+
+  .malomo-banner-header-row {
+    background-color: {{ section.settings.header_background_color }};
+  }
+
+  .malomo-banner-img {
+    display: block;
+    max-height: {{ section.settings.height }}px;
+  }
+
+  .malomo-banner-mobile-img {
+    display: none;
+  }
+
+  .malomo-banner .malomo-order-lookup,
+  .malomo-banner .malomo-shipment-tracker {
+    background-color: {{ section.settings.malomo_background_color }};
+    border-color: {{ section.settings.malomo_border_color }};
+    border-radius: {{ section.settings.malomo_border_radius }}px;
+    border-style: {{ section.settings.malomo_border_style }};
+    border-width: {{ section.settings.malomo_border_width }}px;
+    padding: {{ section.settings.malomo_padding }}px;
+  }
+
+  .malomo-banner-row {
+    display: flex;
+  }
+
+  .malomo-banner-spacer {
+    display: block;
+    width: 50%;
+  }
+
+  @media only screen and (max-width : 480px) {
+    .malomo-banner-mobile-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .malomo-banner {
+      background-image: none;
+      padding: 0;
+    }
+
+    .malomo-banner-col {
+      flex-basis: auto;
+      width: 100%;
+    }
+
+    .malomo-banner-col-img,
+    .malomo-banner-img,
+    .malomo-banner-spacer {
+      display: none;
+    }
+  }
+{%- endstyle -%}
+
+<div class="malomo-banner">
+  {%- if section.settings.header_text != blank -%}
+    <div class="malomo-banner-row malomo-banner-align--{{ section.settings.header_horizontal_alignment }} malomo-banner-header-row">
+      <{{ section.settings.header_level }} class="malomo-banner-header">
+        {{ section.settings.header_text }}
+      </{{ section.settings.header_level }}>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.mobile_image != blank -%}
+    {{ section.settings.mobile_image | image_url: width: 480 | image_tag: class: 'malomo-banner-mobile-img', loading: 'lazy' }}
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="malomo-banner-row">
+  {%- endif -%}
+
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'image' -%}
+        {%- if block.settings.image != blank -%}
+          {%- if block.settings.image_width != blank -%}
+            {%- assign srcset = block.settings.image | image_url: width: block.settings.image_width -%}
+            {%- capture style -%}max-width: min(100%, {{ block.settings.image_width }}px);{%- endcapture -%}
+          {%- else -%}
+            {%- assign srcset = block.settings.image | image_url -%}
+          {%- endif -%}
+
+          <div class="malomo-banner-col malomo-banner-col-img malomo-banner-align--{{ block.settings.image_horizontal_alignment }}">
+            {%- if block.settings.image_link_url != blank -%}
+              <a href="{{block.settings.image_link_url}}" target="_blank" aria-label="(opens in a new tab)">
+            {%- endif -%}
+            <img
+              alt="{{ block.settings.image.alt | escape }}"
+              class="malomo-banner-img"
+              loading="lazy"
+              src="{{ block.settings.image | image_url }}"
+              srcset="{{ srcset }}"
+              {%- if style -%}
+                style="{{ style }}"
+              {%- endif -%}
+            >
+            {%- if block.settings.image_link_url != blank -%}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- else -%}
+          {% comment %} 
+          when we don't have an image set, treat the image block as a spacer
+          {% endcomment %}
+          <div
+            class="malomo-banner-spacer"
+            {%- if block.settings.image_width != blank -%}
+              style="width: {{ block.settings.image_width }}"
+            {%- endif -%}
+          >&nbsp;</div>
+        {%- endif -%}
+      {%- when '@app' -%}
+        <div class="malomo-banner-col">
+          {% render block %}
+        </div>
+    {%- endcase -%}
+  {%- endfor -%}
+
+  {%- if section.blocks.size > 0 -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Malomo Banner",
+  "blocks": [
+    {
+      "limit": 1,
+      "name": "Image/Spacer",
+      "settings": [
+        {
+          "id": "image",
+          "label": "Image",
+          "type": "image_picker"
+        },
+        {
+          "default": "center",
+          "id": "image_horizontal_alignment",
+          "label": "Horizontal Alignment",
+          "options": [
+            {
+              "label": "Left",
+              "value": "left"
+            },
+            {
+              "label": "Center",
+              "value": "center"
+            },
+            {
+              "label": "Right",
+              "value": "right"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "id": "image_link_url",
+          "label": "Image link URL",
+          "type": "url"
+        },
+        {
+          "id": "image_width",
+          "label": "Width",
+          "type": "text"
+        }
+      ],
+      "type": "image"
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "content": "Desktop Image",
+      "type": "header"
+    },
+    {
+      "id": "background_image_enabled",
+      "label": "Enable Background Image",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "id": "background_image",
+      "label": "Desktop Background Image",
+      "type": "image_picker"
+    },
+    {
+      "default": "repeat",
+      "id": "background_repeat",
+      "label": "Background Image Repeat",
+      "options": [
+        {
+          "label": "No Repeat",
+          "value": "no-repeat"
+        },
+        {
+          "label": "Repeat",
+          "value": "repeat"
+        },
+        {
+          "label": "Repeat X",
+          "value": "repeat-x"
+        },
+        {
+          "label": "Repeat Y",
+          "value": "repeat-y"
+        },
+        {
+          "label": "Round",
+          "value": "round"
+        },
+        {
+          "label": "Space",
+          "value": "space"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "default": "auto",
+      "id": "background_size",
+      "label": "Background Image Size",
+      "options": [
+        {
+          "label": "Auto",
+          "value": "auto"
+        },
+        {
+          "label": "Contain",
+          "value": "contain"
+        },
+        {
+          "label": "Cover",
+          "value": "cover"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "content": "Mobile Image",
+      "type": "header"
+    },
+    {
+      "id": "mobile_image",
+      "label": "Mobile Image",
+      "type": "image_picker",
+      "info": "Mobile image appears above the tracking block on mobile screens. If no mobile image is uploaded, then no image will appear on mobile screens."
+    },
+    {
+      "content": "Background Color",
+      "type": "header"
+    },
+    {
+      "default": "transparent",
+      "id": "background_color",
+      "label": "Background color",
+      "type": "color"
+    },
+    {
+      "content": "Banner Layout",
+      "type": "header"
+    },
+    {
+      "id": "height",
+      "label": "Height",
+      "type": "text"
+    },
+    {
+      "default": "20",
+      "id": "padding",
+      "label": "Desktop Banner Padding",
+      "type": "text"
+    },
+    {
+      "content": "Header",
+      "type": "header"
+    },
+    {
+      "default": "transparent",
+      "id": "header_background_color",
+      "label": "Background Color",
+      "type": "color"
+    },
+    {
+      "default": "sans-serif",
+      "id": "header_font",
+      "label": "Font",
+      "type": "font_picker"
+    },
+    {
+      "default": "40",
+      "id": "header_font_size",
+      "label": "Font Size",
+      "type": "text"
+    },
+    {
+      "default": "center",
+      "id": "header_horizontal_alignment",
+      "label": "Horizontal Alignment",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "default": "20",
+      "id": "header_padding_top",
+      "label": "Padding - Top",
+      "type": "text"
+    },
+    {
+      "default": "20",
+      "id": "header_padding_bottom",
+      "label": "Padding - Bottom",
+      "type": "text"
+    },
+    {
+      "default": "h2",
+      "id": "header_level",
+      "label": "Level",
+      "options": [
+        {
+          "label": "1",
+          "value": "h1"
+        },
+        {
+          "label": "2",
+          "value": "h2"
+        },
+        {
+          "label": "3",
+          "value": "h3"
+        },
+        {
+          "label": "4",
+          "value": "h4"
+        },
+        {
+          "label": "5",
+          "value": "h5"
+        },
+        {
+          "label": "6",
+          "value": "h6"
+        }
+      ],
+      "type": "select"
+    },
+    {
+      "id": "header_text",
+      "label": "Text",
+      "type": "text"
+    },
+    {
+      "content": "Malomo Tracking Block",
+      "type": "header"
+    },
+    {
+      "default": "#ffffff",
+      "id": "malomo_background_color",
+      "label": "Background color",
+      "type": "color"
+    },
+    {
+      "id": "malomo_border_color",
+      "label": "Border color",
+      "type": "color"
+    },
+    {
+      "default": "0",
+      "id": "malomo_border_radius",
+      "label": "Border radius",
+      "type": "text"
+    },
+    {
+      "default": "none",
+      "id": "malomo_border_style",
+      "label": "Border style",
+      "type": "text"
+    },
+    {
+      "default": "0",
+      "id": "malomo_border_width",
+      "label": "Border width",
+      "type": "text"
+    },
+    {
+      "default": "40",
+      "id": "malomo_padding",
+      "label": "Padding",
+      "type": "text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Malomo Banner"
+    }
+  ]
+}
+{% endschema %}

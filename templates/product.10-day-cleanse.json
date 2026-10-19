@@ -1,0 +1,640 @@
+{
+  "sections": {
+    "empty-space": {
+      "type": "empty-space",
+      "settings": {
+        "desktop_height": 36,
+        "mobile_height": 16
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumb": {
+          "type": "breadcrumb",
+          "disabled": true,
+          "settings": {
+            "text_style": "uppercase",
+            "show_divider": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "h1",
+            "show_price": false,
+            "price_size": "medium"
+          }
+        },
+        "countdown_PMtMYp": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "heading": "BOGO ends at 11:59 p.m. on Wednesday, September 30th",
+            "number_size": "small",
+            "colors_heading": "#9c4308",
+            "colors_text": "#fafafa",
+            "colors_background": "#f47932"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "3d802874-9e21-4081-b28a-c7da66f62f00": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "text": "🍂 Limited-time offer! The BOGO on the Orenda 10-Day Detox Cleanse Bundle- buy one at full price, get one free- continues through Wednesday, September 30th, 11:59 pm Arizona (MST). Available ONLY for online orders placed through the orendainternational.com shopping cart. Note: ➤ This offer is standalone and cannot be combined with other promotions, discounts (manager, affiliate, or auto-ship subscription), or applied to past orders. ➤ No cash value. ➤ Subscription purchases are excluded. ➤ Differential profits are not applicable to this promotion and will not be paid. ➤ Additional exclusions may apply. ➤ The offer is valid while supplies last. ➤ We reserve the right to modify or cancel this offer at any time without prior notice.",
+            "text_style": "body"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "text": "Bundle includes Orenda Shape® 24.4 oz. (608g)\/one scoop (38g)\/16 servings, Orenda Clean® one scoop (5g)\/16 servings, Orenda Burn® 60 capsules, and Orenda Eaze® 30 capsules.",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": "large",
+            "show_badges": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "swatch_type": "round",
+            "size_chart": ""
+          }
+        },
+        "line_item_property_9Cmx6V": {
+          "type": "line_item_property",
+          "settings": {
+            "type": "hidden",
+            "label": "_bundle",
+            "value": "bundle",
+            "required": false,
+            "checked_value": "Yes",
+            "unchecked_value": "No",
+            "radio_options": "",
+            "select_options": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "746983cc-4acc-49dd-bc70-762f1ca0d60f": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "plant",
+            "heading": "KEY INGREDIENTS",
+            "content": "{{ product.metafields.custom.key_ingredients | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_DVFqLW": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "bottle",
+            "heading": "I'd love to learn a little more",
+            "content": "{{ product.metafields.custom.learn_more | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "432f9ff0-1055-431f-bf04-caed2f183522": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "eye",
+            "heading": "10-Day Cleanse Program",
+            "content": "<p>Summary View & Save: <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G124_10-Day_Detox_Guide_FA2_web_Guidelines_Page_4.pdf?v=1784839836\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G124_10-Day_Detox_Guide_FA2_web_Guidelines_Page_4.pdf?v=1784839836\">Orenda 10-Day Cleanse Summary<\/a><\/p><p>View & Save: <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G124_10-Day_Detox_Guide_FA2_web.pdf?v=1784838281\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G124_10-Day_Detox_Guide_FA2_web.pdf?v=1784838281\">Full Orenda 10-Day Cleanse Guide<\/a><\/p><p>View & Save: Suggested <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G124_10-Day_Detox_Guide_FA2_ShopList_Page_11.pdf?v=1784839836\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G124_10-Day_Detox_Guide_FA2_ShopList_Page_11.pdf?v=1784839836\">10-Day Cleanse Shopping List<\/a><\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab-0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "clipboard",
+            "heading": "HOW TO TAKE",
+            "content": "{{ product.metafields.custom.how_to_take | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "check_mark",
+            "heading": "VIEW FULL LABEL",
+            "content": "<p>Learn more about the high-quality ingredients that make up Orenda's products.<\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G118_Shape_Vanilla_Bottle_label_v4_web.pdf?v=1758851375\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G118_Shape_Vanilla_Bottle_label_v4_web.pdf?v=1758851375\">View full Orenda Shape® Label - Vanilla<\/a><\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G118_Shape_Choc_Bottle_label_v4_web.pdf?v=1758851376\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G118_Shape_Choc_Bottle_label_v4_web.pdf?v=1758851376\">View full Orenda Shape® Label - Chocolate<\/a><\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G106_Clean_Bottle_label_web_FA.pdf?v=1724971859\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G106_Clean_Bottle_label_web_FA.pdf?v=1724971859\">View full Orenda Clean® Label<\/a><\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/Burn_Bottle_60_web_G107_0424-1.pdf?v=1724971923\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/Burn_Bottle_60_web_G107_0424-1.pdf?v=1724971923\">View full Orenda Burn® Label<\/a><\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G113_Eaze_Bottle_Label_web.pdf?v=1725398836\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G113_Eaze_Bottle_Label_web.pdf?v=1725398836\">View label Orenda Eaze® Label<\/a><\/p>",
+            "page": ""
+          }
+        },
+        "8dac1e41-7265-4f3e-abde-1fc0bf71bb82": {
+          "type": "collapsible_video",
+          "settings": {
+            "icon": "stopwatch",
+            "heading": "60-Second Spotlight: Orenda 10-Day Cleanse",
+            "description": "60-Second Spotlight: Orenda 10-Day Cleanse",
+            "video": "shopify:\/\/files\/videos\/1.mp4",
+            "youtube_src": "",
+            "vimeo_src": "https:\/\/player.vimeo.com\/video\/356533304?h=0b8a1d55f0&badge=0&autopause=0&player_id=0&app_id=58479"
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 20,
+            "show_inventory_transfer": true,
+            "color_scheme": "accent-3"
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "related_buttons": {
+          "type": "related_buttons",
+          "disabled": true,
+          "settings": {
+            "show_icons": false
+          }
+        },
+        "sticky_cart": {
+          "type": "sticky_cart",
+          "disabled": true,
+          "settings": {
+            "show_quantity_selector": true
+          }
+        },
+        "4d2baa0c-f60f-488f-9d8b-606e1b14e4e8": {
+          "type": "image",
+          "settings": {
+            "height": 20,
+            "link": ""
+          }
+        },
+        "98035d54-52ad-43d7-9d13-b93024ef55d8": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "heading": "Complementary Products",
+            "make_collapsible_row": true,
+            "product_list_limit": 3,
+            "image_ratio": "adapt",
+            "image_position": "center center",
+            "show_vendor": false,
+            "enable_image_fill": false
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb",
+        "title",
+        "countdown_PMtMYp",
+        "rating",
+        "3d802874-9e21-4081-b28a-c7da66f62f00",
+        "vendor",
+        "price",
+        "variant_picker",
+        "line_item_property_9Cmx6V",
+        "buy_buttons",
+        "description",
+        "746983cc-4acc-49dd-bc70-762f1ca0d60f",
+        "collapsible_tab_DVFqLW",
+        "432f9ff0-1055-431f-bf04-caed2f183522",
+        "collapsible_tab-0",
+        "collapsible_tab-1",
+        "8dac1e41-7265-4f3e-abde-1fc0bf71bb82",
+        "inventory_status",
+        "share",
+        "related_buttons",
+        "sticky_cart",
+        "4d2baa0c-f60f-488f-9d8b-606e1b14e4e8",
+        "98035d54-52ad-43d7-9d13-b93024ef55d8"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_position": "left",
+        "media_size": "medium",
+        "gallery_layout": "thumbnail_slider",
+        "image_ratio": "adapt",
+        "show_thumbnails": true,
+        "hide_variants": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "mobile_image_ratio": "adapt",
+        "show_mobile_thumbnails": false,
+        "rc_custom_text": "<strong>How Subscriptions Work <\/strong><br>✔︎ Delivered Monthly - 'no empties' promise<br>\n✔︎ Cancel, Pause, Delay, or Change Anytime, Hassle-Free<br>\n✔︎ No Surprises (We'll send you pre-shipment reminders)",
+        "padding_top": 0,
+        "padding_bottom": 44
+      }
+    },
+    "8ec935eb-935e-42be-8ee7-0d747ab3d6ff": {
+      "type": "logo-list",
+      "blocks": {
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-0": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gmo.png",
+            "link": ""
+          }
+        },
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gluten.png",
+            "link": ""
+          }
+        },
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__dairy.png",
+            "link": ""
+          }
+        },
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gmp.png",
+            "link": ""
+          }
+        },
+        "40de84a6-7318-462f-96b2-9b1b946f8feb": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/G094_web_icons_75__lab_tested.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-0",
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-1",
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-2",
+        "template--14846180753489__8ec935eb-935e-42be-8ee7-0d747ab3d6ff-16851585946bcfa462-3",
+        "40de84a6-7318-462f-96b2-9b1b946f8feb"
+      ],
+      "settings": {
+        "opacity": 100,
+        "background_color": "",
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "subheading": "Our Highest Quality Commitment",
+        "description": "Clean formulations backed by third-party testing.",
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "cb9a3374-ca2a-4224-93cc-49c1e517bc6d": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Plant-Based Pea Protein & Organic Brown Rice Protein",
+            "row_content": "<p>Say hello to the power-packed protein blend at the heart of our Orenda Shape®: <strong>Pea Protein and Organic Brown Rice Protein <\/strong>(15g). This isn't just any ordinary protein duo; it's a vibrant synergy that offers a full array of amino acids, inclusive of BCAAs and all the nine essentials your body craves but can't whip up independently. Our stellar team of proteins not only enhances your general well-being, but also champions your fitness aspirations and nutritional necessities, and kindles your metabolism like a well-tended fire.* <\/p>",
+            "page": ""
+          }
+        },
+        "b6711c40-be63-4b77-959a-6be2b067d8a4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Including 12 Types of Greens",
+            "row_content": "<p>Introducing the green powerhouses of our Orenda Shape formula - Spirulina, Organic Kamut Grass, Barley Grass, Wheat Grass, and Spinach. These nutritional heroes aren't just for digestion; they're committed to supporting your overall well-being.*<\/p><p>Spirulina, a blue-green algae, is a complete protein, offering all essential amino acids, and is packed with antioxidants, aiding in cellular health and vitality. Organic Kamut Grass is a nutrient-dense grain that supports heart health and aids in supporting blood sugar levels.* Barley Grass, high in fiber and packed with vitamins, is your body's partner in detoxification, while Wheat Grass, rich in chlorophyll and various minerals, contributes to supporting energy levels and your immune system.*<\/p><p>Completing this remarkable lineup are Organic Oat Grass, Organic Flax, Chia Seed, Apple Fiber, Chlorella Powder, Pea Fiber, and Quinoa Sprout Powder. Each brings unique nutritional benefits, creating a blend that's as health-supporting as it is harmonious.<\/p><p>Organic Oat Grass offers a good dose of vitamins and minerals and supports a healthy inflammatory response, while Organic Flax and Chia Seed are both rich in omega-3 fatty acids, and offer digestive support. Apple Fiber aids in maintaining a healthy gut environment, while Chlorella Powder supports detoxification. Pea Fiber provides a feeling of fullness, aiding in support of weight management, and Quinoa Sprout Powder is a plant-based protein powerhouse.<\/p><p>Together, they form a nutritional ensemble, working in concert to enhance your health and vitality. With this blend of ingredients, you're not just fueling your body - you're investing in your wellness journey.<\/p>",
+            "page": ""
+          }
+        },
+        "fa8ce6d5-8a53-441f-a72f-6b69b2066949": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Learn more about Shape's Amino Acid profile",
+            "row_content": "<p>Our Orenda Shape® formulation boasts a carefully crafted blend of Pea and Organic Brown Rice proteins, providing a holistic approach to your protein intake. The magic lies in the harmony of these proteins, Pea and Organic Brown Rice proteins, each a complete source of all 9 essential amino acids, yet they shine in different areas. For instance, Pea protein? It's rich in lysine, an essential amino acid vital for protein synthesis and muscle recovery. But it's a tad low in cysteine and methionine.<\/p><p>And that's where Organic Brown Rice protein steps in! It's packed with cysteine and methionine, which support healthy skin, hair, nails, and metabolic processes.* However, it's a bit light on lysine. The solution? Combine them! Together, they create a superior amino acid profile that outclasses any single plant protein source, offering you all essential amino acids, including those all-important BCAAs (Branched Chain Amino Acids), for supporting muscle development and recovery.*<\/p><p>Orenda Shape® was designed to support your body in maintaining an active, balanced lifestyle. So whether you're vegan, vegetarian, or simply looking for a healthier protein alternative, Orenda Shape is here to support you in maintaining a balanced, nutritious lifestyle.<\/p><p>The nine essential amino acids are:<\/p><ul><li>Histidine, <\/li><li>Isoleucine <\/li><li>Leucine <\/li><li>Lysine <\/li><li>Methionine <\/li><li>Phenylalanine<\/li><li>Threonine <\/li><li>Tryptophan <\/li><li>Valine<\/li><\/ul><p>Of these three are BCAAs (Branched Chain Amino Acids):<\/p><ul><li>Leucine<\/li><li>Isoleucine<\/li><li>Valine<\/li><\/ul><p>The other amino acids in our protein blend are:<\/p><ul><li>Alanine<\/li><li>Arginine<\/li><li>Aspartic<\/li><li>Cystine<\/li><li>Glutamic Acid<\/li><li>Glycine<\/li><li>Proline<\/li><li>Serine<\/li><li>Tyrosine<\/li><\/ul>",
+            "page": ""
+          }
+        },
+        "question-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Aronia Berry in Orenda Clean®",
+            "row_content": "<p>Picture this - a bright and powerful berry loaded with all the good stuff that's here to make your detox experience simply wonderful. That's our Aronia Fruit Powder, a superstar in our Orenda Clean® drink.<\/p><p>What's so special about it, you ask? Well, it's like a triple threat in the world of wellness. Packed with antioxidants, it’s as if it has a built-in shield that protects your body from those troublemaker free radicals. These antioxidants are like the bodyguards of your cells, always keeping an eye out for potential damage.<\/p><p>It doesn’t stop there, this berry is also a talented inflammation soother. With its anti-inflammatory properties, Aronia berries help support the reduction of inflammation, which can help to improve overall health. <\/p><p>The cherry on top? These berries work wonders supporting your body's natural detox processes. In our world that can sometimes be chock-full of toxins, Aronia berries are like that dependable friend who's always there to help you declutter, allowing your body to feel its absolute best.<\/p><p>So when you're sipping on your Orenda Clean®, think about the Aronia Berry Fruit Powder. It's there, making every sip count, helping you towards feeling your most vibrant, most healthy self. Cheers to that!<\/p>",
+            "page": ""
+          }
+        },
+        "question-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Potassium Hydrogen-Glucarate (PHG), a water-soluble version of calcium d-glucarate, within our Orenda Clean®",
+            "row_content": "<p>Say hello to Potassium Hydrogen-Glucarate (PHG), a water-soluble version of calcium d-glucarate, nestled within our Orenda Clean® blend. It's like your personal detox assistant, working behind the scenes to help your body feel it's very best.<\/p><p>Here's where the magic happens: Your body has a natural process called glucuronidation. Think of it as your liver's private cleaning service, focused on detoxification at the cellular level. PHG takes the conductor's baton in this physiological orchestra, binding to toxins and turning them water soluble for easy elimination. Plus, it's a bit of a gatekeeper, keeping an eye out for any toxins that might try to sneak back into your system.<\/p><p>PHG is also a wellness multitasker. It's not just about detoxification. It also lends a helping hand to your liver, prostate, and breasts.* Picture it as a personal trainer for your organs, helping them stay fit and healthy.<\/p><p>Cholesterol on your mind? PHG's got that covered, too. It aids in supporting the maintenance of healthy cholesterol levels by supercharging the production of useful bile acids.* Think of it as an adept engineer, ensuring your body operates like a well-oiled machine.<\/p><p>And that's not all. PHG also plays a part in supporting the balancing act of inflammation, toning down those pro-inflammatory cytokines while amping up the friendly, anti-inflammatory ones.* Imagine it as a peacekeeper, maintaining harmony and balance within your body.<\/p><p>So, all things considered, PHG is another secret weapon in your wellness toolkit, tirelessly promoting health and vitality from within your Orenda Clean® drink. Here's to PHG, your steadfast ally on this journey to feeling absolutely fabulous!<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qQxUzq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Berberine",
+            "row_content": "<p>Berberine HCl, a well-researched, potent plant extract known for its extensive health benefits. Berberine helps activate AMPK, an enzyme in your cells that acts like a metabolic switch [<a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/12812656\/\" target=\"_blank\" title=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/12812656\/\">1<\/a>, <a href=\"https:\/\/www.ncbi.nlm.nih.gov\/pmc\/articles\/PMC7795930\/\" target=\"_blank\" title=\"https:\/\/www.ncbi.nlm.nih.gov\/pmc\/articles\/PMC7795930\/\">2<\/a>, <a href=\"https:\/\/www.ncbi.nlm.nih.gov\/pmc\/articles\/PMC8698496\/\" target=\"_blank\" title=\"https:\/\/www.ncbi.nlm.nih.gov\/pmc\/articles\/PMC8698496\/\">3<\/a>].* When AMPK is turned on, it can help your body burn more calories and manage blood sugar levels <a href=\"https:\/\/www.nature.com\/articles\/ncomms6493\" target=\"_blank\" title=\"https:\/\/www.nature.com\/articles\/ncomms6493\">[4]<\/a>.* This can be beneficial for overall health and weight management.<\/p>",
+            "page": ""
+          }
+        },
+        "e4e445f9-3a6a-457c-9ea7-a2f39ffdcd92": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Green Coffee Extract",
+            "row_content": "<p>Step into your day with the vibrancy and vitality that comes with our Green Coffee Extract. Elegantly crafted from arabica beans grown at a lofty 5,000 feet, this ingredient is your go-to for a natural, low-caffeine perk-me-up. It's not just a pick-me-up; it's a reliable companion to kick-start your day and support a lively rhythm from sunup to sundown.<\/p><p>But this isn't your average coffee, folks. Packed with a trove of antioxidants, our Green Coffee Extract goes beyond giving you an energy boost. It gently supports your body's metabolic function and assists in maintaining healthy blood sugar levels.* It's like a personal wellness coach, guiding you on your journey toward your best self.<\/p><p>So, whether you're managing a busy schedule or simply looking for that extra 'oomph,' our Green Coffee Extract is ready to step in and lend a hand. Embrace the power of this unique ingredient, elevate your day, and step confidently into a healthier, more vibrant you. Say 'yes' to Orenda Burn® today. After all, it's not just about living your life; it's about loving every minute of it.<\/p>",
+            "page": ""
+          }
+        },
+        "341bc409-0ecc-4440-ac2b-4cdf806cc878": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of African Mango (Irvingia)",
+            "row_content": "<p>Get ready because we're heading on an incredible journey straight to the heart of the lush forests of West and Central Africa! Right there grows a magnificent fruit known as Irvingia gabonensis or, as we like to call it, African Mango. This is no ordinary fruit, let me tell you. It's a natural powerhouse packed with benefits, all to give you that extra support on your wellness journey.<\/p><p>African Mango is like that reliable friend who's always there when you need it. It's a natural dynamo that assists your metabolism, helps keep those midday cravings at bay, and supports you in revealing a healthier, more vibrant you.<\/p><p>But wait, there's more! This wondrous fruit also aids in balancing your glucose metabolism and enhancing insulin sensitivity, which means supporting stable blood sugar levels.* It's like having a steady wellspring of energy that powers you through your day without those dreaded afternoon crashes.<\/p><p>But it doesn't stop there. African Mango also steps up as your heart's best friend, supporting cardiovascular health and encouraging you to live a heart-healthy lifestyle.*<\/p><p>And can we talk about its super antioxidant abilities? This fruit is like your personal bodyguard, protecting your body from oxidative stress and supporting your overall vitality.*<\/p><p>African Mango isn't just a fruit, it's a gift from nature, full of vitality and ready to transform your wellness journey.<\/p><p>So, it's time to embrace the wonders of African Mango today and step into a healthier, more vibrant version of yourself!<\/p>",
+            "page": ""
+          }
+        },
+        "31af1913-f10c-4184-8fab-4077de748a4a": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Probiotic Endospores",
+            "row_content": "<p>Orenda Eaze® has these little miracles called endospores, resilient probiotics that can outlast your stomach's acidity and ensure those good bacteria make it all the way to your colon. With our custom blend of Bacillus coagulans, Bacillus clausii, and Bacillus subtilis, we're talking about next-level support for your gut health.*<\/p>",
+            "page": ""
+          }
+        },
+        "question-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of systemic Serrapeptidase, Peptizyme-SP EN® for natural detoxification",
+            "row_content": "<p>Serrapeptase, Peptizyme-SP EN®, a shining star in our Orenda Clean®, doesn't just show up; it makes a grand entrance. This enzyme stands out with its unique ability to break down non-living tissue and unwanted wastes in your body, qualities that make it a key player in any detox regimen.<\/p><p>As it diligently works, Serrapeptase helps to clear out harmful substances and supports reducing inflammation, facilitating a healthier environment in your body*. This process not only encourages your body's natural detoxification pathways but also promotes and supports its optimal function. It's like the cleaning service you didn't know you needed, working silently in the background to maintain cleanliness and order in your bodily systems.<\/p><p>Embrace the might of Serrapeptase in Peptizyme-SP EN® blend, your ally for an effective and natural detox it’s an unsung hero in the world of detox drinks. Cheers to a cleaner, healthier you!<\/p>",
+            "page": ""
+          }
+        },
+        "7e9639aa-30d8-43c5-a81e-ea6da76f39ca": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Aloe Vera Powder",
+            "row_content": "<p>Let's pull back the curtain on Aloe Vera Powder. Not your average green plant, but a treasure trove of healthful goodness in powdered form!<\/p><p>Aloe Vera is more than just a sunburn soother; it's like a mini spa treatment for your insides. Bursting with essential vitamins and minerals, Aloe Vera Powder offers a gentle caress for your digestive system, nurturing gut health while keeping things smooth and balanced.*<\/p><p>And it doesn't stop there. This little green goddess is also a skin's best friend, supporting that dewy, youthful glow and silky softness we all desire.* It's about supporting and nourishing your body from the inside out, allowing your beauty to radiate.<\/p><p>Enriched with a wealth of vital nutrients, Aloe Vera Powder captures the essence of wellness. It's nature's way of saying, 'I've got you covered.' So, let's raise a glass to embracing wellness, with every sip of our fabulous Orenda Clean®!<\/p>",
+            "page": ""
+          }
+        },
+        "be7a6918-b5da-470b-9459-8fbdab2541cd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Turmeric Extract",
+            "row_content": "<p>Ready to spice up your life? Then let's talk about Turmeric Extract. This radiant spice, renowned for its striking golden hue, isn't just a delight for the senses. It's been trusted in wellness traditions for centuries, and it's easy to see why.<\/p><p>Turmeric Extract shines with its active compound, curcumin, an all-natural ally for your body. It lends support in combating inflammation and oxidative stress, helping to maintain the balance your body craves.*<\/p><p>But hold on because that's not all! Turmeric Extract is also a darling when it comes to digestive health. It lends a helping hand to support your digestive system, making your wellness journey a smoother ride.*<\/p><p>The charm of Turmeric Extract is more than skin-deep. Its golden glow serves as a beautiful reminder of the beneficial gifts that nature offers us.<\/p><p>So, here's to Turmeric Extract – a bright and bold partner in your wellness routine. It's just a splash of spice to help you live your healthiest, happiest life.<\/p>",
+            "page": ""
+          }
+        },
+        "1260923f-025b-4e94-9eff-dfb32d77af94": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Benefits of Peppermint Leaf Extract",
+            "row_content": "<p>Step into the invigorating world of Peppermint Leaf Extract. Think of it as the breath of fresh air that your health routine never knew it needed! This isn't just a lovely aroma you catch around the holiday season - it's a hardworking herb with an array of benefits tucked into its leaves.<\/p><p>Got digestive concerns? Peppermint Leaf Extract acts as a gentle, soothing friend supporting your digestive system, promoting comfort, and helping things run smoothly.*<\/p><p>But this herb doesn't stop there. It's a clean freak in the best way possible! Renowned for its detoxifying properties, Peppermint Leaf Extract supports your body in its natural cleansing processes, so you can feel as radiant on the inside as you look on the outside.*<\/p><p>So, here's to Peppermint Leaf Extract, your refreshing companion, working hard to ensure you're feeling your very best each and every day.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8rFwrd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the best dose of Berberine?",
+            "row_content": "<p>For best results, take six capsules daily. The standard and most widely researched dose for Berberine is 1,000 mg daily of Berberine HCl, the specific type of Berberine contained in Orenda Burn®. Our 180ct bottle is perfect for this.<\/p>",
+            "page": ""
+          }
+        },
+        "question-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Should I try the Orenda 10-Day Detox Cleanse Bundle if I am on medication?",
+            "row_content": "<p>The Orenda 10-day Detox Cleanse Bundle was formulated with careful attention to safety. That said, if you are currently under medical care or taking any medications, we recommend consulting with your healthcare provider before adding any new supplement to your routine. Your healthcare provider understands your full health picture and is the right person to make that call with you.<\/p><p>*The Orenda cleanse programs are intended as complete detoxification and weight loss programs for adults over 18 years old who are not pregnant or nursing. Results may vary. Exercise and proper diet are necessary to achieve and maintain weight loss. The Orenda 10-Day Cleanse bundle is intended as a complete detoxification and weight-loss program for adults aged 18 who are not pregnant or nursing. Combine the program with diet and exercise to maximize and maintain results. Consult your physician and follow all safety instructions before beginning any exercise program or using any supplement or meal replacement product. Weight loss should not be considered typical. Individual results will vary. Clients on the program can expect to lose 2.5-5.4 lbs. during the first 10 days and 1.3-3.3 lbs. per week for the remaining 90 days of the program. If you experience any pain or difficulty with exercises or diet, stop and consult your healthcare provider.<\/p>",
+            "page": ""
+          }
+        },
+        "820aa0f1-ce2b-4174-afbc-19cb0726d8a8": {
+          "type": "collapsible_video",
+          "settings": {
+            "heading": "🎙️ Indepth Dive on Orenda 10-Day Cleanse",
+            "description": "🎙️ Indepth Dive on Orenda 10-Day Cleanse with co-Founder George Hall & Nina Golden (22min)",
+            "youtube_src": "",
+            "vimeo_src": "https:\/\/player.vimeo.com\/video\/829610230?badge=0&autopause=0&player_id=0&app_id=58479"
+          }
+        },
+        "92701fc9-f4ef-4103-87f6-3ec05acfa82e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "View Cleanse Shopping List",
+            "row_content": "<p>Use this <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/Orenda-10day-Detox-Cleanse-Shopping-List_G090.pdf?v=1725548409\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/Orenda-10day-Detox-Cleanse-Shopping-List_G090.pdf?v=1725548409\">suggested shopping list<\/a> to get off to a quick start. Spices are OK, but watch the sugar content in combination spices (i.e., garlic pepper). If you are grilling or stir-frying your veggies, only 1 T (Tablespoon) of healthy oil (i.e. extra virgin olive oil) daily is recommended.<\/p><p>View & Save: <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/Orenda-10day-Detox-Cleanse-Shopping-List_G090.pdf?v=1725548409\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/Orenda-10day-Detox-Cleanse-Shopping-List_G090.pdf?v=1725548409\">10-Day Cleanse Shopping List<\/a><\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "cb9a3374-ca2a-4224-93cc-49c1e517bc6d",
+        "b6711c40-be63-4b77-959a-6be2b067d8a4",
+        "fa8ce6d5-8a53-441f-a72f-6b69b2066949",
+        "question-1",
+        "question-2",
+        "collapsible_row_qQxUzq",
+        "e4e445f9-3a6a-457c-9ea7-a2f39ffdcd92",
+        "341bc409-0ecc-4440-ac2b-4cdf806cc878",
+        "31af1913-f10c-4184-8fab-4077de748a4a",
+        "question-0",
+        "7e9639aa-30d8-43c5-a81e-ea6da76f39ca",
+        "be7a6918-b5da-470b-9459-8fbdab2541cd",
+        "1260923f-025b-4e94-9eff-dfb32d77af94",
+        "collapsible_row_8rFwrd",
+        "question-3",
+        "820aa0f1-ce2b-4174-afbc-19cb0726d8a8",
+        "92701fc9-f4ef-4103-87f6-3ec05acfa82e"
+      ],
+      "settings": {
+        "open_first_collapsible_row": false,
+        "narrow": true,
+        "show_divider": true,
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h3",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "padding_top": 52,
+        "padding_bottom": 24
+      }
+    },
+    "85abdddf-a94c-47a0-a16c-dd30904eed66": {
+      "type": "gallery",
+      "blocks": {
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/10DAY_Anne_D_Customer_Review_v1_Web_62023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/10DAY_Anne_D_Customer_Review_v1_Web_62023-2.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/10DAY_Michael_C_Customer_Review_v1_Web_62023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        }
+      },
+      "block_order": [
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1",
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-0",
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2"
+      ],
+      "settings": {
+        "per_row": 4,
+        "spacing_images": 20,
+        "image_height": 280,
+        "apply_overlay": true,
+        "full_width": false,
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "mobile_image_height": 160,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "4206f4e5-3db7-4377-bf2f-6ccfb4326b9a": {
+      "type": "yotpo-reviews",
+      "settings": {}
+    },
+    "16868697365ee19943": {
+      "type": "apps",
+      "blocks": {
+        "aa2102e9-50ef-4f00-a288-67df7ade8704": {
+          "type": "shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-widget\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "63144",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "aa2102e9-50ef-4f00-a288-67df7ade8704"
+      ],
+      "settings": {
+        "include_margins": true,
+        "show_divider": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_divider": false,
+        "heading": "You're Gonna Like These Too...",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_image_fill": false,
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_quick_buy": true,
+        "enable_quick_view": false,
+        "enable_color_swatches": true,
+        "enable_countdown": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "disabled": true,
+      "settings": {
+        "show_divider": false,
+        "heading": "Recently Viewed",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_image_fill": true,
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "show_quick_buy": true,
+        "enable_quick_view": true,
+        "enable_color_swatches": true,
+        "enable_countdown": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "empty-space",
+    "main",
+    "8ec935eb-935e-42be-8ee7-0d747ab3d6ff",
+    "collapsible-content",
+    "85abdddf-a94c-47a0-a16c-dd30904eed66",
+    "4206f4e5-3db7-4377-bf2f-6ccfb4326b9a",
+    "16868697365ee19943",
+    "product-recommendations",
+    "recently-viewed-products"
+  ]
+}

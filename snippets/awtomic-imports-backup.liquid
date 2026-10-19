@@ -1,0 +1,2317 @@
+<script>
+  var STYLE_VAR_MAP = {
+    FreqButtonBackgroundColor: {
+      cssVar: '--awt-freq-button-background',
+      defaultVal: '#F0F0F0',
+    },
+    FreqButtonBackgroundColorHover: {
+      cssVar: '--awt-freq-button-background-hover',
+      defaultVal: '#DDD',
+    },
+    FreqButtonColor: {
+      cssVar: '--awt-freq-button-color',
+      defaultVal: '#000',
+    },
+    FreqButtonColorHover: {
+      cssVar: '--awt-freq-button-color-hover',
+      defaultVal: '#000',
+    },
+    FreqButtonBorder: {
+      cssVar: '--awt-freq-button-border',
+      defaultVal: '1px solid #000',
+    },
+    FreqButtonBorderHover: {
+      cssVar: '--awt-freq-button-border-hover',
+      defaultVal: '1px solid #000',
+    },
+    FreqButtonBorderRadius: {
+      cssVar: '--awt-freq-button-border-radius',
+      defaultVal: '0',
+    },
+    FreqButtonBackgroundColorSelected: {
+      cssVar: '--awt-freq-button-background-selected',
+      defaultVal: '#000',
+    },
+    FreqButtonBackgroundColorHoverSelected: {
+      cssVar: '--awt-freq-button-background-hover-selected',
+      defaultVal: '#000',
+    },
+    FreqButtonColorSelected: {
+      cssVar: '--awt-freq-button-color-selected',
+      defaultVal: '#FFF',
+    },
+    FreqButtonColorHoverSelected: {
+      cssVar: '--awt-freq-button-color-hover-selected',
+      defaultVal: '#FFF',
+    },
+    FreqButtonBorderSelected: {
+      cssVar: '--awt-freq-button-border-selected',
+      defaultVal: '1px solid #000',
+    },
+    FreqButtonBorderHoverSelected: {
+      cssVar: '--awt-freq-button-border-hover-selected',
+      defaultVal: '1px solid #000',
+    },
+    PrimaryButtonBackgroundColor: {
+      cssVar: '--awt-primary-button-background',
+      defaultVal: '#000',
+    },
+    PrimaryButtonBackgroundColorHover: {
+      cssVar: '--awt-primary-button-background-hover',
+      defaultVal: '#000',
+    },
+    PrimaryButtonColor: {
+      cssVar: '--awt-primary-button-color',
+      defaultVal: '#FFF',
+    },
+    PrimaryButtonColorHover: {
+      cssVar: '--awt-primary-button-color-hover',
+      defaultVal: '#FFF',
+    },
+    PrimaryButtonBorder: {
+      cssVar: '--awt-primary-button-border',
+      defaultVal: '0px solid #FFF',
+    },
+    PrimaryButtonBorderHover: {
+      cssVar: '--awt-primary-button-border-hover',
+      defaultVal: '0px solid #FFF',
+    },
+    PrimaryButtonBorderRadius: {
+      cssVar: '--awt-primary-button-border-radius',
+      defaultVal: '4px',
+    },
+    RadioButtonBackgroundColor: {
+      cssVar: '--awt-radio-button-background',
+      defaultVal: '#000',
+    },
+    BorderColor: {
+      cssVar: '--awt-border-color',
+      defaultVal: '#e6e6e6',
+    },
+    BorderRadius: {
+      cssVar: '--awt-border-radius',
+      defaultVal: '3px',
+    },
+    SelectedPlanBackgroundColor: {
+      cssVar: '--awt-selected-plan-background',
+      defaultVal: '#EEE',
+    },
+    SelectedPlanBorderColor: {
+      cssVar: '--awt-selected-plan-border-color',
+      defaultVal: '#000',
+    },
+    ProgressBarBackgroundColor: {
+      cssVar: '--awt-progress-bar-background',
+      defaultVal: '#000',
+    },
+    ProgressBarColor: {
+      cssVar: '--awt-progress-bar-color',
+      defaultVal: '#FFF',
+    },
+    AccentBackgroundColor: {
+      cssVar: '--awt-accent-background',
+      defaultVal: '#000',
+    },
+    AccentColor: {
+      cssVar: '--awt-accent-color',
+      defaultVal: '#FFF',
+    },
+  };
+
+  (function () {
+    window.bundleapp = window.bundleapp || {};
+    window.bundleapp.settings = Object.assign(
+      {},
+      window.bundleapp.settings || {},
+      // All configs that where here have been moved to other places
+      // the moneyFormat is now fetched below via ajax
+      // other settings are set to the global namespace on the script tag handler
+      // So this code here is only a reminder that the attribute exists
+
+      /**
+      * Theme specific settings:
+      * This is a quick and dirty way to get some theme specific settings into the app.
+      *
+      * priceContainerSel Array<String> selector string for the price container
+      * comparePriceContainerSel Array<String> selector string for compare at price container
+      * priceBadgeContainer Array<String> selector string for the price Badge container
+      * hideIfUnavailable Boolean hides selling plans if variant is unavailable/out of stock
+      * containerClass String Adds a class to the container where the widget renders
+      * renderInsideSel String Selector to render the widget inside
+      * renderAfterSel String Selector to render the widget after
+      * renderBeforeSel String Selector to render the widget before
+      * useRadioButtonFrequencySelector Boolean use radio buttons instead of a select
+      * addToCartButtonSel Selector string to locale the add to cart button inside form[action='/cart/add']
+      * formDomChangeElementsSel String selector for items to listen to and trigger handleFormDomChanged (ex: 'li.variantSwatch' or 'li.variantSwatch, button.variantItem')
+      * triggerDomChangeOnUrlVariantChange Boolean to trigger handleFormDomChanged when the url variant changes
+      *   - use this when the items to select variant are not input fields and as such would not be listened to by our script naturally
+      * */
+      {
+        hideIfUnavailable: false,
+        proxy: '/tools/bundle-subscriptions',
+        appPublic: true,
+        moneyFormat: '$\{\{amount\}\}',
+        shopStyleSettings: {},
+        defaultSubscription: false,
+      },
+    );
+
+    window.bundleapp.setThemeConfigs = (obj) => {
+      window.bundleapp.settings = Object.assign(
+        {},
+        window.bundleapp.settings,
+        obj,
+      );
+    };
+
+    var showPreviewModeControl = function () {
+      const previewModeControlHtml = `
+        <div id="awt-preview-mode-control">
+          <div class="awt-logo">
+            <div class="awt-logo--image"></div>
+            <span>Preview</span>
+            <a href="https://help.awtomatic.app/en/articles/5593674-previewing-and-testing-your-subscriptions" target="_blank"><div class="awt-logo--info-icon"></div></a>
+          </div>
+          <div>
+            <!-- <button id="awt-preview-mode-control__hide">Hide</button> -->
+            <button id="awt-preview-mode-control__close">Close</button>
+          </div>
+        </div>
+      `;
+      const $previewModelEl = document.createElement('div');
+      $previewModelEl.innerHTML = previewModeControlHtml;
+      document.querySelector('body').appendChild($previewModelEl);
+
+      // not removing this yet bc its set to be used in a v2 version of the preview mode controls
+      const hidePreviewControl = function () {
+        document
+          .querySelector('#awt-preview-mode-control')
+          .classList.add('hidden');
+      };
+      const closePreviewMode = function () {
+        window.localStorage.removeItem(PREVIEW_MODE_STORAGE_KEY);
+        insertUrlParam('awt-preview');
+        window.location.reload();
+      };
+      // document
+      //   .querySelector('#awt-preview-mode-control__hide')
+      //   .addEventListener('click', hidePreviewControl);
+      document
+        .querySelector('#awt-preview-mode-control__close')
+        .addEventListener('click', closePreviewMode);
+    };
+
+    var getShopInfo = function () {
+      const moneyFormat =
+        window.moneyFormat ||
+        (window.theme && window.theme.moneyFormat) ||
+        (window.theme &&
+          window.theme.strings &&
+          window.theme.strings.moneyFormat) ||
+        (window.theme &&
+          window.theme.settings &&
+          window.theme.settings.moneyFormat) ||
+        (window.bundleapp && window.bundleapp.settings && window.bundleapp.settings.moneyFormat);
+      if (moneyFormat) {
+        window.bundleapp.settings = Object.assign({}, window.bundleapp.settings, {
+          moneyFormat: moneyFormat,
+        });
+        return Promise.resolve();
+      }
+
+      return fetch(window.bundleapp.settings.proxy + '/shop-info')
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (data) {
+          window.bundleapp.settings = Object.assign(
+            {},
+            window.bundleapp.settings,
+            data,
+          );
+        });
+    };
+
+    var setCssVars = function (styleSettings) {
+      if (styleSettings) {
+        // update CSS vars
+        var root = document.querySelector(':root');
+        for (var styleSettingsKey in STYLE_VAR_MAP) {
+          styleSettings[styleSettingsKey] &&
+            root.style.setProperty(
+              STYLE_VAR_MAP[styleSettingsKey].cssVar,
+              styleSettings[styleSettingsKey],
+            );
+        }
+      }
+    };
+
+    var insertUrlParam = function (key, value) {
+      if (history.replaceState) {
+        let searchParams = new URLSearchParams(window.location.search);
+        if (value) {
+          searchParams.set(key, value);
+        } else {
+          searchParams.delete(key);
+        }
+        let newurl =
+          window.location.protocol +
+          '//' +
+          window.location.host +
+          window.location.pathname +
+          '?' +
+          searchParams.toString();
+        window.history.replaceState({ path: newurl }, '', newurl);
+      }
+    };
+
+    var formatMoney = function (cents, format) {
+      if (typeof cents == 'string') {
+        cents = cents.replace('.', '');
+      }
+      var value = '';
+      var placeholderRegex = /\{\{\s*(\w+)\s*\}\}/;
+      var formatString = format || window.bundleapp.settings.moneyFormat;
+
+      function defaultOption(opt, def) {
+        return typeof opt == 'undefined' ? def : opt;
+      }
+
+      function formatWithDelimiters(number, precision, thousands, decimal) {
+        precision = defaultOption(precision, 2);
+        thousands = defaultOption(thousands, ',');
+        decimal = defaultOption(decimal, '.');
+
+        if (isNaN(number) || number == null) {
+          return 0;
+        }
+
+        number = (number / 100.0).toFixed(precision);
+
+        var parts = number.split('.'),
+          dollars = parts[0].replace(
+            /(\d)(?=(\d\d\d)+(?!\d))/g,
+            '$1' + thousands,
+          ),
+          cents = parts[1] ? decimal + parts[1] : '';
+
+        return dollars + cents;
+      }
+
+      switch (formatString.match(placeholderRegex)[1]) {
+        case 'amount':
+          value = formatWithDelimiters(cents, 2);
+          break;
+        case 'amount_no_decimals':
+          value = formatWithDelimiters(cents, 0);
+          break;
+        case 'amount_with_comma_separator':
+          value = formatWithDelimiters(cents, 2, '.', ',');
+          break;
+        case 'amount_no_decimals_with_comma_separator':
+          value = formatWithDelimiters(cents, 0, '.', ',');
+          break;
+      }
+
+      return formatString.replace(placeholderRegex, value);
+    };
+    // FIXME eslint error
+    // eslint-disable-next-line no-undef
+    const debounce = function (func, wait, immediate) {
+      var timeout;
+      return function () {
+        var context = this,
+          args = arguments;
+        var later = function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+    // Method to get closes matching parent source: https://gomakethings.com/a-native-vanilla-javascript-way-to-get-the-closest-matching-parent-element/
+    if (window.Element && !Element.prototype.closest) {
+      Element.prototype.closest = function (s) {
+        var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+          i,
+          el = this;
+        do {
+          i = matches.length;
+          // FIXME eslint error
+          // eslint-disable-next-line no-empty
+          while (--i >= 0 && matches.item(i) !== el) {}
+        } while (i < 0 && (el = el.parentElement));
+        return el;
+      };
+    }
+
+    var priceBadgeContainer = () =>
+      [
+        'form.product__form--add-to-cart .product__price', // Boundless
+        '.product-single__meta .price-container', //Brooklyn
+        '.product__price .price__pricing-group', // Debut
+        '.product__content .price__pricing-group', // Express
+        '.product-single__prices', // Minimal, Simple
+        '.product__content-header .product__price', // Narrative
+        '.inline-list.product-meta', // Supply
+        '.product-single__meta-list', // Venture
+      ]
+        .concat(window.bundleapp.settings.priceBadgeContainer || [])
+        .join(', ');
+
+    const priceContainerSel = () =>
+      [
+        '.price__regular', // debut, express
+        '.product-single__price', // brooklin, minimal
+        '.product__current-price', // narrative
+        '#productPrice-product-template', // supply, venture
+        '.product__price--reg', // boundless
+      ]
+        .concat(window.bundleapp.settings.priceContainerSel || [])
+        .join(', ');
+
+    const comparePriceContainerSel = () =>
+      [
+        '.price--on-sale .price__sale', // debut, express
+        '.product-single__price--compare-at', // brooklin
+        '.product-single__sale-price', // minimal
+        '.product__compare-price', //narrative
+        '.product-single__price--compare', // simple, venture
+        '.product__price .product__price--sale', // boundless
+        '.product-meta .sale-tag', // supply
+      ]
+        .concat(window.bundleapp.settings.comparePriceContainerSel || [])
+        .join(', ');
+
+    const planSelectorSel = '.bundleapp-plan-selector-plan';
+
+    const addToCartButtonSel = () =>
+      ['button[type=submit]']
+        .concat(window.bundleapp.settings.addToCartButtonSel || [])
+        .join(', ');
+
+    const PREVIEW_MODE_STORAGE_KEY = 'awtomatic-preview-mode';
+
+    /* Functions for gift form data validation */
+    const getField = (fieldId) => document.getElementById(fieldId);
+    const getFieldValue = (fieldId) => getField(fieldId).value;
+    const isEmpty = (str) => str === '';
+    const emailIsValid = (email) =>
+      /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z0-9]+$/i.test(email);
+    const isFieldValid = (fieldId) =>
+      getField(fieldId).getAttribute('data-invalid') == undefined;
+    const toggleAddToCart = (target, isValidForm) => {
+      const form = target.closest('form');
+      const addToCartBtn = form.querySelector(addToCartButtonSel());
+      if (addToCartBtn) {
+        if (isValidForm) {
+          addToCartBtn.removeAttribute('disabled');
+        } else {
+          addToCartBtn.setAttribute('disabled', true);
+        }
+      }
+      const customizeBtn = form.querySelector('#awt-customize-box-btn');
+      if (customizeBtn) {
+        if (isValidForm) {
+          customizeBtn.removeAttribute('disabled');
+        } else {
+          customizeBtn.setAttribute('disabled', true);
+        }
+      }
+    };
+
+    const toggleFieldValid = (field, isInvalid, message) => {
+      const msg = field.parentElement.getElementsByClassName('awt-error-msg');
+      if (isInvalid) {
+        field.classList.add('awt-input-error');
+        field.classList.add('awt-error');
+  
+        field.setAttribute('data-invalid', true);
+        if (msg.length === 0) {
+          const errorLabel = document.createElement('div');
+          errorLabel.classList.add('awt-error-msg');
+          errorLabel.innerText = message;
+          field.parentElement.insertBefore(
+            errorLabel,
+            field.parentElement.lastElementChild,
+          );
+        }
+      } else {
+        field.classList.remove('awt-input-error');
+        field.classList.remove('awt-error');
+  
+        if (msg.length > 0) {
+          msg[0].remove();
+        }
+        field.removeAttribute('data-invalid');
+      }
+    };
+
+    const isGiftFormValid = () =>
+      isFieldValid('awtGiftInfoFirstName') &&
+      isFieldValid('awtGiftInfoLastName') &&
+      isFieldValid('awtGiftInfoEmail');
+
+    const validateRequiredField = (event) => {
+      const isFieldEmpty = isEmpty(getFieldValue(event.target.id));
+      toggleFieldValid(event.target, isFieldEmpty, 'Required');
+      toggleAddToCart(event.target, isGiftFormValid());
+    };
+
+    const validateEmailField = (event) => {
+      const isValidEmail = emailIsValid(getFieldValue(event.target.id));
+      toggleFieldValid(event.target, !isValidEmail, 'Invalid email');
+      toggleAddToCart(event.target, isGiftFormValid());
+    };
+
+    /**
+    * Awtomatic Selector Widget
+    * */
+
+    function BundleAppWidget($selector, product) {
+      this.product = product;
+      this.isGiftSelected = false;
+      this.$selector = $selector;
+      this.$sellingPlanField = this.$selector.querySelector(
+        'input[name=selling_plan]',
+      );
+      this.$wrapper = this.$selector.closest(
+        'div[data-section-type], .shopify-section, body',
+      );
+      this.$planGroups = this.$selector.querySelectorAll(
+        '.bundleapp-plan-selector-group',
+      );
+      this.$form = this.$selector.closest('form');
+      if (this.$form ) {
+        this.$variantSelect = this.$form.querySelector('[name=id]');
+      }
+       else {
+        console.warn('Could not find the closest form for the bundle app selector');
+      }
+      this.$badgePriceEl = this.$wrapper.querySelector(priceBadgeContainer());
+      if (!this.$badgePriceEl)
+        console.warn('Did not find a badge container element');
+      // FIXME eslint error
+      // eslint-disable-next-line no-undef
+      this.setPlansVisibility = debounce(
+        this._baseSetPlansVisibility.bind(this),
+        50,
+      );
+
+      this.init();
+      this.setPlansVisibility();
+      if (window.bundleapp.settings.onInit) {
+        window.bundleapp.settings.onInit.call(this);
+      }
+      if (window.bundleapp.onInit) {
+        console.warn(
+          'onInit will be deprecated soon. Please use bundleapp.settings.onInit instead',
+        );
+        window.bundleapp.onInit.call(this);
+      }
+    }
+
+    Object.assign(BundleAppWidget.prototype, {
+      init: function () {
+        this.$selector.style.display = 'block';
+        this.$planGroups.forEach(
+          function (elem) {
+            var $planGroupRadio = elem.querySelector(
+              "input[name='bundleapp-plan-selector-group']",
+            );
+            var groupId = $planGroupRadio.value;
+            var selectedPlanGroup = this.product.selling_plans_by_id[
+              this.product.selected_selling_plan
+                ? this.product.selected_selling_plan.id
+                : null
+            ];
+            var isSelectedGroup = !!(
+              selectedPlanGroup &&
+              String(selectedPlanGroup.selling_plan_group_id) === String(groupId)
+            );
+
+            this.handleGiftVisibility(isSelectedGroup);
+
+            $planGroupRadio.addEventListener(
+              'change',
+              this.handlePlanRadioChange.bind(this),
+            );
+            elem
+              .querySelector('select')
+              .addEventListener(
+                'change',
+                this.handlePlanOptionsChange.bind(this),
+              );
+            var $radioButtonsfrequencySelector = elem.querySelectorAll(
+              '.bundleapp-plan-selector-radio__input',
+            );
+            for (
+              let index = 0;
+              index < $radioButtonsfrequencySelector.length;
+              index++
+            ) {
+              $radioButtonsfrequencySelector[index].addEventListener(
+                'change',
+                this.handlePlanOptionsChange.bind(this),
+              );
+            }
+          }.bind(this),
+        );
+
+        //Ads an event listener to every element in the form
+        const $selectorElements = Array.from(
+          this.$selector.querySelectorAll('input, select'),
+        );
+        if (this.$form) {
+          Array.from(this.$form.elements).forEach(
+            function (el) {
+              if (
+                !$selectorElements.includes(el) &&
+                el.tagName !== 'BUTTON' &&
+                el.type !== 'hidden'
+              ) {
+                el.addEventListener('change', this.handleFormDomChanged.bind(this));
+              }
+            }.bind(this),
+          );
+        }
+
+        if (window.bundleapp.settings.defaultSubscription) {
+          const $oneTimeRadio = this.$selector.querySelector('[data-one-time]');
+  
+          // Only if one time is available and defaultSubscription enabled we set checked
+          // the first selling plan group. If there is no one-time option, we already
+          // mark the first selling plan checked
+          if ($oneTimeRadio) {
+            const $firstSellingPlanGroup = this.$selector.querySelector(
+              '[data-one-time] + .bundleapp-plan-selector-group input',
+            );
+            $firstSellingPlanGroup.dispatchEvent(new Event('change'));
+          }
+        }
+        
+        if (window.bundleapp.settings.formDomChangeElementsSel) {
+          const $variantEls = document.querySelectorAll(
+            window.bundleapp.settings.formDomChangeElementsSel,
+          );
+          $variantEls.forEach(
+            function (el) {
+              el.addEventListener('click', this.handleFormDomChanged.bind(this));
+            }.bind(this),
+          );
+        }
+
+      },
+
+      getTranslation: function (key, fallback) {
+        let translation = this.product?.translations[key];
+        if (translation.includes('translation missing')) {
+          translation = fallback;
+        }
+        return translation;
+      },
+
+      handleGiftVisibility: function (isSelectedGroup) {
+          let isGiftable =
+            this.product &&
+            this.product.gift_selling_plans &&
+            this.product.gift_selling_plans.includes(
+              this.product.selected_selling_plan &&
+                this.product.selected_selling_plan.id,
+            );
+          const giftCheckBox = document.querySelector('input[name="awt-is-gift"]');
+    
+          if (isGiftable && !giftCheckBox && isSelectedGroup) {
+            this.isGiftSelected = true;
+            let isGiftCheckboxLabel = document.createElement('label');
+            isGiftCheckboxLabel.classList.add('awt-checkbox');
+            let isGiftCheckbox = document.createElement('input');
+            const giftTitle = this.getTranslation(
+              'gift_recipient_info_title',
+              'Recipient info',
+            );
+            const giftFirstNameLabel = this.getTranslation(
+              'gift_first_name_label',
+              'First name',
+            );
+            const giftFirstNamePlaceholder = this.getTranslation(
+              'gift_first_name_placeholder',
+              'First name',
+            );
+            const giftLastNameLabel = this.getTranslation(
+              'gift_last_name_label',
+              'Last name',
+            );
+            const giftLastNamePlaceholder = this.getTranslation(
+              'gift_last_name_placeholder',
+              'Last name',
+            );
+            const giftEmailLabel = this.getTranslation(
+              'gift_email_label',
+              'Email address',
+            );
+            const giftEmailPlaceholder = this.getTranslation(
+              'gift_email_placeholder',
+              'Email address',
+            );
+            const giftEmailWarning = this.getTranslation(
+              'gift_email_warning',
+              'Important: Gift emails will be sent here',
+            );
+            const giftNoteLabel = this.getTranslation('gift_note_label', 'Note');
+            const giftNotePlaceholder = this.getTranslation(
+              'gift_note_placeholder',
+              'Note',
+            );
+    
+            isGiftCheckbox.addEventListener('change', function (event) {
+              const isGiftSelected = event.currentTarget.checked;
+              this.isGiftSelected = isGiftSelected;
+    
+              if (isGiftSelected) {
+                const giftsMarkUp = `<div class="gift">
+                <p class="awt-gift-info-title">${giftTitle}</p>
+                    <div class="awt-form-group">
+                      <label for="awtGiftInfoFirstName" class="awt-floating-label">
+                          <input type="text" id="awtGiftInfoFirstName" class="awt-gift-input" required name="properties[_giftFirstName]" placeholder="${giftFirstNamePlaceholder}" data-invalid>
+                          <span class="awt-gift-label">${giftFirstNameLabel}*</span>
+                      </label>
+                      <label for="awtGiftInfoLastName" class="awt-floating-label">
+                          <input type="text" id="awtGiftInfoLastName" class="awt-gift-input" required name="properties[_giftLastName]" placeholder="${giftLastNamePlaceholder}" data-invalid>
+                         <span class="awt-gift-label">${giftLastNameLabel}*</span>
+                      </label>
+                    </div>
+                    <div class="awt-gift-input-container">
+                      <label for="awtGiftInfoEmail" class="awt-floating-label">
+                          <input type="email" id="awtGiftInfoEmail" class="awt-gift-input" required name="properties[_giftEmail]" placeholder="${giftEmailPlaceholder}" data-invalid>
+                          <span class="awt-gift-label">${giftEmailLabel}*</span>
+                          <div class="awt-floating-label-warning">${giftEmailWarning}</div>
+                      </label>
+                    </div>
+                    <div class="awt-gift-input-container">
+                      <label for="awtGiftInfoNote" class="awt-floating-label">
+                          <textarea id="awtGiftInfoNote" class="awt-gift-input" placeholder="${giftNotePlaceholder}" name="properties[_giftNote]"></textarea>
+                          <span class="awt-gift-label">${giftNoteLabel}</span>
+                      </label>
+                    </div>
+            </div>`;
+    
+                let giftInfoContainer = document.createElement('div');
+                giftInfoContainer.setAttribute('name', 'awt-gift-info-container');
+                giftInfoContainer.classList.add('awt-gift-info-container');
+    
+                giftInfoContainer.innerHTML = giftsMarkUp;
+                isGiftCheckboxLabel.parentElement.appendChild(giftInfoContainer);
+                getField('awtGiftInfoFirstName').addEventListener(
+                  'blur',
+                  validateRequiredField,
+                );
+                getField('awtGiftInfoLastName').addEventListener(
+                  'blur',
+                  validateRequiredField,
+                );
+                getField('awtGiftInfoEmail').addEventListener(
+                  'blur',
+                  validateEmailField,
+                );
+                toggleAddToCart(getField('awtGiftInfoEmail'), isGiftFormValid());
+              } else {
+                const giftInfoContainer = document.querySelector(
+                  'div[name="awt-gift-info-container"]',
+                );
+                getField('awtGiftInfoFirstName').removeEventListener(
+                  'blur',
+                  validateRequiredField,
+                );
+                getField('awtGiftInfoLastName').removeEventListener(
+                  'blur',
+                  validateRequiredField,
+                );
+                getField('awtGiftInfoEmail').removeEventListener(
+                  'blur',
+                  validateEmailField,
+                );
+                toggleAddToCart(getField('awtGiftInfoEmail'), true);
+                giftInfoContainer &&
+                  giftInfoContainer.parentNode &&
+                  giftInfoContainer.parentNode.removeChild(giftInfoContainer);
+              }
+            });
+            isGiftCheckbox.type = 'checkbox';
+            isGiftCheckbox.name = 'awt-is-gift';
+            isGiftCheckboxLabel.appendChild(isGiftCheckbox);
+            isGiftCheckboxLabel.appendChild(
+              document.createTextNode(
+                this.getTranslation('gift_checkbox_label', 'This is a gift'),
+              ),
+            );
+            const planDescription = document.querySelector(
+              '.bundleapp-plan-selector-description',
+            );
+            planDescription &&
+              planDescription.parentNode.insertBefore(
+                isGiftCheckboxLabel,
+                planDescription.nextSibling,
+              );
+          }
+          if (!isGiftable) {
+            if (giftCheckBox) {
+              const giftCheckBoxLabel = giftCheckBox.parentNode;
+              giftCheckBoxLabel.parentNode.removeChild(giftCheckBoxLabel);
+              const giftInfoContainer = document.querySelector(
+                'div[name="awt-gift-info-container"]',
+              );
+    
+              giftInfoContainer &&
+                giftInfoContainer.parentNode &&
+                giftInfoContainer.parentNode.removeChild(giftInfoContainer);
+            }
+          }
+        },
+
+      // This is marked as a private function because this is not intended to be used
+      // directly. Use the debounced version of it this.setPlansVisibility()
+      _baseSetPlansVisibility: function () {
+        if (window.bundleapp.settings.hideIfUnavailable) {
+          //If variant is not available hide the whole widget
+          this.$selector.style.display = this.product.selected_variant.available
+            ? 'block'
+            : 'none';
+        }
+
+        var selling_plan_group_ids = this.product.selected_variant.selling_plan_allocations.map(
+          function (i) {
+            return i.selling_plan_group_id;
+          },
+        );
+        var planId = '';
+        const hasPlanWithMultipleDeliveries = this.product.selected_variant.selling_plan_allocations.some(
+          (sp) => sp.price !== sp.per_delivery_price,
+        );
+        // @TODO: translate suffix
+        const suffix = hasPlanWithMultipleDeliveries
+          ? this.getTranslation('delivery_suffix', '/delivery')
+          : '';
+        this.$planGroups.forEach(
+          function (elem) {
+            var bundleAppSettings = window.bundleapp.settings || {};
+            var $planGroupRadio = elem.querySelector(
+              "input[name='bundleapp-plan-selector-group']",
+            );
+            var groupId = $planGroupRadio.value;
+            elem.style.display =
+              selling_plan_group_ids.includes(groupId) || !groupId
+                ? 'block'
+                : 'none';
+            var selectedPlanGroup = this.product.selling_plans_by_id[
+              this.product.selected_selling_plan
+                ? this.product.selected_selling_plan.id
+                : null
+            ];
+            var isSelectedGroup = !!(
+              selectedPlanGroup &&
+              String(selectedPlanGroup.selling_plan_group_id) === String(groupId)
+            );
+
+            this.handleGiftVisibility(isSelectedGroup);
+
+            var $selectorPlan = elem.querySelector(planSelectorSel);
+            $selectorPlan.style.display = isSelectedGroup ? 'block' : 'none';
+
+            if (!$planGroupRadio.value && !isSelectedGroup) {
+              // If value is falsy a.k.a one-time purchase
+              $planGroupRadio.checked = true;
+            } else {
+              $planGroupRadio.checked = isSelectedGroup;
+
+              if (this.$planGroups.length === 1) {
+                elem.classList.add('bundleapp-plan-selector-group--single-group');
+              }
+
+              // if this is the selected group add the selected class
+              if (isSelectedGroup) {
+                elem.classList.add('bundleapp-plan-selector-group--selected');
+                if (bundleAppSettings.useRadioButtonFrequencySelector) {
+                  const selectedGroupPlans = elem
+                    .querySelector('.bundleapp-plan-selector-radio')
+                    .getElementsByTagName('input');
+                  const isPlanChecked = Array.from(selectedGroupPlans).some(
+                    ({ checked }) => checked,
+                  );
+                  if (!isPlanChecked) {
+                    // if no plan is checked, select the first one
+                    selectedGroupPlans[0].checked = true;
+                    elem
+                      .querySelector('.bundleapp-plan-selector-radio label')
+                      .classList.add(
+                        'bundleapp-plan-selector-radio__label--selected',
+                      );
+                  }
+                }
+              }
+            }
+
+            if (bundleAppSettings.useRadioButtonFrequencySelector) {
+              let $radioButtonPlanSelector = elem.querySelector(
+                '.bundleapp-plan-selector-radio',
+              );
+
+              $radioButtonPlanSelector.style.display = isSelectedGroup
+                ? 'block'
+                : 'none';
+              let $selectPlanSelector = elem.querySelector(
+                '.bundleapp-plan-selector-select',
+              );
+              $selectPlanSelector.style.display = 'none';
+            } else {
+              let $radioButtonPlanSelector = elem.querySelector(
+                '.bundleapp-plan-selector-radio',
+              );
+              $radioButtonPlanSelector.style.display = 'none';
+              let $selectPlanSelector = elem.querySelector(
+                '.bundleapp-plan-selector-select',
+              );
+              $selectPlanSelector.style.display =
+                isSelectedGroup && $selectPlanSelector.options.length > 1
+                  ? 'block'
+                  : 'none';
+            }
+
+            if (isSelectedGroup) {
+              const planSel = bundleAppSettings.useRadioButtonFrequencySelector
+                ? `${planSelectorSel} .bundleapp-plan-selector-radio input:checked`
+                : `${planSelectorSel} select`;
+
+              planId =
+                elem.querySelector(planSel) && elem.querySelector(planSel).value;
+            }
+
+            //update pricing label of each group
+            const planGroup = this.product.selling_plan_groups.find(
+              (p) => String(p.id) === String(groupId),
+            );
+            const $priceLabel = elem.querySelector(
+              '.bundleapp-plan-selector-group-pricing',
+            );
+
+            const currentVariant = this.product.variants.find(
+              (variant) => variant.id === this.product.selected_variant.id,
+            );
+
+            if (planGroup && $priceLabel) {
+              const values = planGroup.selling_plans.map(function (i) {
+                return parseInt(i.price_adjustments[0]?.value);
+              });
+
+              const sellingPlansFromCurrentGroup = currentVariant.selling_plan_allocations.filter(
+                (sp) => sp.selling_plan_group_id === planGroup.id,
+              );
+              if (sellingPlansFromCurrentGroup && values) {
+                const lowestPriceInGroup = Math.min.apply(
+                  null,
+                  sellingPlansFromCurrentGroup.map((sp) => sp.per_delivery_price),
+                );
+                const isSame = values.every(function (val) {
+                  return val === values[0];
+                });
+                const prefix = isSame ? '' : this.getTranslation('from', 'from');
+                $priceLabel.innerHTML = `${prefix} ${formatMoney(
+                  lowestPriceInGroup,
+                )}${suffix}`;
+                $priceLabel.dataset.test = `planPriceInSelector-${
+                  sellingPlansFromCurrentGroup?.selling_plan_group_id ||
+                  sellingPlansFromCurrentGroup[0]?.selling_plan_group_id
+                }`;
+
+                const comparePrice = $priceLabel.parentNode.querySelector(
+                  '.bundleapp-plan-selector-group-compare span',
+                );
+                if (comparePrice) {
+                  comparePrice.innerHTML = `${formatMoney(
+                    currentVariant.price,
+                  )}${suffix}`;
+                }
+              }
+            }
+
+            if (this.product?.selling_plan_groups?.length === 1) {
+              // check to see. IF just one selling plan group, and does not offer discount
+              // then we wont display itemized prices.
+              const $itemizedPrices = this.$selector.querySelectorAll(
+                '.bundleapp-plan-selector-group-pricing',
+              );
+
+              const oneTimePurchasePrice = currentVariant?.price;
+
+              const pricesInSellingPlans = currentVariant.selling_plan_allocations.map(
+                (sp) => sp.price,
+              );
+              const allEqual = (arr) => arr.every((val) => val === arr[0]);
+
+              if (allEqual([oneTimePurchasePrice, ...pricesInSellingPlans])) {
+                $itemizedPrices.forEach((price) => {
+                  price.style.display = 'none';
+                });
+              }
+            }
+          }.bind(this),
+        );
+
+        //check if theres a visible option selected
+        //If not: check first
+        if (
+          !Array.from(this.$planGroups).filter(
+            (el) => el.offsetParent && el.querySelector('input').checked,
+          ).length
+        ) {
+          // get first input that's visible
+          const firstVisibleGroup = Array.from(this.$planGroups).filter(
+            (el) => el.offsetParent,
+          )[0];
+          if (firstVisibleGroup) {
+            const $firstRadio = firstVisibleGroup.querySelector('input');
+            if (!$firstRadio.checked) {
+              $firstRadio.checked = true;
+              $firstRadio.dispatchEvent(new Event('change'));
+              // if we are using radio buttons get the first plan and check it
+              if (window.bundleapp.settings.useRadioButtonFrequencySelector) {
+                let $radioButtonPlanSelector = firstVisibleGroup.querySelector(
+                  '.bundleapp-plan-selector-radio',
+                );
+                const firstPlan = $radioButtonPlanSelector.querySelector('input');
+                if (!firstPlan.checked) {
+                  firstPlan.checked = true;
+                  firstPlan.dispatchEvent(new Event('change'));
+                }
+              }
+            }
+          }
+        }
+
+        //Updates input field
+        if (this.$sellingPlanField) {
+          this.$sellingPlanField.value = planId ? planId : '';
+        }
+        //Clear selling_plan from URL on product pages (plan is tracked via hidden input, not URL)
+        if (window.location.pathname.includes('/products/')) {
+          insertUrlParam('selling_plan');
+        }
+
+        //Updates one-time purchase price
+        const $oneTimePrice = this.$selector.querySelector(
+          '[data-one-time].bundleapp-plan-selector-group .bundleapp-plan-selector-group-pricing',
+        );
+        if ($oneTimePrice) {
+          $oneTimePrice.innerHTML = `${formatMoney(
+            this.product.selected_variant.price,
+          )}${suffix}`;
+          // data-test attribute for testing
+          $oneTimePrice.dataset.test = 'oneTimePriceInSelector';
+        }
+
+        // do not update prices if there are no selling plans groups on the product
+        if (this.product?.selling_plan_groups?.length) {
+          this.updatePrice(planId);
+          this.updateBadgePrice(planId);
+        }
+        this.replaceAddBtnForBundles();
+
+        if (window.bundleapp.settings.triggerDomChangeOnUrlVariantChange && !this.urlVariantChangeInitialized) {
+          this.urlVariantChangeInitialized = true;
+          let last;
+          const check = () => {
+            const v = new URLSearchParams(location.search).get('variant');
+            if (v !== last) {
+              last = v;
+              this.handleFormDomChanged();
+              console.log(this);
+            }
+          };
+          ['pushState', 'replaceState'].forEach(type => {
+            const original = history[type];
+            history[type] = function () {
+              original.apply(this, arguments);
+              check();
+            };
+          });
+          addEventListener('popstate', check);
+          check();
+        }
+      },
+
+      replaceAddBtnForBundles: function () {
+        // only replace button on BaB bundle
+        if (
+          !this.product?.metafields?.isBundle ||
+          this.product?.metafields?.type === 'shuffle'
+        ) {
+          return;
+        }
+
+        const $btn = this.$form.querySelector(addToCartButtonSel());
+
+        // remove "buy it now" button
+        const $shopifyPaymentBtn = $btn.parentElement.querySelector(
+          '.shopify-payment-button',
+        );
+        if ($shopifyPaymentBtn) {
+          $shopifyPaymentBtn.remove();
+        }
+
+        let $clonedBtn = this.$form.querySelector('#awt-customize-box-btn');
+        if (!$clonedBtn) {
+          $clonedBtn = $btn.cloneNode(true);
+          $clonedBtn.id = 'awt-customize-box-btn';
+          $clonedBtn.type = 'button';
+          $clonedBtn.innerText = this.getTranslation(
+            'customize_my_box',
+            'Customize my box',
+          );
+          $clonedBtn.classList.remove('btn--secondary-accent');
+          $clonedBtn.classList.add('btn--primary-accent');
+          $clonedBtn.removeAttribute('@click.prevent');
+          $clonedBtn.removeAttribute('x-show:');
+          $clonedBtn.removeAttribute(':disabled');
+          $clonedBtn.removeAttribute(':class');
+          // remove any href in case the theme has been customized and isn't a standard add-to-cart button
+          $clonedBtn.removeAttribute('href');
+
+          $btn.style.display = 'none';
+          $btn.classList.add('awt-hidden-add-to-cart-button');
+          $btn.parentNode.insertBefore($clonedBtn, $btn.nextSibling);
+        } else {
+          // clone the previous clone and replace
+          var secondClone = $clonedBtn.cloneNode(true);
+          $clonedBtn.parentNode.replaceChild(secondClone, $clonedBtn);
+
+          // reference new button so we can add event listener
+          $clonedBtn = secondClone;
+        }
+
+        var handleCustomizeBoxButtonClick = function (event) {
+          event.stopPropagation();
+
+          let params = new URLSearchParams(window.location.search);
+          let search = window.location.search;
+          // only use product.selected_variant.id arg if variant is not already in the
+          // url params. Otherwise we might be overriding the latest selection
+          if (!search.includes('variant') && this.product?.selected_variant?.id) {
+            params.append('variant', this.product?.selected_variant?.id);
+          }
+
+          // Always read selling_plan from the hidden form input (kept in sync by widget),
+          // falling back to the product object. Never use the URL value — it may be stale.
+          let selectedSellingPlanId =
+            document.querySelector('form input[name="selling_plan"]')?.value ||
+            this.product?.selected_selling_plan?.id;
+          params.delete('selling_plan');
+          if (selectedSellingPlanId) {
+            params.append('selling_plan', selectedSellingPlanId);
+          }
+
+          let priceAdjustments = this.product?.selected_selling_plan
+            ?.price_adjustments;
+          if (
+            priceAdjustments &&
+            priceAdjustments[0] &&
+            priceAdjustments[0].value
+          ) {
+            params.append(
+              'd',
+              `${priceAdjustments[0].value}-${
+                priceAdjustments[0].value_type === 'percentage' ? 'p' : 'q'
+              }`,
+            );
+          }
+
+          let url = new URL(
+            `${window.location.origin}${window.bundleapp.settings.proxy}/bundle/${this.product.id}`,
+          );
+          url.search = params.toString();
+          let isGiftable = this.product.gift_selling_plans.includes(
+            this.product.selected_selling_plan?.id,
+          );
+          if (isGiftable && this.isGiftSelected) {
+            const giftFirstName = document.getElementById('awtGiftInfoFirstName');
+            const giftLastName = document.getElementById('awtGiftInfoLastName');
+            const giftEmail = document.getElementById('awtGiftInfoEmail');
+            const giftNote = document.getElementById('awtGiftInfoNote');
+            const giftInformation = {
+              firstName: giftFirstName?.value,
+              lastName: giftLastName?.value,
+              email: giftEmail?.value,
+              note: giftNote?.value,
+            };
+            sessionStorage &&
+              sessionStorage.setItem(
+                'awt-gift-information',
+                JSON.stringify(giftInformation),
+              );
+          }
+
+          window.location.href = url.toString();
+        };
+        $clonedBtn.addEventListener(
+          'click',
+          handleCustomizeBoxButtonClick.bind(this),
+        );
+      },
+
+      updatePrice: function (planId) {
+        var planAllocation = this.product.selected_variant.selling_plan_allocations.find(
+          (allo) => allo.selling_plan_id == planId,
+        );
+
+        // var planOption = this.product.selling_plans_by_id[planId];
+        let $comparePriceSpan = this.$wrapper.querySelector(
+          '.bundleapp-compareAtPrice',
+        );
+        const $priceRegular = this.$wrapper.querySelector(priceContainerSel());
+        
+        const $priceSale = this.$wrapper.querySelector(
+          comparePriceContainerSel(),
+        );
+
+        if (!$priceRegular) console.warn('Did not find a price element');
+        if (!$priceSale) console.warn('Did not find a compare price element');
+
+        if (!$comparePriceSpan) {
+          $comparePriceSpan = document.createElement('span');
+          $comparePriceSpan.classList.add('bundleapp-compareAtPrice');
+          if ($priceRegular) {
+            const priceStyles = window.getComputedStyle($priceRegular);
+            Array.from(priceStyles).forEach((key) =>
+              $comparePriceSpan.style.setProperty(
+                key,
+                priceStyles.getPropertyValue(key),
+                priceStyles.getPropertyPriority(key),
+              ),
+            );
+            $priceRegular.after($comparePriceSpan);
+          }
+          $comparePriceSpan.style.textDecoration = 'line-through';
+          $comparePriceSpan.style.webkitTextDecorationLine = 'line-through';
+          $comparePriceSpan.style.marginLeft = '10px';
+
+          // for testing purpose
+          if ($comparePriceSpan)
+            $comparePriceSpan.dataset.test = 'bundlePriceOnSale';
+        }
+
+        setTimeout(
+          function () {
+            // Since the theme wants to change the price we need to wait a bit to make our changes,
+            // hence, the timeout
+            if (planAllocation) {
+              if ($priceRegular) {
+                $priceRegular.innerHTML = `${formatMoney(planAllocation.price)}`;
+
+                if (
+                  planAllocation.compare_at_price &&
+                  planAllocation.compare_at_price !== planAllocation.price
+                ) {
+                  $comparePriceSpan.innerHTML = `${formatMoney(
+                    planAllocation.compare_at_price,
+                  )}`;
+                  $comparePriceSpan.style.display = 'inline';
+                } else if (
+                  this.product &&
+                  this.product.compare_at_price &&
+                  this.product.compare_at_price !== planAllocation.price
+                ) {
+                  $comparePriceSpan.innerHTML = `${formatMoney(
+                    product.compare_at_price,
+                  )}`;
+                  $comparePriceSpan.style.display = 'inline';
+                }
+                 else {
+                  $comparePriceSpan.style.display = 'none';
+                }
+              }
+            } else {
+              if ($priceRegular) {
+                $priceRegular.innerHTML = `${formatMoney(
+                  this.product.selected_variant.price,
+                )}`;
+              }
+              if (this.product.selected_variant.compare_at_price) {
+                $comparePriceSpan.innerHTML = formatMoney(
+                  this.product.selected_variant.compare_at_price,
+                );
+                $comparePriceSpan.style.display = 'inline';
+              } else {
+                $comparePriceSpan.style.display = 'none';
+              }
+            }
+
+            // make sure theme did not try to display=block
+            if ($priceRegular) $priceRegular.style.display = 'inline';
+
+            //for testing purposes
+            if ($priceRegular) $priceRegular.dataset.test = 'priceRegular';
+
+            // hide this because we are not longer using this elements.
+            if ($priceSale) $priceSale.style.display = 'none';
+            //for testing purposes
+            if ($priceSale) $priceSale.dataset.test = 'priceOnSale';
+
+            // make sure theme did not tried to decorate text
+            if ($priceRegular) $priceRegular.style.textDecoration = 'none';
+
+            if (
+              this.product?.selected_variant?.compare_at_price ===
+                this.product.selected_variant.price ||
+              this.product?.selected_variant?.compare_at_price ===
+                planAllocation?.price ||
+              this.product?.selected_variant?.price === planAllocation?.price
+            ) {
+              if ($comparePriceSpan) $comparePriceSpan.style.display = 'none';
+            }
+          }.bind(this),
+          100,
+        );
+      },
+
+      updateBadgePrice: function (planId) {
+        var planAllocation = this.product.selected_variant.selling_plan_allocations.find(
+          (allo) => allo.selling_plan_id == planId,
+        );
+        var planOption = this.product.selling_plans_by_id[planId];
+
+        var $priceAdjustment = this.$wrapper.querySelector(
+          '.bundleapp-price-adjustment',
+        );
+
+        if (planAllocation) {
+          var value_type = planOption.price_adjustments[0].value_type;
+          var value = planOption.price_adjustments[0].value;
+
+          var symbol = value_type === 'percentage' ? '%' : '';
+          var strValue = value_type === 'percentage' ? value : formatMoney(value);
+
+          var discount = value > 0 ? `${strValue}${symbol}` : '';
+
+          // find out if this selling plan is part of a selling plan group with multiple selling plans/frequencies
+          const planAllocationBrothers = this.product.selected_variant.selling_plan_allocations.reduce(
+            (acc, curr) => {
+              if (
+                curr.selling_plan_group_id ===
+                  planAllocation.selling_plan_group_id &&
+                curr.selling_plan_id !== planAllocation.selling_plan_id
+              ) {
+                acc.brothers = acc.brothers + 1;
+
+                if (curr.price !== planAllocation.price) {
+                  acc.dynamicSavings = acc.dynamicSavings + 1;
+                }
+              }
+
+              return acc;
+            },
+            { brothers: 0, dynamicSavings: 0 },
+          );
+
+          const subscriptionLabel = `<span data-test="subscriptionLabel">${this.getTranslation(
+            'subscription',
+            'SUBSCRIPTION',
+          )}</span>`;
+          const dotSeparatorLabel =
+            '<span data-test="dotSeparatorLabel"> · </span>';
+          const saveLabel = `<span data-test="saveLabel">${this.getTranslation(
+            'save',
+            'Save',
+          )} ${discount}</span>`;
+          const extraDiscountLabel = `<span data-test="extraDiscountLabel">${this.getTranslation(
+            'extra',
+            'Extra',
+          )} ${discount} ${this.getTranslation('off', 'off')}</span>`;
+
+          let badgeLabel = subscriptionLabel + dotSeparatorLabel + saveLabel;
+
+          if (!discount) {
+            badgeLabel = subscriptionLabel;
+          }
+
+          if (
+            this.product.selected_variant.compare_at_price &&
+            this.product.selected_variant.price != planAllocation.price
+          ) {
+            badgeLabel = extraDiscountLabel;
+          }
+
+          const html = `<span data-test="subscriptionBadge">${badgeLabel}</span>`;
+
+          if (this.$badgePriceEl) {
+            if ($priceAdjustment) {
+              $priceAdjustment.innerHTML = html;
+            } else {
+              var div = document.createElement('div');
+              div.classList.add('bundleapp-price-adjustment');
+              div.innerHTML = html;
+              this.$badgePriceEl.appendChild(div);
+            }
+          }
+        } else {
+          if ($priceAdjustment) {
+            $priceAdjustment.remove();
+          }
+        }
+      },
+
+      setSupportInformation: function () {
+        var $description = this.$selector.querySelector(
+          '.bundleapp-plan-selector-description',
+        );
+
+        if ($description) {
+          if (
+            this.product.selected_selling_plan &&
+            this.product.selected_selling_plan.description
+          ) {
+            $description.innerHTML = `<span>${this.product.selected_selling_plan.description}</span>`;
+          } else {
+            $description.innerHTML = '';
+          }
+        }
+      },
+
+      handlePlanRadioChange: function (e) {
+        var target = e.currentTarget || e.target;
+        var $planGroup = target.closest('.bundleapp-plan-selector-group');
+
+        // remove selected class from previously selected group
+        var $previouslySelected = this.$form.querySelectorAll(
+          '.bundleapp-plan-selector-group--selected',
+        );
+        $previouslySelected.forEach((selectedGroup) =>
+          selectedGroup.classList.remove(
+            'bundleapp-plan-selector-group--selected',
+          ),
+        );
+
+        // add selected class to newly selected group
+        $planGroup.classList.add('bundleapp-plan-selector-group--selected');
+
+        var $planSelect = $planGroup.querySelector('select');
+        var planId = $planSelect.value;
+        this.product.selected_selling_plan = this.product.selling_plans_by_id[
+          planId
+        ];
+
+        this.setPlansVisibility();
+        this.setSupportInformation();
+      },
+
+      handlePlanOptionsChange: function (e) {
+        var target = e.currentTarget || e.target;
+        var planId = target.value;
+
+        if (window.bundleapp.settings.useRadioButtonFrequencySelector) {
+          // remove selected class from previously selected plan label
+          var $previouslySelectedLabels = document.querySelectorAll(
+            '.bundleapp-plan-selector-radio__label--selected',
+          );
+          $previouslySelectedLabels.forEach((selectedLabel) =>
+            selectedLabel.classList.remove(
+              'bundleapp-plan-selector-radio__label--selected',
+            ),
+          );
+
+          // add selected class to selected label
+          var $label = document.querySelector(
+            `.bundleapp-plan-selector-radio__label[for="${planId}"]`,
+          );
+          if ($label) {
+            $label.classList.add(
+              'bundleapp-plan-selector-radio__label--selected',
+            );
+          }
+        }
+
+        this.product.selected_selling_plan = this.product.selling_plans_by_id[
+          planId
+        ];
+        this.setPlansVisibility();
+      },
+
+      handleFormDomChanged: function (e) {
+        setTimeout(
+          function () {
+            var variantIdElement = this.$form.querySelector('[name=id]');
+            if (!variantIdElement) return;
+            var variantId = variantIdElement.value;
+            this.product.selected_variant = this.product.variants.find(
+              (v) => v.id == variantId,
+            );
+            this.setPlansVisibility();
+          }.bind(this),
+          20,
+        );
+      },
+    });
+
+    // DEBUG: trace selling_plan URL param changes — REMOVE BEFORE PRODUCTION
+    (function() {
+      ['pushState', 'replaceState'].forEach(function(type) {
+        var original = history[type];
+        history[type] = function(state, title, url) {
+          if (url) {
+            try {
+              var urlObj = new URL(url.toString(), location.origin);
+              var sp = urlObj.searchParams.get('selling_plan');
+              var current = new URLSearchParams(location.search).get('selling_plan');
+              if (sp !== current) {
+                console.group('[selling_plan debug] history.' + type + ' changed selling_plan');
+                console.log('  FROM:', current);
+                console.log('  TO:  ', sp);
+                console.trace();
+                console.groupEnd();
+              }
+            } catch(e) {}
+          }
+          return original.apply(this, arguments);
+        };
+      });
+      var lastSP = new URLSearchParams(location.search).get('selling_plan');
+      setInterval(function() {
+        var current = new URLSearchParams(location.search).get('selling_plan');
+        if (current !== lastSP) {
+          console.group('[selling_plan debug] URL param changed (poll)');
+          console.log('  FROM:', lastSP);
+          console.log('  TO:  ', current);
+          console.groupEnd();
+          lastSP = current;
+        }
+      }, 200);
+      console.log('[selling_plan debug] watching. Current selling_plan:', new URLSearchParams(location.search).get('selling_plan'));
+    })();
+
+    //Validates app is public
+    const inPreviewMode = !!(
+      window.location.search.includes('awt-preview') ||
+      window.localStorage.getItem(PREVIEW_MODE_STORAGE_KEY) === 'true'
+    );
+
+    // make sure preview mode is set in local storage if in preview mode
+    inPreviewMode &&
+      window.localStorage.setItem(PREVIEW_MODE_STORAGE_KEY, inPreviewMode);
+
+    // if we're in preview mode we can get rid of the URL param
+    inPreviewMode && insertUrlParam('awt-preview');
+
+    // show preview control if !appPublic and inPreviewMode
+    if (inPreviewMode && !window.bundleapp.settings.appPublic) {
+      showPreviewModeControl();
+    }
+
+    // update CSS vars
+    setCssVars(window.bundleapp.settings.shopStyleSettings);
+
+    if (window.bundleapp.settings.appPublic || inPreviewMode) {
+      window.bundleapp.BundleAppWidget = BundleAppWidget;
+      document.dispatchEvent(new Event('bundleapp:ready'));
+    }
+
+    /**
+    * Iterating over forms
+    */
+    var shopInfoPromise = getShopInfo();
+
+    window.bundleapp.initializeForms = function () {
+      var $forms = document.querySelectorAll("form[action='/cart/add']");
+      $forms.forEach(function (el) {
+        // if we found more than one form, lets make sure we're adding only to the
+        // forms that we want to..
+        if ($forms.length > 1) {
+          // check if this is the installments form (from Dawn theme) before
+          // initializing the plan selector widget
+          if (el.getAttribute('id') && el.getAttribute('id').includes('product-form-installment')) {
+            return;
+          }
+
+          // additional checks will go here
+        }
+        var settings = window.bundleapp.settings;
+        var $variantEl = el.querySelector('[name=id]');
+
+        // Checking if the widget has been initialized already
+        if (el.querySelector('[data-bundleapp-wrapper]')) {
+          console.warn('Bundleapp: Form already initialized');
+          return;
+        }
+        if ($variantEl) {
+          var pathname = window.location.pathname;
+          var search = window.location.search;
+          var searchParams = new URLSearchParams(search);
+          var reqParams = new URLSearchParams();
+
+          //gets product handle if in a product page
+          let productHandle = pathname.includes('/products/')
+            ? pathname.split('/').filter(Boolean).pop()
+            : null;
+
+          // If there is a container selector we want to try to get the handle from it.
+          // This because in collection pages or product pages with recommended products it
+          // will be easier: ie <div data-bundleapp-widget="{{product.handle}}"/>
+
+          var $containerSel = el.querySelector(
+            settings.containerSel || '[data-bundleapp-widget]',
+          );
+
+          if (
+            $containerSel &&
+            $containerSel.dataset &&
+            $containerSel.dataset.bundleappWidget
+          ) {
+            productHandle = $containerSel.dataset.bundleappWidget;
+          }
+
+          if (productHandle) {
+            reqParams.append('productHandle', productHandle);
+          }
+          var getProductSelector = function () {
+              return;
+            return fetch(
+              settings.productSelectorUrl
+                ? settings.productSelectorUrl +
+                    productHandle +
+                    '?view=selector&' +
+                    reqParams.toString()
+                : settings.proxy + '/product-selector?' + reqParams.toString(),
+            ).then(function (res) {
+              if (!res.ok) {
+                throw new Error(res.statusText);
+              }
+              return res.text();
+            });
+          };
+
+          // gets selected variant
+          var variantId = $variantEl.value;
+          if (variantId) {
+            reqParams.append('variant', variantId);
+          }
+
+          // gets selected selling plan
+          var sellingPlan = searchParams.get('selling_plan');
+          if (sellingPlan) {
+            reqParams.append('selling_plan', sellingPlan);
+          }
+
+          var compareHtmlStrings = function (html1, html2) {
+            // We need to remove this uuid from the string since it is always different
+            // This is used to uniquely identify each widget. and it cannot be any product related
+            // attribute because we could have multiple selectors for the same product
+            var regexWrapperIdHtml = /data-bundleapp-wrapper=["|']\d+["|']/gm;
+            var regexWrapperIdJs = /"widget_id":\s?"\d+"/gm;
+
+            var str1 = (html1 || '')
+              .replace(regexWrapperIdHtml, '')
+              .replace(regexWrapperIdJs, '');
+            var str2 = (html2 || '')
+              .replace(regexWrapperIdHtml, '')
+              .replace(regexWrapperIdJs, '');
+            return str1 === str2;
+          };
+
+          var cachedSelector;
+          var selectorStorageKey = `bundleSelector1${productHandle + variantId}`;
+
+          // We check first if there is a cached selector in local storage
+          // to speed the render time
+          try {
+            cachedSelector = window.localStorage.getItem(selectorStorageKey);
+            if (cachedSelector && cachedSelector !== 'undefined') {
+              Promise.all([shopInfoPromise]).then(function () {
+                if (window.bundleapp.settings.appPublic || inPreviewMode) {
+                  addAndInitiateSelector(
+                    cachedSelector,
+                    window.bundleapp.settings.shopStyleSettings,
+                  );
+                }
+              });
+            }
+          } catch (err) {
+            console.error(err);
+          }
+
+          // we want to store the selector in a cache
+          // in case there is a new version we can remove it and
+          // create and initiate a new one
+          var cachedDivContainer;
+          var addAndInitiateSelector = function (htmlString, styleSettings) {
+            var addSelector = function ($el) {
+              // if selector style is selected use that
+              if (styleSettings && styleSettings.SelectorStyle) {
+                $el.classList.add(styleSettings.SelectorStyle);
+              }
+              // if a container class has been set in the settings this means
+              // that we've manually set them up, use this class
+              else if (settings.containerClass) {
+                $el.classList.add(settings.containerClass);
+              }
+              // if styleSettings exist but no selector style has been chosen, default to awt-style-1
+              else if (styleSettings && !styleSettings.SelectorStyle) {
+                $el.classList.add('awt-style-1');
+              }
+              // final default is bundleapp-container
+              else {
+                $el.classList.add('bundleapp-container');
+              }
+
+              $el.innerHTML = htmlString.trim();
+
+              var $renderBeforeEl, $renderAfterEl, $renderInsideEl;
+              if (
+                settings.renderAfterSel ||
+                (styleSettings && styleSettings.RenderAfterSel)
+              ) {
+                $renderAfterEl = el.querySelector(
+                  settings.renderAfterSel || styleSettings.RenderAfterSel,
+                );
+              } else if (
+                settings.renderBeforeEl ||
+                (styleSettings && styleSettings.RenderBeforeSel)
+              ) {
+                $renderBeforeEl = el.querySelector(
+                  settings.renderBeforeEl || styleSettings.RenderBeforeSel,
+                );
+              } else if (
+                settings.renderInsideSel ||
+                (styleSettings && styleSettings.RenderInsideSel)
+              ) {
+                $renderInsideEl = el.querySelector(
+                  settings.renderInsideSel || styleSettings.RenderInsideSel,
+                );
+              }
+
+              // If there is a custom selector to render the widget
+              if ($renderInsideEl) {
+                $renderInsideEl.append($el);
+              } else if ($containerSel) {
+                // if the default container selector is available
+                $containerSel.append($el);
+              } else if ($renderAfterEl) {
+                // else if renderAfterSel is set, render widget after that
+                $renderAfterEl.parentNode.insertBefore(
+                  $el,
+                  $renderAfterEl.nextSibling,
+                );
+              } else if ($renderBeforeEl) {
+                // else if renderBeforeSel is set, render widget after that
+                $renderBeforeEl.parentNode.insertBefore($el, $renderBeforeEl);
+              } else if ($variantEl) {
+                // else render the widget after the input field
+                $variantEl.parentNode.insertBefore($el, $variantEl.nextSibling);
+              }
+            };
+
+            if (cachedDivContainer) {
+              var newEl = document.createElement('div');
+              addSelector(newEl);
+              cachedDivContainer.parentNode.removeChild(cachedDivContainer);
+            } else {
+              cachedDivContainer = document.createElement('div');
+              addSelector(cachedDivContainer);
+            }
+
+            const scriptMatches = [
+              ...htmlString.matchAll(/<script type=.*>(.+)<\/script>/gims),
+            ];
+            if (scriptMatches.length && scriptMatches[0] && scriptMatches[0][1]) {
+              try {
+                var product = JSON.parse(scriptMatches[0][1]);
+                /**
+                * Initiates the widget selector
+                */
+                var $selector = document.querySelector(
+                  "[data-bundleapp-wrapper='" + product.widget_id + "']",
+                );
+                new window.bundleapp.BundleAppWidget($selector, product);
+              } catch (err) {
+                console.warn('Bundle: Could not parse and initiate widget', err);
+              }
+            }
+          };
+
+          try {
+            var prodSelectorPromise = getProductSelector();
+            Promise.all([prodSelectorPromise, shopInfoPromise]).then((values) => {
+              const responseText = values[0];
+              // replaces to minify a bit the html string
+              // .replace(/\n|\t/g, ' ') // replaces newlines and tabs
+              // .replace(/>[\s]*?</g, '><') // removes spaces between open and close brackets
+              // .replace(/[\s]*?</g, '<'); // removes spaces at start
+
+              if (
+                (window.bundleapp.settings.appPublic || inPreviewMode) &&
+                !compareHtmlStrings(responseText, cachedSelector)
+              ) {
+                window.localStorage.setItem(selectorStorageKey, responseText);
+                addAndInitiateSelector(
+                  responseText,
+                  window.bundleapp.settings.shopStyleSettings,
+                );
+              }
+            });
+          } catch (err) {
+            console.error(
+              'Something went wrong while fetching and parsing the product',
+              err,
+            );
+          }
+        }
+      });
+    };
+
+    window.bundleapp.initializeForms();
+  })();
+
+  (function () {
+    function addStyle(styleString) {
+        const style = document.createElement('style');
+        style.textContent = styleString;
+        document.head.append(style);
+    }
+    const rootStyles = Object.values(STYLE_VAR_MAP).reduce(
+        (accum, { cssVar, defaultVal = '' } = {}) => {
+        return `${accum}${cssVar}: ${defaultVal};`;
+        },
+        '',
+    );
+
+    addStyle(`
+        /**** CUSTOM COLORS ****/
+        :root {
+        ${rootStyles}
+        }
+        /**** END CUSTOM COLORS ****/
+    `);
+  })();
+</script>
+
+<style>
+
+  .bundleapp-wrapper {
+      border: none;
+      padding: 0;
+      margin-bottom: 20px;
+      width: 100%;
+  }
+  .bundleapp-wrapper legend {
+      font-size: 90%;
+      margin-bottom: 5px;
+  }
+  .bundleapp-wrapper .bundleapp-plan-selector-group {
+      margin-bottom: 5px;
+  }
+  .bundleapp-wrapper .bundleapp-plan-selector-group > label {
+      display: flex;
+      align-items: center;
+      font-size: 90%;
+  }
+  .bundleapp-wrapper .bundleapp-plan-selector-group label > input {
+      min-height: 30px;
+      margin-right: 10px;
+  }
+  .bundleapp-wrapper .bundleapp-plan-selector-group select {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  .bundleapp-wrapper .bundleapp-plan-selector-group-pricing {
+      margin-left: auto;
+  }
+  .bundleapp-wrapper .bundleapp-plan-selector-plan {
+      margin-left: 23px;
+  }
+  .bundleapp-wrapper .bundleapp-plan-selector-plan > label {
+      font-size: 80%;
+      display: block;
+      text-align: left;
+  }
+  .bundleapp-wrapper .bundleapp-plan-selector-description span {
+      border: solid 1px #dfe3e8;
+      padding: 16px;
+      height: auto;
+      margin-top: 16px;
+      border-radius: 0px;
+      font-size: 90%;
+      margin-left: 23px;
+      display: block;
+  }
+  .bundleapp-price-adjustment {
+      display: inline-block;
+      margin-left: 10px;
+      border: 1px solid;
+      border-color: inherit;
+      font-size: 80%;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 3px;
+  }
+  .bundleapp-legend {
+      text-align: left;
+      margin-bottom: 5px;
+  }
+  .awt-hidden-add-to-cart-button {
+      display: none !important;
+  }
+  /**** PLAN SELECTOR BASICS ****/
+  .awt-style-1, .awt-style-2 {
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+  .awt-style-1 .bundleapp-wrapper, .awt-style-2 .bundleapp-wrapper {
+      margin-bottom: 0;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-description span, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-description span {
+      margin-left: 0;
+  }
+  /**** PLAN SELECTOR BASICS ****/
+  /**** CUSTOM DROP DOWN ****/
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group select.bundleapp-plan-selector-select, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group select.bundleapp-plan-selector-select {
+      padding: 14px 50px 14px 17px;
+      margin-bottom: 8px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-image: url("data:image/svg+xml,%3Csvg width='44' height='24' xmlns='http://www.w3.org/2000/svg' role='presentation' focusable='false' aria-hidden='true' class='icon-chevron '%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cpath transform='rotate(90 12.414 12.4145)' stroke='null' id='svg_1' d='m10.121,19.122l6,-6a1,1 0 0 0 0,-1.415l-6,-6a1,1 0 0 0 -1.414,0a1,1 0 0 0 0,1.415l5.293,5.292l-5.293,5.293a1,1 0 1 0 1.414,1.415z' fill-rule='evenodd' fill='currentColor'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 35px;
+      background-color: #fff;
+      border: 1px solid var(--awt-border-color);
+      outline: 0;
+      height: auto;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group select.bundleapp-plan-selector-select:focus-visible, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group select.bundleapp-plan-selector-select:focus-visible {
+      box-shadow: none;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group select.bundleapp-plan-selector-select:hover, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group select.bundleapp-plan-selector-select:hover {
+      cursor: pointer;
+  }
+  /**** END CUSTOM DROP DOWN ****/
+  /**** CUSTOM RADIO BUTTON ****/
+  .awt-style-1 .bundleapp-wrapper input[type='radio'], .awt-style-2 .bundleapp-wrapper input[type='radio'] {
+      /* Add if not using autoprefixer */
+      -webkit-appearance: none;
+      /* Remove most all native input styles */
+      appearance: none;
+      /* For iOS < 15 */
+      background-color: #fff;
+      /* Not removed via appearance */
+      margin: 0 10px 0 0;
+      color: currentColor;
+      width: 20px;
+      height: 20px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      /* transform: translateY(-0.075em);
+      */
+      display: grid;
+      place-content: center;
+      min-height: 0 !important;
+      min-width: 20px;
+      outline: none;
+      padding: 0;
+  }
+  .awt-style-1 .bundleapp-wrapper input[type='radio']:focus .awt-style-2 .bundleapp-wrapper input[type='radio']:focus {
+      /* remove outline */
+      outline: none;
+  }
+  .awt-style-1 .bundleapp-wrapper input[type='radio']::before, .awt-style-2 .bundleapp-wrapper input[type='radio']::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      background-color: var(--awt-radio-button-background);
+      transition: background-color 0.3s;
+  }
+  .awt-style-1 .bundleapp-wrapper input[type='radio']:checked::before, .awt-style-2 .bundleapp-wrapper input[type='radio']:checked::before {
+      transform: scale(1);
+  }
+  /**** END CUSTOM RADIO BUTTON ****/
+  /**** CUSTOM FREQUENCY BUTTONS ****/
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-radio input, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-radio input {
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+      position: absolute;
+      height: 1px;
+      width: 1px;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-radio__label, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-radio__label {
+      display: inline-block;
+      text-align: center;
+      min-width: 36px;
+      padding: 6px 10px;
+      border: var(--awt-freq-button-border);
+      color: var(--awt-freq-button-color);
+      background-color: var(--awt-freq-button-background);
+      cursor: pointer;
+      border-radius: var(--awt-freq-button-border-radius);
+      margin: 6px 8px 6px 0;
+      transition: border 0.3s, color 0.3s, background-color 0.3s;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-radio__label:hover, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-radio__label:hover {
+      color: var(--awt-freq-button-color-hover);
+      background-color: var(--awt-freq-button-background-hover);
+      border: var(--awt-freq-button-border-hover);
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-radio__label.bundleapp-plan-selector-radio__label--selected, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-radio__label.bundleapp-plan-selector-radio__label--selected {
+      background-color: var(--awt-freq-button-background-selected);
+      color: var(--awt-freq-button-color-selected);
+      border: var(--awt-freq-button-border-selected);
+      transition: border 0.3s, color 0.3s, background-color 0.3s;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-radio__label.bundleapp-plan-selector-radio__label--selected:hover, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-radio__label.bundleapp-plan-selector-radio__label--selected:hover {
+      background-color: var(--awt-freq-button-background-hover-selected);
+      color: var(--awt-freq-button-color-hover-selected);
+      border: var(--awt-freq-button-border-hover-selected);
+  }
+  /**** END CUSTOM FREQUENCY BUTTONS ****/
+  /**** CUSTOM LABEL ACCENT ****/
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group > label .awt-accent, .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group > label .awt-accent {
+      background-color: var(--awt-accent-background);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      display: inline-block;
+      color: var(--awt-accent-color);
+  }
+  /**** END CUSTOM LABEL ACCENT ****/
+  /*****************************************/
+  /*****************************************/
+  /**************** STYLE 1 ****************/
+  /*****************************************/
+  /*****************************************/
+  /**** CUSTOM PLAN SELECTOR ****/
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group > label {
+      font-weight: 400;
+      margin-bottom: 0;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group > label:hover {
+      cursor: pointer;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group {
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border-radius: var(--awt-border-radius);
+      border: 1px solid var(--awt-border-color);
+      transition: border 0.3s, color 0.3s, background-color 0.3s;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group .bundleapp-plan-selector-select {
+      margin-bottom: 0;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group .bundleapp-plan-selector-plan {
+      margin-top: 10px;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group .bundleapp-plan-selector-plan > label {
+      margin-bottom: 8px;
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group.bundleapp-plan-selector-group--selected {
+      border-color: var(--awt-selected-plan-border-color);
+      background-color: var(--awt-selected-plan-background);
+  }
+  .awt-style-1 .bundleapp-wrapper .bundleapp-plan-selector-group.bundleapp-plan-selector-group--single-group {
+      //border: none;
+      background-color: initial;
+      border-color: var(--awt-border-color);
+      transition: border 0.3s, color 0.3s, background-color 0.3s;
+  }
+  /**** END CUSTOM PLAN SELECTOR ****/
+  /*****************************************/
+  /*****************************************/
+  /**************** STYLE 2 ****************/
+  /*****************************************/
+  /*****************************************/
+  /**** CUSTOM PLAN SELECTOR ****/
+  .awt-style-2 .bundleapp-wrapper {
+      border: 1px solid var(--awt-border-color);
+  }
+  .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group:not(:last-child) {
+      border-bottom: 1px solid var(--awt-border-color);
+  }
+  .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group > label {
+      font-weight: 400;
+      margin-bottom: 0;
+  }
+  .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group > label:hover {
+      cursor: pointer;
+  }
+  .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group .bundleapp-plan-selector-plan {
+      margin-top: 10px;
+  }
+  .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group .bundleapp-plan-selector-plan > label {
+      margin-bottom: 8px;
+  }
+  .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group {
+      margin-bottom: 0;
+      padding: 8px 20px;
+      transition: border 0.3s, color 0.3s, background-color 0.3s;
+  }
+  .awt-style-2 .bundleapp-wrapper .bundleapp-plan-selector-group.bundleapp-plan-selector-group--selected {
+      border-color: var(--awt-selected-plan-border-color);
+      background-color: var(--awt-selected-plan-background);
+      border-bottom: 0;
+  }
+  /**** END CUSTOM PLAN SELECTOR ****/
+  /**** CUSTOMIZE CP ****/
+  .bundle-button.button--primary:enabled {
+      background-color: var(--awt-primary-button-background);
+      color: var(--awt-primary-button-color);
+      border-style: solid;
+      border: var(--awt-primary-button-border);
+      border-radius: var(--awt-primary-button-border-radius);
+      transition: color 0.3s, background-color 0.3s, border-color 0.3s, border-width 0.3s;
+  }
+  .bundle-button.button--primary:enabled:hover {
+      background-color: var(--awt-primary-button-background-hover);
+      color: var(--awt-primary-button-color-hover);
+      border: var(--awt-primary-button-border-hover);
+  }
+  /**** END CUSTOMIZE CP ****/
+  /**** BaB UI ****/
+  .bundleapp-modal__logo {
+      background-image: url();
+      background-position: center;
+  }
+  .awtomatic-progress-item {
+      transition: border 0.3s, color 0.3s, background-color 0.3s;
+  }
+  .awtomatic-progress-item.awtomatic-progress-item--completed {
+      background-color: var(--awt-progress-bar-background);
+  }
+  .awtomatic-progress-item.awtomatic-progress-item--completed .bundle-text--subheading {
+      color: var(--awt-progress-bar-color);
+  }
+  .bundle-stepper-counter--complete {
+      background-color: var(--awt-progress-bar-background);
+      color: var(--awt-progress-bar-color);
+  }
+  .bundle-stepper-item:after {
+      transition: border-color 0.3s;
+  }
+  .bundle-stepper-item--complete:after {
+      border-bottom-color: var(--awt-progress-bar-background);
+  }
+  /**** End BaB UI ****/
+  
+  /**** Gift styling ****/
+  .awt-gift-info-title {
+      font-weight: 400;
+      font-size: 16px;
+      text-align: start;
+  }
+  .awt-error-msg {
+      color: #ff2a51;
+      text-align: start;
+  }
+  .awt-input-error.awt-error {
+      background-color: rgba(255,42,81,.1);
+      border: 2px solid #ff2a51;
+  }
+  .awt-floating-label {
+      display: block;
+      position: relative;
+      border-radius: 5px;
+      width: 100%;
+  }
+  .awt-floating-label:last-child {
+      margin-bottom: 0;
+  }
+  .awt-floating-label input, .awt-floating-label textarea {
+      font-family: inherit;
+      width: 100%;
+      height: 40px;
+      border: none;
+      outline: none;
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      padding: 0 12px;
+      font-size: 16px;
+      margin: 0px;
+      font-family: inherit;
+  }
+  .awt-floating-label textarea {
+      height: 120px;
+      padding: 12px;
+  }
+  .awt-floating-label input::placeholder, .awt-floating-label textarea::placeholder {
+      opacity: 0;
+  }
+  .awt-floating-label span {
+      position: absolute;
+      top: 20px;
+      left: 8px;
+      transform: translateY(-50%);
+      font-size: 16px;
+      padding: 0 4px;
+      transition-duration: 300ms;
+      border-radius: 5px;
+  }
+  label.awt-floating-label:focus-within > span, .awt-floating-label input:not(:placeholder-shown) + span, .awt-floating-label textarea:not(:placeholder-shown) + span {
+      transform: translateY(-150%);
+      font-size: 11px;
+      background-color: rgba(255, 255, 255);
+  }
+  .awt-floating-label-warning {
+      font-size: 14px;
+      padding: 0 2px;
+      text-align: start;
+  }
+  /*! form field group in 2 columns */
+  .awt-form-group {
+      display: flex;
+      justify-content: space-between;
+  }
+  .awt-form-group > * {
+      width: calc(50% - 4px);
+      padding-bottom: 16px;
+  }
+  .awt-gift-input-container {
+      padding-bottom:16px 
+  }
+  /*! custom checkbox */
+  .awt-checkbox {
+      display: flex;
+      align-items: center;
+      margin: 16px 0;
+  }
+  .awt-checkbox input[type="checkbox"] {
+      /* Add if not using autoprefixer */
+      -webkit-appearance: none;
+      /* Remove most all native input styles */
+      appearance: none;
+      /* For iOS < 15 */
+      background-color: #fff;
+      width: 18px;
+      height: 18px;
+      margin-right: 4px;
+      position: relative;
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px inset #000;
+  }
+  .awt-checkbox input[type="checkbox"]:checked {
+      /* For iOS < 15 */
+      background-color: #000000;
+  }
+  .awt-checkbox input[type="checkbox"]:checked::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      background: white;
+      width: 2px;
+      height: 2px;
+      box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+      transform: rotate(45deg);
+  }
+  .awt-checkbox input[type="checkbox"]:disabled {
+      background-color: #f8f8f8;
+      cursor: not-allowed;
+  }
+  /**** End Gift styling ****/
+
+  /*** PREVIEW CONTROL ***/
+  #awt-preview-mode-control {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 75px;
+      z-index: 2147483647;
+      background-color: #fff;
+      color: #222;
+      padding: 17px;
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      box-sizing: border-box;
+  }
+  #awt-preview-mode-control.hidden {
+      display: none;
+  }
+  #awt-preview-mode-control div.awt-logo {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      flex-wrap: nowrap;
+  }
+  #awt-preview-mode-control div.awt-logo span {
+      margin-top: 3px;
+      font-size: 16px;
+      font-family: sans-serif;
+      color: #3700ff;
+  }
+  #awt-preview-mode-control div.awt-logo .awt-logo--image {
+      display: block;
+      background-image: url('https://bundle-public-assets.s3.amazonaws.com/customerPortal/awtomatic-no-dot.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 95px;
+      height: 100%;
+      margin-right: 6px;
+  }
+  #awt-preview-mode-control div.awt-logo .awt-logo--info-icon {
+      display: block;
+      background-image: url('https://bundle-public-assets.s3.amazonaws.com/customerPortal/info-icon.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 15px;
+      height: 15px;
+      margin: 5px 25px 0 9px;
+  }
+  #awt-preview-mode-control button {
+      display: inline-block;
+      border: 1px solid #eee;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 5px 15px;
+      margin: 0;
+      text-decoration: none;
+      color: #000;
+      font-family: sans-serif;
+      font-size: 15px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 250ms ease-in-out, transform 150ms ease;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      font-weight: bold;
+      height: 100%;
+      outline: none;
+      box-shadow: none;
+  }
+  #awt-preview-mode-control button:hover, #awt-preview-mode-control button:focus {
+      background-color: #fbfbfb;
+  }
+  #awt-preview-mode-control button:focus {
+      outline: none;
+  }
+  #awt-preview-mode-control button:active {
+      transform: scale(0.99);
+  }
+  button#awt-preview-mode-control__hide {
+      background-color: #fff;
+      color: #000;
+  }
+  #awt-preview-mode-control button#awt-preview-mode-control__hide:hover, #awt-preview-mode-control button#awt-preview-mode-control__hide:focus {
+      background: #eee;
+  }
+  @media only screen and (max-width: 480px) {
+      #awt-preview-mode-control button#awt-preview-mode-control__hide {
+          display: none;
+      }
+  }
+  /*** END PREVIEW CONTROL ***/ 
+
+</style>

@@ -1,0 +1,249 @@
+{% comment %}
+
+Params:
+- order
+
+Example:
+{% render 'account-order' order: order %}
+
+{% endcomment %}
+
+<div class="account__order">
+    <div class="account__order--inner">
+        {% comment %} Order Number Link {% endcomment %}
+        <div class="account__order--number">
+            <a class="link" href="{{ order.customer_url }}">{{ order.name }}</a>
+        </div>
+
+        <div class="account__order--body">
+            {% comment %} Product Images {% endcomment %}
+            <div id="account__order--slider-{{ order.id }}" class="account__order--slider-container">
+                {% comment %} Left Arrow {% endcomment %}
+                <button class="account__order--prev-btn"
+                    style="{% if order.line_items.size <= 1 %} opacity: 0; pointer-events: none; {% endif %}">
+                    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.4 4.00005L5.40002 12L13.4 20L11.8 23.2L0.600024 12L11.8 0.800049L13.4 4.00005Z"
+                            fill="#505050" />
+                    </svg>
+                </button>
+
+                <div class="account__order--gallery">
+                    {% for line in order.line_items %}
+                      {% if line.product %}
+                        {{ line.product | image_url: width: 200 | image_tag }}
+                      {% else %}
+                        <img src="https://cdn.shopify.com/s/files/1/0100/9549/3201/files/G094_web_icons_logo_hexes.svg?v=1683325379&width=200" width="200" height="200" loading="lazy" />
+                      {% endif %}
+                    {% endfor %}
+                </div>
+
+                {% comment %} Right Arrow {% endcomment %}
+                <button
+                    class="account__order--next-btn"
+                    style="{% if order.line_items.size <= 1 %} opacity: 0; pointer-events: none; {% endif %}">
+                    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.599975 20L8.59998 12L0.599975 3.99995L2.19997 0.799951L13.4 12L2.19998 23.2L0.599975 20Z"
+                            fill="#505050" />
+                    </svg>
+                </button>
+            </div>
+
+            {% comment %} Order Information {% endcomment %}
+            <div class="account__order--info">
+                <div class="account__order--info-item">
+                    <span>Total</span>
+                    <span>{{ order.total_net_amount | money }}</span>
+                </div>
+
+                <div class="account__order--info-item">
+                    <span>Date Placed</span>
+                    <span>{{ order.created_at | time_tag: format: 'date' }}</span>
+                </div>
+
+                <div class="account__order--info-item">
+                    <span>Status</span>
+                    <span>{{ order.fulfillment_status_label }}</span>
+                </div>
+
+
+                <div class="account__order--info-item">
+                    <span>Tracking</span>
+                    <span>
+                        {% for line in order.line_items limit: 1 %}
+                        {% if line.fulfillment.tracking_url and line.fulfillment.tracking_number %}
+                        <div>
+                            <a href="{{ line.fulfillment.tracking_url }}">
+                                {{ line.fulfillment.tracking_number }}
+                            </a>
+                        </div>
+                        {% else %}
+                        Not yet available
+                        {% endif %}
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <a class="button account__order--link" href="{{ order.customer_url }}">VIEW ORDER DETAILS</a>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sliderContainer = document.getElementById("account__order--slider-{{ order.id }}")
+        const prevButton = sliderContainer.querySelector(".account__order--prev-btn");
+        const nextButton = sliderContainer.querySelector(".account__order--next-btn");
+        const slider = sliderContainer.querySelector(".account__order--gallery");
+        const images = sliderContainer.querySelectorAll(".account__order--gallery img");
+        let currentIndex = 0;
+
+        function showImage(index) {
+            // Hide all images
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = "none";
+            }
+            // Display the image at the given index
+            images[index].style.display = "block";
+        }
+
+        function prevImage() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+            showImage(currentIndex);
+        }
+
+        function nextImage() {
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            showImage(currentIndex);
+        }
+
+        // Event listeners for button clicks
+        prevButton.addEventListener("click", prevImage);
+        nextButton.addEventListener("click", nextImage);
+    });
+
+</script>
+
+<style>
+    .account__order--inner {
+        border-width: 2px 2px 0px 2px;
+        border-style: solid;
+        border-color: #E8E9EB;
+        padding: 16px 16px 24px 16px;
+    }
+
+    .account__order--body {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 16px;
+    }
+
+    .account__order--number {
+        padding-bottom: 16px;
+        border-bottom: 2px solid #E8E9EB;
+    }
+
+    .account__order--number .link {
+                font-style: normal;
+        font-weight: 600;
+        font-size: 18px !important;
+        line-height: 130%;
+        letter-spacing: 0.03em !important;
+        color: #000000;
+    }
+
+
+    .account__order--slider-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .account__order--slider-container button {
+        background: none;
+        border: none;
+    }
+
+    .account__order--gallery {
+        width: 100%;
+        max-width: 160px;
+        overflow: hidden;
+    }
+
+    .account__order--gallery img {
+        width: 100%;
+        height: auto;
+        display: none;
+        aspect-ratio: 1;
+        object-fit: contain;
+    }
+
+    .account__order--gallery img:first-child {
+        display: block;
+    }
+
+    .account__order--info {
+        flex: 1;
+    }
+
+    .account__order--info-item {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: 0.05em;
+        color: #000000;
+        margin-bottom: 8px;
+    }
+
+    .account__order--info-item> :last-child {
+        font-weight: 600;
+    }
+
+    .account__order--link {
+        display: grid;
+        place-items: center;
+        padding: 12px 2px !important;
+        background: #6E1273;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-weight: 400;
+        font-size: 16px !important;
+        line-height: 120%;
+        margin: 0 !important;
+    }
+
+    @media screen and (min-width: 1100px) {
+        .account__order--body {
+            flex-direction: row;
+            align-items: center;
+            gap: 50px;
+            margin-top: 32px;
+        }
+
+        .account__order--number .link {
+            font-size: 18px !important;
+        }
+
+        .account__order--info-item {
+            font-size: 16px !important;
+        }
+
+        .account__order--link {
+            padding: 16px !important;
+            font-size: 16px !important;
+        }
+    }
+</style>

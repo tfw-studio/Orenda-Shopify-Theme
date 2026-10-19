@@ -1,0 +1,361 @@
+{%- assign locale = request.locale.iso_code | replace: '_', '-' -%}
+{%- assign origin = request.origin -%}
+{%- assign page_url = origin | append: page.url -%}
+
+{% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
+
+{%- comment -%}
+  Outputs a JSON array of valid social URLs for schema.org sameAs
+{%- endcomment -%}
+{% assign social_fields = 'facebook,twitter,pinterest,instagram,tiktok,tumblr,snapchat,youtube,vimeo' | split: ',' %}
+{% assign social_links = '' %}
+
+{% for platform in social_fields %}
+  {% assign key = 'social_' | append: platform | append: '_link' %}
+  {% if settings[key] != blank %}
+    {% assign key_string = settings[key] | append: ',' %}
+    {% assign social_links = social_links | append: key_string %}
+  {% endif %}
+{% endfor %}
+
+{% assign social_links_array = social_links | split: ',' %}
+
+{%- capture base_nodes -%}
+  {
+    "@type": "Organization",
+    "@id": "{{ origin }}#org",
+    "name": {{ shop.name | json }},
+    {% if brand.logo.src %}
+    "logo": {{ brand.logo.src | image_url: width: brand.logo.width | prepend: "https:" | json }},
+    {% endif %}
+    "brand": { "@id": "{{ origin }}#brand" },
+    "hasOfferCatalog": { "@id": "{{ origin }}#root-offercatalog" },
+    "email": {{ shop.email | json }},
+    "telephone": {{ shop.phone | json }},
+    "sameAs": {{ social_links_array | json }},
+    "url": {{ page_url | json }}
+  },
+  {
+    "@type": "Brand",
+    "@id": "{{ origin }}#brand",
+    "name": {{ shop.name | json }},
+    "url": {{ origin | json }},
+    {% if brand.logo.src %}
+    "logo": {{ brand.logo.src | image_url: width: brand.logo.width | prepend: "https:" | json }},
+    {% endif %}
+    "sameAs": {{ social_links_array | json }}
+  },
+  {
+    "@type": "WebSite",
+    "@id": "{{ origin }}#website",
+    "name": {{ shop.name | json }},
+    "url": {{ origin | json }},
+    "inLanguage": "{{ locale }}",
+    "publisher": { "@id": "{{ origin }}#org" },
+    "about": { "@id": "{{ origin }}#org" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {{ potential_action_target | json }},
+      "query-input": "required name=search_term_string"
+    }
+  }
+{%- endcapture -%}
+
+{%- capture page_nodes -%}
+{%- case request.page_type -%}
+
+  {%- when 'index' -%}
+  ,{
+    "@type": "OfferCatalog",
+    "@id": "{{ origin }}#root-offercatalog",
+    "name": "Root Catalog",
+    "url": {{ origin | json }},
+    "itemListElement": [
+      {%- assign pos = 0 -%}
+      {%- for collection in collections -%}
+        {%- if collection and collection.metafields.seo.hidden != 1 -%}
+          {%- assign pos = pos | plus: 1 -%}
+          {
+            "@type": "ListItem",
+            "position": {{ pos }},
+            "item": {
+              "@type": "OfferCatalog",
+              "@id": "{{ origin }}#collection-{{ collection.handle }}",
+              "name": {{ collection.title | json }},
+              "url": {{ collection.url | prepend: origin | json }}
+            }
+          }{% unless forloop.last %},{% endunless %}
+        {%- endif -%}
+      {%- endfor -%}
+    ]
+  },
+  {
+    "@type": "WebPage",
+    "@id": {{ page_url | append: "#webpage" | json }},
+    "url": {{ page_url | json }},
+    "name": {{ page_title | json }},
+    "isPartOf": { "@id": "{{ origin }}#website" },
+    "about": { "@id": "{{ origin }}#org" },
+    "inLanguage": "{{ locale }}"
+  }
+
+  {%- when 'collection' -%}
+  ,{
+    "@type": ["CollectionPage","WebPage"],
+    "@id": {{ origin | append: collection.url | append: "#collectionpage" | json }},
+    "url": {{ origin | append: collection.url | json }},
+    "name": {{ collection.title | json }},
+    "description": {{ collection.description | strip_html | escape | json }},
+    "image": [{% if collection.image %}{{ collection.image | image_url: width: 1200 | prepend: "https:" | json }}{% endif %}],
+    "isPartOf": { "@id": "{{ origin }}#website" },
+    "about": { "@id": "{{ origin }}#org" },
+    "publisher": { "@id": "{{ origin }}#org" },
+    "inLanguage": "{{ locale }}",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ origin | json }} },
+        { "@type": "ListItem", "position": 2, "name": {{ collection.title | json }}, "item": {{ origin | append: collection.url | json }} }
+      ]
+    },
+    "mainEntity": { "@id": "{{ origin }}#collection-{{ collection.handle }}-itemlist" }
+  },
+  {
+    "@type": "ItemList",
+    "@id": "{{ origin }}#collection-{{ collection.handle }}-itemlist",
+    "url": {{ origin | append: collection.url | json }},
+    "name": {{ collection.title | json }},
+    "description": {{ collection.description | strip_html | escape | json }},
+    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+    "numberOfItems": {{ collection.all_products_count | default: collection.products_count }},
+    "itemListElement": [
+      {%- assign pos = 0 -%}
+      {%- for product in collection.products -%}
+        {%- assign pos = pos | plus: 1 -%}
+        {
+          "@type": "ListItem",
+          "position": {{ pos }},
+          "url": {{ product.url | prepend: origin | json }},
+          "item": {
+            "@type": "Product",
+            "@id": "{{ origin }}#product-{{ product.id }}",
+            "name": {{ product.title | json }},
+            "url": {{ product.url | prepend: origin | json }},
+            {%- if product.featured_image -%}
+            "image": [{{ product.featured_image.src | image_url: width: 1200 | prepend: "https:" | json }}],
+            {%- endif -%}
+            {%- assign first_variant = product.selected_or_first_available_variant -%}
+            {%- if first_variant and first_variant.sku != blank -%}
+            "sku": {{ first_variant.sku | json }},
+            {%- endif -%}
+                        {%- assign rating_value = 0 -%}
+            {%- assign review_count = 0 -%}
+
+            {%- if product.metafields.reviews and product.metafields.reviews.rating_value and product.metafields.reviews.review_count -%}
+              {%- assign rating_value = product.metafields.reviews.rating_value | plus: 0 -%}
+              {%- assign review_count = product.metafields.reviews.review_count | plus: 0 -%}
+              {%- if rating_value > 0 and review_count > 0 -%}
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": {{ rating_value }},
+                "reviewCount": {{ review_count }}
+              },
+              {%- endif -%}
+            {%- elsif product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_average -%}
+              {%- assign rating_value = product.metafields.yotpo.reviews_average | plus: 0 -%}
+              {%- assign review_count = product.metafields.yotpo.reviews_count | plus: 0 -%}
+              {%- if rating_value > 0 and review_count > 0 -%}
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": {{ rating_value }},
+                "reviewCount": {{ review_count }}
+              },
+              {%- endif -%}
+            {%- endif -%}
+            "brand": { "@id": "{{ origin }}#brand" },
+            "category": {{ collection.title | json }},
+            "description": {{ product.description | strip_html | strip_newlines | truncate: 280 | json }},
+            "offers": {
+              "@type": "Offer",
+              "url": {{ product.url | prepend: origin | json }},
+              "priceCurrency": "{{ cart.currency.iso_code }}",
+              "price": {{ product.price_min | times: 0.01 | json }},
+              "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+              "itemCondition": "https://schema.org/NewCondition",
+              "seller": { "@id": "{{ origin }}#org" }
+            }
+          }
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ]
+  },
+  {
+    "@type": "OfferCatalog",
+    "@id": "{{ origin }}#collection-{{ collection.handle }}",
+    "name": {{ collection.title | json }},
+    "url": {{ origin | append: collection.url | json }}
+  }
+
+  {%- when 'product' -%}
+  ,{
+    "@type": ["ItemPage","WebPage"],
+    "@id": {{ product.url | append: "#productpage" | json }},
+    "url": {{ product.url | prepend: origin | json }},
+    "name": {{ product.title | json }},
+    {%- if product.featured_image -%}
+    "image": [{{ product.featured_image.src | image_url: width: 1200 | prepend: "https:" | json }}],
+    {%- endif -%}
+    "inLanguage": "{{ locale }}",
+    "isPartOf": { "@id": "{{ origin }}#website" },
+    "about": { "@id": "{{ origin }}#org" },
+    "publisher": { "@id": "{{ origin }}#org" },
+    "mainEntity": { "@id": "{{ origin }}#product-{{ product.id }}" }
+  },
+  {
+    "@type": ["DietarySupplement","Product"],
+    "@id": "{{ origin }}#product-{{ product.id }}",
+    "name": {{ product.title | json }},
+    "url": {{ product.url | prepend: origin | json }},
+    {%- if product.featured_image -%}
+    "image": [{{ product.featured_image.src | image_url: width: 1200 | prepend: "https:" | json }}],
+    {%- endif -%}
+    "description": {{ product.description | strip_html | strip_newlines | truncate: 500 | json }},
+    "brand": { "@id": "{{ origin }}#brand" },
+    {%- assign first_variant = product.selected_or_first_available_variant -%}
+    {%- if first_variant and first_variant.sku != blank -%}
+    "sku": {{ first_variant.sku | json }},
+    {%- endif -%}
+    {%- if first_variant and first_variant.barcode != blank -%}
+    "gtin": {{ first_variant.barcode | json }},
+    {%- endif -%}
+
+    {%- assign rating_value = 0 -%}
+    {%- assign review_count = 0 -%}
+
+    {%- if product.metafields.reviews and product.metafields.reviews.rating_value and product.metafields.reviews.review_count -%}
+      {%- assign rating_value = product.metafields.reviews.rating_value | plus: 0 -%}
+      {%- assign review_count = product.metafields.reviews.review_count | plus: 0 -%}
+      {%- if rating_value > 0 and review_count > 0 -%}
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": {{ rating_value }},
+        "reviewCount": {{ review_count }}
+      },
+      {%- endif -%}
+    {%- elsif product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_average -%}
+      {%- assign rating_value = product.metafields.yotpo.reviews_average | plus: 0 -%}
+      {%- assign review_count = product.metafields.yotpo.reviews_count | plus: 0 -%}
+      {%- if rating_value > 0 and review_count > 0 -%}
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": {{ rating_value }},
+        "reviewCount": {{ review_count }}
+      },
+      {%- endif -%}
+    {%- endif -%}
+
+
+    {%- comment -%}
+    Active Ingredients & Blends from metaobjects
+    - Metaobject type: active_ingredient
+    - Product metafield: custom.active_ingredient_blends (list of Ingredient Blend)
+    {%- endcomment -%}
+
+    {%- assign blends = product.metafields.custom.active_ingredient_blends.value -%}
+    {%- if blends -%}
+    "activeIngredient": [
+      {%- assign all_ingredients = '' -%}
+      {%- for blend in blends -%}
+        {%- for ingredient in blend.active_ingredients.value -%}
+          {%- if all_ingredients != '' -%}
+            {%- assign all_ingredients = all_ingredients | append: '||' -%}
+          {%- endif -%}
+          {%- assign all_ingredients = all_ingredients | append: ingredient -%}
+        {%- endfor -%}
+      {%- endfor -%}
+      {%- assign all_ingredients_array = all_ingredients | split: '||' | uniq -%}
+      {%- for ingredient in all_ingredients_array -%}
+        {{ ingredient | strip | json }}{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ],
+    {%- endif -%}
+
+    {%- comment -%} --- “How to Take” → Dose Schedules --- {%- endcomment -%}
+    {% assign how_to_take = product.metafields.custom.how_to_take %}
+    {%- if how_to_take -%}
+    "recommendedIntake": {
+      "@type": "RecommendedDoseSchedule",
+      "description": {{ how_to_take | metafield_text | strip_newlines | json }}
+    },
+    {%- endif -%}
+
+    {%- comment -%} --- Supplement Facts / Key Ingredients & Learn More / Blends --- {%- endcomment -%}
+    {%- assign additional_props = '' -%}
+
+    {%- assign ingredients = nil -%}
+    {%- if product.metafields.custom.key_ingredients != blank -%}
+      {%- assign ingredients = product.metafields.custom.key_ingredients -%}
+      {%- capture additional_props -%}{{ additional_props }}{
+        "@type": "PropertyValue",
+        "name": "Key Ingredients",
+        "value": {{ ingredients | metafield_text | strip_newlines | json }}
+      }{%- endcapture -%}
+    {%- endif -%}
+
+    {%- assign learn_more = product.metafields.custom.learn_more -%}
+    {%- if learn_more != blank -%}
+      {%- if additional_props != '' -%}
+        {%- capture additional_props -%}{{ additional_props }},{%- endcapture -%}
+      {%- endif -%}
+      {%- capture additional_props -%}{{ additional_props }}{
+        "@type": "PropertyValue",
+        "name": "Learn More",
+        "value": {{ learn_more | metafield_text | strip_newlines | json  }}
+      }{%- endcapture -%}
+    {%- endif -%}
+
+    {%- if blends -%}
+      {%- for blend in blends -%}
+        {%- capture ingredient_list -%}
+          {%- for ingredient in blend.active_ingredients.value -%}
+            {{ ingredient | strip }}{%- unless forloop.last -%}, {% endunless -%}
+          {%- endfor -%}
+        {%- endcapture -%}
+        {%- if additional_props != '' -%}
+          {%- capture additional_props -%}{{ additional_props }},{%- endcapture -%}
+        {%- endif -%}
+        {%- capture additional_props -%}{{ additional_props }}{
+          "@type": "PropertyValue",
+          "name": {{ blend.ingredient | json }},
+          "value": {{ ingredient_list | strip | json }}
+        }{%- endcapture -%}
+      {%- endfor -%}
+    {%- endif -%}
+
+    {%- if additional_props != '' -%}
+    "additionalProperty": [{{ additional_props }}],
+    {%- endif -%}
+
+    "offers": {
+      "@type": "Offer",
+      "url": {{ product.url | prepend: origin | json }},
+      "priceCurrency": "{{ cart.currency.iso_code }}",
+      "price": {{ product.selected_or_first_available_variant.price | times: 0.01 | json }},
+      "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": { "@id": "{{ origin }}#org" }
+    }
+  }
+
+{%- endcase -%}
+{%- endcapture -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {{ base_nodes | strip }}
+    {{ page_nodes | strip }}
+  ]
+}
+</script>

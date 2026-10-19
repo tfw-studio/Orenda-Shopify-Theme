@@ -1,0 +1,23 @@
+<!-- Yotpo Widgets Repository integration script from Consentmo GDPR Compliance App -->
+<script id="consentmo-yotpo-widgetsrepository-integration-script">
+  let isYotpoWidgetsRepositoryExecuted = false;
+
+  function executeYotpoWidgetsRepository() {
+    if (!isYotpoWidgetsRepositoryExecuted) {
+      const yotpoWidgetsRepositoryScript = document.createElement('script');
+      yotpoWidgetsRepositoryScript.src = 'https://cdn-widgetsrepository.yotpo.com/v1/loader/-e9jGcOGcuunAw5dBDhHTw?disable_tracking=true';
+      yotpoWidgetsRepositoryScript.async = true;
+      document.head.appendChild(yotpoWidgetsRepositoryScript);
+
+      isYotpoWidgetsRepositoryExecuted = true;
+    }
+  }
+
+  document.addEventListener('consentmoSignal', function(eventData) {
+    let data = eventData.detail.preferences;
+
+    if (data.analytics && data.marketing) {
+      executeYotpoWidgetsRepository();
+    }
+  });
+</script>

@@ -1,0 +1,309 @@
+{% if settings.enable_popup_indicator %}
+<div class="popup-indicator-container__overlay"></div>
+<div class="popup-indicator-container">
+    <div class="popup-indicator-header">
+        {% render 'icon-close' %}
+        <h2 class="h2">{{  settings.popup_indicator_header }}</h2>
+        {% render 'icon-down-arrow' %}
+    </div>
+    <div class="popup-indicator customer login">
+        <div class="customer__page-half section--padding">
+            <div class="customer__form-wrap">
+                <div>
+                    {%- if recover_success == true -%}
+                    <small class="form__message" tabindex="-1" autofocus>
+                        {% render 'icon', icon: 'success' %}
+                        {{ 'customer.recover_password.success' | t }}
+                    </small>
+                    {%- endif -%}
+                    <form-state>
+                    {%- form 'customer_login' -%}
+                        {%- if form.errors -%}
+                        <p>
+                            <small class="form__message errors" tabindex="-1" autofocus>
+                            {% render 'icon', icon: 'error' %}
+                            {{ form.errors.messages['form'] }}
+                            </small>
+                        </p>
+                        {%- endif -%}
+                        
+                        <div class="field">       
+                        <label for="CustomerEmail">{{ 'customer.login_page.email' | t }}</label> 
+                        <input
+                            required="required"
+                            class="required{% if form.errors contains 'form' %} invalid{% endif %}"
+                            type="email"
+                            name="customer[email]"
+                            id="CustomerEmail"
+                            autocomplete="email"
+                            autocorrect="off"
+                            autocapitalize="off"
+                            {% if form.errors contains 'form' %}
+                            aria-invalid="true"
+                            {% endif %}
+                            placeholder="{{ 'customer.login_page.email' | t }}"
+                        >
+                        </div>
+
+                        {%- if form.password_needed -%}
+                        <div class="field">          
+                            <label for="CustomerPassword">{{ 'customer.login_page.password' | t }}</label>
+                            <input
+                            required="required"
+                            class="required{% if form.errors contains 'form' %} invalid{% endif %}"
+                            type="password"
+                            value=""
+                            name="customer[password]"
+                            id="CustomerPassword"
+                            autocomplete="current-password"
+                            {% if form.errors contains 'form' %}
+                                aria-invalid="true"
+                            {% endif %}
+                            placeholder="{{ 'customer.login_page.password' | t }}"
+                            >
+                        </div>
+
+                        <a class="link" href="{{ shop.url }}/account/login#recover">{{ 'customer.login_page.forgot_password' | t }}</a>
+                        {%- endif -%}
+                        <br>
+                        <button class="button" type="submit">{{ 'customer.login_page.sign_in' | t }}</button>
+                    {%- endform -%}
+                    </form-state>
+                </div>
+                <div class="customer__create-account"><p>New to Orenda?</p><a href="{{ shop.url }}/account/login">Create an account</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .popup-indicator-container__overlay {
+        display: none;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    .popup-indicator-container {
+        display: none;
+        position: fixed;
+        width: 411px;
+        bottom: 100px;
+        right: 20px;
+        z-index: 9999;
+    }
+    .popup-indicator-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #6E1273;
+        padding: 16px 24px;
+        gap: 16px;
+    }
+    .popup-indicator-header svg {
+        cursor: pointer;
+    }
+    .popup-indicator-header .h2 {
+        color: #fff;
+        font-size: 16px;
+        font-family: "Gill Sans Nova", sans-serif;
+        font-weight: 500;
+        line-height: 130%;
+        letter-spacing: 0.54px;
+        text-align: center;
+        margin: 0;
+        max-width: 291px;
+        cursor: pointer;
+    }
+    .popup-indicator {
+        max-height: 0;
+        width: 100%;
+        background: #fff;   
+        padding: 0;
+        border-right: 1px solid #E8E9EB;
+        border-left: 1px solid #E8E9EB;
+        -webkit-transition: max-height .5s; 
+        -moz-transition: max-height .5s; 
+        -ms-transition: max-height .5s; 
+        -o-transition: max-height .5s; 
+        transition: max-height .5s;  
+        overflow: hidden;
+    }
+    .popup-indicator br {
+        display: none;
+    }
+    .popup-indicator label{
+        color: #1A1B18;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: 0.9px;
+    }
+    .popup-indicator #customer_login {
+        margin: 0;
+    }
+    .popup-indicator .customer__form-wrap {
+        visibility: hidden;
+    }
+    .popup-indicator .button {
+        width: 100%;
+        margin: 0;
+        margin-top: 24px;
+        font-weight: 400;
+    }
+    .popup-indicator .field {
+        margin-bottom: 24px !important;
+    }
+    .popup-indicator .link {
+        margin: 0;
+        color: #1A1B18;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: 0.9px;
+    }
+    .popup-indicator.active {
+        display: block;
+        max-height: 503px;
+        padding: 24px 24px 48px 24px;
+        border-bottom: 1px solid #E8E9EB;
+    }
+    .popup-indicator.active .customer__form-wrap {
+        visibility: visible;
+    }
+    .popup-indicator-container .icon-down-arrow {
+        transform: rotate(180deg);
+    }
+    .popup-indicator-container .icon-down-arrow.active {
+        transform: rotate(0deg);
+    }
+    .popup-indicator .customer__create-account {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        color: #1A1B18;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: 0.9px;
+        margin-top: 24px;
+        display: none;
+    }
+    .popup-indicator .customer__create-account p {
+        margin: 0;
+    }
+    .popup-indicator .customer__create-account a {
+        color: #6E1273;
+        margin: 0;
+    }
+    .popup-indicator .form__message.errors {
+        margin: 0;
+        margin-bottom: 12px;
+    }
+    .popup-indicator p {
+        margin: 0;
+    }
+    @media screen and (max-width: 480px){
+        .popup-indicator-container {
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            z-index: 100000000000;
+        }
+        .popup-indicator-container__overlay {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000000000;
+        }
+        .popup-indicator-container__overlay.active {
+            display: block !important;
+        }
+        .popup-indicator-header {
+            padding: 16px 20px;
+        }
+        .popup-indicator.active {   
+            padding: 20px 20px 40px 20px;
+        }
+        .popup-indicator-header .h2 {
+            max-width: 221px;
+            font-size: 14px;
+            line-height: 130%;
+            letter-spacing: 0.42px;
+        }
+        .popup-indicator label, .popup-indicator .link {
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: 0.8px;
+        }
+        .popup-indicator .field {
+            margin-bottom: 20px !important;
+        }
+        .popup-indicator .button {
+            margin-top: 20px;
+        }
+    }
+</style>
+
+<script>
+(function(){
+    let userLoggedIn = false
+    
+    {% if customer %} 
+        document.cookie = "hasAccount=true; path=/" 
+        userLoggedIn = true
+    {% endif %}
+
+    const hasAccountCookie = document.cookie.split(';').filter((item) => item.includes('hasAccount'))[0]
+    const closePopupIndicator = document.cookie.split(';').filter((item) => item.includes('closePopupIndicator'))[0]
+    const popupIndicatorContainer = document.querySelector('.popup-indicator-container')
+    const popupIndicator = document.querySelector('.popup-indicator')
+    const popupIndicatorHeader = document.querySelector('.popup-indicator-header .h2')
+    const popupIndicatorArrow = document.querySelector('.popup-indicator-header .icon-down-arrow')
+    const popupIndicatorClose = document.querySelector('.popup-indicator-header .icon-close')
+    const popupIndicatorOverlay = document.querySelector('.popup-indicator-container__overlay')
+
+    initPopupIndicator()
+
+    function initPopupIndicator() {
+        // if cookie exists show popup
+        // if cookie exists and customer is logged in hide popup
+        // if cookie does not exist hide popup
+        if (hasAccountCookie && !userLoggedIn) {
+            popupIndicatorContainer.style.display = 'block'
+        }
+        else if (hasAccountCookie && userLoggedIn) {
+            popupIndicatorContainer.style.display = 'none'
+        }
+        else {
+            popupIndicatorContainer.style.display = 'none'
+        }
+
+        if (closePopupIndicator) {
+            popupIndicatorContainer.style.display = 'none'
+        }
+
+        popupIndicatorHeader.addEventListener('click', function() {
+            popupIndicator.classList.toggle('active')
+            popupIndicatorArrow.classList.toggle('active')
+            popupIndicatorOverlay.classList.toggle('active')
+        })
+
+        popupIndicatorArrow.addEventListener('click', function() {
+            popupIndicator.classList.toggle('active')
+            popupIndicatorArrow.classList.toggle('active')
+            popupIndicatorOverlay.classList.toggle('active')
+        })
+
+        popupIndicatorClose.addEventListener('click', function() {
+            popupIndicatorContainer.style.display = 'none'
+            popupIndicatorOverlay.classList.remove('active')
+            document.cookie = "closePopupIndicator=true; path=/" 
+        })
+    }
+})()
+</script>
+{% endif %}

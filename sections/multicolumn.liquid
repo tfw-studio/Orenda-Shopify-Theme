@@ -1,0 +1,659 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --image-position: {{ section.settings.image_position }};
+  }
+  {%if section.settings.desktop_scroll %}
+    @media screen and (min-width: 750px) {
+      .grid--2-col .grid__item {
+          max-width: unset;
+      }
+    }
+  {% endif %}
+  .swiper-container-{{ section.index }} {
+    overflow: hidden;
+    padding-left: 12px;
+
+  }
+{%- endstyle -%}
+
+
+{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="section--padding{% if section.settings.show_divider %} section--divider{% endif %}">
+  <div class="multicolumn page-width">
+    <div class="title-wrapper{% if section.settings.heading == blank %} title-wrapper--no-heading{% endif %} {{ section.settings.text_alignment }} mobile-{{ section.settings.mobile_text_alignment }} {{ section.settings.heading_alignment }}">
+      <{{ section.settings.heading_tag }} class="title {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</{{ section.settings.heading_tag }}>
+      {% if section.settings.desktop_scroll and section.blocks.size > 2 %}
+        <div class="multicolumn-slider-desktop-pagination {% if section.blocks.size <= 3 %}hide-desktop{% endif %}">
+          <div class="arrow-multicolumn-left-{{ section.id }}">
+            {% render 'icon', icon: 'arrow-left' %}
+          </div>
+          {% render 'icon', icon: 'vertical-line' %}
+          <div class="arrow-multicolumn-right-{{ section.id }}">
+            {% render 'icon', icon: 'arrow-right' %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    
+    <slider-component class="{{ section.settings.text_alignment }} mobile-{{ section.settings.mobile_text_alignment }}">
+      <ul id="Slider-{{ section.id }}"
+        class="{% if section.settings.desktop_scroll %}swiper-container-{{ section.index }} {% endif %} slider ul-multicolumn"
+        role="list"
+      >
+        {%- liquid
+          if section.settings.image_ratio == 'adapt'
+            assign highest_ratio = 0
+            for block in section.blocks
+              if block.settings.image.aspect_ratio > highest_ratio
+                assign highest_ratio = block.settings.image.aspect_ratio
+              endif
+            endfor
+          endif
+        -%}
+
+        {%- capture sizes -%}(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %}, (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %}{%- endcapture -%}
+        {%if section.settings.desktop_scroll %}
+          <div class="swiper-wrapper">
+        {% endif %}
+        {%- for block in section.blocks -%}
+          <li id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="{% if section.settings.desktop_scroll %}swiper-slide {% endif %}multicolumn-list__item grid__item slider__slide list-style-type-none"
+            {{ block.shopify_attributes }}
+          >
+            <div class="multicolumn-card-wrapper">
+            <div class="multicolumn-card">
+              {%- if block.settings.image != blank -%}
+                <use-animate data-animate="zoom-fade" class="media-wrapper">
+                  <div class="image-animate media media--{{ section.settings.image_ratio }}"
+                    {%- if section.settings.image_ratio == 'adapt' %} style="--image-ratio-percent: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"{% endif -%}
+                  >
+                    {{ block.settings.image | image_url: width: 1420 | image_tag:
+                      loading: 'lazy',
+                      sizes: sizes,
+                      widths: '275, 550, 710, 1420',
+                      is: 'lazy-image'
+                    }}
+                  </div>
+                  {%- if block.settings.button_link != blank -%}
+                    <a href="{{ block.settings.button_link }}" class="full-unstyled-link">&nbsp;</a>
+                  {%- endif -%}
+                </use-animate>
+              {%- endif -%}
+              {%- if block.settings.title != blank or block.settings.text != blank or block.settings.button_label != blank -%}
+                <div class="multicolumn-card__info">
+                  <p class="multicolumn-card__title {{ block.settings.title_size }}">{{ block.settings.title | escape }}</p>
+                  <div class="rte typeset">{{ block.settings.text }}</div>
+                  {%- if block.settings.button_label != blank -%}
+                    {%- if block.settings.button_style_secondary -%}
+                      <a class="button button--cta"{% if block.settings.button_link != blank %} href="{{ block.settings.button_link }}"{% else %} role="link" aria-disabled="true"{% endif %}>
+                        <span class="label">{{ block.settings.button_label | escape }}</span>
+                        {% render 'icon', icon: 'arrow' %}
+                      </a>
+                    {%- else -%}
+                      <a class="button button--tertiary"{% if block.settings.button_link != blank %} href="{{ block.settings.button_link }}"{% else %} role="link" aria-disabled="true"{% endif %}>
+                        {{ block.settings.button_label | escape }}
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+            {% if block.settings.text-left-collapsible != "" and block.settings.heading-right-collapsible != "" %}
+            <div class="studies-info-wrapper">
+              <div>
+                <p class="studies-info-header">{{ block.settings.heading-left-collapsible }}</p>
+                {{ block.settings.text-left-collapsible }}
+              </div>
+              <div>
+                <p class="studies-info-header">{{ block.settings.heading-right-collapsible }}</p>
+                {{ block.settings.text-right-collapsible }}
+              </div>
+            </div>
+            {% endif %}
+            {% if block.settings.collapsible-row-content != '' %}
+              <div class="studies-wrapper-{{ block.index }}-{{ section.index }} studies-wrapper">
+                <button class="accordion-multicolumn accordion-multicolumn-{{ forloop.index }}-{{ section.index }}" style="{% if section.settings.desktop_scroll %}width: 100%;{% endif %} background-color: {{ block.settings.collapsible-bg-color }};">{{ block.settings.collapsible_row_heading }} <div class="collapsible-toggle collapsible-plus-{{ forloop.index }}-{{ section.index }}">{% render 'icon', icon: 'plus' %}</div><div class="collapsible-toggle collapsible-minus-{{ forloop.index }}-{{ section.index }}" style="display: none;">{% render 'icon', icon: 'minus' %}</div></button>
+                <div class="panel panel-{{ forloop.index }}-{{ section.index }}">
+                  {{ block.settings.collapsible-row-content }}
+                </div>
+                <button class="read-more-button collapse_button collapse-button_{{ forloop.index }}_{{ section.index }}">Collapse</button>
+              </div>
+            {% endif %}
+            </div>
+          </li>
+        {%- endfor -%}
+        {%if section.settings.desktop_scroll %}
+          </div>
+        {% endif %}
+      </ul>
+    </slider-component>
+  </div>
+</div>
+
+{% if section.settings.desktop_scroll %}
+  <script>
+    let swiperInstance_{{ section.index }};
+
+    function initSwiper_{{ section.index }}() {
+      const container = document.querySelector('.swiper-container-{{ section.index }}');
+
+      if (!container || container.classList.contains('swiper-initialized')) return;
+
+      swiperInstance_{{ section.index }} = new Swiper(container, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.arrow-multicolumn-right-{{ section.id }}',
+          prevEl: '.arrow-multicolumn-left-{{ section.id }}',
+        },
+        breakpoints: {
+          456: {
+            slidesPerView: 1
+          },
+          768: {
+            slidesPerView: 2
+          },
+          1248: {
+            slidesPerView: 3
+          },
+        }
+      });
+
+      container.classList.add('swiper-initialized');
+    }
+    
+
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(initSwiper_{{ section.index }}, 250); // allow DOM + Swiper to load
+    });
+
+    // Only needed inside the Shopify theme editor
+    if (Shopify.designMode) {
+      
+      document.addEventListener('shopify:section:load', function(event) {
+
+        const sectionEl = event.target;
+        if (sectionEl && sectionEl.querySelector('.swiper-container-{{ section.index }}')) {
+          const container = sectionEl.querySelector('.swiper-container-{{ section.index }}');
+          if (container.classList.contains('swiper-initialized')) {
+            container.classList.remove('swiper-initialized');
+          }
+          setTimeout(() => initSwiper_{{ section.index }}(), 250);
+        }
+      });
+    }
+  </script>
+{% endif %}
+
+
+
+
+{% for block in section.blocks %}
+  <script>
+    document.addEventListener("DOMContentLoaded", ()=> {
+
+      const accordion_multicolumn_{{ forloop.index }}_{{ section.index }} = document.querySelector(".accordion-multicolumn-{{ forloop.index }}-{{ section.index }}");
+      const panel_{{ forloop.index }}_{{ section.index }} = document.querySelector(".panel-{{ forloop.index }}-{{ section.index }}");
+      const collapsible_minus_{{ forloop.index }}_{{ section.index }} = document.querySelector(".collapsible-minus-{{ forloop.index }}-{{ section.index }}");
+      const collapsible_plus_{{ forloop.index }}_{{ section.index }} = document.querySelector(".collapsible-plus-{{ forloop.index }}-{{ section.index }}");
+      const collapse_button_{{ forloop.index }}_{{ section.index }} = document.querySelector(".collapse-button_{{ forloop.index }}_{{ section.index }}");
+      const studies_wrapper_{{ forloop.index }}_{{ section.index }} = document.querySelector(".studies-wrapper-{{ forloop.index }}-{{ section.index }}")
+
+      accordion_multicolumn_{{ forloop.index }}_{{ section.index }}.addEventListener("click", () => {
+
+        if (parseInt(panel_{{ forloop.index }}_{{ section.index }}.style.height) > 0) {
+          panel_{{ forloop.index }}_{{ section.index }}.style.height = '0px';
+          collapsible_minus_{{ forloop.index }}_{{ section.index }}.style.display = 'none'
+          accordion_multicolumn_{{ forloop.index }}_{{ section.index }}.style.borderBottom = '1px solid #D2D4D8'
+          collapsible_plus_{{ forloop.index }}_{{ section.index }}.style.display ='flex'
+          collapse_button_{{ forloop.index }}_{{ section.index }}.style.display = 'none'
+        } else {
+          panel_{{ forloop.index }}_{{ section.index }}.style.height = `${panel_{{ forloop.index }}_{{ section.index }}.scrollHeight}px`;
+          accordion_multicolumn_{{ forloop.index }}_{{ section.index }}.style.borderBottom = 'unset'
+          accordion_multicolumn_{{ forloop.index }}_{{ section.index }}.style.borderBottom = '1px solid #fff'
+          collapsible_minus_{{ forloop.index }}_{{ section.index }}.style.display = 'flex'
+          collapsible_plus_{{ forloop.index }}_{{ section.index }}.style.display ='none'
+          collapse_button_{{ forloop.index }}_{{ section.index }}.style.display = 'flex'
+        }
+
+      })
+      
+      collapse_button_{{ forloop.index }}_{{ section.index }}.addEventListener("click", ()=>{
+        panel_{{ forloop.index }}_{{ section.index }}.style.height = '0px';
+        collapse_button_{{ forloop.index }}_{{ section.index }}.style.display = 'none'
+        collapsible_minus_{{ forloop.index }}_{{ section.index }}.style.display = 'none'
+        collapsible_plus_{{ forloop.index }}_{{ section.index }}.style.display ='flex'
+        accordion_multicolumn_{{ forloop.index }}_{{ section.index }}.style.borderBottom = '1px solid #D2D4D8'
+      })
+
+      const olElement_{{ forloop.index }}_{{ section.index }} = panel_{{ forloop.index }}_{{ section.index }}.querySelector('ol');
+      const listItems_{{ forloop.index }}_{{ section.index }} = olElement_{{ forloop.index }}_{{ section.index }}.querySelectorAll('li');
+
+      listItems_{{ forloop.index }}_{{ section.index }}.forEach(element => {
+        element.classList.add("li-accordion")
+      });
+
+      if (listItems_{{ forloop.index }}_{{ section.index }}.length > 15) {
+        listItems_{{ forloop.index }}_{{ section.index }}.forEach((item, index) => {
+          if (index >= 15) {
+            item.style.display = 'none';
+          }
+        });
+
+        const readMoreBtn_{{ forloop.index }}_{{ section.index }} = document.createElement('button');
+        readMoreBtn_{{ forloop.index }}_{{ section.index }}.innerText = 'Read more';
+        readMoreBtn_{{ forloop.index }}_{{ section.index }}.classList.add('read-more-button');
+        readMoreBtn_{{ forloop.index }}_{{ section.index }}.addEventListener('click', function() {
+          listItems_{{ forloop.index }}_{{ section.index }}.forEach((item, index) => {
+            if (index >= 15) {
+              item.style.display = 'list-item';
+              panel_{{ forloop.index }}_{{ section.index }}.style.height = `${panel_{{ forloop.index }}_{{ section.index }}.scrollHeight - 32}px`;
+            }
+          });
+          readMoreBtn_{{ forloop.index }}_{{ section.index }}.style.display = 'none';
+        });
+
+        olElement_{{ forloop.index }}_{{ section.index }}.parentElement.appendChild(readMoreBtn_{{ forloop.index }}_{{ section.index }});
+      }
+    })
+  </script>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "t:sections.multicolumn.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.all.card_image_ratio.options__1.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.all.card_image_ratio.options__2.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.all.card_image_ratio.options__3.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:sections.all.card_image_ratio.options__4.label"
+        },
+        {
+          "value": "wide",
+          "label": "t:sections.all.card_image_ratio.options__5.label"
+        }
+      ],
+      "default": "landscape",
+      "label": "t:sections.all.card_image_ratio.label"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "options": [
+        {
+          "value": "20% 0",
+          "label": "t:sections.all.image_position.options__1.label"
+        },
+        {
+          "value": "top center",
+          "label": "t:sections.all.image_position.options__2.label"
+        },
+        {
+          "value": "80% 0",
+          "label": "t:sections.all.image_position.options__3.label"
+        },
+        {
+          "value": "20% 50%",
+          "label": "t:sections.all.image_position.options__4.label"
+        },
+        {
+          "value": "center center",
+          "label": "t:sections.all.image_position.options__5.label"
+        },
+        {
+          "value": "80% 50%",
+          "label": "t:sections.all.image_position.options__6.label"
+        },
+        {
+          "value": "20% 100%",
+          "label": "t:sections.all.image_position.options__7.label"
+        },
+        {
+          "value": "bottom center",
+          "label": "t:sections.all.image_position.options__8.label"
+        },
+        {
+          "value": "80% 100%",
+          "label": "t:sections.all.image_position.options__9.label"
+        }
+      ],
+      "default": "center center",
+      "label": "t:sections.all.image_position.label",
+      "info": "t:sections.all.image_position.info"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.all.text_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.text_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.all.text_alignment.options__3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.all.text_alignment.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "desktop_scroll",
+      "default": true,
+      "label": "t:sections.all.desktop_scroll.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "default": false,
+      "label": "t:sections.all.show_divider.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.heading.label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Multicolumn",
+      "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "t:sections.all.heading_alignment.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.all.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.all.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_tag.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_tag.options__2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_tag.options__3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_tag.options__4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.heading_tag.options__5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.heading_tag.options__6.label"
+        },
+        {
+          "value": "div",
+          "label": "t:sections.all.heading_tag.options__7.label"
+        },
+        {
+          "value": "span",
+          "label": "t:sections.all.heading_tag.options__8.label"
+        },
+        {
+          "value": "p",
+          "label": "t:sections.all.heading_tag.options__9.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_tag.label",
+      "info": "t:sections.all.heading_tag.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.mobile_layout.header.content"
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.all.mobile_layout.mobile_text_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.mobile_layout.mobile_text_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.all.mobile_layout.mobile_text_alignment.options__3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.all.mobile_layout.mobile_text_alignment.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "t:sections.all.padding.padding_top.unit",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "t:sections.all.padding.padding_bottom.unit",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "t:sections.multicolumn.blocks.column.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.all.image.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "options": [
+            {
+              "value": "h4",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__3.label"
+            }
+          ],
+          "default": "h3",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "t:sections.all.text.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:sections.all.button_label.label",
+          "info": "t:sections.all.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.all.button_link.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "t:sections.all.button_style_secondary.label"
+        },
+          {
+          "type": "header",
+          "content": "Extra information"
+        },
+        {
+          "type": "text",
+          "id": "heading-left-collapsible",
+          "default": "Header",
+          "label": "Heading Left Column",
+          "info": "Include a heading that explains the content."
+        },
+        {
+          "type": "richtext",
+          "id": "text-left-collapsible",
+          "default": "<p>Subtext</p>",
+          "label": "Text Left Column"
+        },
+        {
+          "type": "text",
+          "id": "heading-right-collapsible",
+          "default": "Header",
+          "label": "Heading Right Column",
+          "info": "Include a heading that explains the content."
+        },
+        {
+          "type": "richtext",
+          "id": "text-right-collapsible",
+          "default": "<p>Subtext</p>",
+          "label": "Text Right Column"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.collapsible_row.label"
+        },
+        {
+          "type": "text",
+          "default": "Collapsible row",
+          "id": "collapsible_row_heading",
+          "info": "Include a heading that explains the content.",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "default": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br/><br/>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+          "id": "collapsible-row-content",
+          "label": "Row content"
+        },
+        {
+          "type": "color",
+          "default": "#fff",
+          "id": "collapsible-bg-color",
+          "label": "Background color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.multicolumn.presets.name",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.overlay"]
+  },
+  "max_blocks": 10
+}
+{% endschema %}

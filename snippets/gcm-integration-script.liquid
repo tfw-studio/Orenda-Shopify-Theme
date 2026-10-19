@@ -1,0 +1,59 @@
+    <!-- Google Consent Mode V2 Advanced Mode integration script for Consentmo GDPR Compliance App -->
+    <script id="consentmo-gcmv2-advanced-mode-integration">
+      const consentOutOfRegion = {
+        analytics: true,
+        marketing: true,
+        functionality: true,
+        adsDataRedaction: false,
+        urlPassthrough: false,
+      };
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_personalization: 'denied',
+        ad_user_data: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'denied',
+        personalization_storage:'denied',
+        security_storage: 'granted',
+        wait_for_update: 1500
+      });
+
+      document.addEventListener('consentmoSignal_onLoad', function(eventData) {
+        const csmLoadSignal = eventData.detail || {isActive:false};
+        console.log('LIQUID - consentmoSignal_onLoad event', csmLoadSignal);
+
+        if (!csmLoadSignal.isActive) {
+          console.log('LIQUID - isActive false - use consentOutOfRegion');
+          gtag('consent', 'update', {
+            ad_storage: consentOutOfRegion.marketing ? 'granted' : 'denied',
+            ad_personalization: consentOutOfRegion.marketing ? 'granted' : 'denied',
+            ad_user_data: consentOutOfRegion.marketing ? 'granted' : 'denied',
+            analytics_storage: consentOutOfRegion.analytics ? 'granted' : 'denied',
+            functionality_storage: consentOutOfRegion.functionality ? 'granted' : 'denied',
+            personalization_storage: consentOutOfRegion.functionality ? 'granted' : 'denied',
+            security_storage: 'granted',
+          });
+          gtag('set', 'ads_data_redaction', consentOutOfRegion.adsDataRedaction);
+          gtag('set', 'url_passthrough', consentOutOfRegion.urlPassthrough);
+          console.log('LIQUID - dataLayer', window.dataLayer);
+        } else {
+          console.log('LIQUID - set default-consent and subscribe consentmoSignal for consent-update');
+          document.addEventListener('consentmoSignal', function(event) {
+            const csmSignal = event.detail;
+            const consentState = csmSignal.integration?.gcm?.isEnabled ? csmSignal.integration.gcm.state : csmSignal.state;
+            console.log('LIQUID - consentmoSignal event', csmSignal);
+            console.log('LIQUID - dataLayer', window.dataLayer);
+
+            gtag('consent', 'update', consentState);
+            if (csmSignal.integration?.gcm?.isEnabled) {
+              gtag('set', 'ads_data_redaction', csmSignal.integration.gcm.adsDataRedaction);
+              gtag('set', 'url_passthrough', csmSignal.integration.gcm.urlPassthrough);
+            }
+          });
+        }
+      });
+    </script>

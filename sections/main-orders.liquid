@@ -1,0 +1,78 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+MAIN ORDERS
+
+<div class="customer account page-width section--padding">
+  {% render 'account-navigation' %}
+
+  <div style="flex: 1;">
+    <h1>Order History</h1>
+    <p>Below are details on your prior purchase(s).</p>
+
+    <div class="grid main-page-account">
+      <div class="grid__item grid__item--three-quarter">
+        {%- if customer.orders.size > 0 -%}
+            {%- for order in customer.orders limit: 10 -%}
+              {% render 'customer-order-card' %}
+            {% endfor %}
+
+
+
+
+        <table role="table" class="order-history">
+          <caption class="visually-hidden">{{ 'customer.orders.title' | t }}</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+              <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+              <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+              <th id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status' | t }}
+              </th>
+              <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            {%- for order in customer.orders limit: 10 -%}
+            <tr role="row">
+              <td
+                id="RowOrder"
+                role="cell"
+                headers="ColumnOrder"
+                data-label="{{ 'customer.orders.order_number' | t }}">
+                <a class="link" href="{{ order.customer_url }}"
+                  aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">
+                  {{ order.name }}
+                </a>
+              </td>
+              <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+                {{ order.created_at | time_tag: format: 'date' }}
+              </td>
+              <td headers="RowOrder ColumnPayment" role="cell" data-label="{{ 'customer.orders.payment_status' | t }}">
+                {{ order.financial_status_label }}
+              </td>
+              <td headers="RowOrder ColumnFulfillment" role="cell"
+                data-label="{{ 'customer.orders.fulfillment_status' | t }}">
+                {{ order.fulfillment_status_label }}
+              </td>
+              <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+                {{ order.total_net_amount | money_with_currency }}</td>
+            </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+        {%- else -%}
+        <p>{{ 'customer.orders.none' | t }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+"name": "t:sections.main-account.name",
+"settings": [
+
+]
+}
+{% endschema %}

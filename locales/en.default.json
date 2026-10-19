@@ -1,0 +1,980 @@
+{
+  "general": {
+    "password_page": {
+      "login_form_heading": "Enter store using password:",
+      "login_password_button": "Enter using password",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_error": "Wrong password!",
+      "login_form_submit": "Enter",
+      "modal": "Password modal",
+      "admin_link_html": "Are you the store owner? <a href=\"\/admin\" class=\"link link--underline\">Log in here<\/a>",
+      "powered_by_shopify_html": " "
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Share",
+        "share_on_twitter": "Tweet",
+        "share_on_pinterest": "Pin it",
+        "share_on_whatsapp": "Share",
+        "share_on_telegram": "Share",
+        "share_by_email": "Email"
+      },
+      "links": {
+        "twitter": "Twitter",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "linkedin": "LinkedIn",
+        "snapchat": "Snapchat",
+        "youtube": "YouTube",
+        "vimeo": "Vimeo",
+        "tiktok": "TikTok"
+      }
+    },
+    "continue_shopping": "Return to shop",
+    "pagination": {
+      "label": "Pagination",
+      "page": "Page {{ number }}",
+      "next": "Next ›",
+      "previous": "‹ Prev",
+      "show_more": "Show more"
+    },
+    "search": {
+      "search": "Search our site",
+      "placeholder": "Search",
+      "clear": "Clear"
+    },
+    "cart": {
+      "view": "View cart",
+      "item_added": "Item added to your cart",
+      "note": {
+        "title": "Note",
+        "caption": "Order special instructions",
+        "button": "Apply"
+      },
+      "gift_note": {
+        "title": "Message",
+        "caption": "Add a personalized message to your order",
+        "button": "Apply"
+      },
+      "discount": {
+        "title": "Coupon",
+        "caption": "Add a discount code",
+        "tooltip": "Discount will be applied at checkout",
+        "button": "Apply"
+      },
+      "shipping_calculator": {
+        "title": "Shipping",
+        "caption": "Estimate shipping rates",
+        "tooltip": "Shipping & taxes will be calculated at checkout",
+        "button": "Calculate"
+      },
+      "free_shipping": {
+        "remaining_html": "Spend {{ remaining_amount }} more to reach free shipping",
+        "congratulations_html": "You are eligible for free shipping."
+      }
+    },
+    "share": {
+      "share": "Share now",
+      "close": "Close share",
+      "copy_to_clipboard": "Copy link",
+      "share_url": "Copy link",
+      "success_message": "Link copied to clipboard!"
+    },
+    "slider": {
+      "of": "of",
+      "next_slide": "Slide right",
+      "previous_slide": "Slide left"
+    },
+    "date": {
+      "d": "D",
+      "day": "Day",
+      "days": "Days",
+      "hour": "Hour",
+      "hours": "Hours",
+      "minute": "Min",
+      "minutes": "Mins",
+      "second": "Sec",
+      "seconds": "Secs"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "home_link_title": "Back to the frontpage"
+    }
+  },
+  "date_formats": {
+    "month_year": "%B %Y",
+    "month_day_year": "%B %d, %Y"
+  },
+  "newsletter": {
+    "label": "Enter email here",
+    "success": "Thanks for subscribing",
+    "button_label": "Subscribe"
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "skip_to_product_info": "Skip to product information",
+    "close": "Close",
+    "unit_price_separator": "per",
+    "vendor": "Vendor:",
+    "error": "Error",
+    "refresh_page": "Choosing a selection results in a full page refresh.",
+    "link_messages": {
+      "new_window": "Opens in a new window.",
+      "external": "Opens external website."
+    },
+    "loading": "Loading...",
+    "total_reviews": "total reviews",
+    "star_reviews_info": "{{ rating_value }} out of {{ rating_max }} stars",
+    "collapsible_content_title": "Collapsible content",
+    "complementary_products": "Complementary products"
+  },
+  "blogs": {
+    "article": {
+      "blog": "Blog",
+      "all_tags": "All",
+      "read_more_title": "Read more: {{ title }}",
+      "read_more": "Read more",
+      "comments": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      },
+      "moderated": "Please note, comments need to be approved before they are published.",
+      "comment_form_title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Comment",
+      "post": "Post comment",
+      "back_to_blog": "Back to {{ title }}",
+      "share": "Share this article",
+      "success": "Your comment was posted successfully! Thank you!",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated."
+    }
+  },
+  "onboarding": {
+    "product_title": "Example product title",
+    "collection_title": "Your collection's name",
+    "no_content": "This section doesn't currently include any content. Add content to this section using the sidebar."
+  },
+  "products": {
+    "product": {
+      "color_swatch_trigger": "Color",
+      "size_chart_trigger": "Size",
+      "size_chart": "Help about your size",
+      "add_to_cart": "Add to cart",
+      "add_set_to_cart": "Add set to cart",
+      "description": "Description",
+      "quick_view": "Quick view",
+      "on_sale": "Sale",
+      "product_variants": "Product variants",
+      "media": {
+        "gallery_viewer": "Gallery Viewer",
+        "load_image": "Load image {{ index }} in gallery view",
+        "load_model": "Load 3D Model {{ index }} in gallery view",
+        "load_video": "Play video {{ index }} in gallery view",
+        "image_available": "Image {{ index }} is now available in gallery view",
+        "open_media": "Open media {{ index }} in modal",
+        "play_model": "Play 3D Viewer",
+        "play_video": "Play video"
+      },
+      "quantity": {
+        "label": "Quantity",
+        "input_label": "Quantity for {{ product }}",
+        "increase": "Increase quantity for {{ product }}",
+        "decrease": "Decrease quantity for {{ product }}",
+        "minimum_of": "Minimum of {{ quantity }}",
+        "maximum_of": "Maximum of {{ quantity }}",
+        "multiples_of": "Increments of {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> in cart"
+      },
+      "pickup_availability": {
+        "view_store_info": "View store information",
+        "check_other_stores": "Check availability at other stores",
+        "pick_up_available": "Pickup available",
+        "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "unavailable": "Couldn't load pickup availability",
+        "refresh": "Refresh"
+      },
+      "price": {
+        "from_price_html": "From {{ price }}",
+        "regular_price": "Regular price",
+        "sale_price": "Sale price",
+        "unit_price": "Unit price"
+      },
+      "inventory": {
+        "in_stock_label": "In stock, ready to ship",
+        "stock_label_html": {
+          "one": "Hurry, only <strong>{{ count }}<\/strong> item left in stock!",
+          "other": "Hurry, only <strong>{{ count }}<\/strong> items left in stock!"
+        },
+        "will_not_ship_until": "Ready to ship {{ date }}",
+        "will_be_in_stock_after": "Back in stock {{ date }}",
+        "waiting_for_stock": "Inventory on the way"
+      },
+      "share": "Share this product",
+      "view": "View product",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "pre_order": "Pre-order",
+      "vendor": "Vendor",
+      "video_exit_message": "{{ title }} opens full screen video in same window.",
+      "view_full_details": "View full details",
+      "view_info": "More information",
+      "view_images": "View images",
+      "xr_button": "View in your space",
+      "xr_button_label": "View in your space, loads item in augmented reality window",
+      "include_taxes": "Tax included.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "choose_options": "Choose options",
+      "choose_product_options": "Choose options for {{ product_name }}"
+    },
+    "modal": {
+      "label": "Media gallery"
+    },
+    "facets": {
+      "apply": "Apply",
+      "clear": "Clear",
+      "clear_all": "Clear all",
+      "from": "From",
+      "filter_and_sort": "Filter and sort",
+      "filter_by_label": "Filter",
+      "filter_button": "Filter",
+      "filters_selected": {
+        "one": "{{ count }} selected",
+        "other": "{{ count }} selected"
+      },
+      "max_price": "The highest price is {{ price }}",
+      "price_html": "Price: {{ price_min }} &ndash; {{ price_max }}",
+      "product_count": {
+        "one": "{{ product_count }} of {{ count }} product",
+        "other": "{{ product_count }} of {{ count }} products"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "reset": "Reset",
+      "sort_button": "Sort",
+      "sort_by_label": "Sort by",
+      "to": "To",
+      "clear_filter": "Clear filter",
+      "show_more": "Show more",
+      "show_less": "Show less"
+    }
+  },
+  "templates": {
+    "search": {
+      "empty": "No results found",
+      "use_fewer_filters_html": "Use fewer filters or <a class=\"{{ class }}\" href=\"{{ link }}\">clear all<\/a>",
+      "no_results": "No results found for “{{ terms }}”",
+      "check_the_spelling": "Check the spelling or use a different word or phrase",
+      "page": "Page",
+      "products": "Products",
+      "results_pages_with_count": {
+        "one": "{{ count }} page",
+        "other": "{{ count }} pages"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} suggestion",
+        "other": "{{ count }} suggestions"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "results_with_count": {
+        "one": "{{ count }} result found for “{{ terms }}”",
+        "other": "{{ count }} results found for “{{ terms }}”"
+      },
+      "results_with_count_and_term": {
+        "one": "{{ count }} result found for “{{ terms }}”",
+        "other": "{{ count }} results found for “{{ terms }}”"
+      },
+      "title": "Search results",
+      "search_for": "Search for “{{ terms }}”",
+      "suggestions": "Suggestions",
+      "pages": "Pages"
+    },
+    "cart": {
+      "cart": "Cart"
+    },
+    "contact": {
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone number",
+        "comment": "Comment",
+        "send": "Send message",
+        "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+      }
+    },
+    "404": {
+      "title": "Page not found",
+      "subtext": "404"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Announcement",
+      "menu": "Menu",
+      "cart_count": {
+        "one": "{{ count }} item",
+        "other": "{{ count }} items"
+      }
+    },
+    "cart": {
+      "title": "Cart",
+      "caption": "Cart items",
+      "remove_title": "Remove {{ title }}",
+      "subtotal": "Subtotal",
+      "new_subtotal": "New subtotal",
+      "note": "Add a note to your order",
+      "note_placeholder": "How can we help you?",
+      "checkout": "Check out",
+      "empty": "Your cart is currently empty",
+      "cart_error": "There was an error while updating your cart. Please try again.",
+      "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
+      "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
+      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
+      "headings": {
+        "product": "Product",
+        "price": "Price",
+        "total": "Total",
+        "quantity": "Quantity"
+      },
+      "update": "Update",
+      "gift_wrapping_html": "For {{ price }} please wrap the products in this order.",
+      "gift_note_placeholder": "Gift message (free and optional)"
+    },
+    "footer": {
+      "social_placeholder": "Follow us on social media!",
+      "payment": "Payment methods"
+    },
+    "featured_blog": {
+      "view_all": "View all",
+      "onboarding_title": "Blog post",
+      "onboarding_content": "Give your customers a summary of your blog post"
+    },
+    "featured_collection": {
+      "view_all": "Shop All",
+      "view_all_label": "View all products in the {{ collection_name }} collection"
+    },
+    "collection_list": {
+      "view_all": "View all"
+    },
+    "collection_template": {
+      "title": "Collection",
+      "no_products": "Sorry, there are no products in this collection",
+      "empty": "No products found",
+      "use_fewer_filters_html": "Use fewer filters or <a class=\"{{ class }}\" href=\"{{ link }}\">clear all<\/a>"
+    },
+    "video": {
+      "load_video": "Load video: {{ description }}"
+    }
+  },
+  "localization": {
+    "country_label": "Country\/region",
+    "update_country": "Update country\/region",
+    "language_label": "Language",
+    "update_language": "Update language",
+    "text_direction_trigger": "LTR"
+  },
+  "customer": {
+    "account": {
+      "title": "Account",
+      "details": "Account details",
+      "view_addresses": "View addresses",
+      "return": "Return to Account details"
+    },
+    "account_fallback": "Account",
+    "activate_account": {
+      "title": "Activate account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Activate account",
+      "cancel": "Decline invitation"
+    },
+    "addresses": {
+      "title": "Addresses",
+      "default": "Default",
+      "add_new": "Add a new address",
+      "edit_address": "Edit address",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "company": "Company",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "city": "City",
+      "country": "Country\/region",
+      "province": "Province",
+      "zip": "Postal\/ZIP code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add address",
+      "update": "Update address",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you wish to delete this address?"
+    },
+    "log_in": "Log in",
+    "log_out": "Log out",
+    "login_page": {
+      "cancel": "Cancel",
+      "create_account": "Create Account",
+      "email": "Email",
+      "forgot_password": "Forgot your password?",
+      "guest_continue": "Continue",
+      "guest_title": "Continue as a guest",
+      "password": "Password",
+      "title": "Already have an account?",
+      "sign_in": "Sign in",
+      "submit": "Submit",
+      "dont_have_account": "Don't have an account yet?",
+      "return": "Return to Store"
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date_html": "Placed on {{ date }}",
+      "cancelled_html": "Order Cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing Address",
+      "payment_status": "Payment Status",
+      "shipping_address": "Shipping Address",
+      "fulfillment_status": "Fulfillment Status",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "product": "Product",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "fulfilled_at_html": "Fulfilled {{ date }}",
+      "track_shipment": "Track shipment",
+      "tracking_url": "Tracking link",
+      "tracking_company": "Carrier",
+      "tracking_number": "Tracking number",
+      "subtotal": "Subtotal",
+      "total_duties": "Duties",
+      "total_refunded": "Refunded"
+    },
+    "orders": {
+      "title": "Order history",
+      "order_number": "Order",
+      "order_number_link": "Order number {{ number }}",
+      "date": "Date",
+      "payment_status": "Payment status",
+      "fulfillment_status": "Fulfillment status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "subtext": "We will send you an email to reset your password",
+      "success": "We've sent you an email with a link to update your password."
+    },
+    "register": {
+      "title": "New to Orenda?",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create",
+      "return": "Return to Store"
+    },
+    "reset_password": {
+      "title": "Reset account password",
+      "subtext": "Enter a new password",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Reset password"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Here's your {{ value }} gift card for {{ shop }}!",
+      "subtext": "Your gift card",
+      "gift_card_code": "Gift card code",
+      "shop_link": "Return to shop",
+      "remaining_html": "Remaining {{ balance }}",
+      "add_to_apple_wallet": "Add to Apple Wallet",
+      "qr_image_alt": "QR code — scan to redeem gift card",
+      "copy_code": "Copy code",
+      "expired": "Expired",
+      "copy_code_success": "Code copied successfully",
+      "print_gift_card": "Print"
+    }
+  },
+  "customer_accounts": {
+    "order_details": {
+      "marketing_checkbox_label": "Email me with marketing, announcements, educational content, and email messages from Orenda International at the email provided. Consent is not a condition of any purchase. Message frequency may vary. View our Privacy Policy and Terms of Service below."
+    },
+    "account_menu": {
+      "signed_out_state": {
+        "use_email_button": "Click Here to login with your email instead"
+      }
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "marketing": {
+        "accept_marketing_checkbox_label": "     Email me with marketing, announcements, educational content, and email messages from Orenda International at the email provided. Consent is not a condition of any purchase. Message frequency may vary. View our Privacy Policy and Terms of Service below."
+      },
+      "customer_account": {
+        "have_an_account_label": "To Apply your Discount or Redeem Rewards -"
+      },
+      "general": {
+        "autocomplete_powered_by_google": " "
+      },
+      "shipping": {
+        "estimated_delivery_date": {
+          "other": "Estimated Delivery {{ count }} business days"
+        },
+        "estimated_delivery_date_range": "Estimated {{ minimum }} to {{ maximum}} business days"
+      }
+    },
+    "notices": {
+      "customer": {
+        "invalid_credentials": "Incorrect email or password. You may need to create an account and setup your password."
+      }
+    },
+    "links": {
+      "powered_by_shopify": " "
+    }
+  },
+  "awtomatic": {
+    "plan_selector": {
+      "subscription": "SUBSCRIPTION",
+      "save": "Save",
+      "extra": "Extra",
+      "off": "off",
+      "customize_my_box": "Customize my box",
+      "from": "Starting from",
+      "delivery_suffix": "\/delivery",
+      "one_time_purchase_label": "One-time purchase",
+      "purchase_options_label": "Purchase options",
+      "gift_first_name_placeholder": "First name",
+      "gift_first_name_label": "First name",
+      "gift_last_name_placeholder": "Last name",
+      "gift_last_name_label": "Last name",
+      "gift_email_placeholder": "Email address",
+      "gift_email_label": "Email address",
+      "gift_email_warning": "Important: Gift emails will be sent here",
+      "gift_note_placeholder": "Note",
+      "gift_note_label": "Note",
+      "gift_checkbox_label": "This is a gift",
+      "gift_recipient_info_title": "Recipient info"
+    },
+    "customer_portal": {
+      "titles": {
+        "return_to_account": "Return to account details",
+        "subscription": "Subscription",
+        "subscriptions": "Subscriptions",
+        "loading": "Loading...",
+        "cancel": "Cancel",
+        "save": "Save",
+        "continue": "Continue",
+        "pause": "Pause",
+        "edit": "Edit",
+        "my_subscriptions": "My Subscriptions",
+        "frequency": "Frequency",
+        "next_order": "Next Order",
+        "confirm": "Confirm",
+        "remove": "Remove",
+        "description": "Description",
+        "add": "Add"
+      },
+      "email_gate": {
+        "no_subs": "You do not have any subscriptions yet",
+        "check_email": "Check your email to access your subscriptions, {{email}}",
+        "cta_access_link": "Email me an access link"
+      },
+      "subscriptions": {
+        "error": "There was an error loading your subscriptions",
+        "no_subs": "You do not have any subscriptions yet",
+        "link_to_account": "Return to Account Details"
+      },
+      "subscription": {
+        "fetch_error": "There was an error fetching the detail subscription",
+        "auth_error": "There was authorization error, please login again",
+        "plan": "Plan",
+        "active": "Active",
+        "activate": "Activate",
+        "pause": "Pause",
+        "paused": "Paused",
+        "cancel": "Cancel",
+        "cancelled": "Cancelled",
+        "shipment_info": "Shipment info",
+        "update_shipping": "Update shipping",
+        "payment_method": "Payment method",
+        "pay_pal_payment_method": "PayPal",
+        "ending_in": "ending in",
+        "expires": "Expires",
+        "add_phone": "Enter a phone number",
+        "add_name": "Enter your name",
+        "add_lastName": "Enter your last name",
+        "billing_attepts": "Billing Attempts",
+        "percentage_dynamic_discount": "{{discount}} % off",
+        "fixed_amount_dynamic_discount": "{{discount}} off",
+        "then_dynamic_discount": " then {{discount}}",
+        "orders_dynamic_discount": " for {{orderQty}} orders,",
+        "billing_attepts_empty": "There are no billing attempts",
+        "billing_attepts_error": "There was an error loading the billing attempts",
+        "subs_details": "Subscription Details",
+        "update_payment_btn": "Update payment",
+        "cancel_prompt_title": "Canceling subscription cannot be undone. If you want to resume shipments, you will need to create a new order in the store.",
+        "cancel_error": "There was an error trying to cancel your subscription",
+        "no_payment_method_error": "Payment method missing from subscripiton.",
+        "no_payment_method_error_add": "Please add a new card.",
+        "new_payment_method_success": "Succesfully updated the payment method.",
+        "new_payment_method_error": "Unknown error adding your payment method. Please try again.",
+        "remove_line_error": "There was an error trying to remove the product",
+        "remove_line_success": "Succesfully removed the product",
+        "ships_to": "Ships to",
+        "update_payment_success": "An email was sent to {{email}} with a secure link to update payment information.",
+        "update_payment_success_dunning": "An email was sent to {{email}} with a secure link to update payment information. After payment information is updated we will retry the order.",
+        "update_payment_success_payment_error": "Unable to add payment method. An email was sent to {{email}} with a secure link to update payment.",
+        "update_payment_error": "There was an error updating your payment information",
+        "sales_tax": "Sales tax (if applicable) is not displayed because it is calculated with each new order.",
+        "skip_billing_interval_prompt": "Are you sure you want to skip?",
+        "skip_billing_interval_success": "Your next order has been rescheduled to {{date}}",
+        "skip_billing_interval_error": "There was an error skipping your next order",
+        "skip_until": "Skip until",
+        "skip_next": "Skip next",
+        "order_now": "Order now",
+        "next_order_success": "Your next order has been rescheduled to {{date}}",
+        "next_order_error": "There was an error setting the subscription's next order date.",
+        "add_new_address": "Add new address",
+        "address_update_success": "Address updated successfully",
+        "address_update_failed": "We encountered an unknown error. Please try again.",
+        "pause_subscription": "Pause subscription",
+        "cancel_subscription": "Cancel subscription",
+        "pause_disclaimer_date": "We will postpone your subscription. Your subscription will remain active, but you will not be charged until {{date}}. You can pause indefinitely or reschedule anytime.",
+        "pause_disclaimer_indefinitely": "You will not be charged while your subscription is paused. Reactivate your subscription anytime in your account.",
+        "pause_success": "Your subscription was paused successfully",
+        "reactivate_btn": "Reactivate now",
+        "reactivate": "Reactivate",
+        "reactivate_success": "Your subscription has been successfully reactivated.",
+        "reactivate_error": "Something went wrong while reactivating your subscription. Please try again",
+        "frequency_days": "day(s)",
+        "frequency_weeks": "week(s)",
+        "frequency_months": "month(s)",
+        "order_now_modal_body": "You will be charged {{amount}} and your shipment will go out as soon as possible.",
+        "amount": "Amount",
+        "frequency_update_success": "Delivery frequency updated to {{ frequency }}.",
+        "frequency_update_error": "Unknown error. Delivery frequency could not be updated.",
+        "customer_update_success": "Customer information has been updated",
+        "customer_update_error": "Unknown error. Customer information could not be updated.",
+        "customer_update_info": "Adding your phone number, you will receive free SMS with information about your next subscription, allowing you to skip it,or editing it through your phone",
+        "verified_phone": "Phone verified",
+        "not_verified_phone": "Phone not verified",
+        "verify_phone": "Verify",
+        "enter_code": "Enter the verification code",
+        "verify_code_error": "There was an error verifying your phone number.",
+        "verify_code_retry_error": "You have tried to verify your phone number too many times. Please, try it later.",
+        "verify_code_success": "Phone number verified successfully",
+        "code_received": "You must have received a confirmation code in the provided phone number.",
+        "code_enter": "Please enter the code below to verify your phone number.",
+        "code_send": "Send code",
+        "qty": "Qty",
+        "manage": "Manage",
+        "your_next_order": "Your next order",
+        "swap_product": "Swap products",
+        "swap_product_cta": "Swap for another product...",
+        "or": "Or",
+        "update_variant": "Change selection",
+        "update_bundle": "Update Box",
+        "save": "Save {{percentage}}%",
+        "failed_payment_message": "Failed payment with saved method. We will automatically retry payment.",
+        "failed_payment_cta": "Update Payment method",
+        "order_now_success": "Order placed successfully",
+        "order_now_error": "Unknown error. Please try again.",
+        "update_current_payment_method": "Update current payment method",
+        "add_new_card": "Add new card",
+        "delayed": "Delayed",
+        "delayedNotification": "Subscription delayed due to inventory. Order will ship when item becomes available. To receive order more quickly, please update selection below.",
+        "update_success": "Your subscription has been updated successfully.",
+        "update_line_success": "Subscription updated. The order will ship out as soon as possible.",
+        "update_error": "Something went wrong. Your subscription has not been changed."
+      },
+      "new_payment_method": {
+        "title": "Enter payment method",
+        "payment_info": "Payment information",
+        "card_number": "Card number",
+        "exp_date": "Exp date",
+        "security_code": "CVV",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "billing_address": "Billing address",
+        "address1": "Address",
+        "address2": "Apartment, suite, etc. (optional)",
+        "city": "City",
+        "country": "Country\/Region",
+        "state": "State\/Province",
+        "zip": "Zip code",
+        "phone": "Phone"
+      },
+      "tables": {
+        "ID": "ID",
+        "status": "Status",
+        "item": "Item",
+        "created": "Created",
+        "next_order": "Next Order",
+        "skip": "Skip",
+        "product": "Product",
+        "quantity": "Quantity",
+        "price": "Price",
+        "total": "Total",
+        "shipping": "Shipping",
+        "originated": "Originated",
+        "frequency": "Frequency",
+        "phone": "Phone",
+        "name": "Name",
+        "lastName": "Last name",
+        "date": "Date",
+        "sold_out": "Sold out",
+        "partial_inventory": "Partial inventory",
+        "qty_sold_out": " • {{quantity}} sold out",
+        "order_number": "Order Number",
+        "subtotal": "Subtotal",
+        "loading_fulfillments": "Loading...",
+        "last_fulfillment": "Last fulfillment",
+        "next_fulfillment": "Next fulfillment",
+        "merchant_discount": "Discount",
+        "one_time_discount_label": "(One-time)",
+        "finite_discount_label": "({{usageCount}} of {{recurringCycleLimit}})",
+        "edit": "Edit",
+        "box_discount": {
+          "percentage": "Box discount ({{value}}%)",
+          "amount": "Box discount ({{value}})"
+        }
+      },
+      "login": {
+        "start_intro": "Enter your email address to get started",
+        "welcome": "Welcome",
+        "send_link": "We'll email you a secure link to sign in.",
+        "email_address": "Email address",
+        "continue": "Continue",
+        "welcome_back": "Welcome back",
+        "choose_login": "Choose how to login for",
+        "send_secure_link": "Send me secure link",
+        "login_password": "Login with password",
+        "check_email": "Check your email for login link",
+        "secure_email_sent": "We've sent a secure email to {{email}}. The link expires in 24 hours.",
+        "not_received": "Didn't receive it?",
+        "new_link": "Send me a new link",
+        "different_email": "Try different email",
+        "no_subscriptions": "No subscriptions found",
+        "invalid_email": "Invalid Email",
+        "no_subscriptions_message": "We couldn't find any subscriptions associated with"
+      },
+      "product_swap": {
+        "title_select": "Choose replacement item",
+        "title_confirm": "Confirm",
+        "sold_out": "Sold out",
+        "choose": "Choose",
+        "back": "Back",
+        "confirm": "Confirm",
+        "save": "Save",
+        "update": "Update",
+        "original_item": "Original item",
+        "replacement_item": "Replacement item",
+        "update_success": "Successfully swapped items for the next order.",
+        "update_error": "Something went wrong. Your subscription has not been changed."
+      },
+      "bundles": {
+        "build_box": "Build your box",
+        "of": "of",
+        "back": "Back",
+        "continue": "Continue",
+        "add_cart": "Add to cart",
+        "select_plan": "Select plan",
+        "build_your_box": "Build your box",
+        "addons": "Add-ons",
+        "checkout": "Checkout",
+        "edit_my_box": "Edit my box",
+        "box_size": "Box size",
+        "add_cart_error": "There was an error updating your cart.",
+        "update_price": "Cost of the box has changed from {{prevBasePrice}} to {{basePrice}}",
+        "update_success": "Box successfully updated",
+        "update_error": "Something went wrong trying to update the box",
+        "delivery_options": "Delivery options",
+        "one_time_delivery": "One time",
+        "additional_products": "Additional products"
+      },
+      "addons": {
+        "title": "Add Items",
+        "selection_unavailable": "Selection unavailable",
+        "success_added": "Successfully added items to your subscription.",
+        "subtitle": "Add items to your upcoming order",
+        "subscribe": "Subscribe",
+        "select": "Add",
+        "see_products": "See all products",
+        "modal_title": "Add products to your next order",
+        "save": "Save",
+        "type": "Type"
+      },
+      "sms": {
+        "title": "Text updates",
+        "enable": "Enable",
+        "edit_phone": "Edit phone number",
+        "enable_phone": "Enable text updates",
+        "phone_placeholder": "Enter phone number",
+        "enable_phone_text": "Text messages allow you to update subscriptions on the go. Message and. data rates may apply.",
+        "phone": "Phone number",
+        "invalid_phone": "Invalid phone number",
+        "invalid_country": "Only US and CA phone numbers are supported.",
+        "duplicated_phone_error": "Phone number already in use"
+      },
+      "cancelModal": {
+        "header": "Reason for cancelling",
+        "neverMind": "Never mind",
+        "back": "Back",
+        "continue": "Continue",
+        "continueWithCancellation": "Continue with cancellation",
+        "continueCancel": "Continue cancel",
+        "confirmCancellation": "Confirm cancellation",
+        "error": "There was an unknown error",
+        "tryAgain": "Try again.",
+        "TOO_MUCH": "I have too much",
+        "MOVING": "Moving to a new place",
+        "COMPETITOR": "Switching to a competitor",
+        "BUDGET": "Doesn’t fit my budget",
+        "NOT_ENJOY": "I didn’t enjoy the product",
+        "NO_NEED": "No longer need this",
+        "TRAVELLING": "I’m traveling",
+        "OTHER": "Other",
+        "frequency": {
+          "modalTitle": "Frequency update available",
+          "title": "Update frequency instead of losing subscription",
+          "subtitle": "By updating your delivery frequency, you can control how often you recieve shipments.",
+          "updateFrequency": "Update frequency",
+          "formModalTitle": "Edit frequency",
+          "formTitle": "You control how often your receive deliveries. Upcoming orders will be delivered on the frequency selected below.",
+          "formDelivery": "Delivery every",
+          "setFrequency": "Set frequency"
+        },
+        "address": {
+          "modalPromptTitle": "Address update available",
+          "promptTitle": "Moving doesn’t have to mean cancellation",
+          "promptSubtitle": "By updating your address, you have the option of keeping your subscription with you wherever you go!",
+          "promptUpdateAddress": "Update address",
+          "modalFormTitle": "Enter address",
+          "noShippingOptions": "There are no shipping options available for that address.",
+          "confirmModalTitle": "Shipping confirmation",
+          "confirmTitle": "The price of shipping for your subscription will change from {{oldPrice}} to {{newPrice}} because your new address is in a different delivery zone.",
+          "confirmAcceptShipping": "Accept shipping",
+          "newAddress": "New address:",
+          "oldAddress": "Old address:"
+        },
+        "pause": {
+          "header": "Pause available",
+          "title": "Did you know you can pause instead?",
+          "description": "Instead of cancelling, pausing your subscription allows you to keep billing and shipping details saved when you’re ready to reactivate your subscription.",
+          "cta": "Pause subscription",
+          "success": "Your subscription was paused successfully"
+        },
+        "skip": {
+          "header": "Edit order date available",
+          "title": "You can skip or reschedule your next order",
+          "description": "Keep your shipments coming once you’re back from your trip. Consider skipping or rescheduling instead of canceling.",
+          "titleHideSkip": "You can reschedule your next order",
+          "descriptionHideSkip": "Keep your shipments coming once you’re back from your trip. Consider rescheduling instead of canceling.",
+          "titleHideEditNextOrderDate": "You can skip your next order",
+          "descriptionHideEditNextOrderDate": "Keep your shipments coming once you’re back from your trip. Consider skipping instead of canceling.",
+          "ctaReschedule": "Reschedule next order",
+          "ctaSkip": "Skip next",
+          "success": "Your next order has been rescheduled to {{date}}"
+        },
+        "reschedule": {
+          "header": "Schedule next order",
+          "confirmReschedule": "Reschedule",
+          "dateFormat": "mm\/dd\/yyyy",
+          "inputLabel": "Next order",
+          "description": "Your subscription will remain active, but we will postpone your subscription until the date you select below."
+        },
+        "confirm": {
+          "modalTitle": "Additional feedback",
+          "title": "Please provide additional feedback (optional)",
+          "button": "Confirm cancellation",
+          "success": "Subscription cancelled"
+        },
+        "prepaidMultiOrder": {
+          "modalTitle": "Cancel prepaid subscription",
+          "description": "Subscription with prepaid items cannot be cancelled immediately. By continuing, we will set prepaid items to expire after the current prepaid period.",
+          "button": "Disable autorenew",
+          "success": "Prepaid items will not autorenew"
+        }
+      },
+      "drawers": {
+        "updateAddress": {
+          "title": "Enter address"
+        }
+      },
+      "billingHistory": {
+        "title": "Billing history",
+        "order": "Order",
+        "date": "Date",
+        "status": "Status",
+        "submitted": "Submitted",
+        "challenged": "Challenged",
+        "failed": "Failed",
+        "success": "Success",
+        "loadMore": "Load more",
+        "bankChallenge": "Complete Challenge"
+      },
+      "pauseModal": {
+        "delaySubscriptionTitle": "Delay subscription available",
+        "delaySubscriptionSubtitle": "Consider delaying subscription instead",
+        "delaySubscriptionBody": "By delaying your subscription, you can make sure orders start again without needing to remember to turn them back on.",
+        "delaySubscriptionCta": "Delay subscription",
+        "pauseModalTitle": "Pause subscription",
+        "pauseModalLabel": "Pause subscription for",
+        "pauseModalBody": "You will not be charged while your subscription is paused. Reactivate your subscription anytime in your account",
+        "continueToPause": "Continue to Pause",
+        "neverMind": "Never mind",
+        "back": "Back",
+        "save": "Save",
+        "confirmPause": "Confirm",
+        "delaySubscription": "Delay subscription",
+        "ONE_MONTH": "1 month",
+        "TWO_MONTH": "2 months",
+        "THREE_MONTH": "3 months",
+        "CUSTOM": "Custom"
+      },
+      "discountCodeCard": {
+        "title": "Discount Code",
+        "addBtn": "Add",
+        "cancelBtn": "Cancel",
+        "inputPlaceholder": "Enter code",
+        "applyBtn": "Apply",
+        "successMsg": "Discount applied to subscription",
+        "removeSuccessMsg": "Discount removed from subscription",
+        "loadingMsg": "Adding discount code...",
+        "errorMsg": "Invalid code",
+        "boxDiscount": "Box discount"
+      },
+      "frequency": {
+        "once_a": "Once a",
+        "every": "Every",
+        "week": "week",
+        "month": "month",
+        "year": "year",
+        "weeks": "weeks",
+        "months": "months",
+        "years": "years"
+      }
+    },
+    "babFilters": {
+      "filters": "Filters",
+      "reset": "Reset"
+    }
+  }
+}

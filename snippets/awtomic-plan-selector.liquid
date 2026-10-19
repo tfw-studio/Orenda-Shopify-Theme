@@ -1,0 +1,392 @@
+{% liquid
+  assign hiddenShopGroupNames = ''
+  assign visibleProductGroupNames = ''
+  if shop.metafields.awtomic.hidden_selling_plan_groups
+    assign hiddenShopGroupNames = shop.metafields.awtomic.hidden_selling_plan_groups.value | join: ','
+  endif
+  if product.metafields.awtomic.visible_selling_plan_groups
+    assign visibleProductGroupNames = product.metafields.awtomic.visible_selling_plan_groups.value | join: ','
+  endif
+  assign hasNonHiddenPlans = false
+  for group in product.selling_plan_groups
+    if group.app_id == 'bundlesubscriptions'
+      unless hiddenShopGroupNames contains group.name
+        assign hasNonHiddenPlans = true
+      endunless
+      if visibleProductGroupNames contains group.name
+        assign hasNonHiddenPlans = true
+      endif
+    endif
+  endfor
+
+  assign isBaB = false
+  if product.metafields.bundle.isBundle and product.metafields.bundle.type != 'shuffle'
+    assign isBaB = true
+  endif
+%}
+
+{% if hasNonHiddenPlans or isBaB %}
+  {%- comment -%} Awtomic App {%- endcomment -%}
+  {%- assign selected_selling_plan_id = product.selected_selling_plan -%}
+  {% assign min = 10 %}
+  {% assign max = 80 %}
+  {% assign diff = max | minus: min %}
+  {% assign uuid = 'now' | date: '%N' | modulo: diff | plus: min | append: product.id %}
+  {%- assign variant = product.selected_or_first_available_variant -%}
+
+  {% comment %} Translations {% endcomment %}
+  {% assign one_time_purchase_label = 'awtomatic.plan_selector.one_time_purchase_label' | t %}
+  {% if one_time_purchase_label contains 'translation missing' %}
+    {% assign one_time_purchase_label = 'One-time purchase' %}
+  {% endif %}
+  {% assign purchase_options_label = 'awtomatic.plan_selector.purchase_options_label' | t %}
+  {% if purchase_options_label contains 'translation missing' %}
+    {% assign purchase_options_label = 'Purchase options' %}
+  {% endif %}
+
+  <div class="awt-style-1{% if product.metafields.bundle.type == 'dynamicBaB' %} dynamic-bab{% endif %}">
+    <fieldset data-bundleapp-wrapper="{{uuid}}" class="bundleapp-wrapper" style="display: none">
+      {%- if product and product.selling_plan_groups.size > 0 -%}
+        <input type="hidden" name="selling_plan" value="{{selected_selling_plan_id}}">
+        {% if product.selling_plan_groups.size > 1 %}
+          <legend class="bundleapp-legend">{{ purchase_options_label }}</legend>
+        {% endif %}
+
+        {% unless product.requires_selling_plan %}
+          <div
+            class="bundleapp-plan-selector-group {% if selected_selling_plan_id == nil %}bundleapp-plan-selector-group--selected{% endif %}"
+            data-one-time
+            data-test="oneTimePrice"
+          >
+            <label>
+              <input
+                type="radio"
+                name="bundleapp-plan-selector-group"
+                value=""
+                {%- if selected_selling_plan_id == null -%}
+                  checked
+                {%- endif -%}
+              >
+              <span>{{ one_time_purchase_label }}</span>
+              <span class="bundleapp-plan-selector-group-pricing">
+                {{- product.selected_or_first_available_variant.price | money -}}
+              </span>
+            </label>
+
+            <div class="bundleapp-plan-selector-plan" style="display: none">
+              <select class="bundleapp-plan-selector-select">
+                <option value=""></option>
+              </select>
+              <div class="bundleapp-plan-selector-radio" style="display: none">
+                <input
+                  type="radio"
+                  name="plan"
+                  value=""
+                  id="one-time-purchase"
+                  {%- if selected_selling_plan_id == null -%}
+                    checked
+                  {%- endif -%}
+                >
+              </div>
+            </div>
+          </div>
+        {% endunless %}
+
+        {% for selling_plan_group in product.selling_plan_groups %}
+          {% liquid
+            assign isHiddenGroupName = false
+            if hiddenShopGroupNames contains selling_plan_group.name
+              assign isHiddenGroupName = true
+            endif
+            if visibleProductGroupNames contains selling_plan_group.name
+              assign isHiddenGroupName = false
+            endif
+          %}
+
+          {%- unless isHiddenGroupName -%}
+            {%- if selling_plan_group.app_id == 'bundlesubscriptions' -%}
+              <div class="bundleapp-plan-selector-group" style="display: none" data-test="{{ selling_plan_group.id }}">
+                {%- comment -%}
+                  Labels:
+                  This first code block figures out the largest value of a subscription plan to now the "up to N"
+                {%- endcomment -%}
+                {% assign is_same_value = true %}
+                {% assign prev_value = selling_plan_group.selling_plans[0].price_adjustments[0] %}
+                {% assign largest_value = selling_plan_group.selling_plans[0].price_adjustments[0] %}
+                {% for plan in selling_plan_group.selling_plans %}
+                  {% if prev_value.value != plan.price_adjustments[0].value %}
+                    {% assign is_same_value = false %}
+                  {% endif %}
+                  {% if largest_value.value < plan.price_adjustments[0].value %}
+                    {% assign largest_value = plan.price_adjustments[0] %}
+                  {% endif %}
+                  {% assign prev_value = plan.price_adjustments[0] %}
+                {% endfor %}
+                {%- comment -%}
+                  This numbers
+                  helps figuring out when to show or hide certain aspects of the UI ie: Hide the radio button when there is
+                  only a single subscription plan.
+                {%- endcomment -%}
+                {%- assign show_thresshold = 0 -%}
+                {%- if product.requires_selling_plan -%}
+                  {%- assign show_thresshold = 1 -%}
+                {%- endif -%}
+                <label>
+                  <input
+                    type="radio"
+                    name="bundleapp-plan-selector-group"
+                    value="{{ selling_plan_group.id }}"
+                    style="{% if product.selling_plan_groups.size <= show_thresshold %}display:none{% endif %}"
+                  >
+                  <span>{{ selling_plan_group.name }}</span>
+                  <span class="bundleapp-plan-selector-group-pricing"></span>
+                  <div
+                    class="bundleapp-plan-selector-group-compare"
+                    style="{% if is_same_value == false or largest_value.value == 0 %}display:none;{% endif %}"
+                  >
+                    &nbsp;
+                    <span style="text-decoration: line-through; opacity: .8; font-size: 0.8em;">
+                      {{- product.selected_or_first_available_variant.price | money -}}
+                    </span>
+                  </div>
+                </label>
+
+                <div
+                  class="bundleapp-plan-selector-plan"
+                  id="bundleapp-plan-selector-{{selling_plan_group.id}}"
+                  style="display: none"
+                >
+                  {%- if selling_plan_group.selling_plans.size > 1 -%}
+                    {% unless selling_plan_group.options[0].name == '*no_prefix*' %}
+                      <label data-test="prefixFromSellingPlanGroup-{{ selling_plan_group.id }}">
+                        {{- selling_plan_group.options[0].name -}}
+                      </label>
+                    {% endunless %}
+                  {%- else -%}
+                    <label>
+                      {% unless selling_plan_group.options[0].name == '*no_prefix*' %}
+                        <span data-test="prefixFromSellingPlanGroup">{{ selling_plan_group.options[0].name }} </span>
+                      {% endunless %}
+                      <span data-test="prefixFromSellingPlan-{{ selling_plan_group.selling_plans[0].id }}">
+                        {{- selling_plan_group.selling_plans[0].options[0].value -}}
+                      </span>
+                    </label>
+                  {%- endif -%}
+
+                  <select
+                    class="bundleapp-plan-selector-select"
+                    style="{% if selling_plan_group.selling_plans.size <= 1 %}display:none{% endif %}"
+                  >
+                    {% for plan in selling_plan_group.selling_plans %}
+                      <option
+                        data-test="prefixFromSellingPlan-{{ plan.id }}"
+                        value="{{ plan.id }}"
+                        {%- if selected_selling_plan_id == plan.id -%}
+                          selected
+                        {%- endif -%}
+                      >
+                        {%- comment -%}
+                          {%- capture value -%}
+                            {% if plan.price_adjustments[0].value_type == "percentage" %}
+                            {% if plan.price_adjustments[0].value != 0 %} (Save {{plan.price_adjustments[0].value}}%){%
+                            endif %}
+                            {% else %}
+                            {% if plan.price_adjustments[0].value != 0 %} (Save {{plan.price_adjustments[0].value |
+                            money}}){% endif %}
+                            {% endif %}
+                            {%- endcapture -%}
+                          {{ plan.options[0].value -}}
+                          {%- if is_same_value == false %} {{ value }}{% endif %}
+                        {%- endcomment -%}
+
+                        {%- capture value -%}
+                          {% if plan.price_adjustments[0].value_type == "percentage" %}
+                            {% if plan.price_adjustments[0].value != 0 %} (Save {{plan.price_adjustments[0].value}}%){% endif %}
+                          {% elsif plan.price_adjustments[0].value_type == "fixed_amount" %}
+                            {% if plan.price_adjustments[0].value != 0 %} (Save {{plan.price_adjustments[0].value | money}}){% endif %}
+                          {% endif %}
+                        {%- endcapture -%}
+                        {{ plan.options[0].value -}}
+                        {%- if is_same_value == false %} {{ value }}{% endif %}
+                      </option>
+                    {% endfor %}
+                  </select>
+
+                  <div class="bundleapp-plan-selector-radio" style="display: none">
+                    <div style="{% if selling_plan_group.selling_plans.size <= 1 %}display:none{% endif %}">
+                      {% for plan in selling_plan_group.selling_plans %}
+                        {%- capture valueOption -%}
+                          {% if plan.price_adjustments[0].value_type == "percentage" %}
+                          {% if plan.price_adjustments[0].value != 0 %} (Save {{plan.price_adjustments[0].value}}%){%
+                          endif %}
+                          {% else %}
+                          {% if plan.price_adjustments[0].value != 0 %} (Save {{plan.price_adjustments[0].value |
+                          money}}){% endif %}
+                          {% endif %}
+                          {%- endcapture -%}
+                        <label
+                          class="bundleapp-plan-selector-radio__label {% if selected_selling_plan_id == plan.id %}bundleapp-plan-selector-radio__label--selected{% endif %}"
+                          for="{{ plan.id }}"
+                        >
+                          <input
+                            class="bundleapp-plan-selector-radio__input {% if selected_selling_plan_id == plan.id %}bundleapp-plan-selector-radio__input--selected{% endif %}"
+                            type="radio"
+                            name="plan"
+                            data-test="prefixFromSellingPlan-{{ plan.id }}"
+                            value="{{ plan.id }}"
+                            id="{{ plan.id }}"
+                            {%- if selected_selling_plan_id == plan.id -%}
+                              checked
+                            {%- endif -%}
+                          >
+                          {{ plan.options[0].value -}}
+                          {%- if is_same_value == false %} {{ valueOption }}{% endif %}
+                        </label>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endunless -%}
+        {% endfor %}
+
+        <div class="bundleapp-plan-selector-description">
+          {% if product.selected_selling_plan.description and product.selected_selling_plan.description != '' -%}
+            <span>{{ product.selected_selling_plan.description }}</span>
+          {%- endif %}
+        </div>
+      {%- endif -%}
+    </fieldset>
+  </div>
+  <div class="bundleapp-subscription-benefits" style="display: none;">
+    <p class="bundleapp-subscription-benefits__title">
+      Subscription Benefits
+    </p>
+    <ul class="bundleapp-subscription-benefits__list">
+      <li>✔ Delivered Monthly - 'no empties' promise</li>
+      <li>✔ Consistent daily use is where the difference is felt - monthly delivery makes that easy</li>
+      <li>✔ Cancel, Pause, Skip, or Change Anytime, Hassle-Free</li>
+      <li>✔ No Surprises (Friendly pre-shipment email reminders)</li>
+    </ul>
+  </div>
+
+  
+
+  <script type="application/json">
+    {%- assign selectedVariantId = variant.id -%}
+    {%- assign selectedSellingPlanId = product.selected_selling_plan.id -%}
+    {
+      "widget_id": {{uuid | json}},
+      "id": {{ product.id | json }},
+      "title": {{ product.title | json }},
+      "selling_plan_groups": {{ product.selling_plan_groups | json }},
+      "variants": {{ product.variants | json }},
+      "selected_variant": {%- liquid
+        for variant in product.variants
+          if variant.id == selectedVariantId
+            echo variant | json
+          endif
+        endfor
+      -%},
+      "selling_plans_by_id": {
+       {%- for group in product.selling_plan_groups -%}
+        {%- assign parentLoop = forloop -%}
+         {%- for plan in group.selling_plans -%}
+            {%- capture planJson -%}
+              {
+                "id": {{- plan.id | json-}},
+                "name": {{plan.name | json}},
+                "description": {{plan.description | json}},
+                "options": {{plan.options | json}},
+                "recurring_deliveries": {{plan.recurring_deliveries | json}},
+                "price_adjustments": {{plan.price_adjustments | json}},
+                "selling_plan_group_id": {{group.id | json}}
+              }
+            {%- endcapture -%}
+            {%- if plan.id == selectedSellingPlanId -%}
+              {%- assign selectedSellingPlan = planJson -%}
+            {%- endif -%}
+           "{{plan.id}}": {{planJson}}
+           {%- unless forloop.last == true and parentLoop.last == true -%},{%- endunless -%}
+         {%- endfor -%}
+       {%- endfor -%}
+      },
+      "metafields": {{ product.metafields.bundle | json }},
+      "selectedSellingPlanId": {{selectedSellingPlanId | json}},
+      "selected_selling_plan": {%- if selectedSellingPlan -%}{{selectedSellingPlan}}{%- else -%}null{%- endif -%},
+      "translations": {
+        "subscription": "{{ 'awtomatic.plan_selector.subscription' | t }}",
+        "save": "{{ 'awtomatic.plan_selector.save' | t }}",
+        "extra": "{{ 'awtomatic.plan_selector.extra' | t }}",
+        "off": "{{ 'awtomatic.plan_selector.off' | t }}",
+        "customize_my_box": "{{ 'awtomatic.plan_selector.customize_my_box' | t }}",
+        "from": "{{ 'awtomatic.plan_selector.from' | t }}",
+        "delivery_suffix": "{{ 'awtomatic.plan_selector.delivery_suffix' | t }}"
+      }
+    }
+  </script>
+
+  <script>
+    (function () {
+      var product = {};
+      product.id = {{ product.id | json }};
+      product.title = {{ product.title | json }};
+      product.selling_plan_groups = {{ product.selling_plan_groups | json }};
+      product.variants = {{ product.variants | json }};
+      product.selected_selling_plan = {{product.selected_selling_plan | json}};
+      product.selected_variant = {{ variant | json }};
+      product.translations = {
+        subscription: "{{ 'awtomatic.plan_selector.subscription' | t }}",
+        save: "{{ 'awtomatic.plan_selector.save' | t }}",
+        extra: "{{ 'awtomatic.plan_selector.extra' | t }}",
+        off: "{{ 'awtomatic.plan_selector.off' | t }}",
+        customize_my_box: "{{ 'awtomatic.plan_selector.customize_my_box' | t }}",
+        from: "{{ 'awtomatic.plan_selector.from' | t }}",
+        delivery_suffix: "{{ 'awtomatic.plan_selector.delivery_suffix' | t }}",
+        gift_first_name_placeholder: "{{ 'awtomatic.plan_selector.gift_first_name_placeholder' | t }}",
+        gift_first_name_label: "{{ 'awtomatic.plan_selector.gift_first_name_label' | t }}",
+        gift_last_name_placeholder: "{{ 'awtomatic.plan_selector.gift_last_name_placeholder' | t }}",
+        gift_last_name_label: "{{ 'awtomatic.plan_selector.gift_last_name_label' | t }}",
+        gift_email_placeholder: "{{ 'awtomatic.plan_selector.gift_email_placeholder' | t }}",
+        gift_email_label: "{{ 'awtomatic.plan_selector.gift_email_label' | t }}",
+        gift_email_warning: "{{ 'awtomatic.plan_selector.gift_email_warning' | t }}",
+        gift_note_placeholder: "{{ 'awtomatic.plan_selector.gift_note_placeholder' | t }}",
+        gift_note_label: "{{ 'awtomatic.plan_selector.gift_note_label' | t }}",
+        gift_checkbox_label: "{{ 'awtomatic.plan_selector.gift_checkbox_label' | t }}",
+        gift_recipient_info_title: "{{ 'awtomatic.plan_selector.gift_recipient_info_title' | t }}"
+      }
+      product.metafields = {{ product.metafields.bundle | json }};
+      product.gift_selling_plans = {%- if shop.metafields.sellingPlans.gifts -%} {{ shop.metafields.sellingPlans.gifts }} {%- else -%}[]{%- endif -%};
+
+      product.selling_plans_by_id = (function() {
+        var ret = {};
+        for (group of product.selling_plan_groups) {
+          for (plan of group.selling_plans) {
+            ret[plan.id] = JSON.parse(JSON.stringify(plan));
+            ret[plan.id].selling_plan_group_id = group.id;
+          }
+        }
+        return ret;
+      })();
+
+      document.addEventListener("bundleapp:ready", function(){
+        if(window.bundleapp && window.bundleapp.BundleAppWidget) {
+          var $selector = document.querySelector("[data-bundleapp-wrapper='{{uuid}}']");
+          var widget = new window.bundleapp.BundleAppWidget($selector, product);
+        }
+      });
+
+      // Add dynamic-bab class to closest form
+      (function() {
+        var dynamicBabElement = document.querySelector('.dynamic-bab');
+        if (dynamicBabElement) {
+          var container = dynamicBabElement.closest('.product__info-container');
+          if (container) {
+            container.classList.add('dynamic-bab-container');
+          }
+        }
+      })();
+    })();
+  </script>
+{% endif %}

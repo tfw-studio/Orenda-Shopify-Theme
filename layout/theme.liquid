@@ -1,0 +1,891 @@
+{%- assign text_direction = 'localization.text_direction_trigger' | t | downcase -%}
+<!doctype html>
+<html
+  class="no-js"
+  lang="{{ request.locale.iso_code }}"
+  {%- if text_direction == 'rtl' %}
+    dir="rtl"
+  {% endif -%}
+>
+  <head>
+    <!-- Google Consent Mode V2 Consentmo -->
+    {% render 'gcm-integration-script' %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <meta name="google-site-verification" content="j9oxAYFwX36fztqcfbdsgwbcOuaRm8HFeXZ6BJHvAJY">
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    {%- comment -%}
+      <title>
+        {{ page_title }}
+        {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+        {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+        {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      </title>
+    {%- endcomment -%}
+
+    {%- if page_description -%}
+      {%- comment -%}<meta name="description" content="{{ page_description | escape }}">{%- endcomment -%}
+    {%- endif -%}
+      <script> 
+    
+    (function () {
+      'use strict';
+
+      // ── Configuration ─────────────────────────────────────────────────────────
+      const DEDUP_WINDOW_MS = 500;   // Reuse a resolved response for this long
+      const DEBUG = true;            // Console logging (set false for production)
+
+      // ── State ─────────────────────────────────────────────────────────────────
+      const _originalFetch = window.fetch;
+      let _enabled = true;
+
+      //  _inflight[url] = { promise, resolvedAt, response }
+      //  - While the fetch is pending:  promise is set, resolvedAt is null
+      //  - After it resolves:           resolvedAt is set, cleared after DEDUP_WINDOW_MS
+      const _inflight = {};
+
+      // Stats
+      let _stats = { actual: 0, deduped: 0, cloned: 0 };
+
+      const _log = (...args) => {
+        if (DEBUG) console.log('%c[CartDedup]', 'color:#f9a825; font-weight:bold', ...args);
+      };
+
+      // ── URL matching ──────────────────────────────────────────────────────────
+      const _isCartUrl = (url) => {
+        if (typeof url !== 'string') return false;
+        // Match /cart.js and /cart.json (GET only — POST to /cart/update.js etc. must pass through)
+        return /\/cart\.(js|json)(\?.*)?$/.test(url);
+      };
+
+      const _isGetRequest = (args) => {
+        // fetch(url) or fetch(url, { method: 'GET' }) or fetch(Request)
+        const init = args[1];
+        if (!init) return true; // no options = GET
+        if (typeof init.method === 'string' && init.method.toUpperCase() !== 'GET') return false;
+        if (args[0] instanceof Request && args[0].method.toUpperCase() !== 'GET') return false;
+        return true;
+      };
+
+      const _normalizeUrl = (input) => {
+        const url = typeof input === 'string' ? input : input?.url || '';
+        // Strip query params for dedup key — /cart.js?t=123 and /cart.js share a response
+        try {
+          const u = new URL(url, window.location.origin);
+          return u.pathname; // e.g. "/cart.js"
+        } catch {
+          return url;
+        }
+      };
+
+      // ── Patched fetch ─────────────────────────────────────────────────────────
+      window.fetch = function (...args) {
+        const rawUrl = typeof args[0] === 'string' ? args[0] : args[0]?.url || '';
+
+        // Only intercept GET /cart.js and /cart.json
+        if (!_enabled || !_isCartUrl(rawUrl) || !_isGetRequest(args)) {
+          return _originalFetch.apply(this, args);
+        }
+
+        const key = _normalizeUrl(rawUrl);
+        const entry = _inflight[key];
+
+        // Case 1: There's an in-flight request — piggyback on it
+        if (entry && entry.promise && !entry.resolvedAt) {
+          _stats.deduped++;
+          _log('DEDUP (in-flight) ' + key + ' — ' + _stats.deduped + ' saved so far');
+          return entry.promise.then(r => r.clone());
+        }
+
+        // Case 2: A recently resolved response is still within the dedup window
+        if (entry && entry.resolvedAt && (Date.now() - entry.resolvedAt < DEDUP_WINDOW_MS) && entry.response) {
+          _stats.cloned++;
+          _log('CLONE (recent) ' + key + ' — resolved ' + (Date.now() - entry.resolvedAt) + 'ms ago');
+          return Promise.resolve(entry.response.clone());
+        }
+
+        // Case 3: No in-flight or recent response — make the actual request
+        _stats.actual++;
+        _log('FETCH (actual) ' + key + ' — request #' + _stats.actual);
+
+        const fetchPromise = _originalFetch.apply(this, args).then(response => {
+          // Store the response for cloning
+          const cloneForStorage = response.clone();
+          _inflight[key] = {
+            promise: null,
+            resolvedAt: Date.now(),
+            response: cloneForStorage,
+          };
+          // Clear after dedup window
+          setTimeout(() => {
+            if (_inflight[key]?.resolvedAt) {
+              delete _inflight[key];
+            }
+          }, DEDUP_WINDOW_MS + 50);
+          return response;
+        }).catch(err => {
+          // On error, clear so next caller retries
+          delete _inflight[key];
+          throw err;
+        });
+
+        _inflight[key] = { promise: fetchPromise, resolvedAt: null, response: null };
+        return fetchPromise.then(r => r.clone());
+      };
+
+      // ── Public API ────────────────────────────────────────────────────────────
+      window.cartDedup = {
+        report() {
+          const total = _stats.actual + _stats.deduped + _stats.cloned;
+          console.log('%c── Cart Fetch Dedup Report ──', 'color:#f9a825; font-weight:bold; font-size:13px');
+          console.log('  Total fetch() calls to /cart.js|json:  ' + total);
+          console.log('  Actual HTTP requests:                  ' + _stats.actual);
+          console.log('  Deduplicated (in-flight):              ' + _stats.deduped);
+          console.log('  Cloned (recent response):              ' + _stats.cloned);
+          var saved = _stats.deduped + _stats.cloned;
+          var pct = total > 0 ? ((saved / total) * 100).toFixed(0) : 0;
+          console.log('  Requests saved:                        ' + saved + ' (' + pct + '%)');
+          console.log('%c────────────────────────────', 'color:#f9a825');
+        },
+
+        stats() {
+          return { ..._stats };
+        },
+
+        reset() {
+          _stats = { actual: 0, deduped: 0, cloned: 0 };
+          Object.keys(_inflight).forEach(k => delete _inflight[k]);
+          _log('Stats and cache reset');
+        },
+
+        disable() {
+          _enabled = false;
+          _log('Dedup DISABLED — all fetches pass through');
+        },
+
+        enable() {
+          _enabled = true;
+          _log('Dedup ENABLED');
+        },
+
+        teardown() {
+          window.fetch = _originalFetch;
+          _enabled = false;
+          _log('Teardown complete — original fetch restored');
+        },
+      };
+
+      _log('Loaded — dedup window: ' + DEDUP_WINDOW_MS + 'ms');
+
+    })();
+    </script>
+
+    {% render 'meta-tags' %}
+    <script src="{{ 'vendor-v4.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    
+    <!-- Custom Discount Logic -->
+    {% liquid
+      assign custom_disc = 0
+      assign discount_code = ''
+
+      if customer
+        if customer.tags contains 'Discount_Autoship20%' and customer.tags contains 'Active Subscriber'
+          assign custom_disc = 20
+          assign discount_code = 'ACTIVE_SUBSCRIBER20'
+        endif
+        if customer.tags contains 'Discount_Affiliate20%'
+          assign custom_disc = 20
+          assign discount_code = 'AFFILIATE20PERCENT'
+        endif
+        if customer.tags contains 'Discount_Affiliate30%'
+          assign custom_disc = 30
+          assign discount_code = 'AFFILIATE30PERCENT'
+        endif
+        if customer.tags contains 'Discount_Manager40%'
+          assign custom_disc = 40
+          assign discount_code = 'MANAGER40PERCENT'
+        endif
+      endif
+    %}
+    <script defer="defer">
+      function setDiscount() {
+        if(window.theme && theme.Discount) {
+          theme.Discount.setDiscountPercent({{ custom_disc }})
+          theme.Discount.setDiscountCode('{{ discount_code }}')
+        }
+      }
+      document.addEventListener("DOMContentLoaded", setDiscount);
+      document.addEventListener('rebuy:smartcart.ready', setDiscount);
+      document.addEventListener('rebuy:cart.change', setDiscount);
+    </script>
+    <!-- End Custom Discount Logic -->
+
+    <!-- Klaviyo integration script from Consentmo GDPR app -->
+<script id="consentmo-klaviyo-conditional-load">
+(function() {
+  'use strict';
+  var KLAVIYO_URL = 'https://static.klaviyo.com/onsite/js/NLurPQ/klaviyo.js?company_id=NLurPQ';
+  var loaded = false;
+
+  function loadKlaviyo() {
+    if (loaded) return;
+    loaded = true;
+    document.cookie = "__kla_off=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+    var s = document.createElement('script');
+    s.src = KLAVIYO_URL;
+    s.async = true;
+    document.head.appendChild(s);
+    console.log('[Consentmo-Klaviyo] Marketing consent granted — Klaviyo loaded');
+  }
+
+  function blockKlaviyo() {
+    document.cookie = "__kla_off=true;path=/";
+    console.log('[Consentmo-Klaviyo] Marketing not consented — Klaviyo blocked');
+  }
+
+  // Default: block tracking
+  blockKlaviyo();
+
+  // Also block the auto-injected script via MutationObserver
+  var blockedSrcs = [];
+  var observer = new MutationObserver(function(mutations) {
+    for (var m = 0; m < mutations.length; m++) {
+      var nodes = mutations[m].addedNodes;
+      for (var n = 0; n < nodes.length; n++) {
+        var node = nodes[n];
+        if (node.tagName === 'SCRIPT') {
+          var src = node.src || '';
+          if (src.toLowerCase().indexOf('klaviyo.com') !== -1) {
+            if (blockedSrcs.indexOf(src) === -1) blockedSrcs.push(src);
+            node.parentNode && node.parentNode.removeChild(node);
+            console.log('[Consentmo-Klaviyo] Blocked auto-injected script:', src);
+          }
+        }
+      }
+    }
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+
+  // Listen for ConsentMo consent
+  document.addEventListener('consentmoSignal_onLoad', function(e) {
+    var signal = e.detail || { isActive: false };
+
+    if (!signal.isActive) {
+      // ConsentMo not active for this visitor — allow Klaviyo
+      observer.disconnect();
+      loadKlaviyo();
+    } else {
+      // ConsentMo active — wait for consent decision
+      document.addEventListener('consentmoSignal', function(ev) {
+        var prefs = ev.detail && ev.detail.preferences;
+        if (!prefs) return;
+
+        if (prefs.marketing) {
+          observer.disconnect();
+          loadKlaviyo();
+        } else {
+          blockKlaviyo();
+        }
+      });
+    }
+  });
+
+  // Also check cookie-based consent for immediate page loads
+  var match = document.cookie.match(/(?:^|;\s*)cookieconsent_preferences_disabled=([^;]*)/);
+  if (match) {
+    var disabled = decodeURIComponent(match[1]);
+    if (disabled.indexOf('marketing') === -1) {
+      // Marketing is NOT disabled — consent was previously granted
+      observer.disconnect();
+      loadKlaviyo();
+    }
+  }
+})();
+</script>
+
+    {{ content_for_header }}
+
+    {%- liquid
+      render 'css-variables'
+      echo 'base.css' | asset_url | stylesheet_tag: preload: true
+
+      if text_direction == 'rtl'
+        echo 'rtl.css' | asset_url | stylesheet_tag
+      endif
+    -%}
+
+    {%- unless settings.type_body_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_header_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {%- if settings.predictive_search_enabled -%}
+      <link
+        rel="stylesheet"
+        href="{{ 'component-predictive-search.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'"
+      >
+    {%- endif -%}
+    {%- if settings.quick_view_enabled -%}
+      <link
+        rel="stylesheet"
+        href="{{ 'component-quick-view.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'"
+      >
+    {%- endif -%}
+    {%- if settings.color_swatches_enabled -%}
+      <link
+        rel="stylesheet"
+        href="{{ 'component-color-swatches.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'"
+      >
+    {%- endif -%}
+    {%- if linklists['gift-wrapping'].links != blank
+      and linklists['gift-wrapping'].links.first.type == 'product_link'
+    -%}
+      <link
+        rel="stylesheet"
+        href="{{ 'component-gift-wrapping.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'"
+      >
+      <noscript>{{ 'component-gift-wrapping.css' | asset_url | stylesheet_tag }}</noscript>
+    {%- endif -%}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+   
+
+    <!-- Yotpo widget <> Consentmo -->
+{% render 'Yotpo-js-integration-script' %}
+
+    <!-- Yotpo widget <> Consentmo -->
+{% render 'Yotpo-widget-integration-script' %}
+
+ {% # render 'yotpo js' %}
+
+    {% comment %} <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/-e9jGcOGcuunAw5dBDhHTw?disable_tracking=true" async></script> {% endcomment %}
+    
+    
+    {%- comment -%} === Custom Fonts: Axiforma + Aeonik Extended + Alexandria (Option 2) === {%- endcomment -%}
+    <!-- Preload self-hosted Axiforma + Aeonik Extended -->
+    <link rel="preload" as="font" href="{{ 'axiforma-book.woff2' | asset_url }}" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="{{ 'axiforma-regular.woff2' | asset_url }}" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="{{ 'axiforma-semibold.woff2' | asset_url }}" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="{{ 'aeonikextended-medium.woff2' | asset_url }}" type="font/woff2" crossorigin>
+
+    <!-- Alexandria (Google Fonts): Light 300, Regular 400, Bold 700 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+      /* =========================
+         Self-hosted families
+         ========================= */
+      /* Axiforma: Book(300) / Regular(400) / SemiBold(600) */
+      @font-face{
+        font-family:"Axiforma";
+        src:url("{{ 'axiforma-book.woff2' | asset_url }}") format("woff2"),
+            url("{{ 'axiforma-book.woff'  | asset_url }}") format("woff");
+        font-weight:300;
+        font-style:normal;
+        font-display:swap;
+      }
+      @font-face{
+        font-family:"Axiforma";
+        src:url("{{ 'axiforma-regular.woff2' | asset_url }}") format("woff2"),
+            url("{{ 'axiforma-regular.woff'  | asset_url }}") format("woff");
+        font-weight:400;
+        font-style:normal;
+        font-display:swap;
+      }
+      @font-face{
+        font-family:"Axiforma";
+        src:url("{{ 'axiforma-semibold.woff2' | asset_url }}") format("woff2"),
+            url("{{ 'axiforma-semibold.woff'  | asset_url }}") format("woff");
+        font-weight:600;
+        font-style:normal;
+        font-display:swap;
+      }
+
+      /* Aeonik Extended: Medium(500) */
+      @font-face{
+        font-family:"Aeonik Extended";
+        src:url("{{ 'aeonikextended-medium.woff2' | asset_url }}") format("woff2"),
+            url("{{ 'aeonikextended-medium.woff'  | asset_url }}") format("woff");
+        font-weight:500;
+        font-style:normal;
+        font-display:swap;
+      }
+
+      /* =========================
+         CSS variables (families)
+         ========================= */
+      :root{
+        /* Base families */
+        --font-body-family: "Axiforma", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        --font-heading-family: "Alexandria", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+        /* Specific roles */
+        --font-extended-family: "Aeonik Extended", "Alexandria", "Axiforma", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        --font-alexandria-family: "Alexandria", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+        /* Defaults per strategy */
+        --font-body-weight: 300;  /* Axiforma Book for body copy */
+        --font-heading-weight: 400; /* Alexandria Regular for H2+ by default */
+
+        /* Common line-heights */
+        --lh-tight: 1.1;
+        --lh-head: 1.2;
+        --lh-body: 1.6;
+      }
+
+      /* =========================
+         Global defaults
+         ========================= */
+      body{
+        font-family: var(--font-body-family);
+        font-weight: var(--font-body-weight);
+        line-height: var(--lh-body);
+      }
+
+      /* =========================
+         Headings mapping (Option 2)
+         ========================= */
+      /* H1: Aeonik Extended Medium */
+      {% if template.name == 'index' %}
+      h1, .h1{
+        font-family: var(--font-extended-family);
+        font-weight: 500;
+        line-height: var(--lh-tight);
+        letter-spacing: -0.01em; /* subtle optical kerning for extended */
+      }
+      {% else %}
+      h1, .h1{
+        font-family: var(--font-heading-family);
+        font-weight: 500;
+        line-height: var(--lh-tight);
+        letter-spacing: -0.01em; /* subtle optical kerning for extended */
+      }
+      {% endif %}
+
+      /* H2–H4: Alexandria Regular */
+      h2, .h2,
+      h3, .h3,
+      h4, .h4{
+        font-family: var(--font-heading-family);
+        font-weight: 400;
+        line-height: var(--lh-head);
+        letter-spacing: 0;
+      }
+
+      /* =========================
+         Subheading / Tagline
+         (Alexandria Light, uppercase)
+         ========================= */
+      .subheading,
+      .tagline{
+        font-family: var(--font-alexandria-family);
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        line-height: 1.3;
+        opacity: .9; /* optional: softer tone */
+      }
+
+      /* =========================
+         Eyebrow / Label
+         (Alexandria Regular, small/uppercase)
+         ========================= */
+      .eyebrow,
+      .label{
+        font-family: var(--font-alexandria-family);
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.2;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-smooth: never;
+      }
+
+      /* =========================
+         Buttons (Axiforma SemiBold)
+         ========================= */
+      .button,
+      button,
+      [type="button"],
+      [type="submit"],
+      .shopify-payment-button__button{
+        font-family: "Axiforma", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+        font-weight: 600 !important; /* SemiBold */
+        letter-spacing: 0.15em;
+        text-transform: none; /* keep brand voice; set to uppercase if desired */
+      }
+
+      /* Utility families */
+      .font-extended, .font-extended *{ font-family: var(--font-extended-family) !important; font-weight: 500; letter-spacing: .01em; }
+      .font-alexandria, .font-alexandria *{ font-family: var(--font-alexandria-family) !important; }
+
+      /* Optional helpers for Alexandria weights */
+      .font-alexandria--light{ font-weight: 300 !important; }
+      .font-alexandria--regular{ font-weight: 400 !important; }
+      .font-alexandria--bold{ font-weight: 700 !important; }
+
+      * {
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+    {%- comment -%} === End Custom Fonts (Option 2) === {%- endcomment -%}
+
+    {% render 'structured-data' %}
+
+    {% comment %} Awtomic Subscriptions {% endcomment %}
+    {% capture awtomic-translations %}{% render 'awtomic-translations' %}{% endcapture %}
+    {% unless awtomic-translations contains 'Liquid error' %}
+      {{ awtomic-translations }}
+    {% endunless %}
+    {% comment %} End Awtomic Subscriptions {% endcomment %}
+
+     
+
+  </head>
+
+  <body
+    class="template-{{ request.page_type }}{% if request.design_mode %} shopify-design-mode{% endif %}"
+
+    {%- if settings.image_zoom_effect_enabled %}
+      data-animate-image
+    {% endif -%}
+    {%- if settings.image_loading_bar_enabled %}
+      data-lazy-image
+    {% endif -%}
+    {%- if settings.heading_capitalize %}
+      data-heading-capitalize
+    {% endif -%}
+    {%- if settings.heading_center %}
+      data-heading-center
+    {% endif -%}
+    {%- if settings.price_superscript %}
+      data-price-superscript
+    {% endif -%}
+    {%- if settings.button_corner_radius > 0 %}
+      data-button-round
+    {% endif -%}
+  >
+    <a class="skip-to-content-link button button--small visually-hidden" href="#MainContent">
+      {{ 'accessibility.skip_to_text' | t }}
+    </a>
+
+    {% render 'transition-cover' %}
+
+    <div class="transition-body">
+      {% sections 'header-group' %}
+
+      {% if template.name == 'addresses' or template.name == 'account' or template.name == 'order' %}
+        {% assign show_account_nav = true %}
+      {% endif %}
+
+      <div class="transition-content">
+        <main
+          id="MainContent"
+          class="content-for-layout focus-none shopify-section {% if show_account_nav %} page-width {% endif %}"
+          role="main"
+          tabindex="-1"
+        >
+          {% if show_account_nav %}
+            {% render 'account-navigation' %}
+          {% endif %}
+
+          {{ content_for_layout }}
+        </main>
+
+        {% sections 'footer-group' %}
+      </div>
+    </div>
+
+    {% sections 'overlay-group' %}
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+    </ul>
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+      <symbol id="icon-cart" fill="none" viewbox="0 0 18 19">
+        <path d="M3.09333 5.87954L16.2853 5.87945V5.87945C16.3948 5.8795 16.4836 5.96831 16.4836 6.07785V11.4909C16.4836 11.974 16.1363 12.389 15.6603 12.4714C11.3279 13.2209 9.49656 13.2033 5.25251 13.9258C4.68216 14.0229 4.14294 13.6285 4.0774 13.0537C3.77443 10.3963 2.99795 3.58502 2.88887 2.62142C2.75288 1.42015 0.905376 1.51528 0.283581 1.51478" stroke="currentColor"/>
+        <path d="M13.3143 16.8554C13.3143 17.6005 13.9183 18.2045 14.6634 18.2045C15.4085 18.2045 16.0125 17.6005 16.0125 16.8554C16.0125 16.1104 15.4085 15.5063 14.6634 15.5063C13.9183 15.5063 13.3143 16.1104 13.3143 16.8554Z" fill="currentColor"/>
+        <path d="M3.72831 16.8554C3.72831 17.6005 4.33233 18.2045 5.07741 18.2045C5.8225 18.2045 6.42651 17.6005 6.42651 16.8554C6.42651 16.1104 5.8225 15.5063 5.07741 15.5063C4.33233 15.5063 3.72831 16.1104 3.72831 16.8554Z" fill="currentColor"/>
+      </symbol>
+    </svg>
+
+    <script>
+      window.routes = {
+        root_url: '{{ routes.root_url }}',
+        cart_url: '{{ routes.cart_url }}',
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        search_url: '{{ routes.search_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}'
+      };
+
+      window.cartStrings = {
+        error: `{{ 'sections.cart.cart_error' | t }}`,
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`
+      };
+
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`,
+        preOrder: `{{ 'products.product.pre_order' | t }}`
+      };
+
+      window.accessibilityStrings = {
+        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+        shareSuccess: `{{ 'general.share.success_message' | t }}`
+      }
+
+      window.dateStrings = {
+        d: `{{ 'general.date.d' | t }}`,
+        day: `{{ 'general.date.day' | t }}`,
+        days: `{{ 'general.date.days' | t }}`,
+        hour: `{{ 'general.date.hour' | t }}`,
+        hours: `{{ 'general.date.hours' | t }}`,
+        minute: `{{ 'general.date.minute' | t }}`,
+        minutes: `{{ 'general.date.minutes' | t }}`,
+        second: `{{ 'general.date.second' | t }}`,
+        seconds: `{{ 'general.date.seconds' | t }}`
+      };
+
+      window.shopSettings = {
+        moneyFormat: {{ shop.money_format | json }},
+        isoCode: {{ cart.currency.iso_code | json }},
+        cartDrawer: {{ settings.cart_drawer_enabled }}
+      };
+
+      (function() {
+        // Fixed: Largest Contentful Paint image was lazily loaded
+        const first_image = document.querySelector('#MainContent .shopify-section .media img');
+        if (first_image) first_image.setAttribute('loading', 'auto');
+      })();
+    </script>
+
+    
+    
+
+    <!-- Rebuy Custom Smart Cart Template -->
+    {% if settings['enable-rebuy'] %}
+      {% include 'smart-cart-template' %}
+    {% endif %}
+    <!-- End Rebuy Custom Smart Cart Template -->
+
+    <!-- Begin ReCharge code -->
+    {% include 'subscription-theme-footer' %}
+    <!-- End ReCharge code -->
+
+    {%- if settings.image_loading_bar_enabled %}
+      <script src="{{ 'lazyimage.js' | asset_url }}" async></script>
+    {% endif -%}
+    {%- if settings.predictive_search_enabled -%}
+      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {%- if settings.quick_view_enabled -%}
+      <script src="{{ 'quick-view.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {%- if settings.color_swatches_enabled -%}
+      <script src="{{ 'color-swatches.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {%- if linklists['gift-wrapping'].links != blank
+      and linklists['gift-wrapping'].links.first.type == 'product_link'
+    -%}
+      <script src="{{ 'gift-wrapping.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {% comment %} Start Accessibe Script {% endcomment %}
+    <script>
+      (function () {
+        var s = document.createElement('script');
+        var h = document.querySelector('head') || document.body;
+        s.src = 'https://acsbapp.com/apps/app/dist/js/app.js';
+        s.async = true;
+        s.onload = function () {
+          acsbJS.init({
+            statementLink: '',
+            footerHtml: '',
+            hideMobile: false,
+            hideTrigger: false,
+            disableBgProcess: false,
+            language: 'en',
+            position: 'left',
+            leadColor: '#801D7F',
+            triggerColor: '#146FF8',
+            triggerRadius: '50%',
+            triggerPositionX: 'left',
+            triggerPositionY: 'bottom',
+            triggerIcon: 'people',
+            triggerSize: 'medium',
+            triggerOffsetX: 16,
+            triggerOffsetY: 90,
+            mobile: {
+              triggerSize: 'medium',
+              triggerPositionX: 'left',
+              triggerPositionY: 'bottom',
+              triggerOffsetX: 23,
+              triggerOffsetY: 90,
+              triggerRadius: '50%',
+            },
+          });
+        };
+        h.appendChild(s);
+      })();
+    </script>
+    {% comment %} End Accessibe Script {% endcomment %}
+
+    {% include 'elspw_include' %}
+
+    {% comment %} START - Update Product Price and Subtotal on Rebuy Reactivate Landing Page {% endcomment %}
+    <script>
+      (function () {
+        if (window.location.pathname !== '/apps/rebuy/recharge/subscription/reactivate') return;
+
+        const interval = setInterval(updateReactivatePrice, 100);
+
+        let originalPrice = null;
+
+        function toCent(amount) {
+          const str = amount.toString();
+          const [int] = str.split('.');
+
+          return Number(
+            amount
+              .toFixed(2)
+              .replace('.', '')
+              .padEnd(int.length === 1 ? 3 : 4, '0')
+          );
+        }
+
+        function updateReactivatePrice() {
+          const priceElem = document.querySelector(
+            '.rebuy-reactivate-landing__utility-block.rebuy-product-price .rebuy-money'
+          );
+          const subtotalElem = document.querySelector(
+            '.rebuy-reactivate-landing__utility-block.rebuy-reactivate-landing__subtotal .rebuy-money'
+          );
+          const quantityElem = document.querySelector('.rebuy-widget__item-quantity-widget-label');
+
+          if (!priceElem || !subtotalElem || !quantityElem) return;
+
+          if (!originalPrice) originalPrice = toCent(parseInt(priceElem.innerText.slice(1)));
+
+          const quantity = parseInt(quantityElem.innerText);
+
+          const priceCents = originalPrice;
+          const subtotalCents = priceCents * quantity;
+
+          const discountPrice = theme.Discount.applyDiscount(priceCents, 20);
+          const discountSubtotal = theme.Discount.applyDiscount(subtotalCents, 20);
+
+          priceElem.innerText = theme.Currency.formatMoney(discountPrice, window.shopSettings.moneyFormat);
+          subtotalElem.innerText = theme.Currency.formatMoney(discountSubtotal, window.shopSettings.moneyFormat);
+        }
+      })();
+    </script>
+    {% comment %} END - Update Product Price and Subtotal on Rebuy Reactivate Landing Page {% endcomment %}
+    {% unless template.name == 'login' %}
+      {% render 'login-popup-indicator' %}
+    {% endunless %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const observer = new MutationObserver(() => {
+          const form = document.querySelector('[data-testid="klaviyo-form-Wh2bT3"]');
+          if (form) {
+            const visibilityObserver = new IntersectionObserver(
+              (entries, visObserver) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    const linksWithoutAria = form.querySelectorAll('a:not([aria-label])');
+                    linksWithoutAria.forEach((link) => {
+                      link.setAttribute('aria-label', `${link.text} (Opens in new tab)`);
+                    });
+                    visObserver.disconnect(); // Stop observing once it's handled
+                    mutationObserver.disconnect(); // Optional: stop mutation observer too
+                  }
+                });
+              },
+              {
+                threshold: 0.1, // Adjust as needed (0 = any visibility, 1 = fully visible)
+              }
+            );
+
+            visibilityObserver.observe(form);
+          }
+        });
+
+        const mutationObserver = observer;
+        mutationObserver.observe(document.body, { childList: true, subtree: true });
+      });
+    </script>
+
+    <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+
+
+    <style>
+      .rebuy-cart__custom_checkout-button.disabled {
+        pointer-events: none;
+      }
+    </style>
+
+    {% comment %} Awtomic Subscriptions {% endcomment %}
+    {% capture awtomic-imports %}{% render 'awtomic-imports' %}{% endcapture %}
+    {% unless awtomic-imports contains 'Liquid error' %}
+      {{ awtomic-imports }}
+    {% endunless %}
+    {% capture awtomic-theme-custom %}{% render 'awtomic-theme-custom' %}{% endcapture %}
+    {% unless awtomic-theme-custom contains 'Liquid error' %}
+      {{ awtomic-theme-custom }}
+    {% endunless %}
+    {% comment %} End Awtomic Subscriptions {% endcomment %}
+
+    <script>
+      {% comment %} For tracking referrer links using UTM {% endcomment %}
+  const params = new URLSearchParams(window.location.search);
+  const utmContent = params.get('utm_content');
+  if (utmContent) {
+    fetch('/cart/update.js', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        attributes: { 'referral_influencer': utmContent }
+      })
+    });
+  }
+</script>
+  </body>
+</html>

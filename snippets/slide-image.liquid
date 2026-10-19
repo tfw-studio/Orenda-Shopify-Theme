@@ -1,0 +1,24 @@
+<div class="slideshow__image-wrapper media-wrapper">
+  {%- if block.settings.image != blank -%}
+    <div class="slideshow__image media media--{{ section.settings.image_ratio }} media-mobile--{{ section.settings.mobile_image_ratio }}"
+      style="--image-position: {{ block.settings.image_position }}"
+    >
+      {%- liquid
+        if block.settings.image_mobile == blank
+          echo block.settings.image | image_url: width: 3840 | image_tag: loading: 'lazy', sizes: '100vw', widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', is: 'lazy-image'
+        else
+          echo block.settings.image_mobile | image_url: width: 3840 | image_tag: loading: 'lazy', class: 'medium-hide large-up-hide', sizes: '100vw', widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', is: 'lazy-image'
+          echo block.settings.image | image_url: width: 3840 | image_tag: loading: 'lazy', class: 'small-hide', sizes: '100vw', widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', is: 'lazy-image'
+        endif
+      -%}
+      </div>
+  {%- else -%}
+    <div class="slideshow__image slideshow__image--placeholder media media--{{ section.settings.image_ratio }} media-mobile--{{ section.settings.mobile_image_ratio }}">
+      {%- assign current = position | modulo: 2 | plus: 1 -%}
+      {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder' }}
+    </div>
+  {%- endif -%}
+  {%- if block.settings.button_link != blank -%}
+    <a href="{{ block.settings.button_link }}" class="full-unstyled-link" aria-label="{{ block.settings.button_link }}">&nbsp;</a>
+  {%- endif -%}
+</div>

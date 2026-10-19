@@ -1,0 +1,202 @@
+{% liquid
+  assign custom_disc = 0
+  if customer
+    if customer.tags contains 'SUBSCRIPTION20' or customer.tags contains 'Discount_Autoship20%' and customer.tags contains 'Active Subscriber' or customer.tags contains 'Discount_Affiliate20%'
+      assign custom_disc = 20
+    endif
+    if customer.tags contains 'Discount_Affiliate30%'
+      assign custom_disc = 30
+    endif
+    if customer.tags contains 'Discount_Manager40%'
+      assign custom_disc = 40
+    endif
+  endif
+%}
+
+<script>
+(() => {
+  const widget = document.querySelector('.bundleapp-wrapper[data-bundleapp-wrapper]');
+  console.log('[TWC] Widget found:', !!widget);
+  if (!widget) return;
+
+  let variantOriginalPrice = {{ product.selected_or_first_available_variant.price }};
+  const CUSTOMER_DISC = {{ custom_disc | default: 0 }};
+  const HAS_BOGO = {% if product.metafields.custom.bogo_free_product != blank %}true{% else %}false{% endif %};
+
+  console.log('[TWC] Init values:', { variantOriginalPrice, CUSTOMER_DISC, HAS_BOGO });
+
+  // Guard flag — true while our code is writing to the DOM
+  let isOurWrite = false;
+
+  // ---------- Money helpers ----------
+  const formatMoney = (cents) => {
+    try {
+      if (window.theme?.Currency?.formatMoney && window.shopSettings?.moneyFormat) {
+        return window.theme.Currency.formatMoney(cents, window.shopSettings.moneyFormat);
+      }
+      if (window.Shopify && typeof Shopify.formatMoney === 'function') {
+        const fmt = document.documentElement?.getAttribute('data-money-format') || '${{amount}}';
+        return Shopify.formatMoney(cents, fmt);
+      }
+    } catch (e) {
+      console.warn('[TWC] formatMoney error:', e);
+    }
+    return (Number(cents) / 100).toLocaleString(undefined, { style: 'currency', currency: 'USD' });
+  };
+
+  const applyDiscount = (priceCents, pct = 0) =>
+    Math.round(Number(priceCents || 0) * (100 - Number(pct || 0)) / 100);
+
+  // ---------- Awtomic DOM helpers ----------
+  const oneTimeGroup = () =>
+    widget.querySelector('.bundleapp-plan-selector-group[data-one-time]');
+
+  const subscriptionGroups = () =>
+    Array.from(widget.querySelectorAll('.bundleapp-plan-selector-group'))
+      .filter((g) => !g.hasAttribute('data-one-time'));
+
+  const priceSpanIn = (group) => {
+    if (!group) return null;
+    return group.querySelector('label > .bundleapp-plan-selector-group-pricing')
+      || group.querySelector('.bundleapp-plan-selector-group-pricing');
+  };
+
+  const writeOneTimePrice = (cents) => {
+    const priceEl = priceSpanIn(oneTimeGroup());
+    if (!priceEl) return;
+    priceEl.textContent = formatMoney(cents);
+    priceEl.style.display = '';
+  };
+
+  const writeSubsPrice = (cents, originalCents) => {
+    subscriptionGroups().forEach((group) => {
+      const priceEl = priceSpanIn(group);
+      if (!priceEl) return;
+
+      priceEl.textContent = formatMoney(cents);
+      priceEl.style.display = '';
+
+      group.classList.add('twc-sub-group');
+
+      {% if custom_disc == 0 %}
+        priceEl.setAttribute('data-original-price', formatMoney(originalCents));
+      {% else %}
+        priceEl.removeAttribute('data-original-price');
+      {% endif %}
+
+      const builtInCompare = group.querySelector('.bundleapp-plan-selector-group-compare');
+      if (builtInCompare) builtInCompare.style.display = 'none';
+    });
+  };
+
+  const updateWidget = (priceCents) => {
+    if (!priceCents) return;
+
+    let discountCode = '';
+    try {
+      discountCode = window.theme?.Discount?.getDiscountCode?.() || '';
+    } catch (e) {}
+
+    // ONE-TIME price
+    let oneTime;
+    if (CUSTOMER_DISC > 0) {
+      oneTime = applyDiscount(priceCents, CUSTOMER_DISC);
+    } else {
+      oneTime = (discountCode === 'SUBSCRIPTION20') ? priceCents : applyDiscount(priceCents);
+    }
+
+    // SUBSCRIPTION price
+    const sub = (CUSTOMER_DISC > 0)
+      ? applyDiscount(priceCents, CUSTOMER_DISC)
+      : applyDiscount(priceCents, 20);
+
+    // --- DOM writes (guarded) ---
+    isOurWrite = true;
+
+    if (!HAS_BOGO) {
+      writeOneTimePrice(oneTime);
+    }
+    writeSubsPrice(sub, priceCents);
+
+    isOurWrite = false;
+  };
+
+  // ---------- Lifecycle ----------
+  const runUpdate = () => requestAnimationFrame(() => updateWidget(variantOriginalPrice));
+
+  // Initial polling
+  let tries = 0;
+  const boot = setInterval(() => {
+    runUpdate();
+    if (++tries > 30) clearInterval(boot);
+  }, 75);
+
+  document.addEventListener('bundleapp:ready', runUpdate);
+
+  // MutationObserver — catches Awtomic re-renders but skips our own writes
+  try {
+    const mo = new MutationObserver(() => {
+      if (isOurWrite) return;
+      runUpdate();
+    });
+    mo.observe(widget, { childList: true, subtree: true, characterData: true });
+  } catch (e) {}
+
+  // Theme variant change
+  document.addEventListener('variant:change', (e) => {
+    const v = e?.detail?.variant;
+    if (!v) return;
+    variantOriginalPrice = v.price;
+    updateWidget(v.price);
+  });
+})();
+</script>
+
+<style>
+/* Scope all overrides to the Awtomic widget root */
+.bundleapp-wrapper {
+  --_price-font: var(--font-price-family);
+}
+
+.bundleapp-wrapper .bundleapp-plan-selector-group-pricing {
+  font-family: var(--_price-font) !important;
+}
+
+.bundleapp-wrapper .bundleapp-plan-selector-group label {
+  font-size: 16px !important;
+  font-family: var(--font-body-family) !important;
+}
+
+/* Strike-through + "Save 20%" badge on subscription price (only when no custom_disc) */
+{% if custom_disc == 0 %}
+.bundleapp-wrapper .twc-sub-group .bundleapp-plan-selector-group-pricing {
+  display: inline-block;
+  margin-top: 0;
+  color: #000;
+  padding-left: 7px;
+}
+
+.bundleapp-wrapper .twc-sub-group .bundleapp-plan-selector-group-pricing::after {
+  content: attr(data-original-price);
+  margin-left: 8px;
+  color: rgba(33, 35, 38, 0.7);
+  text-decoration: line-through;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.bundleapp-wrapper .twc-sub-group .bundleapp-plan-selector-group-pricing::before {
+  background-color: #6e1273;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 60px;
+  display: inline-block;
+  padding: 0 12px;
+  margin-right: 10px;
+  content: 'Save 20%';
+  font-size: 14px;
+  transform: translateY(-1px);
+  font-family: "Twentieth Century", sans-serif;
+}
+{% endif %}
+</style>

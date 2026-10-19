@@ -1,0 +1,525 @@
+{
+  "sections": {
+    "17734241931c022b0e": {
+      "type": "apps",
+      "blocks": {
+        "redo_order_tracking_login_3QYrxU": {
+          "type": "shopify:\/\/apps\/redo\/blocks\/order-tracking-login\/c613644b-6df4-4d11-b336-43a5c06745a1",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "redo_order_tracking_login_3QYrxU"
+      ],
+      "settings": {
+        "include_margins": false,
+        "show_divider": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "2e7680e5-a42c-4469-990f-792d5b2d5239": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14880011026513__2e7680e5-a42c-4469-990f-792d5b2d5239-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Order tracking",
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--14880011026513__2e7680e5-a42c-4469-990f-792d5b2d5239-heading-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "horizontal_content": false,
+        "page_width": "default",
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_heading": "#262625",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "section_background": "",
+        "padding_top": 36,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "narrow": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "169023368294f702e9": {
+      "type": "apps",
+      "blocks": {
+        "a8d96903-be07-4ca0-8c96-af36f9248df0": {
+          "type": "shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-widget\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "63144",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "a8d96903-be07-4ca0-8c96-af36f9248df0"
+      ],
+      "settings": {
+        "include_margins": true,
+        "show_divider": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "ef5d0c8f-6324-40e3-8f31-44f640f7b5d4": {
+      "type": "image-with-text",
+      "blocks": {
+        "891a667b-29e5-46c1-8f82-b51d12203538": {
+          "type": "heading",
+          "settings": {
+            "heading": "Save 20% - Because feeling good shouldn't be complicated.",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "template--14880011026513__ef5d0c8f-6324-40e3-8f31-44f640f7b5d4-heading-1": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Making Health Simple",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "91c15fc4-c900-47d5-8b64-52f3472783ea": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Subscriptions",
+            "subheading_size": "h3",
+            "secondary_color": false
+          }
+        },
+        "template--14880011026513__ef5d0c8f-6324-40e3-8f31-44f640f7b5d4-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Your wellness routine, simplified. The right products delivered on your schedule, at a price that makes staying consistent easy.<\/strong><\/p><p>20% off every order, automatically.<\/p><p>Monthly delivery so you never run out, our \"no empties\" promise.<\/p><p>Control your own delivery date with every order.<\/p><p>Skip, pause, or cancel anytime. No hassle, no questions.<\/p><p><strong>We give you a heads up<\/strong>. A friendly reminder email arrives five days before every order processes giving you time to add products, skip a month, pause, or make any changes before anything ships. No surprises ever.<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        },
+        "template--14880011026513__ef5d0c8f-6324-40e3-8f31-44f640f7b5d4-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "WHY Subscribe?",
+            "button_link": "shopify:\/\/pages\/subscriptions",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "891a667b-29e5-46c1-8f82-b51d12203538",
+        "template--14880011026513__ef5d0c8f-6324-40e3-8f31-44f640f7b5d4-heading-1",
+        "91c15fc4-c900-47d5-8b64-52f3472783ea",
+        "template--14880011026513__ef5d0c8f-6324-40e3-8f31-44f640f7b5d4-text-1",
+        "template--14880011026513__ef5d0c8f-6324-40e3-8f31-44f640f7b5d4-button-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/excited-senior-woman-opens-package-delivery.jpg_s_1024x1024_w_is_k_20_c_0bNQxglwztoP3fBgKgLUMBu42GSuCVub4rf8DjjGFMU.jpg",
+        "image_position": "center center",
+        "layout": "image_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "750px",
+        "enlarge_content": false,
+        "full_width": false,
+        "show_divider": false,
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "guarantees_rLHYdG": {
+      "type": "guarantees",
+      "blocks": {
+        "guarantee_tk7LU6": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "truck",
+            "icon_size": "medium",
+            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"M286.38-184q-44.95 0-74.51-31.54-29.56-31.55-27.64-75.69H105l9.85-43.77h89.85q9.22-23.46 31.34-38.12 22.11-14.65 50.34-14.65 27.24 0 49.35 14.65 22.12 14.66 33.5 38.12H576l91.23-397.23H220l1.69-5.23Q224.38-754 237.85-765q13.46-11 31.77-11h453.46l-36.62 153.62h83.31l108.54 146.23-36.39 184.92h-35.15q.92 44.31-28.75 75.77Q748.34-184 704.38-184q-43.95 0-73.51-31.54-29.56-31.55-27.64-75.69H387.77q1.92 44.31-27.75 75.77Q330.34-184 286.38-184ZM641-429.38h185.54l6.54-33.47-85.7-115.77h-71.32L641-429.38Zm13.38-247.93 12.85-54.92L576-335l12.62-54.69 32.69-143.85 33.07-143.77ZM58.15-439.69l11.31-43.77h194.23l-11.31 43.77H58.15Zm84-143.85 11.31-43.77h230.23l-11.31 43.77H142.15Zm144.23 355.77q24.63 0 41.13-16.99 16.49-17 16.49-41.62 0-24.63-16.49-41.13Q311.01-344 286.38-344q-24.62 0-41.62 16.49-16.99 16.5-16.99 41.13 0 24.62 16.99 41.62 17 16.99 41.62 16.99Zm418 0q24.63 0 41.63-16.99 16.99-17 16.99-41.62 0-24.63-16.99-41.13-17-16.49-41.63-16.49-24.62 0-41.12 16.49-16.49 16.5-16.49 41.13 0 24.62 16.49 41.62 16.5 16.99 41.12 16.99Z\"><\/path><\/svg>",
+            "title": "Fast, Reliable Shipping",
+            "title_size": "h3",
+            "text": "<p>Ships in 1–2 business days. Free standard shipping and handling are offered on U.S. orders with a minimum subtotal of $150, less discounts. <\/p>"
+          }
+        },
+        "guarantee_CXhEYk": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "truck",
+            "icon_size": "medium",
+            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"m355.15-90.77-69.77-119.85-137.28-28.85 14.48-137.75L72.85-480l89.73-102.55-14.48-136.98 137.28-29.62 69.77-120.08 124.85 55 124.85-55 70.77 120.08 137.05 29.62-15.25 136.98L887.15-480l-89.73 102.78 15.25 137.75-137.05 28.85-70.77 119.85-124.85-55-124.85 55Zm19.93-57.54L480-192l107.38 43.69L649.77-247l114.15-27.92-10.46-116.7 77.16-88.54-77.16-88.99 10.46-118.35-113.88-25.46-64.12-98.73L480-768l-107.38-43.69-62.05 98.76-114.49 25.46 10.4 118.38-77.1 89.01 77.1 88.57-10.4 118.05 113.84 26.26 65.16 98.89ZM480-480Zm-42.23 119.92 209.54-208.3-32.46-30-177.08 176.61-90.39-94.85-33.69 33.47 124.08 123.07Z\"><\/path><\/svg>",
+            "title": "Our 30-Day promise to you",
+            "title_size": "h3",
+            "text": "<p>We believe in what we make. If Orenda isn't everything you hoped for within 30 days, we'll make it right with a full refund. No hoops. No hassle. Just our word. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "guarantee_tk7LU6",
+        "guarantee_CXhEYk"
+      ],
+      "custom_css": [
+        "svg {color: #6e1273;}"
+      ],
+      "name": "t:sections.guarantees.presets.name",
+      "settings": {
+        "layout": "default",
+        "column_alignment": "left",
+        "horizontal_content": true,
+        "full_width": false,
+        "show_divider": false,
+        "enable_set_section_max_width": false,
+        "set_section_max_width": 950,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "use_custom_colors": true,
+        "colors_icon": "#f8f8f8",
+        "colors_text": "#626262",
+        "colors_header": "#1a1b18",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "section_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "4c65fab7-12ea-4ff3-b855-df0ce609de8e": {
+      "type": "image-with-text",
+      "blocks": {
+        "b50a4c0d-7e13-44e7-b815-0cc3cf2473d5": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "GIVE $20, GET $40",
+            "subheading_size": "h4",
+            "secondary_color": false
+          }
+        },
+        "template--14880011026513__4c65fab7-12ea-4ff3-b855-df0ce609de8e-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Treat your friends to $20 off their first order.",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "template--14880011026513__4c65fab7-12ea-4ff3-b855-df0ce609de8e-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Treat your friends to $20 off their first order, and you'll get $40 in Orenda Rewards towards your next order when they purchase using your link!<\/p><p><em>*Offer valid only for new customers. The reward will be issued <\/em>two<em> days after the friend's purchase. <\/em><\/p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        },
+        "template--14880011026513__4c65fab7-12ea-4ff3-b855-df0ce609de8e-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Treat a Friend",
+            "button_link": "shopify:\/\/pages\/rewards-program-page",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "b50a4c0d-7e13-44e7-b815-0cc3cf2473d5",
+        "template--14880011026513__4c65fab7-12ea-4ff3-b855-df0ce609de8e-heading-1",
+        "template--14880011026513__4c65fab7-12ea-4ff3-b855-df0ce609de8e-text-1",
+        "template--14880011026513__4c65fab7-12ea-4ff3-b855-df0ce609de8e-button-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/20210424_Orenda_1014_copy_5748344a-665a-4d63-bad7-352d5e8d867f.jpg",
+        "image_position": "center center",
+        "layout": "text_first",
+        "text_box_position": "middle",
+        "text_alignment": "center",
+        "image_ratio": "600px",
+        "enlarge_content": false,
+        "full_width": false,
+        "show_divider": false,
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "6be5dff1-233a-41c2-8842-694f10c2b659": {
+      "type": "gallery",
+      "blocks": {
+        "template--14880011026513__6be5dff1-233a-41c2-8842-694f10c2b659-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Womens_Dr_Z_Customer_Review_v1_Web_52023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "template--14880011026513__6be5dff1-233a-41c2-8842-694f10c2b659-image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shanhong_Customer_Review_V4_Web_52023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "middle-center"
+          }
+        },
+        "template--14880011026513__6be5dff1-233a-41c2-8842-694f10c2b659-image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Subscription_Dianne_J_Customer_Review_v1_Web_62023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        }
+      },
+      "block_order": [
+        "template--14880011026513__6be5dff1-233a-41c2-8842-694f10c2b659-image-1",
+        "template--14880011026513__6be5dff1-233a-41c2-8842-694f10c2b659-image-3",
+        "template--14880011026513__6be5dff1-233a-41c2-8842-694f10c2b659-image-2"
+      ],
+      "settings": {
+        "per_row": 3,
+        "spacing_images": 20,
+        "image_height": 320,
+        "apply_overlay": false,
+        "full_width": false,
+        "show_divider": false,
+        "heading": "Loved by thousands of customers since 2002",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "mobile_image_height": 210,
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "f700c718-65e9-473e-89d8-d1484839ab4a": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14880011026513__f700c718-65e9-473e-89d8-d1484839ab4a-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get the Scoop",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "b5afbef9-e91e-405e-a399-e4ab56794447": {
+          "type": "heading",
+          "settings": {
+            "heading": "From the Orenda Advantage Blog",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "template--14880011026513__f700c718-65e9-473e-89d8-d1484839ab4a-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Find articles on a variety of health and wellness topics.<\/p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14880011026513__f700c718-65e9-473e-89d8-d1484839ab4a-heading-1",
+        "b5afbef9-e91e-405e-a399-e4ab56794447",
+        "template--14880011026513__f700c718-65e9-473e-89d8-d1484839ab4a-text-1"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "horizontal_content": false,
+        "page_width": "default",
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_heading": "#262625",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "section_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "cd3911ea-259e-40ac-af9d-adb8fba7d8ed": {
+      "type": "featured-blog",
+      "blocks": {
+        "template--14880011026513__cd3911ea-259e-40ac-af9d-adb8fba7d8ed-title-1": {
+          "type": "title",
+          "settings": {
+            "show_date": true,
+            "show_author": false,
+            "show_comment_count": false
+          }
+        },
+        "template--14880011026513__cd3911ea-259e-40ac-af9d-adb8fba7d8ed-summary-1": {
+          "type": "summary",
+          "settings": {}
+        },
+        "template--14880011026513__cd3911ea-259e-40ac-af9d-adb8fba7d8ed-read_more-1": {
+          "type": "read_more",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--14880011026513__cd3911ea-259e-40ac-af9d-adb8fba7d8ed-title-1",
+        "template--14880011026513__cd3911ea-259e-40ac-af9d-adb8fba7d8ed-summary-1",
+        "template--14880011026513__cd3911ea-259e-40ac-af9d-adb8fba7d8ed-read_more-1"
+      ],
+      "settings": {
+        "blog": "orenda-advantage",
+        "post_limit": 3,
+        "show_view_all": true,
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "show_image": true,
+        "image_ratio": "landscape",
+        "image_position": "center center",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "431dda00-66c6-464c-9bf9-ea6cba2c3a51": {
+      "type": "featured-blog",
+      "blocks": {
+        "template--14880011026513__431dda00-66c6-464c-9bf9-ea6cba2c3a51-title-1": {
+          "type": "title",
+          "settings": {
+            "show_date": true,
+            "show_author": false,
+            "show_comment_count": false
+          }
+        },
+        "template--14880011026513__431dda00-66c6-464c-9bf9-ea6cba2c3a51-summary-1": {
+          "type": "summary",
+          "settings": {}
+        },
+        "template--14880011026513__431dda00-66c6-464c-9bf9-ea6cba2c3a51-read_more-1": {
+          "type": "read_more",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--14880011026513__431dda00-66c6-464c-9bf9-ea6cba2c3a51-title-1",
+        "template--14880011026513__431dda00-66c6-464c-9bf9-ea6cba2c3a51-summary-1",
+        "template--14880011026513__431dda00-66c6-464c-9bf9-ea6cba2c3a51-read_more-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "blog": "10-day-detox-recipes",
+        "post_limit": 3,
+        "show_view_all": true,
+        "show_divider": false,
+        "heading": "10-Day Detox Cleanse Recipes",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "show_image": true,
+        "image_ratio": "landscape",
+        "image_position": "center center",
+        "padding_top": 68,
+        "padding_bottom": 0
+      }
+    },
+    "0c36f8c5-cbc8-4d8d-902e-4158c35fff80": {
+      "type": "empty-space",
+      "settings": {
+        "desktop_height": 96,
+        "mobile_height": 28
+      }
+    },
+    "662da981-9613-4b96-aeca-e8a911a05790": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"klaviyo-form-XHeetp\"><\/div>",
+        "full_width": false,
+        "show_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "17734241931c022b0e",
+    "2e7680e5-a42c-4469-990f-792d5b2d5239",
+    "main",
+    "169023368294f702e9",
+    "ef5d0c8f-6324-40e3-8f31-44f640f7b5d4",
+    "guarantees_rLHYdG",
+    "4c65fab7-12ea-4ff3-b855-df0ce609de8e",
+    "6be5dff1-233a-41c2-8842-694f10c2b659",
+    "f700c718-65e9-473e-89d8-d1484839ab4a",
+    "cd3911ea-259e-40ac-af9d-adb8fba7d8ed",
+    "431dda00-66c6-464c-9bf9-ea6cba2c3a51",
+    "0c36f8c5-cbc8-4d8d-902e-4158c35fff80",
+    "662da981-9613-4b96-aeca-e8a911a05790"
+  ]
+}

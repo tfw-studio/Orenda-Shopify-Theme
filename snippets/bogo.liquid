@@ -1,0 +1,261 @@
+{% assign free_product_id = product.metafields.custom.bogo_free_product.value.selected_or_first_available_variant.id %}
+{% assign max_bogo_quantity = product.metafields.custom.max_bogo_quantity.value %}
+
+{% if free_product_id %}
+<input
+    id="{{ block.id }}__bogo-property-input"
+    type="hidden"
+    name="properties[_bogo-base-product]"
+    value="{{ free_product_id }}">
+{% endif %}
+
+{% if max_bogo_quantity %}
+<input
+    id="{{ block.id }}__max-bogo-quantity-input"
+    type="hidden"
+    name="properties[_max_bogo_quantity]"
+    value="{{ max_bogo_quantity }}">
+{% endif %}
+
+<dialog id="{{ block.id }}__bogo-limitations-modal" class="modal" aria-hidden="true" tabindex="-1">
+    <div class="modal__overlay" tabindex="-1"></div>
+    <div class="modal__content">
+        <div class="modal__header">
+            <h2 class="modal__title"><strong>BOGO Limitations</strong></h2>
+        </div>
+        <div class="modal__body">
+            <p>
+                We are unable to add both a subscription and a BOGO item to your cart at the same time. Please remove
+                the <span id="{{ block.id }}__bogo-limitations-modal--remove">subscription</span>
+                items from your cart to add this <span id="{{ block.id }}__bogo-limitations-modal--add">BOGO</span>.
+            </p>
+        </div>
+        <div class="modal__footer">
+            <button type='button' class="modal__button button" data-micromodal-close>Close</button>
+        </div>
+    </div>
+</dialog>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const bogoInput = document.getElementById('{{ block.id }}__bogo-property-input');
+  const buyButton = document.getElementById('MainAddToCartBtn');
+  const modal = document.getElementById('{{ block.id }}__bogo-limitations-modal');
+
+  let isSubscriptionSelected = false;
+
+  // --- Helper: normalized id tail (Shopify GID -> numeric) ---
+  function normVariantId(id) {
+    if (!id) return null;
+    const m = String(id).match(/ProductVariant\/(\d+)$/);
+    return m ? m[1] : String(id);
+  }
+
+  // --- Recharge radio detection (unchanged from yours) ---
+  function getPurchaseOptionInputChecked() {
+    const checked = document.querySelector('.rc-widget .rc-template__radio input[name="purchaseOption"]:checked');
+    if (checked) return checked;
+    const activeLabel = document.querySelector('.rc-widget .rc-template__radio label.rc-radio--active');
+    if (activeLabel) return activeLabel.querySelector('input[name="purchaseOption"]');
+    return null;
+  }
+  function computeIsSubscriptionSelected() {
+    const input = getPurchaseOptionInputChecked();
+    return (input?.value || '').toLowerCase() === 'subscription';
+  }
+
+  // --- Get cart items (Rebuy first, then Shopify /cart.js) ---
+  async function getCartItems() {
+    try {
+      const rebuyItems = window.Rebuy?.Cart?.getItems?.();
+      if (Array.isArray(rebuyItems)) return rebuyItems;
+    } catch(e) {}
+    // Fallback to Shopify Ajax Cart
+    try {
+      const res = await fetch('/cart.js', { credentials: 'same-origin' });
+      const cart = await res.json();
+      // Normalize to [{id, quantity, properties:{...}}]
+      return (cart.items || []).map(it => ({
+        id: it.id,
+        quantity: it.quantity,
+        properties: it.properties || {}
+      }));
+    } catch(e) {
+      return [];
+    }
+  }
+
+  // --- Decide if we should send the _bogo-base-product property ---
+  async function enforceBogoCap() {
+    if (!bogoInput) return;
+
+    // Current base variant id is whatever is in the hidden input (we keep it synced on variant change)
+    const baseIdRaw = bogoInput.value;
+    const baseId = normVariantId(baseIdRaw) || String(baseIdRaw);
+
+    const maxCapRaw = bogoInput.getAttribute('data-max-cap');
+    const maxCap = Math.max(0, parseInt(maxCapRaw || '0', 10)); // 0 = no redemptions allowed
+
+    // If no cap set, treat as unlimited (only gate by stacks in the Function)
+    const cap = Number.isFinite(maxCap) && maxCap > 0 ? maxCap : Infinity;
+
+    const items = await getCartItems();
+
+    // Count how many items already carry the (swapped) marker for this base:
+    // We consider an item matched if properties._bogo-base-product == baseId
+    const alreadyFreeForBase = items.reduce((acc, it) => {
+      const v = it?.properties?.['_bogo-base-product'];
+      if (!v) return acc;
+      const vNorm = normVariantId(v) || String(v);
+      return vNorm === baseId ? acc + (it.quantity || 0) : acc;
+    }, 0);
+
+    const remaining = Math.max(0, cap - alreadyFreeForBase);
+
+    // Only submit the property when remaining > 0 and we're NOT on subscription
+    const shouldSend = remaining > 0 && !isSubscriptionSelected;
+
+    // Toggle the name attribute so the property only submits when allowed
+    if (shouldSend) {
+      bogoInput.setAttribute('name', 'properties[_bogo-base-product]');
+    } else {
+      bogoInput.removeAttribute('name');
+    }
+
+    return { remaining, cap, alreadyFreeForBase };
+  }
+
+  // --- Apply UI state & block CTA when needed (kept from your logic) ---
+  async function applyState() {
+    // Update submit-ability of the hidden input based on cap
+    await enforceBogoCap();
+
+    // Optional UI hide
+    if (bogoInput) {
+      bogoInput.disabled = isSubscriptionSelected;
+      bogoInput.style.display = isSubscriptionSelected ? 'none' : 'block';
+    }
+
+    const hasSubscriptionInCart = Boolean(window.Rebuy?.Cart?.cartHasSubscriptionItems?.());
+    const hasBogoInCart = Boolean(
+      window.Rebuy?.Cart?.getItems?.()?.find(
+        (item) => item?.properties?.['_bogo-free-product'] || item?.properties?.['_bogo-base-product']
+      )
+    );
+
+    if (buyButton) {
+      const shouldBlock =
+        (hasBogoInCart && isSubscriptionSelected) ||
+        (hasSubscriptionInCart && !isSubscriptionSelected && !!bogoInput?.getAttribute('name'));
+      buyButton.disabled = shouldBlock;
+    }
+  }
+
+  function syncIsSubscriptionSelected() {
+    const prev = isSubscriptionSelected;
+    isSubscriptionSelected = computeIsSubscriptionSelected();
+    if (prev !== isSubscriptionSelected) { /* noop */ }
+    applyState();
+  }
+
+  // Keep hidden input tied to current BASE variant (PDP variant)
+  document.addEventListener('variant:change', function (e) {
+    if (bogoInput && e?.detail?.variant?.id) {
+      bogoInput.value = e.detail.variant.id;
+      applyState(); // re-check cap with new base
+    }
+  });
+
+  // Recharge listeners
+  function attachRadioListeners() {
+    const radios = document.querySelectorAll('.rc-widget .rc-template__radio input[name="purchaseOption"]');
+    radios.forEach((el) => el.addEventListener('change', syncIsSubscriptionSelected));
+  }
+  const root = document.querySelector('.rc-widget .rc-template__radio') || document.querySelector('.rc-widget') || document.body;
+  const observer = new MutationObserver(() => { attachRadioListeners(); syncIsSubscriptionSelected(); });
+  observer.observe(root, { childList: true, subtree: true });
+
+  // Init
+  attachRadioListeners();
+  syncIsSubscriptionSelected();
+
+  // Light polling to catch SPA re-renders
+  const poll = setInterval(syncIsSubscriptionSelected, 600);
+  window.addEventListener('beforeunload', () => clearInterval(poll));
+});
+</script>
+
+<style>
+    /* BOGO LIMITATIONS MODAL */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .product .modal__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        background-color: white;
+        margin: 15% auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        padding: 2rem 1rem;
+    }
+
+    .modal__header {
+        padding: 2px 16px;
+        background-color: rgb(var(--color-background));
+        color: rgb(var(--color-foreground));
+    }
+
+    .modal__title {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .modal__close:hover,
+    .modal__close:focus {
+        color: rgb(var(--color-foreground));
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal__body {
+        padding: 2px 16px;
+    }
+
+    .modal__footer {
+        padding: 2px 16px;
+        background-color: rgb(var(--color-background));
+        color: rgb(var(--color-foreground));
+    }
+
+    .modal__button {
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>

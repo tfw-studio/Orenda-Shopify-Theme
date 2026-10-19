@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+  </head>
+  <body>
+    {% include 'smsbump_checkout_marketing_subscription' %}
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {% comment %} Hide Yotpo Rewards widget if subscriptions are present {% endcomment %}
+    {% liquid
+      assign has_subscription = false
+      for line_item in checkout.line_items
+        if line_item.selling_plan_allocation.selling_plan.id
+          assign has_subscription = true
+        endif
+      endfor
+    %}
+
+    {% unless has_subscription %}
+    <!-- Hide Shop Pay Widget -->
+    <style>
+      #shopify-pay-modal {
+        display: none !important;
+      }
+    </style>
+    <!-- End Hide Shop Pay Widget -->
+
+    <!-- Add the widget repo here -->
+    <!-- Initial CSS to hide the module -->
+    <style type="text/css">
+        .yotpo-checkout-hide {
+            display: none;
+        }
+    </style>
+    <!-- module inside container -->
+    <div class="yotpo-refer-popup-container yotpo-checkout-hide">
+        <div class="yotpo-widget-instance" data-yotpo-instance-id="174721"></div>
+    </div>
+    <!-- JS to handle module initiation -->
+    <script type="text/javascript">
+        window.location.href.indexOf("orders") !== -1
+            ? document.querySelector(".yotpo-checkout-hide").classList.remove("yotpo-checkout-hide")
+            : "";
+    </script>
+    {% endunless %}
+
+    {{ tracking_code }}
+    <div data-rebuy-id="62989"></div>
+    <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop=orenda-international-llc.myshopify.com"></script>
+    <script>
+  (function($) {
+    $(document).on("page:load page:change", function() {
+      if (Shopify.Checkout.step === "contact_information") {
+        let plusTextContainer = document.querySelector('[data-step="contact_information"]');
+        let plusText = `<div style="padding-bottom: 20px;"><span><font color="#6e1273"><b>IMPORTANT</b></font> - Orenda Rewards are not able to be redeemed when using an Express checkout option like Shop Pay, Google Pay or Apple Pay.</span></div>`;
+        plusTextContainer.insertAdjacentHTML('beforebegin', plusText);
+      }
+    });
+  })(Checkout.$);
+</script>
+  </body>
+</html>

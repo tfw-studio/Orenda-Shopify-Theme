@@ -1,0 +1,491 @@
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+
+{% comment %}
+Use string splitting to pull the value from content_for_header and apply some string clean up
+{% endcomment %}
+{%- assign pageUrl = contentForQuerystring | split: '"pageurl":"' | last | split: '"' | first | split: '.myshopify.com' | last |
+    replace: '\/', '/' |
+    replace: '%20', ' ' |
+    replace: '\u0026', '&'
+-%}
+
+{%- assign pageQuerystring = pageUrl | split: '?' | last -%}
+
+{%- if pageQuerystring contains "view=orders" -%}
+{% assign viewing_orders = true %}
+{% else %}
+{% assign viewing_orders = false %}
+{%- endif -%}
+
+
+{% capture nav_list %}
+<ul class="account-navigation__list">
+    <li>
+        <a class="{% if request.path == routes.account_url and viewing_orders == false %} selected {% endif %}"
+            href="{{ routes.account_url }}">
+            Dashboard
+        </a>
+    </li>
+    <li>
+        <a href="https://buyorenda.com/tools/bundle-subscriptions?sso=silent">
+            Manage Subscriptions
+        </a>
+    </li>
+    <li>
+        <a class="{% if viewing_orders == true or request.path contains '/account/orders' %} selected {% endif %}"
+            href="/account?view=orders">
+            Order History/Tracking {{ request.query }}
+        </a>
+    </li>
+    <li>
+        <a class="{% if request.path == routes.account_addresses_url %} selected {% endif %}"
+            href="{{ routes.account_addresses_url }}">
+            Account Information
+        </a>
+    </li>
+    <li>
+        <a href="https://shop.app/pay/authentication/login" target="_blank">
+            Manage My Shop Pay (Payment)
+        </a>
+    </li>
+    <li>
+        <a href="https://buyorenda.com/pages/rewards-program-page">
+            Orenda Rewards
+        </a>
+    </li>
+    {% if customer.metafields.custom.refersion_link %}
+    <li>
+        <span class="account-navigation__refersion-title">
+            My Refersion Referral Link
+        </span>
+
+        <div class="account-nagivation__refersion-link">
+            <div class="account-nagivation__refersion-link--p-container">
+                <p class="account-nagivation__refersion-link--p">{{ customer.metafields.custom.refersion_link }}</p>
+            </div>
+            <button class="button account-nagivation__refersion-link--button">COPY MY LINK</button>
+        </div>
+    </li>
+    {% else %}
+    <li class="account-navigation__button-wrap">
+        <a href="/pages/refersion"
+            target="_blank"
+            aria-label="Signup For A Referral Link (opens in a new tab)"
+            class="button black-btn">
+            Signup For A Referral Link
+        </a>
+    </li>
+    {% endif %}
+
+    <li class="account-navigation__button-wrap">
+        <a href="https://orenda.myvoffice.com/"
+            target="_blank"
+            aria-label="My Orenda Back Office (opens in a new tab)"
+            class="button button--small">
+            My Orenda Back Office
+        </a>
+    </li>
+
+    <li>
+        <a class="account-navigation__logout" href="{{ routes.account_logout_url }}">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M2.16667 15.5C1.70833 15.5 1.31583 15.3367 0.989168 15.01C0.662501 14.6833 0.499446 14.2911 0.500001 13.8333V2.16667C0.500001 1.70833 0.663335 1.31583 0.990001 0.989168C1.31667 0.662501 1.70889 0.499446 2.16667 0.500001H8V2.16667H2.16667V13.8333H8V15.5H2.16667ZM11.3333 12.1667L10.1875 10.9583L12.3125 8.83333H5.5V7.16667H12.3125L10.1875 5.04167L11.3333 3.83334L15.5 8L11.3333 12.1667Z"
+                    fill="black" />
+            </svg>
+            {{ 'customer.log_out' | t }}
+        </a>
+    </li>
+</ul>
+{% endcapture %}
+
+{% comment %} MOBILE NAV {% endcomment %}
+<div class="account-navigation mobile">
+    <span class="account-navigation__title">My Account</span>
+    <div class="account-navigation__dropdown">
+        <button class="account-navigation__dropdown--button">
+            {% if request.path == routes.account_url and viewing_orders == false %} Dashboard
+            {% elsif viewing_orders == true or request.path contains '/account/orders' %} Order History
+            {% elsif request.path == routes.account_addresses_url %} Account and Shipping...
+            {% endif %}
+
+            <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M14.2498 10.0996L8.49981 4.34961L2.74981 10.0996L0.449806 8.94961L8.49981 0.899609L16.5498 8.94961L14.2498 10.0996Z"
+                    fill="#1A1B18" />
+            </svg>
+        </button>
+
+        <hr>
+        {{ nav_list }}
+    </div>
+</div>
+
+{% comment %} DESKTOP NAV{% endcomment %}
+<aside class="account-navigation desktop">
+    <span class="account-navigation__title">My Account</span>
+    {{ nav_list }}
+</aside>
+
+<style>
+
+    #Rise-account-page-button {
+     display: none !important;
+    }
+    /* Account portal global styles */
+    .recently-viewed-products .page-width {
+        padding: 0 !important;
+    }
+
+    main {
+        padding-top: 40px !important;
+    }
+
+    .shopify-section {
+        flex: 1 !important;
+    }
+
+    .account-wrap {
+        flex: 1;
+        padding-bottom: 32px;
+    }
+
+    /* Navigation Styles */
+    .desktop {
+        display: none;
+    }
+
+    .account-navigation.mobile {
+        margin-bottom: 32px;
+    }
+
+    .account-navigation__dropdown {
+        border: 2px solid #E8E9EB;
+        transition: all .3s ease;
+    }
+
+    .account-navigation__dropdown.open {
+        border: 2px solid #585858;
+    }
+
+    .account-navigation__dropdown--button {
+        background: #FFFFFF;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        width: 100%;
+        border: none;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 145%;
+        color: #000000;
+    }
+
+    .account-navigation__dropdown .account-navigation__dropdown--button svg {
+        transform: rotate(180deg);
+        transition: all .3s ease;
+    }
+
+    .account-navigation__dropdown.open .account-navigation__dropdown--button svg {
+        transform: rotate(0deg);
+    }
+
+    .account-navigation__dropdown hr {
+        border-bottom: 2px solid #E8E9EB;
+        margin: -2px 16px 0;
+        opacity: 0;
+        transition: all .3s ease;
+    }
+
+    .account-navigation__dropdown.open hr {
+        margin-top: 0;
+        opacity: 1;
+    }
+
+    .account-navigation.mobile .account-navigation__list {
+        height: 0;
+        opacity: 0;
+        transition: all .3s ease;
+        overflow: hidden;
+    }
+
+    .account-navigation__title {
+        text-align: center;
+        display: block;
+        margin-bottom: 12px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: 0.03em;
+        color: #000000;
+    }
+
+    .account-navigation ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .account-navigation li {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: 0.03em;
+        color: #000000;
+        width: 100%;
+    }
+
+    .account-navigation li a,
+    .account-navigation li span {
+        width: 100%;
+        padding: 16px;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        letter-spacing: inherit;
+        line-height: inherit;
+        font-size: 16px;
+        font-weight: inherit;
+    }
+
+    .account-navigation li a.selected {
+        font-weight: 600;
+        background: #FAFAFA;
+    }
+
+    .account-navigation__button-wrap {
+        padding: 0 16px;
+        margin-top: 24px;
+    }
+
+    .account-navigation li .button {
+        padding: 12px 16px;
+        text-align: center;
+        margin: 0 !important;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        font-family: var(--font-button-family);
+        display: block !important;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        width: 100%;
+        color: #FFFFFF;
+    }
+
+    .account-navigation li .black-btn {
+        background: #1A1B18;
+        border: 1px solid #1A1B18;
+    }
+
+    .account-navigation__logout {
+        display: flex !important;
+        gap: 7px;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .account-nagivation__refersion-link {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8px !important;
+        padding: 0 16px;
+    }
+
+    .account-nagivation__refersion-link--p-container {
+        border-width: 2px 2px 0px 2px;
+        border-style: solid;
+        border-color: #E8E9EB;
+        margin: 0 !important;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .account-nagivation__refersion-link--p {
+        padding: 12px 8px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: 0.05em;
+        color: #000000;
+        margin: 0;
+    }
+
+    .account-nagivation__refersion-link--button {
+        padding: 12px 8px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: #1A1B18 !important;
+        border: 1px solid #1A1B18 !important;
+    }
+
+    .account-navigation__refersion-title {
+        padding-bottom: 0 !important;
+    }
+
+    @media screen and (min-width: 915px) {
+
+        /* Account portal global styles */
+        main {
+            display: flex;
+            gap: 40px;
+            padding-top: 65px !important;
+        }
+
+        .account-wrap {
+            padding-bottom: 64px;
+        }
+
+        /* Navigation Styles */
+        .desktop {
+            display: block;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .account-navigation {
+            padding: 45px 50px 45px 0px;
+            border-right: 2px solid #E8E9EB;
+            position: sticky;
+            top: 0;
+            height: fit-content;
+        }
+
+        .account-navigation__title {
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .account-navigation li {
+            font-size: 16px;
+            padding: 2px 0;
+            margin-top: 24px;
+        }
+
+        .account-navigation li a,
+        .account-navigation li span {
+            width: fit-content;
+            padding: 0;
+        }
+
+        .account-navigation li a.selected {
+            border-bottom: 2px solid #6E1273;
+            background: transparent;
+        }
+
+        .account-navigation__button-wrap {
+            padding: 0;
+        }
+
+        .account-navigation li .button {
+            font-size: 14px;
+            letter-spacing: 0.18em;
+        }
+
+        .account-nagivation__refersion-link {
+            flex-direction: row;
+            align-items: stretch;
+            padding: 0;
+        }
+
+        .account-nagivation__refersion-link--p-container {
+            border-width: 2px 0px 2px 2px;
+            max-width: 167px;
+        }
+
+        .account-nagivation__refersion-link--button {
+            min-height: 0 !important;
+            min-width: 150px;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        main {
+            gap: 113px;
+        }
+    }
+</style>
+
+{% if viewing_orders %}
+<style>
+    .recently-viewed-products {
+        display: none !important;
+    }
+</style>
+{% endif %}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Refersion Link Copy to Clipboard
+        const refersionLinkContainer = document.querySelectorAll('.account-nagivation__refersion-link')
+
+        refersionLinkContainer.forEach(function (container) {
+            const refersionLink = container.querySelector('.account-nagivation__refersion-link--p')
+            const refersionButton = container.querySelector('.account-nagivation__refersion-link--button')
+
+            function copyToClipboard(text) {
+                if (window.clipboardData && window.clipboardData.setData) {
+                    // Internet Explorer-specific code path to prevent textarea being shown while dialog is visible.
+                    return window.clipboardData.setData("Text", text);
+
+                }
+                else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+                    const textarea = document.createElement("textarea");
+                    textarea.textContent = text;
+                    textarea.style.position = "fixed";  
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    try {
+                        return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+                    }
+                    catch (ex) {
+                        console.warn("Copy to clipboard failed.", ex);
+                        return prompt("Copy to clipboard: Ctrl+C, Enter", text);
+                    }
+                    finally {
+                        document.body.removeChild(textarea);
+                    }
+                }
+            }
+
+            refersionButton.addEventListener('click', function () {
+                copyToClipboard(refersionLink.innerText)
+                refersionButton.innerText = 'COPIED'
+                setTimeout(function () {
+                    refersionButton.innerText = 'COPY LINK'
+                }, 1500)
+            })
+        })
+
+        // Mobile Nav Dropdown Control
+        const navDropdown = document.querySelector('.account-navigation__dropdown');
+        const dropdownButton = navDropdown.querySelector('.account-navigation__dropdown--button');
+        const navList = navDropdown.querySelector('.account-navigation__list');
+
+        dropdownButton.addEventListener('click', function () {
+            navDropdown.classList.toggle('open');
+
+            if (navDropdown.classList.contains('open')) {
+                navList.style.height = navList.scrollHeight + 'px';
+                navList.style.opacity = 1;
+            }
+
+            else {
+                navList.style.height = 0;
+                navList.style.opacity = 0;
+            }
+        });
+    })
+</script>

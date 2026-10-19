@@ -1,0 +1,303 @@
+<h1 class="account-dashboard__title">Welcome, {{ customer.name }}</h1>
+
+<span class="account-dashboard__subtitle" style="color: #6E1273;">
+    <span >
+    {% if customer.metafields.custom.valued_customer_since != blank %}
+    Valued Customer Since {{ customer.metafields.custom.valued_customer_since | date: "%B %Y" }}
+    {% endif %}
+    </span>
+
+    <span style="display: block; margin-top: 5px;">
+        Your current discount level: <span class="account-dashboard__customer_discount" style="min-width: max-content; display: inline-block;"></span>
+    </span>
+</span>
+
+
+<div class="account-dashboard__box-wrap">
+    <div class="account-dashboard__box-flex">
+        <div class="account-dashboard__box">
+             <svg width="59" height="57" viewBox="0 0 59 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M54 15.7539H44.1338C44.2434 15.6611 44.3559 15.5711 44.4628 15.4727C45.317 14.7138 46.0054 13.7868 46.485 12.7498C46.9646 11.7127 47.225 10.5878 47.25 9.44549C47.2869 8.19582 47.0681 6.95179 46.6069 5.78976C46.1456 4.62774 45.4518 3.57225 44.5679 2.68808C43.684 1.80391 42.6287 1.10973 41.4668 0.648159C40.3049 0.186584 39.0609 -0.0326464 37.8112 0.00392665C36.6685 0.0285412 35.543 0.28879 34.5055 0.768384C33.4679 1.24798 32.5404 1.93659 31.7812 2.79111C30.7307 4.00863 29.8767 5.38267 29.25 6.86361C28.6233 5.38267 27.7693 4.00863 26.7188 2.79111C25.9596 1.93659 25.0321 1.24798 23.9946 0.768384C22.957 0.28879 21.8315 0.0285412 20.6887 0.00392665C19.4391 -0.0326464 18.1951 0.186584 17.0332 0.648159C15.8713 1.10973 14.816 1.80391 13.9321 2.68808C13.0482 3.57225 12.3544 4.62774 11.8931 5.78976C11.4319 6.95179 11.2131 8.19582 11.25 9.44549C11.275 10.5878 11.5354 11.7127 12.015 12.7498C12.4946 13.7868 13.183 14.7138 14.0372 15.4727C14.1441 15.5655 14.2566 15.6555 14.3663 15.7539H4.5C3.30653 15.7539 2.16193 16.228 1.31802 17.0719C0.474106 17.9159 0 19.0605 0 20.2539V29.2539C0 30.4474 0.474106 31.592 1.31802 32.4359C2.16193 33.2798 3.30653 33.7539 4.5 33.7539V51.7539C4.5 52.9474 4.97411 54.092 5.81802 54.9359C6.66193 55.7798 7.80653 56.2539 9 56.2539H25.875C26.1734 56.2539 26.4595 56.1354 26.6705 55.9244C26.8815 55.7134 27 55.4273 27 55.1289V29.2539H4.5V20.2539H27V29.2539H31.5V20.2539H54V29.2539H31.5V55.1289C31.5 55.4273 31.6185 55.7134 31.8295 55.9244C32.0405 56.1354 32.3266 56.2539 32.625 56.2539H49.5C50.6935 56.2539 51.8381 55.7798 52.682 54.9359C53.5259 54.092 54 52.9474 54 51.7539V33.7539C55.1935 33.7539 56.3381 33.2798 57.182 32.4359C58.0259 31.592 58.5 30.4474 58.5 29.2539V20.2539C58.5 19.0605 58.0259 17.9159 57.182 17.0719C56.3381 16.228 55.1935 15.7539 54 15.7539ZM17.0184 12.0977C16.625 11.7414 16.3095 11.3077 16.0917 10.8237C15.8739 10.3397 15.7585 9.81589 15.7528 9.28518C15.7386 8.66334 15.8486 8.04492 16.0764 7.46615C16.3043 6.88737 16.6453 6.35989 17.0796 5.9146C17.5139 5.46932 18.0327 5.11518 18.6056 4.87295C19.1785 4.63072 19.7939 4.50526 20.4159 4.50393H20.5538C21.0845 4.50965 21.6083 4.62503 22.0923 4.84283C22.5763 5.06063 23.01 5.37614 23.3663 5.76955C25.7259 8.4358 26.5584 12.8571 26.8509 15.5908C24.1059 15.3011 19.6875 14.4686 17.0184 12.0977ZM41.4872 12.0977C38.8181 14.4602 34.3884 15.2927 31.6434 15.5852C31.9781 12.6292 32.9062 8.3008 35.1562 5.77236C35.5125 5.37895 35.9462 5.06344 36.4302 4.84565C36.9142 4.62785 37.438 4.51246 37.9688 4.50674H38.1066C38.7286 4.51063 39.3436 4.63863 39.9155 4.88325C40.4875 5.12787 41.0048 5.48419 41.4373 5.93131C41.8697 6.37844 42.2086 6.90739 42.434 7.48716C42.6594 8.06693 42.7669 8.68586 42.75 9.30768C42.7408 9.83479 42.6235 10.3544 42.4053 10.8343C42.1872 11.3142 41.8727 11.7442 41.4816 12.0977H41.4872Z"
+                fill="#97D700" />
+        </svg>
+        <div class="account-dashboard__desktop-flex">
+            <p class="account-dashboard__small-text">Share with a Friend:</p>
+            <p class="account-dashboard__medium-text">Give $20, Get $40</p>
+        </div>
+                      <a href="https://buyorenda.com/pages/rewards-program-page" class="button black-btn">REFER A FRIEND</a>
+        </div>
+        <div class="account-dashboard__box" style="display: none;">
+            <svg width="49" height="52" viewBox="0 0 49 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M41.02 5.8398H38.5V0.799805H33.4599V5.8398H13.3V0.799805H8.25995V5.8398H5.73995C2.96795 5.8398 0.699951 8.1078 0.699951 10.8798V46.1598C0.699951 48.9318 2.96795 51.1998 5.73995 51.1998H28.42C26.908 49.9398 25.648 48.1758 24.64 46.1598H5.73995V18.4398H41.02V24.9918C42.784 25.2438 44.548 25.7478 46.06 26.7558V10.8798C46.06 8.1078 43.792 5.8398 41.02 5.8398ZM38.5 29.7798C41.2719 29.7798 43.792 30.7878 45.556 32.8038L48.58 29.7798V39.8598H38.5L43.0359 35.3238C41.7759 34.3158 40.264 33.5598 38.5 33.5598C34.972 33.5598 32.2 36.3318 32.2 39.8598C32.2 43.3878 34.972 46.1598 38.5 46.1598C40.5159 46.1598 42.2799 45.1518 43.54 43.6398H47.824C46.312 47.4198 42.784 49.9398 38.5 49.9398C32.956 49.9398 28.42 45.4038 28.42 39.8598C28.42 34.3158 32.956 29.7798 38.5 29.7798Z"
+                    fill="#97D700" />
+            </svg>
+            <a href="https://buyorenda.com/tools/bundle-subscriptions?sso=silent" class="button black-btn">Manage Subscriptions</a>
+        </div>
+    </div>
+    <div class="account-dashboard__box">
+                 <svg width="54" height="52" viewBox="0 0 54 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.0462 51.1998L15.3567 32.5651L0.899902 20.0314L19.9988 18.3735L27.4262 0.799805L34.8536 18.3735L53.9525 20.0314L39.4957 32.5651L43.8062 51.1998L27.4262 41.3187L11.0462 51.1998Z"
+                    fill="#97D700" />
+            </svg>
+            <p class="account-dashboard__small-text">Orenda Rewards Points</p>
+           <!-- <a href="https://buyorenda.com/pages/rewards" class="button black-btn">LEARN MORE</a> -->
+                  <button id="Rise-account-page-button" class="button black-btn" style="margin-top: 10px !important;">View Your Points</button>
+
+    </div>
+</div>
+
+<div class="grid main-page-account">
+    <div class="grid__item grid__item--three-quarter">
+        <div class="account-dashboard__latest-order-row">
+            <h2>Latest Order</h2>
+
+            <a href="/account?view=orders">View Order History</a>
+        </div>
+
+        {%- if customer.orders.size > 0 -%}
+
+        {%- for order in customer.orders limit: 1 -%}
+        {% render 'account-order' order: order %}
+        {% endfor %}
+
+        <a class="account-dashboard__order-history-link" href="/account?view=orders">View Order History</a>
+
+        {%- else -%}
+        <p class="account-dashboard__no-orders">{{ 'customer.orders.none' | t }}</p>
+        {%- endif -%}
+    </div>
+</div>
+
+<style>
+    .account-dashboard__latest-order-row a {
+        margin-bottom: 16px;
+    }
+
+    .account-dashboard__latest-order-row a {
+        display: none;
+    }
+
+    .account-dashboard__title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #000000;
+        margin-bottom: 8px;
+    }
+
+    .account-dashboard__subtitle {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #000000;
+        display: block;
+        margin-bottom: 32px;
+    }
+
+    .account-dashboard__box-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 16px
+    }
+
+    .account-dashboard__box-flex {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 16px
+    }
+
+    .account-dashboard__box {
+        background: #FAFAFA;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 16px;
+        flex: 1;
+        color: #000;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .account-dashboard__box .black-btn {
+        background: #1A1B18;
+        border: 1px solid #1A1B18;
+        margin: 0 !important;
+        padding: 1rem 1.4rem;
+        text-transform: uppercase;
+    }
+
+    .account-dashboard__small-text {
+        display: block;
+        font-size: 16px !important;
+        line-height: 130%;
+        letter-spacing: 0.03em;
+        margin: 15px 0 4px 0 !important;
+    }
+
+    .account-dashboard__medium-text {
+        display: block;
+        font-size: 20px !important;
+        line-height: 130%;
+        letter-spacing: 0.03em;
+        margin: 0 0 12px 0 !important;
+    }
+
+    .account-dashboard__large-text {
+        display: block;
+        font-size: 34px !important;
+        line-height: 116%;
+        letter-spacing: 0.02em;
+        margin: 0 0 12px 0 !important;
+    }
+
+    .account-dashboard__latest-order-row {
+        margin-top: 32px !important;
+    }
+
+    .account-dashboard__latest-order-row h2,
+    .recently-viewed-products .title-wrapper .title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #000000;
+    }
+
+    .account-dashboard__order-history-link {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.03em;
+        text-decoration-line: underline;
+        margin-top: 32px;
+        display: block;
+        color: #000000;
+    }
+
+    .account-dashboard__no-orders {
+        text-align: center;
+    }
+
+    @media screen and (min-width: 768px) {
+        .account-dashboard__latest-order-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .account-dashboard__latest-order-row a {
+            display: block;
+        }
+
+        .account-dashboard__latest-order-row * {
+            margin: 0 !important;
+        }
+
+        .account-dashboard__title {
+            font-size: 30px;
+            line-height: 116%;
+            letter-spacing: 0.02em;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .account-dashboard__subtitle {
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .account-dashboard__box-flex {
+            flex-direction: row;
+            gap: 32px
+        }
+
+        .account-dashboard__box-wrap {
+            gap: 32px;
+        }
+
+        .account-dashboard__box .black-btn {
+            font-size: 14px !important;
+        }
+
+        .account-dashboard__small-text {
+            font-size: 18px !important;
+            margin: 30px 0 8px 0 !important;
+            font-weight: 400;
+        }
+
+        .account-dashboard__medium-text {
+            font-size: 22px !important;
+        }
+
+        .account-dashboard__large-text {
+            margin: 0 0 26px 0 !important;
+        }
+
+        .account-dashboard__desktop-flex {
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 0 0 20px 0 !important;
+        }
+
+        .account-dashboard__desktop-flex * {
+
+        }
+
+        .recently-viewed-products .title-wrapper.center {
+            justify-content: start !important;
+        }
+
+        .account-dashboard__latest-order-row {
+            margin-top: 0;
+        }
+
+        .account-dashboard__latest-order-row h2,
+        .recently-viewed-products .title-wrapper .title {
+            font-size: 32px !important;
+        }
+
+        .account-dashboard__order-history-link {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: 990px) {
+        .account-dashboard__latest-order-row {
+            margin-top: 0;
+        }
+    }
+</style>
+
+
+
+<script>
+  function setDiscount() {
+    if (window.theme && theme.Discount) {
+      theme.Discount.setDiscountPercent({{ custom_disc }});
+      theme.Discount.setDiscountCode('{{ discount_code }}');
+
+      const el = document.querySelector('.account-dashboard__customer_discount');
+
+      if (el) {
+        el.textContent = '{{ discount_code }}';
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', setDiscount);
+  document.addEventListener('rebuy:smartcart.ready', setDiscount);
+  document.addEventListener('rebuy:cart.change', setDiscount);
+</script>

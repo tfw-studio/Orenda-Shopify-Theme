@@ -1,0 +1,38 @@
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+
+{% comment %} 
+Use string splitting to pull the value from content_for_header and apply some string clean up 
+{% endcomment %}
+{%- assign pageUrl = contentForQuerystring | split: '"pageurl":"' | last | split: '"' | first | split: '.myshopify.com' | last |
+    replace: '\/', '/' | 
+    replace: '%20', ' ' | 
+    replace: '\u0026', '&'
+-%}
+
+{%- assign pageQuerystring = pageUrl | split: '?' | last -%}
+
+{%- if pageQuerystring contains "view=orders" -%}
+    {% assign viewing_orders = true %}
+{% else %}
+    {% assign viewing_orders = false %}        
+{%- endif -%}
+
+
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<div class="customer account">
+  {% if viewing_orders == true %}
+  {% render 'account-order-history' %}
+  {% else %}
+  {% render 'account-dashboard' %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+"name": "t:sections.main-account.name",
+"settings": [
+
+]
+}
+{% endschema %}
