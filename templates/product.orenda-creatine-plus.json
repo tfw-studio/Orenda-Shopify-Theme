@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "empty-space": {
@@ -22,7 +31,7 @@
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<div style=\"\n  color: #6E1273;\n  font-family: var(--font-heading-family);\n  font-style: var(--font-heading-style);\n  font-weight: 700;\n  font-size: 24px;\n  line-height: 1.3;\n  margin: 0 0 8px 0;\n\">\n  Free YETI<sup style=\"\n    font-size: 50%;\n    line-height: 0;\n    vertical-align: super;\n  \">®<\/sup> Shaker Bottle Offer\n<\/div>"
+            "custom_liquid": "<div style=\"\n  color: #6E1273;\n  font-family: var(--font-heading-family);\n  font-style: var(--font-heading-style);\n  font-weight: 700;\n  font-size: 24px;\n  line-height: 1.3;\n  margin: 0 0 8px 0;\n\">\n  Free YETI<sup style=\"\n    font-size: 50%;\n    line-height: 0;\n    vertical-align: super;\n  \">®</sup> Shaker Bottle Offer\n</div>"
           }
         },
         "title": {
@@ -49,7 +58,7 @@
           "type": "text",
           "settings": {
             "icon": "none",
-            "text": "11.64oz. (330g)\/one scoop (5g). 60 servings",
+            "text": "11.64oz. (330g)/one scoop (5g). 60 servings",
             "text_style": "subtitle"
           }
         },
@@ -150,7 +159,7 @@
           "settings": {
             "icon": "clipboard",
             "heading": "VIEW SUPPLEMENT FACTS",
-            "image": "shopify:\/\/shop_images\/ORENDACREATINEPLUS_SF_NBG_22026.png",
+            "image": "shopify://shop_images/ORENDACREATINEPLUS_SF_NBG_22026.png",
             "description": "Orenda CreatinePLUS Supplement Facts"
           }
         },
@@ -159,7 +168,7 @@
           "settings": {
             "icon": "check_mark",
             "heading": "VIEW FULL LABEL",
-            "content": "<p>Learn more about the high-quality ingredients that make up Orenda's products. <\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G121_Creatine__bottle_label_FA_web.pdf?v=1764970760\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G121_Creatine__bottle_label_FA_web.pdf?v=1764970760\">View full Orenda CreatinePLUS Label<\/a><\/p>",
+            "content": "<p>Learn more about the high-quality ingredients that make up Orenda's products. </p><p><a href=\"https://cdn.shopify.com/s/files/1/0100/9549/3201/files/G121_Creatine__bottle_label_FA_web.pdf?v=1764970760\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0100/9549/3201/files/G121_Creatine__bottle_label_FA_web.pdf?v=1764970760\">View full Orenda CreatinePLUS Label</a></p>",
             "page": ""
           }
         },
@@ -252,7 +261,7 @@
         "enable_video_looping": false,
         "mobile_image_ratio": "adapt",
         "show_mobile_thumbnails": false,
-        "rc_custom_text": "<strong>Subscription Benefits <\/strong><br>✔︎ Delivered Monthly - 'no empties' promise<br>\n✔︎ Cancel, Pause, Delay, or Change Anytime, Hassle-Free<br>\n✔︎ No Surprises (We'll send you pre-shipment reminders)",
+        "rc_custom_text": "<strong>Subscription Benefits </strong><br>✔︎ Delivered Monthly - 'no empties' promise<br>\n✔︎ Cancel, Pause, Delay, or Change Anytime, Hassle-Free<br>\n✔︎ No Surprises (We'll send you pre-shipment reminders)",
         "padding_top": 0,
         "padding_bottom": 44
       }
@@ -263,42 +272,42 @@
         "e94ea0f0-2ac3-4eb3-b1d3-ce9f691f692d": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gmo.png",
+            "image": "shopify://shop_images/G094_web_icons_75__gmo.png",
             "link": ""
           }
         },
         "logo_fYLbPk": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gluten.png",
+            "image": "shopify://shop_images/G094_web_icons_75__gluten.png",
             "link": ""
           }
         },
         "31745940-86b1-403b-b12a-5b2fdc635816": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__dairy.png",
+            "image": "shopify://shop_images/G094_web_icons_75__dairy.png",
             "link": ""
           }
         },
         "55a55e6d-dba5-4cc5-b613-c7ea7df4ccd5": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__soy.png",
+            "image": "shopify://shop_images/G094_web_icons_75__soy.png",
             "link": ""
           }
         },
         "79ddc89e-d22d-4375-a3b7-b2277d291067": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gmp.png",
+            "image": "shopify://shop_images/G094_web_icons_75__gmp.png",
             "link": ""
           }
         },
         "d8f4e631-26b5-415c-b067-b6b8693666d7": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__lab_tested.png",
+            "image": "shopify://shop_images/G094_web_icons_75__lab_tested.png",
             "link": ""
           }
         }
@@ -320,7 +329,7 @@
         "heading_alignment": "center",
         "heading_tag": "h2",
         "subheading": "Our Highest Quality Commitment",
-        "description": "Clean formulations backed by third-party testing.",
+        "description": "Clean formulations backed by third-party testing. Recommended by healthcare providers in our community who also offer Orenda formulas to their clients.",
         "padding_top": 24,
         "padding_bottom": 40
       }
@@ -332,7 +341,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "What is Orenda CreatinePLUS?",
-            "row_content": "<p>Orenda CreatinePLUS is a daily creatine formula featuring Creavitalis® creatine monohydrate sourced from Germany and VitaCherry® Sport tart cherry extract. This simple, vegan-friendly powder supports muscle performance, exercise recovery, and daily vitality as part of a consistent daily routine.*<\/p><p>Each serving provides 3,000mg of Creavitalis® creatine monohydrate and 480mg of VitaCherry® Sport, bringing together two purposefully chosen ingredients into one easy daily routine for women and men. Manufactured in a USA GMP-certified facility.<\/p>",
+            "row_content": "<p>Orenda CreatinePLUS is a daily creatine formula featuring Creavitalis® creatine monohydrate sourced from Germany and VitaCherry® Sport tart cherry extract. This simple, vegan-friendly powder supports muscle performance, exercise recovery, and daily vitality as part of a consistent daily routine.*</p><p>Each serving provides 3,000mg of Creavitalis® creatine monohydrate and 480mg of VitaCherry® Sport, bringing together two purposefully chosen ingredients into one easy daily routine for women and men. Manufactured in a USA GMP-certified facility.</p>",
             "page": ""
           }
         },
@@ -340,7 +349,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "What makes Orenda CreatinePLUS different from other creatine powders?",
-            "row_content": "<p>Most creatine powders contain one ingredient — creatine monohydrate. Orenda CreatinePLUS was built around two: Creavitalis® creatine monohydrate sourced from Germany and VitaCherry® Sport tart cherry extract. That combination is genuinely uncommon in the creatine category.<\/p><p>The creatine itself starts with sourcing. Creavitalis® is produced in Germany to pharmaceutical-grade standards, a sourcing benchmark that distinguishes it from most standard creatine powders on the market — 99.9% pure, vegan, non-GMO, and third-party tested on every batch.* Germany has long been recognized for creatine purity and manufacturing standards, and Creavitalis® is one of the most trusted sources among practitioners and researchers who work with creatine specifically.<\/p><p>VitaCherry® Sport addresses the recovery side of the equation that standard creatine powders don't. Made from whole U.S.-grown Montmorency tart cherries and significantly more concentrated in anthocyanins than standard tart cherry powders,* it supports a healthy inflammation response in connection with exercise* and helps protect against post-exercise muscle soreness.* The result is a formula that supports both the performance and recovery sides of the equation in one daily scoop.<\/p><p>Orenda CreatinePLUS is also vegan, non-GMO, unflavored, and free from artificial ingredients, formulated for daily use rather than as a pre-workout or performance stack. Manufactured in a USA GMP-certified facility.<\/p>",
+            "row_content": "<p>Most creatine powders contain one ingredient — creatine monohydrate. Orenda CreatinePLUS was built around two: Creavitalis® creatine monohydrate sourced from Germany and VitaCherry® Sport tart cherry extract. That combination is genuinely uncommon in the creatine category.</p><p>The creatine itself starts with sourcing. Creavitalis® is produced in Germany to pharmaceutical-grade standards, a sourcing benchmark that distinguishes it from most standard creatine powders on the market — 99.9% pure, vegan, non-GMO, and third-party tested on every batch.* Germany has long been recognized for creatine purity and manufacturing standards, and Creavitalis® is one of the most trusted sources among practitioners and researchers who work with creatine specifically.</p><p>VitaCherry® Sport addresses the recovery side of the equation that standard creatine powders don't. Made from whole U.S.-grown Montmorency tart cherries and significantly more concentrated in anthocyanins than standard tart cherry powders,* it supports a healthy inflammation response in connection with exercise* and helps protect against post-exercise muscle soreness.* The result is a formula that supports both the performance and recovery sides of the equation in one daily scoop.</p><p>Orenda CreatinePLUS is also vegan, non-GMO, unflavored, and free from artificial ingredients, formulated for daily use rather than as a pre-workout or performance stack. Manufactured in a USA GMP-certified facility.</p>",
             "page": ""
           }
         },
@@ -348,7 +357,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Who is CreatinePLUS for?",
-            "row_content": "<p>Creatine has a reputation for being a supplement built for the gym. The research tells a broader story.<\/p><p>Orenda CreatinePLUS was formulated for men and women who want to support strength, cognitive clarity, and healthy aging as part of a daily routine, not just those who train intensively. The evidence on creatine now extends well beyond athletic performance, with research supporting its role in muscle strength, brain function, cellular energy production, and healthy aging.* Adults over 35 are among the groups with the most to gain from consistent daily creatine supplementation.*<\/p><p>The formula is particularly well-suited for those who want to support lean muscle and physical endurance as they age,* those looking for clean, research-backed support for brain function and mental clarity,* active men and women seeking natural recovery support after exercise,* and those who have assumed creatine was only relevant for intensive training or male athletes.<\/p><p>The creatine in this formula is Creavitalis® — sourced from Germany, 99.9% pure, vegan, non-GMO, and third-party tested on every batch.* VitaCherry® Sport tart cherry completes the formula, supporting comfortable recovery so the work you're putting in has a real chance to show up.* Clean, purposeful, and built for daily life, not just the gym.<\/p>",
+            "row_content": "<p>Creatine has a reputation for being a supplement built for the gym. The research tells a broader story.</p><p>Orenda CreatinePLUS was formulated for men and women who want to support strength, cognitive clarity, and healthy aging as part of a daily routine, not just those who train intensively. The evidence on creatine now extends well beyond athletic performance, with research supporting its role in muscle strength, brain function, cellular energy production, and healthy aging.* Adults over 35 are among the groups with the most to gain from consistent daily creatine supplementation.*</p><p>The formula is particularly well-suited for those who want to support lean muscle and physical endurance as they age,* those looking for clean, research-backed support for brain function and mental clarity,* active men and women seeking natural recovery support after exercise,* and those who have assumed creatine was only relevant for intensive training or male athletes.</p><p>The creatine in this formula is Creavitalis® — sourced from Germany, 99.9% pure, vegan, non-GMO, and third-party tested on every batch.* VitaCherry® Sport tart cherry completes the formula, supporting comfortable recovery so the work you're putting in has a real chance to show up.* Clean, purposeful, and built for daily life, not just the gym.</p>",
             "page": ""
           }
         },
@@ -356,7 +365,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "What are some of the benefits of Orenda CreatinePLUS?",
-            "row_content": "<p>Creatine is one of the most researched supplements available, and one that women in particular tend to overlook. Research suggests women have lower baseline creatine stores than men on average, which means consistent supplementation can make a meaningful difference.*<\/p><p>Orenda CreatinePLUS supports lean muscle and physical endurance,* brain function and mental clarity,* and healthy body composition and bone density when combined with resistance training.* Research also supports creatine's role in mood and cognitive function,* making it relevant well beyond physical performance.<\/p><p>The creatine in this formula is Creavitalis®, sourced from Germany, 99.9% pure, vegan, non-GMO, and third-party tested on every batch.* VitaCherry® Sport tart cherry supports comfortable recovery,* rounding out a formula designed for daily use.<\/p><p>The benefits build with consistency over time. CreatinePLUS works best as part of a daily routine that includes movement, good nutrition, and quality sleep.*<\/p>",
+            "row_content": "<p>Creatine is one of the most researched supplements available, and one that women in particular tend to overlook. Research suggests women have lower baseline creatine stores than men on average, which means consistent supplementation can make a meaningful difference.*</p><p>Orenda CreatinePLUS supports lean muscle and physical endurance,* brain function and mental clarity,* and healthy body composition and bone density when combined with resistance training.* Research also supports creatine's role in mood and cognitive function,* making it relevant well beyond physical performance.</p><p>The creatine in this formula is Creavitalis®, sourced from Germany, 99.9% pure, vegan, non-GMO, and third-party tested on every batch.* VitaCherry® Sport tart cherry supports comfortable recovery,* rounding out a formula designed for daily use.</p><p>The benefits build with consistency over time. CreatinePLUS works best as part of a daily routine that includes movement, good nutrition, and quality sleep.*</p>",
             "page": ""
           }
         },
@@ -364,7 +373,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Why does Orenda CreatinePLUS include VitaCherry® Sport?",
-            "row_content": "<p>Most creatine formulas stop at creatine. Orenda CreatinePLUS includes VitaCherry® Sport because recovery is as important as the work that precedes it.<\/p><p>VitaCherry® Sport is a branded tart cherry extract made from whole U.S.-grown Montmorency tart cherries, one of the most studied botanicals in sports nutrition and recovery research. It delivers the full spectrum of phytonutrients from the whole cherry and is significantly more concentrated in anthocyanins than standard tart cherry powders.* Anthocyanins are the natural compounds responsible for the cherry's deep color and its well-documented role in supporting a healthy inflammation response in connection with exercise.*<\/p><p>Research on Montmorency tart cherries supports their role in helping protect against post-exercise muscle strength loss and soreness,* aiding in muscle recovery,* and supporting antioxidant defenses against oxidative stress that builds during physical activity.* A systematic review and meta-analysis confirmed tart cherry supplementation's efficacy on recovery following strenuous exercise, including measures of muscle soreness, muscular strength, and muscular power.*<\/p><p>For a formula designed around daily use and long-term results, VitaCherry® Sport addresses the recovery side of the equation, supporting the body's ability to respond well to physical activity so the consistency that unlocks creatine's benefits has a real foundation to build on.*<\/p>",
+            "row_content": "<p>Most creatine formulas stop at creatine. Orenda CreatinePLUS includes VitaCherry® Sport because recovery is as important as the work that precedes it.</p><p>VitaCherry® Sport is a branded tart cherry extract made from whole U.S.-grown Montmorency tart cherries, one of the most studied botanicals in sports nutrition and recovery research. It delivers the full spectrum of phytonutrients from the whole cherry and is significantly more concentrated in anthocyanins than standard tart cherry powders.* Anthocyanins are the natural compounds responsible for the cherry's deep color and its well-documented role in supporting a healthy inflammation response in connection with exercise.*</p><p>Research on Montmorency tart cherries supports their role in helping protect against post-exercise muscle strength loss and soreness,* aiding in muscle recovery,* and supporting antioxidant defenses against oxidative stress that builds during physical activity.* A systematic review and meta-analysis confirmed tart cherry supplementation's efficacy on recovery following strenuous exercise, including measures of muscle soreness, muscular strength, and muscular power.*</p><p>For a formula designed around daily use and long-term results, VitaCherry® Sport addresses the recovery side of the equation, supporting the body's ability to respond well to physical activity so the consistency that unlocks creatine's benefits has a real foundation to build on.*</p>",
             "page": ""
           }
         },
@@ -372,7 +381,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "How is the creatine in Orenda CreatinePLUS made?",
-            "row_content": "<p>Orenda CreatinePLUS uses Creavitalis® creatine monohydrate, produced in Germany through a patented, multi-step purification process that achieves a purity level of 99.9% or higher. Rather than harsh solvents, the process uses water-based purification, keeping the final ingredient clean and free of unnecessary residues.<\/p><p>Production takes place in a dedicated GMP-certified facility built specifically for creatine manufacturing, and every batch is tested against strict quality and purity standards before it leaves the facility.<\/p><p>The manufacturer behind Creavitalis® has also earned an EcoVadis Platinum rating,  placing them in the top 1% of companies globally for responsible and sustainable manufacturing practices. That's a credential that takes years to earn and doesn't come from cutting corners.<\/p><p>When Orenda chose Creavitalis® for CreatinePLUS, it was a deliberate decision — because what goes into the product matters as much as what the product does.<\/p>",
+            "row_content": "<p>Orenda CreatinePLUS uses Creavitalis® creatine monohydrate, produced in Germany through a patented, multi-step purification process that achieves a purity level of 99.9% or higher. Rather than harsh solvents, the process uses water-based purification, keeping the final ingredient clean and free of unnecessary residues.</p><p>Production takes place in a dedicated GMP-certified facility built specifically for creatine manufacturing, and every batch is tested against strict quality and purity standards before it leaves the facility.</p><p>The manufacturer behind Creavitalis® has also earned an EcoVadis Platinum rating,  placing them in the top 1% of companies globally for responsible and sustainable manufacturing practices. That's a credential that takes years to earn and doesn't come from cutting corners.</p><p>When Orenda chose Creavitalis® for CreatinePLUS, it was a deliberate decision — because what goes into the product matters as much as what the product does.</p>",
             "page": ""
           }
         },
@@ -380,7 +389,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "How much CreatinePLUS should I take?",
-            "row_content": "<p>The recommended typical daily amount for creatine is 3-5 grams, and taking it regularly is what matters most. Creatine works by building up gradually in your body over time, typically over 3-4 weeks of consistent daily use, so making it part of your routine is what counts.<\/p><p>Some people choose to start with a higher amount for the first week to build up more quickly, then settle into a regular daily amount after that. This is a personal choice and entirely optional; the end result is the same either way.<\/p><p>For most people, 5 grams daily is the amount backed by decades of research.* If you prefer a more personalized approach, research also supports calculating your daily amount based on body weight — approximately 0.03 grams per kilogram of body weight for daily maintenance. Your healthcare provider or wellness professional can help you determine what works best for you.<\/p><p>As with any supplement, consult with your healthcare provider before use, particularly if you have any existing health conditions.<\/p><p>*<a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC7998865\/\" target=\"_blank\" title=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC7998865\/\">View Research <\/a>(opens in a new window)<\/p>",
+            "row_content": "<p>The recommended typical daily amount for creatine is 3-5 grams, and taking it regularly is what matters most. Creatine works by building up gradually in your body over time, typically over 3-4 weeks of consistent daily use, so making it part of your routine is what counts.</p><p>Some people choose to start with a higher amount for the first week to build up more quickly, then settle into a regular daily amount after that. This is a personal choice and entirely optional; the end result is the same either way.</p><p>For most people, 5 grams daily is the amount backed by decades of research.* If you prefer a more personalized approach, research also supports calculating your daily amount based on body weight — approximately 0.03 grams per kilogram of body weight for daily maintenance. Your healthcare provider or wellness professional can help you determine what works best for you.</p><p>As with any supplement, consult with your healthcare provider before use, particularly if you have any existing health conditions.</p><p>*<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7998865/\" target=\"_blank\" title=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7998865/\">View Research </a>(opens in a new window)</p>",
             "page": ""
           }
         },
@@ -388,7 +397,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "When should I take Orenda CreatinePLUS?",
-            "row_content": "<p>The most important factor with CreatinePLUS is consistency. Taking it daily matters more than taking it at a specific time. That said, many people find it convenient to take CreatinePLUS around physical activity, and research generally supports taking it within a reasonable window before or after exercise.<\/p><p>Choose a time that fits your routine and stick with it. A supplement you take consistently will always outperform one taken perfectly but sporadically.<\/p><p>One practical note on mixing: creatine is most stable in powder form, so mix your serving close to when you plan to drink it and consume it promptly.<\/p><p>As always, you may also follow the guidance of your healthcare or performance professional for timing that best fits your individual needs.<\/p>",
+            "row_content": "<p>The most important factor with CreatinePLUS is consistency. Taking it daily matters more than taking it at a specific time. That said, many people find it convenient to take CreatinePLUS around physical activity, and research generally supports taking it within a reasonable window before or after exercise.</p><p>Choose a time that fits your routine and stick with it. A supplement you take consistently will always outperform one taken perfectly but sporadically.</p><p>One practical note on mixing: creatine is most stable in powder form, so mix your serving close to when you plan to drink it and consume it promptly.</p><p>As always, you may also follow the guidance of your healthcare or performance professional for timing that best fits your individual needs.</p>",
             "page": ""
           }
         },
@@ -396,7 +405,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "How quickly will I see results with Creatine?",
-            "row_content": "<p>You may start noticing the effects of creatine within the first week. Most users will notice improved performance and recovery within 2-4 weeks of consistent use. Consistency of use and in your routine helps speed up the results. <\/p>",
+            "row_content": "<p>You may start noticing the effects of creatine within the first week. Most users will notice improved performance and recovery within 2-4 weeks of consistent use. Consistency of use and in your routine helps speed up the results. </p>",
             "page": ""
           }
         },
@@ -404,7 +413,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Hydration and Orenda CreatinePLUS — What you Need to Know",
-            "row_content": "<p>Creatine works in part by drawing water into your muscle cells, supporting how your muscles function and recover day to day. Because of this, staying consistently hydrated while taking CreatinePLUS helps creatine do its job well.<\/p><p>For most people, taking a standard daily amount, consistent fluid intake throughout the day, is what matters. Around 8-10 glasses of water spread throughout the day is a reasonable daily target.<\/p><p>On more active days or in warmer weather, increasing that amount makes sense.<\/p>",
+            "row_content": "<p>Creatine works in part by drawing water into your muscle cells, supporting how your muscles function and recover day to day. Because of this, staying consistently hydrated while taking CreatinePLUS helps creatine do its job well.</p><p>For most people, taking a standard daily amount, consistent fluid intake throughout the day, is what matters. Around 8-10 glasses of water spread throughout the day is a reasonable daily target.</p><p>On more active days or in warmer weather, increasing that amount makes sense.</p>",
             "page": ""
           }
         },
@@ -412,7 +421,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Can creatine supplementation result in water retention or weight gain?",
-            "row_content": "<p>For most people, creatine does not cause fat gain. What some people notice in the first week or two is a small increase on the scale; this reflects water being drawn into muscle cells, not fat accumulation. The result is muscles that feel and look slightly fuller, which is a natural part of how creatine works.*<\/p><p>This shift is temporary and settles as your body adjusts. Staying consistently hydrated throughout the day helps your body handle this well.* Any longer-term changes in body composition are generally connected to the muscle and strength support creatine provides over time, not water retention.*<\/p>",
+            "row_content": "<p>For most people, creatine does not cause fat gain. What some people notice in the first week or two is a small increase on the scale; this reflects water being drawn into muscle cells, not fat accumulation. The result is muscles that feel and look slightly fuller, which is a natural part of how creatine works.*</p><p>This shift is temporary and settles as your body adjusts. Staying consistently hydrated throughout the day helps your body handle this well.* Any longer-term changes in body composition are generally connected to the muscle and strength support creatine provides over time, not water retention.*</p>",
             "page": ""
           }
         },
@@ -420,7 +429,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Can I mix creatine with hot liquids like tea or coffee?",
-            "row_content": "<p>Yes, you can mix creatine with hot liquids like tea or coffee. However, it's generally recommended to combine it with cold or room-temperature liquids.<\/p>",
+            "row_content": "<p>Yes, you can mix creatine with hot liquids like tea or coffee. However, it's generally recommended to combine it with cold or room-temperature liquids.</p>",
             "page": ""
           }
         },
@@ -428,7 +437,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Why is creatine suitable for vegans and vegetarians?",
-            "row_content": "<p>Most of our natural dietary creatine comes from meat, dairy, and fish, which means people who eat little or no animal protein often have lower creatine stores than those who don't. Supplementing with creatine is a well-established way to address this gap.<\/p><p>Orenda CreatinePLUS uses Creavitalis® creatine monohydrate, produced in Germany without any animal-derived ingredients. It is 100% vegan and vegetarian-friendly, non-GMO, and manufactured under GMP-certified standards. The company behind Creavitalis® also holds EcoVadis sustainability recognition — an independent assessment of responsible manufacturing practices — making it a source we feel good about choosing.<\/p>",
+            "row_content": "<p>Most of our natural dietary creatine comes from meat, dairy, and fish, which means people who eat little or no animal protein often have lower creatine stores than those who don't. Supplementing with creatine is a well-established way to address this gap.</p><p>Orenda CreatinePLUS uses Creavitalis® creatine monohydrate, produced in Germany without any animal-derived ingredients. It is 100% vegan and vegetarian-friendly, non-GMO, and manufactured under GMP-certified standards. The company behind Creavitalis® also holds EcoVadis sustainability recognition — an independent assessment of responsible manufacturing practices — making it a source we feel good about choosing.</p>",
             "page": ""
           }
         },
@@ -436,7 +445,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Can I take Orenda CreatinePLUS with other Orenda supplements?",
-            "row_content": "<p>Yes, CreatinePLUS works well alongside other Orenda supplements as part of a consistent daily routine.<\/p><p>Two pairings worth knowing about: Orenda Eaze® and Orenda Immune+Detox®. Eaze supports gut health and nutrient absorption,* which matters because a healthy digestive system helps your body make the most of everything you take, including creatine. Immune+Detox covers immune function, microbiome balance, and the body's natural cleansing processes*, a natural complement to the strength, recovery, and clarity that CreatinePLUS supports.*<\/p><p>Together, these three products address some of the most important foundations of daily wellness, from the inside out.<\/p><p>As always, if you are pregnant, nursing, or have a medical condition, consult with your healthcare provider before combining supplements or starting any new health routine.<\/p>",
+            "row_content": "<p>Yes, CreatinePLUS works well alongside other Orenda supplements as part of a consistent daily routine.</p><p>Two pairings worth knowing about: Orenda Eaze® and Orenda Immune+Detox®. Eaze supports gut health and nutrient absorption,* which matters because a healthy digestive system helps your body make the most of everything you take, including creatine. Immune+Detox covers immune function, microbiome balance, and the body's natural cleansing processes*, a natural complement to the strength, recovery, and clarity that CreatinePLUS supports.*</p><p>Together, these three products address some of the most important foundations of daily wellness, from the inside out.</p><p>As always, if you are pregnant, nursing, or have a medical condition, consult with your healthcare provider before combining supplements or starting any new health routine.</p>",
             "page": ""
           }
         },
@@ -444,7 +453,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Should I take Orenda CreatinePLUS if I am on medication?",
-            "row_content": "<p>Orenda CreatinePLUS was formulated with careful attention to safety. That said, if you are currently under medical care or taking any medications, we recommend consulting with your healthcare provider before adding any new supplement to your routine. Your healthcare provider understands your full health picture and is the right person to make that call with you.<\/p>",
+            "row_content": "<p>Orenda CreatinePLUS was formulated with careful attention to safety. That said, if you are currently under medical care or taking any medications, we recommend consulting with your healthcare provider before adding any new supplement to your routine. Your healthcare provider understands your full health picture and is the right person to make that call with you.</p>",
             "page": ""
           }
         },
@@ -454,7 +463,7 @@
             "heading": "🎙️ In-Depth Dive on Orenda CreatinePLUS with Dr. Golden, M.D. (26 mins)",
             "description": "🎙️ In-Depth Dive on Orenda CreatinePLUS with Dr. Golden, M.D. (26 mins)",
             "youtube_src": "",
-            "vimeo_src": "https:\/\/player.vimeo.com\/video\/1146026804?badge=0&autopause=0&player_id=0&app_id=58479"
+            "vimeo_src": "https://player.vimeo.com/video/1146026804?badge=0&autopause=0&player_id=0&app_id=58479"
           }
         }
       },
@@ -496,16 +505,16 @@
           "settings": {
             "title": "Benefits of Adding Creatine Supplementation",
             "title_size": "h3",
-            "text": "<p>Research suggests that adding creatine supplementation may help support overall wellness and healthy aging as part of a balanced lifestyle.*<\/p>",
+            "text": "<p>Research suggests that adding creatine supplementation may help support overall wellness and healthy aging as part of a balanced lifestyle.*</p>",
             "button_label": "",
             "button_link": "",
             "button_style_secondary": false,
             "heading-left-collapsible": "",
-            "text-left-collapsible": "<p> <\/p>",
+            "text-left-collapsible": "<p> </p>",
             "heading-right-collapsible": "",
-            "text-right-collapsible": "<p> <\/p>",
+            "text-right-collapsible": "<p> </p>",
             "collapsible_row_heading": "View Research Studies",
-            "collapsible-row-content": "<p>Recent research suggests creatine may help support key aspects of brain function and mood, including memory, mental fatigue, and cognitive clarity.*<\/p><ol><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC7998865\/\">Creatine supplementation across female life stages — strength, body composition, mood, and cognition<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/3\/877\">Creatine in women's health — perimenopause, menopause, and beyond<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/33800439\/\">Creatine supplementation in women's health — a lifespan perspective<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/3\/745\">Creatine supplementation for older adults — muscle, physical function, and healthy aging<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/40673730\/\">Creatine monohydrate for older adults and clinical populations<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/2\/447\">Creatine in health and disease — safety and broad applicability<\/a><\/li><li><a href=\"https:\/\/journals.lww.com\/acsm-csmr\/abstract\/2021\/07000\/creatine_supplementation__an_update.3.aspx\">Creatine supplementation — an updated review of performance, muscle, and recovery<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2075-4663\/14\/4\/137\" target=\"_blank\" title=\"https:\/\/www.mdpi.com\/2075-4663\/14\/4\/137\">Creatine Supplementation: Dose, Duration, and Tolerability<\/a><\/li><li><a href=\"https:\/\/www.frontiersin.org\/journals\/nutrition\/articles\/10.3389\/fnut.2025.1687719\/full\" target=\"_blank\" title=\"https:\/\/www.frontiersin.org\/journals\/nutrition\/articles\/10.3389\/fnut.2025.1687719\/full\">Creatine Supplementation and Exercise in Aging<\/a><\/li><\/ol>",
+            "collapsible-row-content": "<p>Recent research suggests creatine may help support key aspects of brain function and mood, including memory, mental fatigue, and cognitive clarity.*</p><ol><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7998865/\">Creatine supplementation across female life stages — strength, body composition, mood, and cognition</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/3/877\">Creatine in women's health — perimenopause, menopause, and beyond</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/33800439/\">Creatine supplementation in women's health — a lifespan perspective</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/3/745\">Creatine supplementation for older adults — muscle, physical function, and healthy aging</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/40673730/\">Creatine monohydrate for older adults and clinical populations</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/2/447\">Creatine in health and disease — safety and broad applicability</a></li><li><a href=\"https://journals.lww.com/acsm-csmr/abstract/2021/07000/creatine_supplementation__an_update.3.aspx\">Creatine supplementation — an updated review of performance, muscle, and recovery</a></li><li><a href=\"https://www.mdpi.com/2075-4663/14/4/137\" target=\"_blank\" title=\"https://www.mdpi.com/2075-4663/14/4/137\">Creatine Supplementation: Dose, Duration, and Tolerability</a></li><li><a href=\"https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2025.1687719/full\" target=\"_blank\" title=\"https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2025.1687719/full\">Creatine Supplementation and Exercise in Aging</a></li></ol>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -514,16 +523,16 @@
           "settings": {
             "title": "Supporting Brain Health and Cognitive Function*",
             "title_size": "h3",
-            "text": "<p>Research across age groups suggests creatine may help support brain health, focus, and everyday cognitive performance.*<\/p>",
+            "text": "<p>Research across age groups suggests creatine may help support brain health, focus, and everyday cognitive performance.*</p>",
             "button_label": "",
             "button_link": "",
             "button_style_secondary": false,
             "heading-left-collapsible": "",
             "text-left-collapsible": "",
             "heading-right-collapsible": "",
-            "text-right-collapsible": "<p> <\/p>",
+            "text-right-collapsible": "<p> </p>",
             "collapsible_row_heading": "View Research Studies",
-            "collapsible-row-content": "<p>These studies examine how creatine supplementation may help support brain health, memory, and everyday cognitive performance across different ages and conditions.*<\/p><ol><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/21394604\/\">Creatine use in older adults — cognitive function across young and older populations<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/33578876\/\">Creatine supplementation and brain health — a current overview<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/2\/586\">Brain health and cognitive function — a research review<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/39691097\/\">The power of creatine plus resistance training — physical vitality and cognitive function in healthy aging<\/a><\/li><li><a href=\"https:\/\/www.sciencedirect.com\/science\/article\/abs\/pii\/S0531556518300263\">Brain creatine, cognitive processing, and traumatic brain injury — beyond muscle<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/14561278\/\">Oral creatine supplementation and brain performance — a double-blind, placebo-controlled trial<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC8912287\/\">Effects of creatine on brain function and health<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC7916590\/\">Creatine supplementation and brain health — research update<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/30086660\/\">Beyond muscle — brain creatine, cognitive processing, and traumatic brain injury<\/a><\/li><li><a href=\"https:\/\/www.cambridge.org\/core\/journals\/british-journal-of-nutrition\/article\/influence-of-creatine-supplementation-on-the-cognitive-functioning-of-vegetarians-and-omnivores\/E2D37729902DDFA6CFC85767AD0421FC\">Creatine supplementation and cognitive functioning — vegetarians and omnivores<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC1691485\/\">Creatine supplementation and cognitive performance — a controlled trial<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC6795258\/\">Cognitive function and creatine supplementation — systematic review<\/a><\/li><li><a href=\"https:\/\/www.sciencedirect.com\/science\/article\/abs\/pii\/S0197018615300383\">Creatine and cognition — research findings<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/10484486\/\">Increase of total creatine in the human brain after oral supplementation<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/17828627\/\">Creatine supplementation and cognitive performance in older adults<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/35984306\/\">Effects of creatine on memory — systematic review and meta-analysis<\/a><\/li><li><a href=\"https:\/\/link.springer.com\/article\/10.1007\/s40279-023-01870-9\">Heads up for creatine — brain health and function across ages<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/16416332\/\">Creatine and cognitive function — research review<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/17046034\/\">Creatine, sleep deprivation, cortisol, melatonin, and cognitive performance<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/38418482\/\">Single dose creatine and cognitive performance during sleep deprivation<\/a><\/li><\/ol><p>10B. <a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC12089086\/\">Creatine monohydrate pilot study in Alzheimer's disease — brain creatine and cognition<\/a><\/p><p>21. <a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC12793482\/pdf\/nuaf135.pdf\" target=\"_blank\" title=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC12793482\/pdf\/nuaf135.pdf\">Creatine and Cognition in Aging: A Review of Evidence in Older Adults<\/a><\/p>",
+            "collapsible-row-content": "<p>These studies examine how creatine supplementation may help support brain health, memory, and everyday cognitive performance across different ages and conditions.*</p><ol><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/21394604/\">Creatine use in older adults — cognitive function across young and older populations</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/33578876/\">Creatine supplementation and brain health — a current overview</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/2/586\">Brain health and cognitive function — a research review</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/39691097/\">The power of creatine plus resistance training — physical vitality and cognitive function in healthy aging</a></li><li><a href=\"https://www.sciencedirect.com/science/article/abs/pii/S0531556518300263\">Brain creatine, cognitive processing, and traumatic brain injury — beyond muscle</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/14561278/\">Oral creatine supplementation and brain performance — a double-blind, placebo-controlled trial</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8912287/\">Effects of creatine on brain function and health</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7916590/\">Creatine supplementation and brain health — research update</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/30086660/\">Beyond muscle — brain creatine, cognitive processing, and traumatic brain injury</a></li><li><a href=\"https://www.cambridge.org/core/journals/british-journal-of-nutrition/article/influence-of-creatine-supplementation-on-the-cognitive-functioning-of-vegetarians-and-omnivores/E2D37729902DDFA6CFC85767AD0421FC\">Creatine supplementation and cognitive functioning — vegetarians and omnivores</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC1691485/\">Creatine supplementation and cognitive performance — a controlled trial</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6795258/\">Cognitive function and creatine supplementation — systematic review</a></li><li><a href=\"https://www.sciencedirect.com/science/article/abs/pii/S0197018615300383\">Creatine and cognition — research findings</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/10484486/\">Increase of total creatine in the human brain after oral supplementation</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/17828627/\">Creatine supplementation and cognitive performance in older adults</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/35984306/\">Effects of creatine on memory — systematic review and meta-analysis</a></li><li><a href=\"https://link.springer.com/article/10.1007/s40279-023-01870-9\">Heads up for creatine — brain health and function across ages</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/16416332/\">Creatine and cognitive function — research review</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/17046034/\">Creatine, sleep deprivation, cortisol, melatonin, and cognitive performance</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/38418482/\">Single dose creatine and cognitive performance during sleep deprivation</a></li></ol><p>10B. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12089086/\">Creatine monohydrate pilot study in Alzheimer's disease — brain creatine and cognition</a></p><p>21. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12793482/pdf/nuaf135.pdf\" target=\"_blank\" title=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12793482/pdf/nuaf135.pdf\">Creatine and Cognition in Aging: A Review of Evidence in Older Adults</a></p>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -533,7 +542,7 @@
           "settings": {
             "title": "Creatine Supports Lean Muscle Mass, Strength & Recovery*",
             "title_size": "h3",
-            "text": "<p>Creatine supplementation, when combined with resistance training, can build stronger bones and increase muscle mass and strength.*<\/p>",
+            "text": "<p>Creatine supplementation, when combined with resistance training, can build stronger bones and increase muscle mass and strength.*</p>",
             "button_label": "",
             "button_link": "",
             "button_style_secondary": false,
@@ -542,7 +551,7 @@
             "heading-right-collapsible": "",
             "text-right-collapsible": "",
             "collapsible_row_heading": "View Research Studies",
-            "collapsible-row-content": "<p>These studies explore how creatine supplementation, especially when combined with resistance training, may help support muscle mass, strength, and overall musculoskeletal health in aging adults.*<\/p><p>30. <a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC12506341\/\">Creatine supplementation and exercise training in older adults — muscle strength, body composition, and physical performance<\/a><\/p><p>31. <a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/24190049\/\">Creatine supplementation and aging musculoskeletal health — muscle mass, strength, and bone<\/a><\/p><p>32. <a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/3\/745\">Current evidence for creatine<br\/>supplementation in older adults — muscle, physical function, and healthy aging<\/a><\/p><p>33. <a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/6\/1912\">Creatine ingestion strategies and lean tissue mass and strength in older adults — a meta-analysis<\/a><\/p><p>34. <a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/11\/3757\">Creatine supplementation<br\/>combined with resistance training on muscle strength and mass in older females — a systematic review and meta-analysis<\/a><\/p><p>35. <a href=\"https:\/\/journals.lww.com\/acsm-msse\/fulltext\/2023\/10000\/a_2_yr_randomized_controlled_trial_on_creatine.4.aspx\">Two-year randomized controlled trial on creatine supplementation during exercise for postmenopausal bone health<\/a><\/p><p>36. <a href=\"https:\/\/www.sciencedirect.com\/science\/article\/abs\/pii\/S8756328222001442\">Creatine supplementation for older adults — sarcopenia, osteoporosis, frailty, and musculoskeletal health<\/a><\/p><p>37. <a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC4864174\/\">Creatine supplementation during resistance training — lean tissue mass and muscular strength in older adults<\/a><\/p><p>38. <a href=\"https:\/\/www.tandfonline.com\/doi\/full\/10.1080\/15502783.2025.2591782#abstract\">Long-term safety of creatine supplementation in female athletes — a real-world study<\/a><\/p>",
+            "collapsible-row-content": "<p>These studies explore how creatine supplementation, especially when combined with resistance training, may help support muscle mass, strength, and overall musculoskeletal health in aging adults.*</p><p>30. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12506341/\">Creatine supplementation and exercise training in older adults — muscle strength, body composition, and physical performance</a></p><p>31. <a href=\"https://pubmed.ncbi.nlm.nih.gov/24190049/\">Creatine supplementation and aging musculoskeletal health — muscle mass, strength, and bone</a></p><p>32. <a href=\"https://www.mdpi.com/2072-6643/13/3/745\">Current evidence for creatine<br/>supplementation in older adults — muscle, physical function, and healthy aging</a></p><p>33. <a href=\"https://www.mdpi.com/2072-6643/13/6/1912\">Creatine ingestion strategies and lean tissue mass and strength in older adults — a meta-analysis</a></p><p>34. <a href=\"https://www.mdpi.com/2072-6643/13/11/3757\">Creatine supplementation<br/>combined with resistance training on muscle strength and mass in older females — a systematic review and meta-analysis</a></p><p>35. <a href=\"https://journals.lww.com/acsm-msse/fulltext/2023/10000/a_2_yr_randomized_controlled_trial_on_creatine.4.aspx\">Two-year randomized controlled trial on creatine supplementation during exercise for postmenopausal bone health</a></p><p>36. <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S8756328222001442\">Creatine supplementation for older adults — sarcopenia, osteoporosis, frailty, and musculoskeletal health</a></p><p>37. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4864174/\">Creatine supplementation during resistance training — lean tissue mass and muscular strength in older adults</a></p><p>38. <a href=\"https://www.tandfonline.com/doi/full/10.1080/15502783.2025.2591782#abstract\">Long-term safety of creatine supplementation in female athletes — a real-world study</a></p>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -552,16 +561,16 @@
           "settings": {
             "title": "Mood Support",
             "title_size": "h3",
-            "text": "<p>Research suggests creatine may help support mood, mental clarity, and everyday resilience as part of a healthy lifestyle.*<\/p>",
+            "text": "<p>Research suggests creatine may help support mood, mental clarity, and everyday resilience as part of a healthy lifestyle.*</p>",
             "button_label": "",
             "button_link": "",
             "button_style_secondary": false,
             "heading-left-collapsible": "",
             "text-left-collapsible": "",
             "heading-right-collapsible": "",
-            "text-right-collapsible": "<p> <\/p>",
+            "text-right-collapsible": "<p> </p>",
             "collapsible_row_heading": "View Research Studies",
-            "collapsible-row-content": "<p>These studies examine the relationship between creatine and various aspects of mood and emotional well-being in different populations.<\/p><ol><li><a href=\"https:\/\/www.nature.com\/articles\/s41398-020-0741-x\">Dietary creatine intake and depression risk — a large-scale study of U.S. adults<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC6769464\/\">Creatine for the treatment of depression — mechanisms, evidence, and clinical findings<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/26457568\/\">Creatine as a treatment approach for depression in females — a pilot study<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC11567172\/\">Creatine supplementation in depression — mechanisms, efficacy, and clinical outcomes<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/26907087\/\">Creatine and brain energy metabolism in adolescent females with treatment-resistant depression<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2218-273X\/9\/9\/406\">Creatine, brain energy metabolism, and mood — a review of the research<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/22864465\/\">Creatine augmentation in women with major depressive disorder — a randomized controlled trial<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/12850248\/\">Creatine supplementation and brain energy metabolism — a magnetic resonance spectroscopy study<\/a><\/li><li><a href=\"https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0924977X24007405\">Creatine as an add-on to cognitive behavioral therapy in depression — a pilot trial<\/a><\/li><\/ol>",
+            "collapsible-row-content": "<p>These studies examine the relationship between creatine and various aspects of mood and emotional well-being in different populations.</p><ol><li><a href=\"https://www.nature.com/articles/s41398-020-0741-x\">Dietary creatine intake and depression risk — a large-scale study of U.S. adults</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6769464/\">Creatine for the treatment of depression — mechanisms, evidence, and clinical findings</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/26457568/\">Creatine as a treatment approach for depression in females — a pilot study</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11567172/\">Creatine supplementation in depression — mechanisms, efficacy, and clinical outcomes</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/26907087/\">Creatine and brain energy metabolism in adolescent females with treatment-resistant depression</a></li><li><a href=\"https://www.mdpi.com/2218-273X/9/9/406\">Creatine, brain energy metabolism, and mood — a review of the research</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/22864465/\">Creatine augmentation in women with major depressive disorder — a randomized controlled trial</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/12850248/\">Creatine supplementation and brain energy metabolism — a magnetic resonance spectroscopy study</a></li><li><a href=\"https://www.sciencedirect.com/science/article/pii/S0924977X24007405\">Creatine as an add-on to cognitive behavioral therapy in depression — a pilot trial</a></li></ol>",
             "collapsible-bg-color": "#ffffff"
           }
         }
@@ -596,7 +605,7 @@
           "settings": {
             "title": "Creatine Supports Lean Muscle, Strength & Recovery*",
             "title_size": "h3",
-            "text": "<p>Creatine supplementation, when combined with resistance training, supports healthy bone density and lean muscle strength.*<\/p>",
+            "text": "<p>Creatine supplementation, when combined with resistance training, supports healthy bone density and lean muscle strength.*</p>",
             "button_label": "",
             "button_link": "",
             "button_style_secondary": false,
@@ -605,7 +614,7 @@
             "heading-right-collapsible": "",
             "text-right-collapsible": "",
             "collapsible_row_heading": "View Research Studies",
-            "collapsible-row-content": "<p>These studies explore how creatine supplementation, especially when combined with resistance training, may help support muscle mass, strength, and overall musculoskeletal health in aging adults.*<\/p><ol><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC12506341\/\">Creatine supplementation and exercise training in older adults — muscle strength, body composition, and physical performance<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/24190049\/\">Creatine supplementation and aging musculoskeletal health — muscle mass, strength, and bone<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/3\/745\">Current evidence for creatine supplementation in older adults — muscle, physical function, and healthy aging<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/6\/1912\">Creatine ingestion strategies and lean tissue mass and strength in older adults — a meta-analysis<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/11\/3757\">Creatine supplementation combined with resistance training on muscle strength and mass in older females — a systematic review and meta-analysis<\/a><\/li><li><a href=\"https:\/\/journals.lww.com\/acsm-msse\/fulltext\/2023\/10000\/a_2_yr_randomized_controlled_trial_on_creatine.4.aspx\">Two-year randomized controlled trial on creatine supplementation during exercise for postmenopausal bone health<\/a><\/li><li><a href=\"https:\/\/www.sciencedirect.com\/science\/article\/abs\/pii\/S8756328222001442\">Creatine supplementation for older adults — sarcopenia, osteoporosis, frailty, and musculoskeletal health<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC4864174\/\">Creatine supplementation during resistance training — lean tissue mass and muscular strength in older adults<\/a><\/li><li><a href=\"https:\/\/www.tandfonline.com\/doi\/full\/10.1080\/15502783.2025.2591782#abstract\">Long-term safety of creatine supplementation in female athletes — a real-world study<\/a><\/li><\/ol>",
+            "collapsible-row-content": "<p>These studies explore how creatine supplementation, especially when combined with resistance training, may help support muscle mass, strength, and overall musculoskeletal health in aging adults.*</p><ol><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12506341/\">Creatine supplementation and exercise training in older adults — muscle strength, body composition, and physical performance</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/24190049/\">Creatine supplementation and aging musculoskeletal health — muscle mass, strength, and bone</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/3/745\">Current evidence for creatine supplementation in older adults — muscle, physical function, and healthy aging</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/6/1912\">Creatine ingestion strategies and lean tissue mass and strength in older adults — a meta-analysis</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/11/3757\">Creatine supplementation combined with resistance training on muscle strength and mass in older females — a systematic review and meta-analysis</a></li><li><a href=\"https://journals.lww.com/acsm-msse/fulltext/2023/10000/a_2_yr_randomized_controlled_trial_on_creatine.4.aspx\">Two-year randomized controlled trial on creatine supplementation during exercise for postmenopausal bone health</a></li><li><a href=\"https://www.sciencedirect.com/science/article/abs/pii/S8756328222001442\">Creatine supplementation for older adults — sarcopenia, osteoporosis, frailty, and musculoskeletal health</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4864174/\">Creatine supplementation during resistance training — lean tissue mass and muscular strength in older adults</a></li><li><a href=\"https://www.tandfonline.com/doi/full/10.1080/15502783.2025.2591782#abstract\">Long-term safety of creatine supplementation in female athletes — a real-world study</a></li></ol>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -614,16 +623,16 @@
           "settings": {
             "title": "Mental Energy and Resilience",
             "title_size": "h3",
-            "text": "<p>Research suggests creatine may help support mental energy, cognitive clarity, and everyday resilience as part of a consistent daily routine.*<\/p>",
+            "text": "<p>Research suggests creatine may help support mental energy, cognitive clarity, and everyday resilience as part of a consistent daily routine.*</p>",
             "button_label": "",
             "button_link": "",
             "button_style_secondary": false,
             "heading-left-collapsible": "",
             "text-left-collapsible": "",
             "heading-right-collapsible": "",
-            "text-right-collapsible": "<p> <\/p>",
+            "text-right-collapsible": "<p> </p>",
             "collapsible_row_heading": "View Research Studies",
-            "collapsible-row-content": "<p>These studies examine the relationship between creatine and various aspects of mood and emotional well-being in different populations.<\/p><ol><li><a href=\"https:\/\/www.nature.com\/articles\/s41398-020-0741-x\">Dietary creatine intake and depression risk — a large-scale study of U.S. adults<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC6769464\/\">Creatine for the treatment of depression — mechanisms, evidence, and clinical findings<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/26457568\/\">Creatine as a treatment approach for depression in females — a pilot study<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC11567172\/\">Creatine supplementation in depression — mechanisms, efficacy, and clinical outcomes<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/26907087\/\">Creatine and brain energy metabolism in adolescent females with treatment-resistant depression<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2218-273X\/9\/9\/406\">Creatine, brain energy metabolism, and mood — a review of the research<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/22864465\/\">Creatine augmentation in women with major depressive disorder — a randomized controlled trial<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/12850248\/\">Creatine supplementation and brain energy metabolism — a magnetic resonance spectroscopy study<\/a><\/li><li><a href=\"https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0924977X24007405\">Creatine as an add-on to cognitive behavioral therapy in depression — a pilot trial<\/a><\/li><\/ol>",
+            "collapsible-row-content": "<p>These studies examine the relationship between creatine and various aspects of mood and emotional well-being in different populations.</p><ol><li><a href=\"https://www.nature.com/articles/s41398-020-0741-x\">Dietary creatine intake and depression risk — a large-scale study of U.S. adults</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6769464/\">Creatine for the treatment of depression — mechanisms, evidence, and clinical findings</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/26457568/\">Creatine as a treatment approach for depression in females — a pilot study</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11567172/\">Creatine supplementation in depression — mechanisms, efficacy, and clinical outcomes</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/26907087/\">Creatine and brain energy metabolism in adolescent females with treatment-resistant depression</a></li><li><a href=\"https://www.mdpi.com/2218-273X/9/9/406\">Creatine, brain energy metabolism, and mood — a review of the research</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/22864465/\">Creatine augmentation in women with major depressive disorder — a randomized controlled trial</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/12850248/\">Creatine supplementation and brain energy metabolism — a magnetic resonance spectroscopy study</a></li><li><a href=\"https://www.sciencedirect.com/science/article/pii/S0924977X24007405\">Creatine as an add-on to cognitive behavioral therapy in depression — a pilot trial</a></li></ol>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -633,16 +642,16 @@
           "settings": {
             "title": "Benefits of Adding Creatine Supplementation",
             "title_size": "h3",
-            "text": "<p>Research suggests that adding creatine supplementation may help support overall wellness and healthy aging as part of a balanced lifestyle.*<\/p>",
+            "text": "<p>Research suggests that adding creatine supplementation may help support overall wellness and healthy aging as part of a balanced lifestyle.*</p>",
             "button_label": "",
             "button_link": "",
             "button_style_secondary": false,
             "heading-left-collapsible": "",
-            "text-left-collapsible": "<p> <\/p>",
+            "text-left-collapsible": "<p> </p>",
             "heading-right-collapsible": "",
-            "text-right-collapsible": "<p> <\/p>",
+            "text-right-collapsible": "<p> </p>",
             "collapsible_row_heading": "View Research Studies",
-            "collapsible-row-content": "<p>Recent research suggests creatine may help support key aspects of brain function and mood, including memory, mental fatigue, and cognitive clarity.*<\/p><ol><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC7998865\/\">Creatine supplementation across female life stages — strength, body composition, mood, and cognition<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/3\/877\">Creatine in women's health — perimenopause, menopause, and beyond<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/33800439\/\">Creatine supplementation in women's health — a lifespan perspective<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/3\/745\">Creatine supplementation for older adults — muscle, physical function, and healthy aging<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/40673730\/\">Creatine monohydrate for older adults and clinical populations<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/2\/447\">Creatine in health and disease — safety and broad applicability<\/a><\/li><li><a href=\"https:\/\/journals.lww.com\/acsm-csmr\/abstract\/2021\/07000\/creatine_supplementation__an_update.3.aspx\">Creatine supplementation — an updated review of performance, muscle, and recovery<\/a><\/li><\/ol>",
+            "collapsible-row-content": "<p>Recent research suggests creatine may help support key aspects of brain function and mood, including memory, mental fatigue, and cognitive clarity.*</p><ol><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7998865/\">Creatine supplementation across female life stages — strength, body composition, mood, and cognition</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/3/877\">Creatine in women's health — perimenopause, menopause, and beyond</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/33800439/\">Creatine supplementation in women's health — a lifespan perspective</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/3/745\">Creatine supplementation for older adults — muscle, physical function, and healthy aging</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/40673730/\">Creatine monohydrate for older adults and clinical populations</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/2/447\">Creatine in health and disease — safety and broad applicability</a></li><li><a href=\"https://journals.lww.com/acsm-csmr/abstract/2021/07000/creatine_supplementation__an_update.3.aspx\">Creatine supplementation — an updated review of performance, muscle, and recovery</a></li></ol>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -652,16 +661,16 @@
           "settings": {
             "title": "Supporting Brain Health and Cognitive Function*",
             "title_size": "h3",
-            "text": "<p>Research in young and older adults suggests creatine may help support brain health, focus, and everyday cognitive performance.*<\/p>",
+            "text": "<p>Research in young and older adults suggests creatine may help support brain health, focus, and everyday cognitive performance.*</p>",
             "button_label": "",
             "button_link": "",
             "button_style_secondary": false,
             "heading-left-collapsible": "",
             "text-left-collapsible": "",
             "heading-right-collapsible": "",
-            "text-right-collapsible": "<p> <\/p>",
+            "text-right-collapsible": "<p> </p>",
             "collapsible_row_heading": "View Research Studies",
-            "collapsible-row-content": "<p>These studies examine how creatine supplementation may help support brain health, memory, and everyday cognitive performance across different ages and conditions.*<\/p><ol><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/21394604\/\">Creatine use in older adults — cognitive function across young and older populations<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/33578876\/\">Creatine supplementation and brain health — a current overview<\/a><\/li><li><a href=\"https:\/\/www.mdpi.com\/2072-6643\/13\/2\/586\">Brain health and cognitive function — a research review<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/39691097\/\">The power of creatine plus resistance training — physical vitality and cognitive function in healthy aging<\/a><\/li><li><a href=\"https:\/\/www.sciencedirect.com\/science\/article\/abs\/pii\/S0531556518300263\">Brain creatine, cognitive processing, and traumatic brain injury — beyond muscle<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/14561278\/\">Oral creatine supplementation and brain performance — a double-blind, placebo-controlled trial<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC8912287\/\">Effects of creatine on brain function and health<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC7916590\/\">Creatine supplementation and brain health — research update<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/30086660\/\">Beyond muscle — brain creatine, cognitive processing, and traumatic brain injury<\/a><\/li><li><a href=\"https:\/\/www.cambridge.org\/core\/journals\/british-journal-of-nutrition\/article\/influence-of-creatine-supplementation-on-the-cognitive-functioning-of-vegetarians-and-omnivores\/E2D37729902DDFA6CFC85767AD0421FC\">Creatine supplementation and cognitive functioning — vegetarians and omnivores<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC1691485\/\">Creatine supplementation and cognitive performance — a controlled trial<\/a><\/li><li><a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC6795258\/\">Cognitive function and creatine supplementation — systematic review<\/a><\/li><li><a href=\"https:\/\/www.sciencedirect.com\/science\/article\/abs\/pii\/S0197018615300383\">Creatine and cognition — research findings<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/10484486\/\">Increase of total creatine in the human brain after oral supplementation<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/17828627\/\">Creatine supplementation and cognitive performance in older adults<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/35984306\/\">Effects of creatine on memory — systematic review and meta-analysis<\/a><\/li><li><a href=\"https:\/\/link.springer.com\/article\/10.1007\/s40279-023-01870-9\">Heads up for creatine — brain health and function across ages<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/16416332\/\">Creatine and cognitive function — research review<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/17046034\/\">Creatine, sleep deprivation, cortisol, melatonin, and cognitive performance<\/a><\/li><li><a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/38418482\/\">Single dose creatine and cognitive performance during sleep deprivation<\/a><\/li><\/ol><p>10B. <a href=\"https:\/\/pmc.ncbi.nlm.nih.gov\/articles\/PMC12089086\/\">Creatine monohydrate pilot study in Alzheimer's disease — brain creatine and cognition<\/a><\/p>",
+            "collapsible-row-content": "<p>These studies examine how creatine supplementation may help support brain health, memory, and everyday cognitive performance across different ages and conditions.*</p><ol><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/21394604/\">Creatine use in older adults — cognitive function across young and older populations</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/33578876/\">Creatine supplementation and brain health — a current overview</a></li><li><a href=\"https://www.mdpi.com/2072-6643/13/2/586\">Brain health and cognitive function — a research review</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/39691097/\">The power of creatine plus resistance training — physical vitality and cognitive function in healthy aging</a></li><li><a href=\"https://www.sciencedirect.com/science/article/abs/pii/S0531556518300263\">Brain creatine, cognitive processing, and traumatic brain injury — beyond muscle</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/14561278/\">Oral creatine supplementation and brain performance — a double-blind, placebo-controlled trial</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8912287/\">Effects of creatine on brain function and health</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7916590/\">Creatine supplementation and brain health — research update</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/30086660/\">Beyond muscle — brain creatine, cognitive processing, and traumatic brain injury</a></li><li><a href=\"https://www.cambridge.org/core/journals/british-journal-of-nutrition/article/influence-of-creatine-supplementation-on-the-cognitive-functioning-of-vegetarians-and-omnivores/E2D37729902DDFA6CFC85767AD0421FC\">Creatine supplementation and cognitive functioning — vegetarians and omnivores</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC1691485/\">Creatine supplementation and cognitive performance — a controlled trial</a></li><li><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6795258/\">Cognitive function and creatine supplementation — systematic review</a></li><li><a href=\"https://www.sciencedirect.com/science/article/abs/pii/S0197018615300383\">Creatine and cognition — research findings</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/10484486/\">Increase of total creatine in the human brain after oral supplementation</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/17828627/\">Creatine supplementation and cognitive performance in older adults</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/35984306/\">Effects of creatine on memory — systematic review and meta-analysis</a></li><li><a href=\"https://link.springer.com/article/10.1007/s40279-023-01870-9\">Heads up for creatine — brain health and function across ages</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/16416332/\">Creatine and cognitive function — research review</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/17046034/\">Creatine, sleep deprivation, cortisol, melatonin, and cognitive performance</a></li><li><a href=\"https://pubmed.ncbi.nlm.nih.gov/38418482/\">Single dose creatine and cognitive performance during sleep deprivation</a></li></ol><p>10B. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12089086/\">Creatine monohydrate pilot study in Alzheimer's disease — brain creatine and cognition</a></p>",
             "collapsible-bg-color": "#ffffff"
           }
         }
@@ -694,7 +703,7 @@
         "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/EAZE_Judy_B_Customer_Review_v1_Web_52023.jpg",
+            "image": "shopify://shop_images/EAZE_Judy_B_Customer_Review_v1_Web_52023.jpg",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h5",
@@ -707,7 +716,7 @@
         "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/EAZE_Dr_Z_Customer_Review_v1_Web_52023.jpg",
+            "image": "shopify://shop_images/EAZE_Dr_Z_Customer_Review_v1_Web_52023.jpg",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h5",
@@ -720,7 +729,7 @@
         "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/EAZE_Dianne_J_Customer_Review_v1_Web_52023.jpg",
+            "image": "shopify://shop_images/EAZE_Dianne_J_Customer_Review_v1_Web_52023.jpg",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h5",
@@ -827,7 +836,7 @@
       "type": "apps",
       "blocks": {
         "a0f16f95-4a98-4de6-8fb7-f2635805066b": {
-          "type": "shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-widget\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
           "settings": {
             "enabled": true,
             "id": "63144",
@@ -879,7 +888,7 @@
           "settings": {
             "title": "Column",
             "title_size": "h3",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button_label": "Button label",
             "button_link": "",
             "button_style_secondary": false,
@@ -888,7 +897,7 @@
             "heading-right-collapsible": "",
             "text-right-collapsible": "",
             "collapsible_row_heading": "Collapsible row",
-            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br\/><br\/>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
+            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br/><br/>Ex: Shipping and return policies, size guides, and other common questions.</p>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -897,7 +906,7 @@
           "settings": {
             "title": "Column",
             "title_size": "h3",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button_label": "Button label",
             "button_link": "",
             "button_style_secondary": false,
@@ -906,7 +915,7 @@
             "heading-right-collapsible": "",
             "text-right-collapsible": "",
             "collapsible_row_heading": "Collapsible row",
-            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br\/><br\/>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
+            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br/><br/>Ex: Shipping and return policies, size guides, and other common questions.</p>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -915,7 +924,7 @@
           "settings": {
             "title": "Column",
             "title_size": "h3",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button_label": "Button label",
             "button_link": "",
             "button_style_secondary": false,
@@ -924,7 +933,7 @@
             "heading-right-collapsible": "",
             "text-right-collapsible": "",
             "collapsible_row_heading": "Collapsible row",
-            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br\/><br\/>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
+            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br/><br/>Ex: Shipping and return policies, size guides, and other common questions.</p>",
             "collapsible-bg-color": "#ffffff"
           }
         }
