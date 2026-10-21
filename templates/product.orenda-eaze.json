@@ -304,7 +304,7 @@
         "heading_alignment": "center",
         "heading_tag": "h2",
         "subheading": "Our Highest Quality Commitment",
-        "description": "Clean formulations backed by third-party testing.",
+        "description": "Clean formulations backed by third-party testing. Recommended by healthcare providers in our community, who also off Orenda formulas to their clients.",
         "padding_top": 24,
         "padding_bottom": 40
       }
@@ -371,6 +371,7 @@
         },
         "bdf3fe71-beba-4517-90c2-a5d34c60a0d4": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "heading": "Should I take Orenda Eaze® if I am on medication?",
             "row_content": "<p>Orenda Eaze® was formulated with your well-being in mind. That said, if you are currently under medical care or taking any medications, we recommend consulting with your healthcare provider before adding any new supplement to your routine. Your healthcare provider understands your full health picture and is the right person to make that call with you.</p>",
