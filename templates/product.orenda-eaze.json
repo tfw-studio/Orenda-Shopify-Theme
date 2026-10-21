@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "empty-space": {
@@ -34,7 +43,7 @@
           "type": "text",
           "settings": {
             "icon": "none",
-            "text": "One Capsule. Six gut health essentials working together.",
+            "text": "One Capsule. Five kinds of gut support for everyday digestive comfort and regularity.*",
             "text_style": "uppercase"
           }
         },
@@ -118,7 +127,7 @@
           "settings": {
             "icon": "clipboard",
             "heading": "VIEW SUPPLEMENT FACTS",
-            "image": "shopify:\/\/shop_images\/Eaze_-_Panel_2.jpg",
+            "image": "shopify://shop_images/Eaze_-_Panel_2.jpg",
             "description": "Orenda Eaze Supplement Facts"
           }
         },
@@ -127,7 +136,7 @@
           "settings": {
             "icon": "check_mark",
             "heading": "VIEW FULL LABEL",
-            "content": "<p>Learn more about the high-quality ingredients that make up Orenda's products. <\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G123_Eaze_Bottle_Label_v1_web.pdf?v=1773869557\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G123_Eaze_Bottle_Label_v1_web.pdf?v=1773869557\">View full Orenda Eaze® Label<\/a><\/p>",
+            "content": "<p>Learn more about the high-quality ingredients that make up Orenda's products. </p><p><a href=\"https://cdn.shopify.com/s/files/1/0100/9549/3201/files/G123_Eaze_Bottle_Label_v1_web.pdf?v=1773869557\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0100/9549/3201/files/G123_Eaze_Bottle_Label_v1_web.pdf?v=1773869557\">View full Orenda Eaze® Label</a></p>",
             "page": ""
           }
         },
@@ -138,7 +147,7 @@
             "heading": "60-Second Spotlight: Orenda Eaze®",
             "description": "60-Second Spotlight: Orenda Eaze®",
             "youtube_src": "",
-            "vimeo_src": "https:\/\/player.vimeo.com\/video\/756930481?h=641c3bfec3&badge=0&autopause=0&player_id=0&app_id=58479"
+            "vimeo_src": "https://player.vimeo.com/video/756930481?h=641c3bfec3&badge=0&autopause=0&player_id=0&app_id=58479"
           }
         },
         "inventory_status": {
@@ -227,7 +236,7 @@
         "enable_video_looping": false,
         "mobile_image_ratio": "adapt",
         "show_mobile_thumbnails": false,
-        "rc_custom_text": "<strong>Subscription Benefits <\/strong><br>✔︎ Delivered Monthly - 'no empties' promise<br>\n✔︎ Consistent daily use is where the difference is felt - monthly delivery makes that easy<br>\n✔︎ Cancel, Pause, Delay, or Change Anytime, Hassle-Free<br>\n✔︎ No Surprises (We'll send you pre-shipment reminders)",
+        "rc_custom_text": "<strong>Subscription Benefits </strong><br>✔︎ Delivered Monthly - 'no empties' promise<br>\n✔︎ Consistent daily use is where the difference is felt - monthly delivery makes that easy<br>\n✔︎ Cancel, Pause, Delay, or Change Anytime, Hassle-Free<br>\n✔︎ No Surprises (We'll send you pre-shipment reminders)",
         "padding_top": 0,
         "padding_bottom": 44
       }
@@ -238,42 +247,42 @@
         "e94ea0f0-2ac3-4eb3-b1d3-ce9f691f692d": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gmo.png",
+            "image": "shopify://shop_images/G094_web_icons_75__gmo.png",
             "link": ""
           }
         },
         "logo_fYLbPk": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gluten.png",
+            "image": "shopify://shop_images/G094_web_icons_75__gluten.png",
             "link": ""
           }
         },
         "31745940-86b1-403b-b12a-5b2fdc635816": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__dairy.png",
+            "image": "shopify://shop_images/G094_web_icons_75__dairy.png",
             "link": ""
           }
         },
         "55a55e6d-dba5-4cc5-b613-c7ea7df4ccd5": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__soy.png",
+            "image": "shopify://shop_images/G094_web_icons_75__soy.png",
             "link": ""
           }
         },
         "79ddc89e-d22d-4375-a3b7-b2277d291067": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gmp.png",
+            "image": "shopify://shop_images/G094_web_icons_75__gmp.png",
             "link": ""
           }
         },
         "d8f4e631-26b5-415c-b067-b6b8693666d7": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__lab_tested.png",
+            "image": "shopify://shop_images/G094_web_icons_75__lab_tested.png",
             "link": ""
           }
         }
@@ -307,7 +316,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Who is Orenda Eaze® for?",
-            "row_content": "<p>Most adults who take gut health seriously find themselves managing more supplements than they'd like, a probiotic on the counter, a digestive enzyme with meals, maybe a prebiotic powder somewhere in the rotation. It works, mostly. But it's a lot to keep track of, and there's always a quiet question in the back of the mind about whether everything is actually reaching the right place and doing what it's supposed to do.<\/p><p>Orenda Eaze® was built for exactly that person.<\/p><p>One daily capsule combining five categories of gut health support — probiotics, prebiotics, postbiotic activity, systemic enzyme support, and digestive enzymes — formulated to work together rather than in isolation.* The acid-resistant Bacillus endospores are built to remain stable through the digestive process and activate in the colon, where they're most effective.* The enteric-coated serrapeptase is absorbed in the small intestine to support the whole body, not just digestion.* And the prebiotic blend nourishes all 13 probiotic strains, contributing to natural postbiotic activity — pre-, pro-, and postbiotic support in one formula.*<\/p><p>It fits into any daily routine without disrupting it. One capsule with food. That's it. For adults who want their gut health support to be as consistent and well-formulated as the rest of their health decisions, Orenda Eaze® was built for exactly that.*<\/p>",
+            "row_content": "<p>Most adults who take gut health seriously find themselves managing more supplements than they'd like, a probiotic on the counter, a digestive enzyme with meals, maybe a prebiotic powder somewhere in the rotation. It works, mostly. But it's a lot to keep track of, and there's always a quiet question in the back of the mind about whether everything is actually reaching the right place and doing what it's supposed to do.</p><p>Orenda Eaze® was built for exactly that person.</p><p>One daily capsule combining five categories of gut health support — probiotics, prebiotics, postbiotic activity, systemic enzyme support, and digestive enzymes — formulated to work together rather than in isolation.* The acid-resistant Bacillus endospores are built to remain stable through the digestive process and activate in the colon, where they're most effective.* The enteric-coated serrapeptase is absorbed in the small intestine to support the whole body, not just digestion.* And the prebiotic blend nourishes all 13 probiotic strains, contributing to natural postbiotic activity — pre-, pro-, and postbiotic support in one formula.*</p><p>It fits into any daily routine without disrupting it. One capsule with food. That's it. For adults who want their gut health support to be as consistent and well-formulated as the rest of their health decisions, Orenda Eaze® was built for exactly that.*</p>",
             "page": ""
           }
         },
@@ -315,7 +324,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "What are the benefits of probiotic endospores in Orenda Eaze®?",
-            "row_content": "<p>Standard probiotic strains can be vulnerable to heat, moisture, and acidity, which means many may not reach the colon in their most active state, where probiotic strains do their most meaningful work.* Endospore-forming Bacillus strains are structurally different. Their natural spore formation makes them acid-resistant and stable through normal storage conditions and the full journey through the digestive system.*<\/p><p>Orenda Eaze® uses a custom blend of three specifically selected Bacillus endospore strains — part of the formula's broader 13-strain probiotic blend. Bacillus coagulans is the most extensively researched of the three, with strong support for digestive comfort, regularity, and microbiome balance.* Bacillus clausii is particularly noted for its resilience — its spores remain stable in gastric conditions that challenge many other probiotic strains* — and for its role in microbiome restoration.* Bacillus subtilis supports gut microbiome diversity and gut barrier function,* while also producing postbiotic metabolites that contribute to the formula's broader gut health benefits.*<\/p><p>Three strains. Three distinct contributions. One formula built to deliver probiotic support that reaches where it matters most.*<\/p>",
+            "row_content": "<p>Standard probiotic strains can be vulnerable to heat, moisture, and acidity, which means many may not reach the colon in their most active state, where probiotic strains do their most meaningful work.* Endospore-forming Bacillus strains are structurally different. Their natural spore formation makes them acid-resistant and stable through normal storage conditions and the full journey through the digestive system.*</p><p>Orenda Eaze® uses a custom blend of three specifically selected Bacillus endospore strains — part of the formula's broader 13-strain probiotic blend. Bacillus coagulans is the most extensively researched of the three, with strong support for digestive comfort, regularity, and microbiome balance.* Bacillus clausii is particularly noted for its resilience — its spores remain stable in gastric conditions that challenge many other probiotic strains* — and for its role in microbiome restoration.* Bacillus subtilis supports gut microbiome diversity and gut barrier function,* while also producing postbiotic metabolites that contribute to the formula's broader gut health benefits.*</p><p>Three strains. Three distinct contributions. One formula built to deliver probiotic support that reaches where it matters most.*</p>",
             "page": ""
           }
         },
@@ -323,7 +332,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "What is the serrapeptase in Orenda Eaze®, and what does it do?",
-            "row_content": "<p>The serrapeptase in Orenda Eaze® is a proteolytic enzyme with over 50 years of use and an established body of research in international clinical literature. As a systemic enzyme, it is absorbed from the small intestine into the bloodstream, where it supports the body as a whole rather than working only in the digestive tract.*<\/p><p>Serrapeptase is sensitive to stomach acid — without protection, a meaningful portion of enzyme activity can be lost before reaching the small intestine, where absorption occurs. The acid-resistant enteric coating in Orenda Eaze® protects serrapeptase as it passes through the stomach and releases it into the alkaline environment of the small intestine, where absorption occurs.*<\/p><p>Serrapeptase is both proteolytic and fibrinolytic, a proteolytic enzyme that supports the body's natural metabolic processes and overall tissue health.* As the systemic enzyme in this formula, it brings a layer of support that reaches well beyond digestion.*<\/p>",
+            "row_content": "<p>The serrapeptase in Orenda Eaze® is a proteolytic enzyme with over 50 years of use and an established body of research in international clinical literature. As a systemic enzyme, it is absorbed from the small intestine into the bloodstream, where it supports the body as a whole rather than working only in the digestive tract.*</p><p>Serrapeptase is sensitive to stomach acid — without protection, a meaningful portion of enzyme activity can be lost before reaching the small intestine, where absorption occurs. The acid-resistant enteric coating in Orenda Eaze® protects serrapeptase as it passes through the stomach and releases it into the alkaline environment of the small intestine, where absorption occurs.*</p><p>Serrapeptase is both proteolytic and fibrinolytic, a proteolytic enzyme that supports the body's natural metabolic processes and overall tissue health.* As the systemic enzyme in this formula, it brings a layer of support that reaches well beyond digestion.*</p>",
             "page": ""
           }
         },
@@ -331,7 +340,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Is Orenda Eaze® tested for stability, viability, and quality?",
-            "row_content": "<p>Yes, the testing process is thorough. Orenda Eaze® is manufactured in an NSF GMP-certified facility in the USA, and every ingredient is tested by third-party laboratories before production to confirm identity, purity, and quality.<\/p><p>For the probiotics specifically, testing happens at three points: each strain is tested for potency before blending, the finished blend is tested again after blending, and a final round of quality checks occurs after encapsulation, before the product is released. Nothing leaves the facility until it meets specification.<\/p><p>The Bacillus-based endospore strains in Eaze are more stable and resilient than most traditional probiotic strains, remaining viable through normal storage conditions and gastric transit.* The finished product is also tested to confirm it maintains those standards through its full shelf life when stored as directed.<\/p>",
+            "row_content": "<p>Yes, the testing process is thorough. Orenda Eaze® is manufactured in an NSF GMP-certified facility in the USA, and every ingredient is tested by third-party laboratories before production to confirm identity, purity, and quality.</p><p>For the probiotics specifically, testing happens at three points: each strain is tested for potency before blending, the finished blend is tested again after blending, and a final round of quality checks occurs after encapsulation, before the product is released. Nothing leaves the facility until it meets specification.</p><p>The Bacillus-based endospore strains in Eaze are more stable and resilient than most traditional probiotic strains, remaining viable through normal storage conditions and gastric transit.* The finished product is also tested to confirm it maintains those standards through its full shelf life when stored as directed.</p>",
             "page": ""
           }
         },
@@ -339,7 +348,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Why does Orenda use HPMC Capsules?",
-            "row_content": "<p>If you've ever looked at a supplement label and wondered what the capsule itself is made of, that's exactly the right question to ask. The capsule matters more than most people realize.<\/p><p>Orenda uses HPMC capsules, made from hypromellose — a plant-based material derived from wood pulp cellulose. Unlike traditional gelatin capsules, which are made from animal collagen, HPMC capsules are 100% plant-based and suitable for vegetarian and vegan lifestyles.<\/p><p>They also protect what's inside more effectively. HPMC has a naturally low moisture content, which helps shield sensitive ingredients from humidity and heat, keeping the formula stable from production to the moment you open the bottle. No additives, no preservatives, nothing that doesn't need to be there.<\/p><p>Sourced from a renewable plant material, this formulation detail reflects the same care and attention that goes into every ingredient in this formula.<\/p>",
+            "row_content": "<p>If you've ever looked at a supplement label and wondered what the capsule itself is made of, that's exactly the right question to ask. The capsule matters more than most people realize.</p><p>Orenda uses HPMC capsules, made from hypromellose — a plant-based material derived from wood pulp cellulose. Unlike traditional gelatin capsules, which are made from animal collagen, HPMC capsules are 100% plant-based and suitable for vegetarian and vegan lifestyles.</p><p>They also protect what's inside more effectively. HPMC has a naturally low moisture content, which helps shield sensitive ingredients from humidity and heat, keeping the formula stable from production to the moment you open the bottle. No additives, no preservatives, nothing that doesn't need to be there.</p><p>Sourced from a renewable plant material, this formulation detail reflects the same care and attention that goes into every ingredient in this formula.</p>",
             "page": ""
           }
         },
@@ -348,7 +357,7 @@
           "disabled": true,
           "settings": {
             "heading": "What if I forget to take a serving?",
-            "row_content": "<p>If you miss a serving, there is no need to take more with the next serving. Just take your next serving as usual.<\/p>",
+            "row_content": "<p>If you miss a serving, there is no need to take more with the next serving. Just take your next serving as usual.</p>",
             "page": ""
           }
         },
@@ -356,7 +365,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "When will I feel something from Orenda Eaze®?",
-            "row_content": "<p>Because Orenda Eaze® combines fast-acting digestive enzymes with probiotics and endospores, the experience unfolds over two timeframes. Most people notice a difference in how they feel after meals within the first few days.* The probiotic and endospore support builds more gradually  beneficial bacteria need time to establish themselves in your digestive system, with fuller support developing over several weeks of daily use.*<\/p><p>Both are working from the start. Consistency is what allows the full picture to come together.<\/p>",
+            "row_content": "<p>Because Orenda Eaze® combines fast-acting digestive enzymes with probiotics and endospores, the experience unfolds over two timeframes. Most people notice a difference in how they feel after meals within the first few days.* The probiotic and endospore support builds more gradually  beneficial bacteria need time to establish themselves in your digestive system, with fuller support developing over several weeks of daily use.*</p><p>Both are working from the start. Consistency is what allows the full picture to come together.</p>",
             "page": ""
           }
         },
@@ -364,7 +373,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Should I take Orenda Eaze® if I am on medication?",
-            "row_content": "<p>Orenda Eaze® was formulated with your well-being in mind. That said, if you are currently under medical care or taking any medications, we recommend consulting with your healthcare provider before adding any new supplement to your routine. Your healthcare provider understands your full health picture and is the right person to make that call with you.<\/p>",
+            "row_content": "<p>Orenda Eaze® was formulated with your well-being in mind. That said, if you are currently under medical care or taking any medications, we recommend consulting with your healthcare provider before adding any new supplement to your routine. Your healthcare provider understands your full health picture and is the right person to make that call with you.</p>",
             "page": ""
           }
         },
@@ -374,7 +383,7 @@
             "heading": "🎥 Ultimate Knowledge Spotlight - Orenda Eaze®",
             "description": "🎥 Ultimate Knowledge Spotlight - Orenda Eaze® with Dr. Hoyer, M.D. (2min)",
             "youtube_src": "",
-            "vimeo_src": "https:\/\/player.vimeo.com\/video\/356532059?badge=0&autopause=0&player_id=0&app_id=58479"
+            "vimeo_src": "https://player.vimeo.com/video/356532059?badge=0&autopause=0&player_id=0&app_id=58479"
           }
         },
         "172a7482-6e98-4746-9afb-cb5e9cf26aa6": {
@@ -383,7 +392,7 @@
             "heading": "🎙️ Indepth Dive on Orenda Eaze®",
             "description": "🎙️ Indepth Dive on Orenda Eaze® with co-Founder George Hall (10min)",
             "youtube_src": "",
-            "vimeo_src": "https:\/\/player.vimeo.com\/video\/824233515?badge=0&autopause=0&player_id=0&app_id=58479"
+            "vimeo_src": "https://player.vimeo.com/video/824233515?badge=0&autopause=0&player_id=0&app_id=58479"
           }
         }
       },
@@ -417,7 +426,7 @@
         "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/EAZE_Judy_B_Customer_Review_v1_Web_52023.jpg",
+            "image": "shopify://shop_images/EAZE_Judy_B_Customer_Review_v1_Web_52023.jpg",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h5",
@@ -430,7 +439,7 @@
         "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/EAZE_Dr_Z_Customer_Review_v1_Web_52023.jpg",
+            "image": "shopify://shop_images/EAZE_Dr_Z_Customer_Review_v1_Web_52023.jpg",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h5",
@@ -443,7 +452,7 @@
         "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/EAZE_Dianne_J_Customer_Review_v1_Web_52023.jpg",
+            "image": "shopify://shop_images/EAZE_Dianne_J_Customer_Review_v1_Web_52023.jpg",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h5",
@@ -549,7 +558,7 @@
       "type": "apps",
       "blocks": {
         "a0f16f95-4a98-4de6-8fb7-f2635805066b": {
-          "type": "shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-widget\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
           "settings": {
             "enabled": true,
             "id": "63144",
@@ -601,7 +610,7 @@
           "settings": {
             "title": "Column",
             "title_size": "h3",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button_label": "Button label",
             "button_link": "",
             "button_style_secondary": false,
@@ -610,7 +619,7 @@
             "heading-right-collapsible": "",
             "text-right-collapsible": "",
             "collapsible_row_heading": "Collapsible row",
-            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br\/><br\/>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
+            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br/><br/>Ex: Shipping and return policies, size guides, and other common questions.</p>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -619,7 +628,7 @@
           "settings": {
             "title": "Column",
             "title_size": "h3",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button_label": "Button label",
             "button_link": "",
             "button_style_secondary": false,
@@ -628,7 +637,7 @@
             "heading-right-collapsible": "",
             "text-right-collapsible": "",
             "collapsible_row_heading": "Collapsible row",
-            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br\/><br\/>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
+            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br/><br/>Ex: Shipping and return policies, size guides, and other common questions.</p>",
             "collapsible-bg-color": "#ffffff"
           }
         },
@@ -637,7 +646,7 @@
           "settings": {
             "title": "Column",
             "title_size": "h3",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button_label": "Button label",
             "button_link": "",
             "button_style_secondary": false,
@@ -646,7 +655,7 @@
             "heading-right-collapsible": "",
             "text-right-collapsible": "",
             "collapsible_row_heading": "Collapsible row",
-            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br\/><br\/>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
+            "collapsible-row-content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<br/><br/>Ex: Shipping and return policies, size guides, and other common questions.</p>",
             "collapsible-bg-color": "#ffffff"
           }
         }
