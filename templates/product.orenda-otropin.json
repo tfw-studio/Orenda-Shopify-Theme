@@ -1,1 +1,573 @@
-{"sections":{"empty-space":{"type":"empty-space","settings":{"desktop_height":36,"mobile_height":16}},"main":{"type":"main-product","blocks":{"breadcrumb":{"type":"breadcrumb","disabled":true,"settings":{"text_style":"uppercase","show_divider":true}},"title":{"type":"title","settings":{"title_size":"h1","show_price":false,"price_size":"medium"}},"rating":{"type":"rating","settings":{}},"text_KX4wAT":{"type":"text","settings":{"icon":"none","text":"Most supplements support what you feel. O-Tropin supports what controls it.","text_style":"uppercase"}},"vendor":{"type":"text","settings":{"icon":"none","text":"1 fl. oz., 30mL spray. 30-day supply.","text_style":"subtitle"}},"price":{"type":"price","settings":{"price_size":"large","show_badges":true}},"countdown":{"type":"countdown","disabled":true,"settings":{"heading":"Hurry up ! Sale end in:","number_size":"compact","colors_heading":"#da3f3f","colors_text":"#da3f3f","colors_background":"#ffeeee"}},"variant_picker":{"type":"variant_picker","settings":{"show_variant_labels":true,"picker_type":"button","enable_color_swatches":true,"swatch_type":"round","size_chart":""}},"buy_buttons":{"type":"buy_buttons","settings":{"show_quantity_selector":true,"show_dynamic_checkout":false}},"description":{"type":"description","disabled":true,"settings":{}},"746983cc-4acc-49dd-bc70-762f1ca0d60f":{"type":"collapsible_tab","settings":{"icon":"plant","heading":"KEY INGREDIENTS","content":"{{ product.metafields.custom.key_ingredients | metafield_tag }}","page":""}},"collapsible_tab_R6EQYe":{"type":"collapsible_tab","settings":{"icon":"bottle","heading":"I'd love to learn a little bit more","content":"{{ product.metafields.custom.learn_more | metafield_tag }}","page":""}},"collapsible_tab-0":{"type":"collapsible_tab","settings":{"icon":"clipboard","heading":"HOW TO TAKE","content":"{{ product.metafields.custom.how_to_take | metafield_tag }}","page":""}},"d7d9ef62-3f60-461b-9323-0bb42458c955":{"type":"collapsible_image","settings":{"icon":"clipboard","heading":"VIEW SUPPLEMENT FACTS","image":"shopify:\/\/shop_images\/O-Tropin-Nutrition_Dosage_23b4fed7-f223-40b3-ad7d-fc612b0d49ee.jpg","description":"Orenda O-Tropin Supplement Facts"}},"collapsible_tab-1":{"type":"collapsible_tab","settings":{"icon":"check_mark","heading":"VIEW FULL LABEL","content":"<p>Learn more about the high-quality ingredients that make up Orenda's products. <\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G098_O-Tropin_Bottle_Label_FA.pdf?v=1724974239\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0100\/9549\/3201\/files\/G098_O-Tropin_Bottle_Label_FA.pdf?v=1724974239\">View full Orenda O-Tropin® Label<\/a><\/p>","page":""}},"8dac1e41-7265-4f3e-abde-1fc0bf71bb82":{"type":"collapsible_video","settings":{"icon":"stopwatch","heading":"60-Second Spotlight: Orenda O-Tropin®","description":"60-Second Spotlight: Orenda O-Tropin®","video":"shopify:\/\/files\/videos\/1.mp4","youtube_src":"","vimeo_src":"https:\/\/player.vimeo.com\/video\/387745259?badge=0&autopause=0&player_id=0&app_id=58479"}},"inventory_status":{"type":"inventory_status","settings":{"inventory_threshold":20,"show_inventory_transfer":true,"color_scheme":"accent-3"}},"share":{"type":"share","disabled":true,"settings":{"share_label":"Share"}},"related_buttons":{"type":"related_buttons","disabled":true,"settings":{"show_icons":false}},"sticky_cart":{"type":"sticky_cart","settings":{"show_quantity_selector":true}},"4d2baa0c-f60f-488f-9d8b-606e1b14e4e8":{"type":"image","settings":{"height":20,"link":""}},"98035d54-52ad-43d7-9d13-b93024ef55d8":{"type":"complementary","disabled":true,"settings":{"icon":"none","heading":"Complementary Products","make_collapsible_row":true,"product_list_limit":3,"image_ratio":"adapt","image_position":"center center","show_vendor":false,"enable_image_fill":false}},"6c39e8dd-eb91-484f-922e-b58b74c5caa4":{"type":"collapsible_video","disabled":true,"settings":{"icon":"none","heading":"Text block","description":"🎥 Ultimate Knowledge Spotlight - Is your Pituitary Offline with Dr. Skul, MD (2min)","youtube_src":"","vimeo_src":""}}},"block_order":["breadcrumb","title","rating","text_KX4wAT","vendor","price","countdown","variant_picker","buy_buttons","description","746983cc-4acc-49dd-bc70-762f1ca0d60f","collapsible_tab_R6EQYe","collapsible_tab-0","d7d9ef62-3f60-461b-9323-0bb42458c955","collapsible_tab-1","8dac1e41-7265-4f3e-abde-1fc0bf71bb82","inventory_status","share","related_buttons","sticky_cart","4d2baa0c-f60f-488f-9d8b-606e1b14e4e8","98035d54-52ad-43d7-9d13-b93024ef55d8","6c39e8dd-eb91-484f-922e-b58b74c5caa4"],"settings":{"enable_sticky_info":true,"media_position":"left","media_size":"medium","gallery_layout":"thumbnail_slider","image_ratio":"adapt","show_thumbnails":true,"hide_variants":true,"enable_image_zoom":true,"enable_video_looping":false,"mobile_image_ratio":"adapt","show_mobile_thumbnails":false,"rc_custom_text":"<strong>Subscription Benefits <\/strong><br>✔︎ Delivered Monthly - 'no empties' promise<br>\n✔︎ Cancel, Pause, Delay, or Change Anytime, Hassle-Free<br>\n✔︎ No Surprises (We'll send you pre-shipment reminders)","padding_top":0,"padding_bottom":44}},"8ec935eb-935e-42be-8ee7-0d747ab3d6ff":{"type":"logo-list","blocks":{"8dc4929a-9454-4a67-9787-609fe7d6a83a":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/G094_web_icons_75__gmo.png","link":""}},"913ca5dd-8f0a-4f45-8c8d-600962a91189":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/G094_web_icons_75__dairy.png","link":""}},"78499603-454a-4264-a1db-5eda8dc52a92":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/G094_web_icons_75__soy.png","link":""}},"ee3cd67c-a067-435d-9353-6b310cc7013f":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/G094_web_icons_75__gmp.png","link":""}},"40de84a6-7318-462f-96b2-9b1b946f8feb":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/G094_web_icons_75__lab_tested.png","link":""}}},"block_order":["8dc4929a-9454-4a67-9787-609fe7d6a83a","913ca5dd-8f0a-4f45-8c8d-600962a91189","78499603-454a-4264-a1db-5eda8dc52a92","ee3cd67c-a067-435d-9353-6b310cc7013f","40de84a6-7318-462f-96b2-9b1b946f8feb"],"settings":{"opacity":100,"background_color":"","show_divider":false,"heading":"","heading_size":"h1","heading_alignment":"center","heading_tag":"h2","subheading":"Our Highest Quality Commitment","description":"Clean formulations backed by third-party testing.","padding_top":24,"padding_bottom":40}},"collapsible-content":{"type":"collapsible-content","blocks":{"question-3":{"type":"collapsible_row","settings":{"heading":"How does liposomal delivery work and why does it matter for Orenda O-Tropin®?","row_content":"<p>For certain nutrients to deliver their intended benefits, they need to survive the journey through the digestive system, stomach acid, digestive enzymes, and the complex intestinal environment, which can degrade sensitive compounds before they reach the bloodstream. Liposomal delivery was developed specifically to address this challenge for formulas where ingredient stability and absorption matter most.<\/p><p>Each key nutrient in O-Tropin is encapsulated within a liposome, a tiny sphere made of phospholipids, the same healthy fats that form the membranes of every cell in the human body. This protective layer helps ingredients remain stable as they move through the body and supports their absorption into the bloodstream.* Because liposomes share their structure with cell membranes, the body recognizes and absorbs them readily.*<\/p><p>Orenda uses sunflower-sourced phospholipids specifically, a clean, plant-derived source that is non-GMO, soy-free, gluten-free, and dairy-free, and carries Generally Recognized as Safe status. Many phospholipid sources are soy-derived, making the soy-free distinction meaningful for anyone mindful of soy in their supplement routine. It is a deliberate formulation choice that reflects Orenda's commitment to a cleaner, more inclusive formula.<\/p><p>O-Tropin takes this further with its oral spray format. Rather than being swallowed immediately, O-Tropin is held in the mouth for 30 seconds before swallowing, allowing nutrients to begin absorbing directly through the mucous membranes of the mouth before they reach the digestive system.* This supports a more direct delivery pathway than capsules, tablets, or standard liquid supplements can provide, and is the specific advantage of the O-Tropin oral spray format within the broader liposomal delivery story.<\/p><p>Orenda has used this liposomal delivery system in O-Tropin for over 20 years, one of the longest-standing applications of liposomal technology in the natural health supplement space. The delivery system is what makes this purposeful formula work as intended.*<\/p>","page":""}},"question-1":{"type":"collapsible_row","settings":{"heading":"What are the benefits of PharmaGABA® in Orenda O-Tropin®?","row_content":"<p>GABA — gamma-aminobutyric acid — is one of the body's primary inhibitory neurotransmitters, meaning it plays a central role in calming nervous system activity and supporting the transition from wakefulness to rest.* The body produces GABA naturally, but production can be influenced by age, stress, and lifestyle factors, making it an increasingly relevant area of nutritional support for adults over 35.<\/p><p>PharmaGABA® is the branded, naturally sourced form of GABA produced through a natural fermentation process. This distinction matters because not all GABA supplements are created equal. Standard synthetic GABA supplements have inconsistent absorption profiles, while PharmaGABA®, produced through fermentation rather than chemical synthesis, is a form the body more readily recognizes and utilizes.* According to research conducted by the laboratory that developed it, PharmaGABA® is 20% more effective than standard GABA at supporting restorative sleep when experiencing occasional sleeplessness.*<\/p><p>In O-Tropin, PharmaGABA® serves two primary functions. First, it supports relaxation and calm nervous system activity,* contributing to the overall stress and recovery support the formula is designed to provide. Second, and most centrally to O-Tropin's benefit story, it supports restorative sleep during occasional sleeplessness.* Quality sleep is not simply a comfort benefit; it is essential to the body's natural overnight recovery and regulatory processes, including those the pituitary gland supports.*<\/p><p>PharmaGABA® contains no artificial ingredients or fillers and is produced without synthetic chemicals, consistent with Orenda's commitment to clean, purposeful formulation. It is one of the more credible and well-researched branded sleep-support ingredients available, and a key reason O-Tropin consistently stands apart in the healthy aging and pituitary support category.<\/p>","page":""}},"question-0":{"type":"collapsible_row","settings":{"heading":"What are the benefits of Alpha GPC in Orenda O-Tropin®?","row_content":"<p>Alpha GPC — glycerophosphocholine — is one of the most bioavailable and well-researched forms of choline available in nutritional supplements. Choline is an essential nutrient that plays a foundational role in neurological function, neurotransmitter production, and overall brain health.* While the body produces some choline naturally, research consistently shows that many adults, particularly those over 35, do not maintain optimal choline levels through diet and natural production alone.<\/p><p>Alpha GPC is specifically valued because of how effectively it supports choline availability in the body.* It supports the production of acetylcholine, one of the brain's primary neurotransmitters, involved in memory, learning, attention, and overall cognitive performance.* This is why Alpha GPC has become one of the most researched ingredients in the cognitive support space and why it is increasingly recognized by healthcare providers working with adults focused on brain health and healthy aging.<\/p><p>In Orenda O-Tropin®, Alpha GPC contributes to the formula's broader goal of supporting cognitive function, mental clarity, and neurological well-being.* These benefits become increasingly relevant as the body ages and natural choline production declines, making Alpha GPC one of the more purposefully placed ingredients in the O-Tropin formula.<\/p><p>Alpha GPC also plays a specific role in supporting pituitary function,* which is central to what O-Tropin is designed to do. It works alongside the amino acid blend and Mucuna Pruriens to support the body's natural regulatory systems* contributing to the formula's integrated approach to pituitary support, restorative sleep, and healthy aging.<\/p>","page":""}},"question-2":{"type":"collapsible_row","settings":{"heading":"What are the benefits of Mucuna Pruriens Extract in Orenda O-Tropin®?","row_content":"<p>Mucuna Pruriens is a botanical with a long history of use in traditional Ayurvedic wellness systems, with origins in the tropical regions of Africa and Asia. It has been studied and used for centuries, and its growing presence in modern nutritional research reflects what traditional practitioners recognized long before clinical science caught up.<\/p><p>The primary reason Mucuna Pruriens is included in O-Tropin is its natural concentration of L-DOPA, a direct precursor to dopamine, one of the body's most important neurotransmitters. Dopamine plays a central role in mood regulation, motivation, cognitive function, and neurological health.* By providing a natural source of L-DOPA, Mucuna Pruriens supports the body's own dopamine production rather than introducing synthetic compounds.*<\/p><p>Research supports Mucuna Pruriens for several specific benefit areas relevant to the O-Tropin formula. It supports healthy mood and motivation,* contributes to cognitive function and mental clarity,* and has been traditionally used to support the body's natural stress response.* Research also suggests it supports restorative sleep when experiencing occasional sleeplessness*, which is why it works alongside PharmaGABA® on the sleep side of the O-Tropin formula.<\/p><p>Mucuna Pruriens also supports the body's natural hormonal processes,* contributing to the pituitary support story that O-Tropin is built around. It is one of the most purposefully placed ingredients in the formula, working simultaneously on mood, sleep, cognitive function, and pituitary support in a way that few single botanical ingredients can.*<\/p><p>For adults over 35 experiencing energy, sleep, and cognitive changes that often accompany the natural aging process, Mucuna Pruriens is a well-researched and credible addition to a daily healthy-aging formula.<\/p>","page":""}},"0012d063-e0fd-45ee-a82f-1bf18615c665":{"type":"collapsible_row","settings":{"heading":"What are the benefits of Moomiyo Extract (Shilajit) in Orenda O-Tropin®?","row_content":"<p>Moomiyo — more widely known today as Shilajit — is a mineral-rich adaptogenic extract with origins in the high-altitude mountain ranges of Central Asia. It has been used in traditional Ayurvedic wellness systems for centuries, valued for its naturally occurring concentration of humic acids, fulvic acid, and trace minerals that are rarely found together in a single botanical source. What traditional practitioners recognized centuries ago, modern research is increasingly validating, making Shilajit one of the most studied adaptogens in the current landscape of nutritional supplements.<\/p><p>Orenda has included Moomiyo in the O-Tropin formula for over 20 years, long before Shilajit became one of the fastest-growing ingredients in the modern supplement space. That 20-year track record reflects both Orenda's confidence in the ingredient and the consistency of the results reported by practitioners and customers over time. Orenda was not following a trend with Moomiyo. The trend caught up with Orenda.<\/p><p>Research supports Shilajit for several benefit areas that are directly relevant to the O-Tropin formula. It supports the body's natural stress response,* contributes to natural energy and physical vitality,* and supports healthy aging processes over time.* As an adaptogen, Shilajit works by supporting the body's natural resilience rather than producing an immediate stimulant effect, which is consistent with how O-Tropin approaches pituitary and healthy aging support overall.*<\/p><p>The fulvic acid content in Shilajit is particularly relevant from a bioavailability perspective. Fulvic acid supports the body's ability to transport and absorb minerals and other nutrients at the cellular level,* which complements O-Tropin's liposomal delivery system and reinforces the formula's broader focus on absorption and bioavailability.<\/p><p>For adults over 35 navigating the energy, stress, and vitality changes that often accompany the natural aging process, Moomiyo Extract is a well-researched and credible addition to a daily healthy aging formula, and one of the ingredients that gives O-Tropin its depth and heritage.<\/p>","page":""}},"collapsible_row_fCFe63":{"type":"collapsible_row","settings":{"heading":"What are the benefits of the amino acid blend in Orenda O-Tropin®?","row_content":"<p>Amino acids are the fundamental building blocks of proteins and play essential roles in virtually every biological process in the human body, from neurotransmitter production and hormone regulation to energy metabolism and tissue repair. The amino acid blend in O-Tropin was not assembled from a generic list. It was formulated specifically to support normal pituitary function,* with each amino acid chosen for a distinct and purposeful role in that story.<\/p><p>The blend includes eight amino acids — Ornithine Alpha Ketoglutarate, L-Glutamine, L-Arginine, L-Lysine, L-Valine, L-Isoleucine, L-Tyrosine, and Glycine. Ornithine Alpha Ketoglutarate supports energy metabolism and the body's natural recovery processes.* L-Arginine and L-Lysine work synergistically to support the body's natural regulatory processes.* L-Tyrosine supports healthy neurotransmitter production and contributes to mental clarity and focus.* Glycine supports pituitary function directly* and contributes to the restorative sleep story alongside PharmaGABA® and Mucuna Pruriens. The branched-chain amino acids, L-Valine and L-Isoleucine, support healthy muscle function and physical recovery.* L-Glutamine supports overall metabolic function and the body's natural resilience.*<\/p><p>What distinguishes the amino acid blend in O-Tropin from other amino acid formulas on the market is the approach. Rather than delivering large amounts of any single amino acid to force a physiological response, O-Tropin uses a precise combination that works with the body's natural regulatory systems rather than overriding them.* This philosophy,  supporting the body's own processes rather than substituting for them, is central to how the entire O-Tropin formula was designed and has been refined over more than 20 years.<\/p><p>For adults over 35 experiencing the energy, cognitive, and vitality changes that often accompany the natural aging process, this amino acid combination represents one of the most purposeful and considered aspects of the O-Tropin formula.<\/p>","page":""}},"bdf3fe71-beba-4517-90c2-a5d34c60a0d4":{"type":"collapsible_row","settings":{"heading":"Should I take Orenda O-Tropin® if I am on medication?","row_content":"<p>Orenda O-Tropin® was formulated with careful attention to safety. That said, if you are currently under medical care or taking any medications, we recommend consulting with your healthcare provider before adding any new supplement to your routine. Your healthcare provider understands your full health picture and is the right person to make that call with you.<\/p><p><strong>Warning:<\/strong> O-Tropin is not recommended for pregnant or nursing women, any persons with health conditions, any persons with active Cancer, Diabetic Retinopathy, or Acromegaly, and any persons who are taking prescription drugs (before consulting with a physician).<\/p>","page":""}},"4114f001-18fb-4006-9b4c-e15ffa754733":{"type":"collapsible_video","settings":{"heading":"🎥 Ultimate Knowledge Spotlight - Is your Pituitary Offline (2min)","description":"🎥 Ultimate Knowledge Spotlight - Is your Pituitary Offline with Dr. Skul, MD (2min)","youtube_src":"","vimeo_src":"https:\/\/player.vimeo.com\/video\/356532903?badge=0&autopause=0&player_id=0&app_id=58479"}},"402df330-6a56-4e03-8b15-abdd82f4a486":{"type":"collapsible_video","settings":{"heading":"🎙️ Indepth Dive on Orenda O-Tropin® with co-Founder George Hall (15min)","description":"🎙️ Indepth Dive on Orenda O-Tropin® with co-Founder George Hall (15min)","youtube_src":"","vimeo_src":"https:\/\/player.vimeo.com\/video\/811006856?badge=0&autopause=0&player_id=0&app_id=58479"}}},"block_order":["question-3","question-1","question-0","question-2","0012d063-e0fd-45ee-a82f-1bf18615c665","collapsible_row_fCFe63","bdf3fe71-beba-4517-90c2-a5d34c60a0d4","4114f001-18fb-4006-9b4c-e15ffa754733","402df330-6a56-4e03-8b15-abdd82f4a486"],"settings":{"open_first_collapsible_row":false,"narrow":true,"show_divider":true,"heading":"Frequently Asked Questions","heading_size":"h3","heading_alignment":"center","heading_tag":"h2","padding_top":52,"padding_bottom":24}},"85abdddf-a94c-47a0-a16c-dd30904eed66":{"type":"gallery","blocks":{"template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-3":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Otropin_Nancy_A_Customer_Review_v1_Web_52023.jpg","image_position":"center center","subheading":"","subheading_size":"h5","heading":"","heading_size":"h3","link":"","text_box_position":"bottom-left"}},"template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Otropin_Carol_H_Customer_Review_v2_Web_52023.jpg","image_position":"center center","subheading":"","subheading_size":"h5","heading":"","heading_size":"h3","link":"","text_box_position":"bottom-left"}},"template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Otropin_Julie_F_Customer_Review_v4_Web_52023.jpg","image_position":"center center","subheading":"","subheading_size":"h5","heading":"","heading_size":"h3","link":"","text_box_position":"bottom-left"}}},"block_order":["template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-3","template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1","template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2"],"settings":{"per_row":4,"spacing_images":20,"image_height":280,"apply_overlay":true,"full_width":false,"show_divider":false,"heading":"","heading_size":"h1","heading_alignment":"left","heading_tag":"h2","columns_mobile":"1","swipe_on_mobile":false,"mobile_image_height":160,"padding_top":36,"padding_bottom":0}},"4206f4e5-3db7-4377-bf2f-6ccfb4326b9a":{"type":"yotpo-reviews","settings":{}},"1686871113013f0f80":{"type":"apps","blocks":{"f0374d95-c87a-4b29-919c-5732d529ce79":{"type":"shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-widget\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc","settings":{"enabled":true,"id":"63144","product_id_enabled":true,"collection_id_enabled":false}}},"block_order":["f0374d95-c87a-4b29-919c-5732d529ce79"],"settings":{"include_margins":true,"show_divider":false,"padding_top":24,"padding_bottom":24}},"product-recommendations":{"type":"product-recommendations","disabled":true,"settings":{"show_divider":false,"heading":"You're Gonna Like These Too...","heading_size":"h1","heading_alignment":"left","heading_tag":"h2","columns_mobile":"1","swipe_on_mobile":true,"image_ratio":"portrait","image_position":"center center","enable_image_fill":false,"show_secondary_image":false,"show_vendor":false,"show_rating":true,"show_quick_buy":true,"enable_quick_view":false,"enable_color_swatches":true,"enable_countdown":true,"padding_top":36,"padding_bottom":36}},"recently-viewed-products":{"type":"recently-viewed-products","disabled":true,"settings":{"show_divider":false,"heading":"Recently Viewed","heading_size":"h1","heading_alignment":"center","heading_tag":"h2","columns_mobile":"1","swipe_on_mobile":true,"image_ratio":"portrait","image_position":"center center","enable_image_fill":true,"show_secondary_image":true,"show_vendor":true,"show_rating":true,"show_quick_buy":true,"enable_quick_view":true,"enable_color_swatches":true,"enable_countdown":true,"padding_top":36,"padding_bottom":36}}},"order":["empty-space","main","8ec935eb-935e-42be-8ee7-0d747ab3d6ff","collapsible-content","85abdddf-a94c-47a0-a16c-dd30904eed66","4206f4e5-3db7-4377-bf2f-6ccfb4326b9a","1686871113013f0f80","product-recommendations","recently-viewed-products"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "empty-space": {
+      "type": "empty-space",
+      "settings": {
+        "desktop_height": 36,
+        "mobile_height": 16
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumb": {
+          "type": "breadcrumb",
+          "disabled": true,
+          "settings": {
+            "text_style": "uppercase",
+            "show_divider": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "h1",
+            "show_price": false,
+            "price_size": "medium"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "text_KX4wAT": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "text": "Most supplements support what you feel. O-Tropin supports what controls it.",
+            "text_style": "uppercase"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "text": "1 fl. oz., 30mL spray. 30-day supply.",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": "large",
+            "show_badges": true
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "heading": "Hurry up ! Sale end in:",
+            "number_size": "compact",
+            "colors_heading": "#da3f3f",
+            "colors_text": "#da3f3f",
+            "colors_background": "#ffeeee"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "swatch_type": "round",
+            "size_chart": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "746983cc-4acc-49dd-bc70-762f1ca0d60f": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "plant",
+            "heading": "KEY INGREDIENTS",
+            "content": "{{ product.metafields.custom.key_ingredients | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_R6EQYe": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "bottle",
+            "heading": "I'd love to learn a little bit more",
+            "content": "{{ product.metafields.custom.learn_more | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab-0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "clipboard",
+            "heading": "HOW TO TAKE",
+            "content": "{{ product.metafields.custom.how_to_take | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "d7d9ef62-3f60-461b-9323-0bb42458c955": {
+          "type": "collapsible_image",
+          "settings": {
+            "icon": "clipboard",
+            "heading": "VIEW SUPPLEMENT FACTS",
+            "image": "shopify://shop_images/O-Tropin-Nutrition_Dosage_23b4fed7-f223-40b3-ad7d-fc612b0d49ee.jpg",
+            "description": "Orenda O-Tropin Supplement Facts"
+          }
+        },
+        "collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "check_mark",
+            "heading": "VIEW FULL LABEL",
+            "content": "<p>Learn more about the high-quality ingredients that make up Orenda's products. </p><p><a href=\"https://cdn.shopify.com/s/files/1/0100/9549/3201/files/G098_O-Tropin_Bottle_Label_FA.pdf?v=1724974239\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0100/9549/3201/files/G098_O-Tropin_Bottle_Label_FA.pdf?v=1724974239\">View full Orenda O-Tropin® Label</a></p>",
+            "page": ""
+          }
+        },
+        "8dac1e41-7265-4f3e-abde-1fc0bf71bb82": {
+          "type": "collapsible_video",
+          "settings": {
+            "icon": "stopwatch",
+            "heading": "60-Second Spotlight: Orenda O-Tropin®",
+            "description": "60-Second Spotlight: Orenda O-Tropin®",
+            "video": "shopify://files/videos/1.mp4",
+            "youtube_src": "",
+            "vimeo_src": "https://player.vimeo.com/video/387745259?badge=0&autopause=0&player_id=0&app_id=58479"
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 20,
+            "show_inventory_transfer": true,
+            "color_scheme": "accent-3"
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "related_buttons": {
+          "type": "related_buttons",
+          "disabled": true,
+          "settings": {
+            "show_icons": false
+          }
+        },
+        "sticky_cart": {
+          "type": "sticky_cart",
+          "settings": {
+            "show_quantity_selector": true
+          }
+        },
+        "4d2baa0c-f60f-488f-9d8b-606e1b14e4e8": {
+          "type": "image",
+          "settings": {
+            "height": 20,
+            "link": ""
+          }
+        },
+        "98035d54-52ad-43d7-9d13-b93024ef55d8": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "heading": "Complementary Products",
+            "make_collapsible_row": true,
+            "product_list_limit": 3,
+            "image_ratio": "adapt",
+            "image_position": "center center",
+            "show_vendor": false,
+            "enable_image_fill": false
+          }
+        },
+        "6c39e8dd-eb91-484f-922e-b58b74c5caa4": {
+          "type": "collapsible_video",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "heading": "Text block",
+            "description": "🎥 Ultimate Knowledge Spotlight - Is your Pituitary Offline with Dr. Skul, MD (2min)",
+            "youtube_src": "",
+            "vimeo_src": ""
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb",
+        "title",
+        "rating",
+        "text_KX4wAT",
+        "vendor",
+        "price",
+        "countdown",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "746983cc-4acc-49dd-bc70-762f1ca0d60f",
+        "collapsible_tab_R6EQYe",
+        "collapsible_tab-0",
+        "d7d9ef62-3f60-461b-9323-0bb42458c955",
+        "collapsible_tab-1",
+        "8dac1e41-7265-4f3e-abde-1fc0bf71bb82",
+        "inventory_status",
+        "share",
+        "related_buttons",
+        "sticky_cart",
+        "4d2baa0c-f60f-488f-9d8b-606e1b14e4e8",
+        "98035d54-52ad-43d7-9d13-b93024ef55d8",
+        "6c39e8dd-eb91-484f-922e-b58b74c5caa4"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_position": "left",
+        "media_size": "medium",
+        "gallery_layout": "thumbnail_slider",
+        "image_ratio": "adapt",
+        "show_thumbnails": true,
+        "hide_variants": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "mobile_image_ratio": "adapt",
+        "show_mobile_thumbnails": false,
+        "rc_custom_text": "<strong>Subscription Benefits </strong><br>✔︎ Delivered Monthly - 'no empties' promise<br>\n✔︎ Cancel, Pause, Delay, or Change Anytime, Hassle-Free<br>\n✔︎ No Surprises (We'll send you pre-shipment reminders)",
+        "padding_top": 0,
+        "padding_bottom": 44
+      }
+    },
+    "8ec935eb-935e-42be-8ee7-0d747ab3d6ff": {
+      "type": "logo-list",
+      "blocks": {
+        "8dc4929a-9454-4a67-9787-609fe7d6a83a": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/G094_web_icons_75__gmo.png",
+            "link": ""
+          }
+        },
+        "913ca5dd-8f0a-4f45-8c8d-600962a91189": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/G094_web_icons_75__dairy.png",
+            "link": ""
+          }
+        },
+        "78499603-454a-4264-a1db-5eda8dc52a92": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/G094_web_icons_75__soy.png",
+            "link": ""
+          }
+        },
+        "ee3cd67c-a067-435d-9353-6b310cc7013f": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/G094_web_icons_75__gmp.png",
+            "link": ""
+          }
+        },
+        "40de84a6-7318-462f-96b2-9b1b946f8feb": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/G094_web_icons_75__lab_tested.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8dc4929a-9454-4a67-9787-609fe7d6a83a",
+        "913ca5dd-8f0a-4f45-8c8d-600962a91189",
+        "78499603-454a-4264-a1db-5eda8dc52a92",
+        "ee3cd67c-a067-435d-9353-6b310cc7013f",
+        "40de84a6-7318-462f-96b2-9b1b946f8feb"
+      ],
+      "settings": {
+        "opacity": 100,
+        "background_color": "",
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "subheading": "Our Highest Quality Commitment",
+        "description": "Clean formulations backed by third-party testing. Recommended by healthcare providers in our community who also offer Orenda formulas to their clients.",
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "question-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does liposomal delivery work and why does it matter for Orenda O-Tropin®?",
+            "row_content": "<p>For certain nutrients to deliver their intended benefits, they need to survive the journey through the digestive system, stomach acid, digestive enzymes, and the complex intestinal environment, which can degrade sensitive compounds before they reach the bloodstream. Liposomal delivery was developed specifically to address this challenge for formulas where ingredient stability and absorption matter most.</p><p>Each key nutrient in O-Tropin is encapsulated within a liposome, a tiny sphere made of phospholipids, the same healthy fats that form the membranes of every cell in the human body. This protective layer helps ingredients remain stable as they move through the body and supports their absorption into the bloodstream.* Because liposomes share their structure with cell membranes, the body recognizes and absorbs them readily.*</p><p>Orenda uses sunflower-sourced phospholipids specifically, a clean, plant-derived source that is non-GMO, soy-free, gluten-free, and dairy-free, and carries Generally Recognized as Safe status. Many phospholipid sources are soy-derived, making the soy-free distinction meaningful for anyone mindful of soy in their supplement routine. It is a deliberate formulation choice that reflects Orenda's commitment to a cleaner, more inclusive formula.</p><p>O-Tropin takes this further with its oral spray format. Rather than being swallowed immediately, O-Tropin is held in the mouth for 30 seconds before swallowing, allowing nutrients to begin absorbing directly through the mucous membranes of the mouth before they reach the digestive system.* This supports a more direct delivery pathway than capsules, tablets, or standard liquid supplements can provide, and is the specific advantage of the O-Tropin oral spray format within the broader liposomal delivery story.</p><p>Orenda has used this liposomal delivery system in O-Tropin for over 20 years, one of the longest-standing applications of liposomal technology in the natural health supplement space. The delivery system is what makes this purposeful formula work as intended.*</p>",
+            "page": ""
+          }
+        },
+        "question-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the benefits of PharmaGABA® in Orenda O-Tropin®?",
+            "row_content": "<p>GABA — gamma-aminobutyric acid — is one of the body's primary inhibitory neurotransmitters, meaning it plays a central role in calming nervous system activity and supporting the transition from wakefulness to rest.* The body produces GABA naturally, but production can be influenced by age, stress, and lifestyle factors, making it an increasingly relevant area of nutritional support for adults over 35.</p><p>PharmaGABA® is the branded, naturally sourced form of GABA produced through a natural fermentation process. This distinction matters because not all GABA supplements are created equal. Standard synthetic GABA supplements have inconsistent absorption profiles, while PharmaGABA®, produced through fermentation rather than chemical synthesis, is a form the body more readily recognizes and utilizes.* According to research conducted by the laboratory that developed it, PharmaGABA® is 20% more effective than standard GABA at supporting restorative sleep when experiencing occasional sleeplessness.*</p><p>In O-Tropin, PharmaGABA® serves two primary functions. First, it supports relaxation and calm nervous system activity,* contributing to the overall stress and recovery support the formula is designed to provide. Second, and most centrally to O-Tropin's benefit story, it supports restorative sleep during occasional sleeplessness.* Quality sleep is not simply a comfort benefit; it is essential to the body's natural overnight recovery and regulatory processes, including those the pituitary gland supports.*</p><p>PharmaGABA® contains no artificial ingredients or fillers and is produced without synthetic chemicals, consistent with Orenda's commitment to clean, purposeful formulation. It is one of the more credible and well-researched branded sleep-support ingredients available, and a key reason O-Tropin consistently stands apart in the healthy aging and pituitary support category.</p>",
+            "page": ""
+          }
+        },
+        "question-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the benefits of Alpha GPC in Orenda O-Tropin®?",
+            "row_content": "<p>Alpha GPC — glycerophosphocholine — is one of the most bioavailable and well-researched forms of choline available in nutritional supplements. Choline is an essential nutrient that plays a foundational role in neurological function, neurotransmitter production, and overall brain health.* While the body produces some choline naturally, research consistently shows that many adults, particularly those over 35, do not maintain optimal choline levels through diet and natural production alone.</p><p>Alpha GPC is specifically valued because of how effectively it supports choline availability in the body.* It supports the production of acetylcholine, one of the brain's primary neurotransmitters, involved in memory, learning, attention, and overall cognitive performance.* This is why Alpha GPC has become one of the most researched ingredients in the cognitive support space and why it is increasingly recognized by healthcare providers working with adults focused on brain health and healthy aging.</p><p>In Orenda O-Tropin®, Alpha GPC contributes to the formula's broader goal of supporting cognitive function, mental clarity, and neurological well-being.* These benefits become increasingly relevant as the body ages and natural choline production declines, making Alpha GPC one of the more purposefully placed ingredients in the O-Tropin formula.</p><p>Alpha GPC also plays a specific role in supporting pituitary function,* which is central to what O-Tropin is designed to do. It works alongside the amino acid blend and Mucuna Pruriens to support the body's natural regulatory systems* contributing to the formula's integrated approach to pituitary support, restorative sleep, and healthy aging.</p>",
+            "page": ""
+          }
+        },
+        "question-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the benefits of Mucuna Pruriens Extract in Orenda O-Tropin®?",
+            "row_content": "<p>Mucuna Pruriens is a botanical with a long history of use in traditional Ayurvedic wellness systems, with origins in the tropical regions of Africa and Asia. It has been studied and used for centuries, and its growing presence in modern nutritional research reflects what traditional practitioners recognized long before clinical science caught up.</p><p>The primary reason Mucuna Pruriens is included in O-Tropin is its natural concentration of L-DOPA, a direct precursor to dopamine, one of the body's most important neurotransmitters. Dopamine plays a central role in mood regulation, motivation, cognitive function, and neurological health.* By providing a natural source of L-DOPA, Mucuna Pruriens supports the body's own dopamine production rather than introducing synthetic compounds.*</p><p>Research supports Mucuna Pruriens for several specific benefit areas relevant to the O-Tropin formula. It supports healthy mood and motivation,* contributes to cognitive function and mental clarity,* and has been traditionally used to support the body's natural stress response.* Research also suggests it supports restorative sleep when experiencing occasional sleeplessness*, which is why it works alongside PharmaGABA® on the sleep side of the O-Tropin formula.</p><p>Mucuna Pruriens also supports the body's natural hormonal processes,* contributing to the pituitary support story that O-Tropin is built around. It is one of the most purposefully placed ingredients in the formula, working simultaneously on mood, sleep, cognitive function, and pituitary support in a way that few single botanical ingredients can.*</p><p>For adults over 35 experiencing energy, sleep, and cognitive changes that often accompany the natural aging process, Mucuna Pruriens is a well-researched and credible addition to a daily healthy-aging formula.</p>",
+            "page": ""
+          }
+        },
+        "0012d063-e0fd-45ee-a82f-1bf18615c665": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the benefits of Moomiyo Extract (Shilajit) in Orenda O-Tropin®?",
+            "row_content": "<p>Moomiyo — more widely known today as Shilajit — is a mineral-rich adaptogenic extract with origins in the high-altitude mountain ranges of Central Asia. It has been used in traditional Ayurvedic wellness systems for centuries, valued for its naturally occurring concentration of humic acids, fulvic acid, and trace minerals that are rarely found together in a single botanical source. What traditional practitioners recognized centuries ago, modern research is increasingly validating, making Shilajit one of the most studied adaptogens in the current landscape of nutritional supplements.</p><p>Orenda has included Moomiyo in the O-Tropin formula for over 20 years, long before Shilajit became one of the fastest-growing ingredients in the modern supplement space. That 20-year track record reflects both Orenda's confidence in the ingredient and the consistency of the results reported by practitioners and customers over time. Orenda was not following a trend with Moomiyo. The trend caught up with Orenda.</p><p>Research supports Shilajit for several benefit areas that are directly relevant to the O-Tropin formula. It supports the body's natural stress response,* contributes to natural energy and physical vitality,* and supports healthy aging processes over time.* As an adaptogen, Shilajit works by supporting the body's natural resilience rather than producing an immediate stimulant effect, which is consistent with how O-Tropin approaches pituitary and healthy aging support overall.*</p><p>The fulvic acid content in Shilajit is particularly relevant from a bioavailability perspective. Fulvic acid supports the body's ability to transport and absorb minerals and other nutrients at the cellular level,* which complements O-Tropin's liposomal delivery system and reinforces the formula's broader focus on absorption and bioavailability.</p><p>For adults over 35 navigating the energy, stress, and vitality changes that often accompany the natural aging process, Moomiyo Extract is a well-researched and credible addition to a daily healthy aging formula, and one of the ingredients that gives O-Tropin its depth and heritage.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fCFe63": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the benefits of the amino acid blend in Orenda O-Tropin®?",
+            "row_content": "<p>Amino acids are the fundamental building blocks of proteins and play essential roles in virtually every biological process in the human body, from neurotransmitter production and hormone regulation to energy metabolism and tissue repair. The amino acid blend in O-Tropin was not assembled from a generic list. It was formulated specifically to support normal pituitary function,* with each amino acid chosen for a distinct and purposeful role in that story.</p><p>The blend includes eight amino acids — Ornithine Alpha Ketoglutarate, L-Glutamine, L-Arginine, L-Lysine, L-Valine, L-Isoleucine, L-Tyrosine, and Glycine. Ornithine Alpha Ketoglutarate supports energy metabolism and the body's natural recovery processes.* L-Arginine and L-Lysine work synergistically to support the body's natural regulatory processes.* L-Tyrosine supports healthy neurotransmitter production and contributes to mental clarity and focus.* Glycine supports pituitary function directly* and contributes to the restorative sleep story alongside PharmaGABA® and Mucuna Pruriens. The branched-chain amino acids, L-Valine and L-Isoleucine, support healthy muscle function and physical recovery.* L-Glutamine supports overall metabolic function and the body's natural resilience.*</p><p>What distinguishes the amino acid blend in O-Tropin from other amino acid formulas on the market is the approach. Rather than delivering large amounts of any single amino acid to force a physiological response, O-Tropin uses a precise combination that works with the body's natural regulatory systems rather than overriding them.* This philosophy,  supporting the body's own processes rather than substituting for them, is central to how the entire O-Tropin formula was designed and has been refined over more than 20 years.</p><p>For adults over 35 experiencing the energy, cognitive, and vitality changes that often accompany the natural aging process, this amino acid combination represents one of the most purposeful and considered aspects of the O-Tropin formula.</p>",
+            "page": ""
+          }
+        },
+        "bdf3fe71-beba-4517-90c2-a5d34c60a0d4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Should I take Orenda O-Tropin® if I am on medication?",
+            "row_content": "<p>Orenda O-Tropin® was formulated with careful attention to safety. That said, if you are currently under medical care or taking any medications, we recommend consulting with your healthcare provider before adding any new supplement to your routine. Your healthcare provider understands your full health picture and is the right person to make that call with you.</p><p><strong>Warning:</strong> O-Tropin is not recommended for pregnant or nursing women, any persons with health conditions, any persons with active Cancer, Diabetic Retinopathy, or Acromegaly, and any persons who are taking prescription drugs (before consulting with a physician).</p>",
+            "page": ""
+          }
+        },
+        "4114f001-18fb-4006-9b4c-e15ffa754733": {
+          "type": "collapsible_video",
+          "settings": {
+            "heading": "🎥 Ultimate Knowledge Spotlight - Is your Pituitary Offline (2min)",
+            "description": "🎥 Ultimate Knowledge Spotlight - Is your Pituitary Offline with Dr. Skul, MD (2min)",
+            "youtube_src": "",
+            "vimeo_src": "https://player.vimeo.com/video/356532903?badge=0&autopause=0&player_id=0&app_id=58479"
+          }
+        },
+        "402df330-6a56-4e03-8b15-abdd82f4a486": {
+          "type": "collapsible_video",
+          "settings": {
+            "heading": "🎙️ Indepth Dive on Orenda O-Tropin® with co-Founder George Hall (15min)",
+            "description": "🎙️ Indepth Dive on Orenda O-Tropin® with co-Founder George Hall (15min)",
+            "youtube_src": "",
+            "vimeo_src": "https://player.vimeo.com/video/811006856?badge=0&autopause=0&player_id=0&app_id=58479"
+          }
+        }
+      },
+      "block_order": [
+        "question-3",
+        "question-1",
+        "question-0",
+        "question-2",
+        "0012d063-e0fd-45ee-a82f-1bf18615c665",
+        "collapsible_row_fCFe63",
+        "bdf3fe71-beba-4517-90c2-a5d34c60a0d4",
+        "4114f001-18fb-4006-9b4c-e15ffa754733",
+        "402df330-6a56-4e03-8b15-abdd82f4a486"
+      ],
+      "settings": {
+        "open_first_collapsible_row": false,
+        "narrow": true,
+        "show_divider": true,
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h3",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "padding_top": 52,
+        "padding_bottom": 24
+      }
+    },
+    "85abdddf-a94c-47a0-a16c-dd30904eed66": {
+      "type": "gallery",
+      "blocks": {
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Otropin_Nancy_A_Customer_Review_v1_Web_52023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Otropin_Carol_H_Customer_Review_v2_Web_52023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        },
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Otropin_Julie_F_Customer_Review_v4_Web_52023.jpg",
+            "image_position": "center center",
+            "subheading": "",
+            "subheading_size": "h5",
+            "heading": "",
+            "heading_size": "h3",
+            "link": "",
+            "text_box_position": "bottom-left"
+          }
+        }
+      },
+      "block_order": [
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-3",
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-1",
+        "template--14846180753489__85abdddf-a94c-47a0-a16c-dd30904eed66-16851588283c0bce1e-2"
+      ],
+      "settings": {
+        "per_row": 4,
+        "spacing_images": 20,
+        "image_height": 280,
+        "apply_overlay": true,
+        "full_width": false,
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "mobile_image_height": 160,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "4206f4e5-3db7-4377-bf2f-6ccfb4326b9a": {
+      "type": "yotpo-reviews",
+      "settings": {}
+    },
+    "1686871113013f0f80": {
+      "type": "apps",
+      "blocks": {
+        "f0374d95-c87a-4b29-919c-5732d529ce79": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "63144",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "f0374d95-c87a-4b29-919c-5732d529ce79"
+      ],
+      "settings": {
+        "include_margins": true,
+        "show_divider": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_divider": false,
+        "heading": "You're Gonna Like These Too...",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_image_fill": false,
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_quick_buy": true,
+        "enable_quick_view": false,
+        "enable_color_swatches": true,
+        "enable_countdown": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "disabled": true,
+      "settings": {
+        "show_divider": false,
+        "heading": "Recently Viewed",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_image_fill": true,
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "show_quick_buy": true,
+        "enable_quick_view": true,
+        "enable_color_swatches": true,
+        "enable_countdown": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "empty-space",
+    "main",
+    "8ec935eb-935e-42be-8ee7-0d747ab3d6ff",
+    "collapsible-content",
+    "85abdddf-a94c-47a0-a16c-dd30904eed66",
+    "4206f4e5-3db7-4377-bf2f-6ccfb4326b9a",
+    "1686871113013f0f80",
+    "product-recommendations",
+    "recently-viewed-products"
+  ]
+}
