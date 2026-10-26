@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slideshow": {
@@ -6,8 +15,8 @@
         "image_zAfzbX": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Girl_Holding_Bag_and_Immune_Updated_4.png",
-            "image_mobile": "shopify:\/\/shop_images\/Girl_Holding_Bag_and_Immune_Updated-3.png",
+            "image": "shopify://shop_images/Girl_Holding_Bag_and_Immune_Updated_4.png",
+            "image_mobile": "shopify://shop_images/Girl_Holding_Bag_and_Immune_Updated-3.png",
             "image_position": "20% 100%",
             "text_box_position": "bottom-left",
             "subheading": "",
@@ -22,7 +31,7 @@
             "rating_subtext": "10,129+ happy customers",
             "text_alignment": "left",
             "button_label": "SHOP NUTRITIONAL PRODUCTS",
-            "button_link": "shopify:\/\/collections\/our-products",
+            "button_link": "shopify://collections/our-products",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -30,7 +39,7 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/20210424_Orenda_1014_copy.jpg",
+            "image": "shopify://shop_images/20210424_Orenda_1014_copy.jpg",
             "image_position": "bottom center",
             "text_box_position": "top-right",
             "subheading": "YOU SHOULD STILL FEEL LIKE YOU",
@@ -45,7 +54,7 @@
             "rating_subtext": "10,129+ happy customers",
             "text_alignment": "left",
             "button_label": "SHOP NUTRITIONAL PRODUCTS",
-            "button_link": "shopify:\/\/collections\/our-products",
+            "button_link": "shopify://collections/our-products",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -54,7 +63,7 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/HERO_Orenda_Immune_Bogo_Header_1200x489_copy.png",
+            "image": "shopify://shop_images/HERO_Orenda_Immune_Bogo_Header_1200x489_copy.png",
             "image_position": "center center",
             "text_box_position": "bottom-right",
             "subheading": "",
@@ -69,7 +78,7 @@
             "rating_subtext": "8,837+ happy customers",
             "text_alignment": "right",
             "button_label": "SHOP NUTRITIONAL PRODUCTS",
-            "button_link": "shopify:\/\/collections\/our-products",
+            "button_link": "shopify://collections/our-products",
             "button_size": "small",
             "button_style_secondary": false
           }
@@ -78,7 +87,7 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/HERO_OPTION_ORENDA_Ease_1026_3000x1500_fd88d3ca-b2ec-4073-8ffe-c8fe3672baa3.jpg",
+            "image": "shopify://shop_images/HERO_OPTION_ORENDA_Ease_1026_3000x1500_fd88d3ca-b2ec-4073-8ffe-c8fe3672baa3.jpg",
             "image_position": "center center",
             "text_box_position": "bottom-left",
             "subheading": "You should still feel like you",
@@ -93,7 +102,7 @@
             "rating_subtext": "8,837+ happy customers",
             "text_alignment": "left",
             "button_label": "SHOP NUTRITIONAL PRODUCTS",
-            "button_link": "shopify:\/\/collections\/our-products",
+            "button_link": "shopify://collections/our-products",
             "button_size": "small",
             "button_style_secondary": false
           }
@@ -102,7 +111,7 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/ORENDA_Active_411_1145b9fd-72e6-4ac4-9eec-5d0dbc6b782a.jpg",
+            "image": "shopify://shop_images/ORENDA_Active_411_1145b9fd-72e6-4ac4-9eec-5d0dbc6b782a.jpg",
             "image_position": "80% 50%",
             "text_box_position": "bottom-left",
             "subheading": "IF YOU COULD CHANGE ONE THING...",
@@ -117,7 +126,7 @@
             "rating_subtext": "8,837+ happy customers",
             "text_alignment": "left",
             "button_label": "SHOP NUTRITIONAL PRODUCTS",
-            "button_link": "shopify:\/\/collections\/our-products",
+            "button_link": "shopify://collections/our-products",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -185,9 +194,9 @@
         "countdown_LC3kFK": {
           "type": "countdown",
           "settings": {
-            "date": "1\/12\/2026",
+            "date": "1/12/2026",
             "number_size": "medium",
-            "message": "<h3><strong>SORRY BOGO HAS NOW ENDED<\/strong><\/h3>",
+            "message": "<h3><strong>SORRY BOGO HAS NOW ENDED</strong></h3>",
             "message_size": "typeset2"
           }
         },
@@ -195,7 +204,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP BOGO",
-            "button_link": "shopify:\/\/products\/orenda-10-day-detox-cleanse",
+            "button_link": "shopify://products/orenda-10-day-detox-cleanse",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -210,7 +219,7 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/BOGO_2025_940x788_V2_NewBurn_NBG.png",
+        "image": "shopify://shop_images/BOGO_2025_940x788_V2_NewBurn_NBG.png",
         "image_position": "center center",
         "layout": "image_first",
         "text_box_position": "middle",
@@ -219,7 +228,7 @@
         "enlarge_content": false,
         "full_width": true,
         "show_divider": false,
-        "image_mobile": "shopify:\/\/shop_images\/BOGO_2025_940x788_V2_NewBurn_NBG.png",
+        "image_mobile": "shopify://shop_images/BOGO_2025_940x788_V2_NewBurn_NBG.png",
         "mobile_layout": "text_first",
         "mobile_text_alignment": "center",
         "mobile_image_ratio": "auto",
@@ -247,7 +256,7 @@
         "text_iYLC3i": {
           "type": "text",
           "settings": {
-            "text": "<p><\/p><p><\/p>",
+            "text": "<p></p><p></p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -256,7 +265,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p><strong>🚨 <\/strong><em><strong>EXTENDED <\/strong><\/em><strong>📣 <\/strong><em><strong>Ends midnight, Tuesday, December 3rd<\/strong><\/em><\/p>",
+            "text": "<p><strong>🚨 </strong><em><strong>EXTENDED </strong></em><strong>📣 </strong><em><strong>Ends midnight, Tuesday, December 3rd</strong></em></p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -282,7 +291,7 @@
           "settings": {
             "date": "10-01-2026",
             "number_size": "medium",
-            "message": "<h3><strong>SORRY BOGO HAS NOW ENDED<\/strong><\/h3>",
+            "message": "<h3><strong>SORRY BOGO HAS NOW ENDED</strong></h3>",
             "message_size": "typeset2"
           }
         },
@@ -298,7 +307,7 @@
           "type": "button",
           "settings": {
             "button_label": "Claim your BOGO",
-            "button_link": "shopify:\/\/products\/orenda-10-day-detox-cleanse",
+            "button_link": "shopify://products/orenda-10-day-detox-cleanse",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -316,7 +325,7 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/FALL_BOGO_ART_Updated_v2.png",
+        "image": "shopify://shop_images/FALL_BOGO_ART_Updated_v2.png",
         "image_position": "center center",
         "layout": "image_first",
         "text_box_position": "middle",
@@ -325,7 +334,7 @@
         "enlarge_content": false,
         "full_width": true,
         "show_divider": false,
-        "image_mobile": "shopify:\/\/shop_images\/FALL_BOGO_ART_Updated_v2.png",
+        "image_mobile": "shopify://shop_images/FALL_BOGO_ART_Updated_v2.png",
         "mobile_layout": "image_first",
         "mobile_text_alignment": "center",
         "mobile_image_ratio": "adapt",
@@ -369,9 +378,9 @@
         "template--14869576056913__58dcbc79-602c-4d95-a3db-f9b0d916059c-countdown-1": {
           "type": "countdown",
           "settings": {
-            "date": "02\/08\/2024",
+            "date": "02/08/2024",
             "number_size": "medium",
-            "message": "<h3><strong>SORRY BOGO HAS NOW ENDED<\/strong><\/h3>",
+            "message": "<h3><strong>SORRY BOGO HAS NOW ENDED</strong></h3>",
             "message_size": "typeset2"
           }
         },
@@ -379,7 +388,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP BOGO",
-            "button_link": "shopify:\/\/products\/orenda-oki-chocolate",
+            "button_link": "shopify://products/orenda-oki-chocolate",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -394,7 +403,7 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/FEB_BOGO_2024.png",
+        "image": "shopify://shop_images/FEB_BOGO_2024.png",
         "image_position": "center center",
         "layout": "image_first",
         "text_box_position": "middle",
@@ -403,7 +412,7 @@
         "enlarge_content": false,
         "full_width": false,
         "show_divider": false,
-        "image_mobile": "shopify:\/\/shop_images\/FEB_BOGO_2024.png",
+        "image_mobile": "shopify://shop_images/FEB_BOGO_2024.png",
         "mobile_layout": "image_first",
         "mobile_text_alignment": "center",
         "mobile_image_ratio": "adapt",
@@ -423,7 +432,7 @@
         "custom_liquid_bxCp8k": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"\n  text-align: left;\n  max-width: 100%;\n\">\n\n  <h2 style=\"\n  color: #6E1273;\n  font-family: var(--font-heading-family);\n  font-style: var(--font-heading-style);\n  font-weight: var(--font-heading-weight);\n  text-align: center;\n  margin: 0 0 18px 0;\n\">\n  Free YETI Shaker Bottle Offer\n<\/h2>\n\n  <div style=\"\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: 700;\n    font-size: 18px;\n    line-height: 1.5;\n    margin: 0 0 18px 0;\n  \">\n    Through September 15th, the first 50 people who purchase two Orenda CreatinePLUS in a single order will receive a YETI Yonder<sup style=\"\n      font-size: 55%;\n      line-height: 0;\n      vertical-align: super;\n    \">®<\/sup> 20 oz shaker bottle at no charge, one per customer and one per household, while supplies last.\n  <\/div>\n\n  <div style=\"\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: var(--font-body-weight);\n    font-size: 18px;\n    line-height: 1.5;\n    margin: 0;\n  \">\n    Because CreatinePLUS works best with daily consistency, a shaker bottle makes it that much easier to keep that habit going.\n  <\/div>\n\n<\/div>"
+            "custom_liquid": "<div style=\"\n  text-align: left;\n  max-width: 100%;\n\">\n\n  <h2 style=\"\n  color: #6E1273;\n  font-family: var(--font-heading-family);\n  font-style: var(--font-heading-style);\n  font-weight: var(--font-heading-weight);\n  text-align: center;\n  margin: 0 0 18px 0;\n\">\n  Free YETI Shaker Bottle Offer\n</h2>\n\n  <div style=\"\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: 700;\n    font-size: 18px;\n    line-height: 1.5;\n    margin: 0 0 18px 0;\n  \">\n    Through September 15th, the first 50 people who purchase two Orenda CreatinePLUS in a single order will receive a YETI Yonder<sup style=\"\n      font-size: 55%;\n      line-height: 0;\n      vertical-align: super;\n    \">®</sup> 20 oz shaker bottle at no charge, one per customer and one per household, while supplies last.\n  </div>\n\n  <div style=\"\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: var(--font-body-weight);\n    font-size: 18px;\n    line-height: 1.5;\n    margin: 0;\n  \">\n    Because CreatinePLUS works best with daily consistency, a shaker bottle makes it that much easier to keep that habit going.\n  </div>\n\n</div>"
           }
         },
         "heading_t434zG": {
@@ -448,7 +457,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p><strong>Through September 15th, the first 50 people who purchase two Orenda CreatinePLUS in a single order will receive a YETI Yonder® 20 oz shaker bottle at no charge, one per customer and one per household, while supplies last.<\/strong><\/p>",
+            "text": "<p><strong>Through September 15th, the first 50 people who purchase two Orenda CreatinePLUS in a single order will receive a YETI Yonder® 20 oz shaker bottle at no charge, one per customer and one per household, while supplies last.</strong></p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -457,7 +466,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p>Because CreatinePLUS works best with daily consistency a shaker bottle makes it that much easier to keep that habit going.<\/p>",
+            "text": "<p>Because CreatinePLUS works best with daily consistency a shaker bottle makes it that much easier to keep that habit going.</p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -475,9 +484,9 @@
           "type": "countdown",
           "disabled": true,
           "settings": {
-            "date": "0915\/2026",
+            "date": "0915/2026",
             "number_size": "medium",
-            "message": "<h3><strong>SORRY OFFER HAS NOW ENDED<\/strong><\/h3>",
+            "message": "<h3><strong>SORRY OFFER HAS NOW ENDED</strong></h3>",
             "message_size": "typeset2"
           }
         },
@@ -494,7 +503,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop CreatinePLUS",
-            "button_link": "shopify:\/\/products\/orenda-creatineplus",
+            "button_link": "shopify://products/orenda-creatineplus",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -513,7 +522,7 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/CreatinePLUS_with_Shaker_Image_82026.png",
+        "image": "shopify://shop_images/CreatinePLUS_with_Shaker_Image_82026.png",
         "image_position": "center center",
         "layout": "image_first",
         "text_box_position": "middle",
@@ -522,7 +531,7 @@
         "enlarge_content": false,
         "full_width": true,
         "show_divider": false,
-        "image_mobile": "shopify:\/\/shop_images\/CreatinePLUS_with_Shaker_Image_82026.png",
+        "image_mobile": "shopify://shop_images/CreatinePLUS_with_Shaker_Image_82026.png",
         "mobile_layout": "image_first",
         "mobile_text_alignment": "center",
         "mobile_image_ratio": "adapt",
@@ -544,7 +553,7 @@
           "settings": {
             "icon": "truck",
             "icon_size": "large",
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"M286.38-184q-44.95 0-74.51-31.54-29.56-31.55-27.64-75.69H105l9.85-43.77h89.85q9.22-23.46 31.34-38.12 22.11-14.65 50.34-14.65 27.24 0 49.35 14.65 22.12 14.66 33.5 38.12H576l91.23-397.23H220l1.69-5.23Q224.38-754 237.85-765q13.46-11 31.77-11h453.46l-36.62 153.62h83.31l108.54 146.23-36.39 184.92h-35.15q.92 44.31-28.75 75.77Q748.34-184 704.38-184q-43.95 0-73.51-31.54-29.56-31.55-27.64-75.69H387.77q1.92 44.31-27.75 75.77Q330.34-184 286.38-184ZM641-429.38h185.54l6.54-33.47-85.7-115.77h-71.32L641-429.38Zm13.38-247.93 12.85-54.92L576-335l12.62-54.69 32.69-143.85 33.07-143.77ZM58.15-439.69l11.31-43.77h194.23l-11.31 43.77H58.15Zm84-143.85 11.31-43.77h230.23l-11.31 43.77H142.15Zm144.23 355.77q24.63 0 41.13-16.99 16.49-17 16.49-41.62 0-24.63-16.49-41.13Q311.01-344 286.38-344q-24.62 0-41.62 16.49-16.99 16.5-16.99 41.13 0 24.62 16.99 41.62 17 16.99 41.62 16.99Zm418 0q24.63 0 41.63-16.99 16.99-17 16.99-41.62 0-24.63-16.99-41.13-17-16.49-41.63-16.49-24.62 0-41.12 16.49-16.49 16.5-16.49 41.13 0 24.62 16.49 41.62 16.5 16.99 41.12 16.99Z\"><\/path><\/svg>",
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"M286.38-184q-44.95 0-74.51-31.54-29.56-31.55-27.64-75.69H105l9.85-43.77h89.85q9.22-23.46 31.34-38.12 22.11-14.65 50.34-14.65 27.24 0 49.35 14.65 22.12 14.66 33.5 38.12H576l91.23-397.23H220l1.69-5.23Q224.38-754 237.85-765q13.46-11 31.77-11h453.46l-36.62 153.62h83.31l108.54 146.23-36.39 184.92h-35.15q.92 44.31-28.75 75.77Q748.34-184 704.38-184q-43.95 0-73.51-31.54-29.56-31.55-27.64-75.69H387.77q1.92 44.31-27.75 75.77Q330.34-184 286.38-184ZM641-429.38h185.54l6.54-33.47-85.7-115.77h-71.32L641-429.38Zm13.38-247.93 12.85-54.92L576-335l12.62-54.69 32.69-143.85 33.07-143.77ZM58.15-439.69l11.31-43.77h194.23l-11.31 43.77H58.15Zm84-143.85 11.31-43.77h230.23l-11.31 43.77H142.15Zm144.23 355.77q24.63 0 41.13-16.99 16.49-17 16.49-41.62 0-24.63-16.49-41.13Q311.01-344 286.38-344q-24.62 0-41.62 16.49-16.99 16.5-16.99 41.13 0 24.62 16.99 41.62 17 16.99 41.62 16.99Zm418 0q24.63 0 41.63-16.99 16.99-17 16.99-41.62 0-24.63-16.99-41.13-17-16.49-41.63-16.49-24.62 0-41.12 16.49-16.49 16.5-16.49 41.13 0 24.62 16.49 41.62 16.5 16.99 41.12 16.99Z\"></path></svg>",
             "text": "Free Shipping &amp; Handling on Orders $150+",
             "text_size": 14,
             "link": ""
@@ -555,10 +564,10 @@
           "settings": {
             "icon": "price_tag",
             "icon_size": "large",
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"M825-391 570-136q-10.25 10-22.81 14.5Q534.63-117 522-117t-24.76-4.5Q485.11-126 475-136L137-473q-10.91-8.81-15.96-20.92Q116-506.04 116-521v-255q0-27.91 19.63-47.96Q155.25-844 184-844h255q13.23 0 24.82 4.75Q475.4-834.5 487-825l338 337q10.04 10.08 15.52 22.93 5.48 12.86 5.48 25.9 0 13.41-5.72 25.59Q834.57-401.39 825-391ZM546-161l255-255q10-10 10-23.5T801-463L452.13-808H184q-14 0-23.5 9t-9.5 23v254.32q0 6 2 12.5t7 10.5L499-161q10 9 23.5 9t23.5-9ZM262.24-660q16.18 0 26.97-11.61Q300-683.21 300-698.65 300-715 289.33-726q-10.66-11-26.33-11-16.5 0-28.25 10.84T223-699.41q0 16.33 11.78 27.87Q246.55-660 262.24-660ZM482-479Z\"><\/path><\/svg>",
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"M825-391 570-136q-10.25 10-22.81 14.5Q534.63-117 522-117t-24.76-4.5Q485.11-126 475-136L137-473q-10.91-8.81-15.96-20.92Q116-506.04 116-521v-255q0-27.91 19.63-47.96Q155.25-844 184-844h255q13.23 0 24.82 4.75Q475.4-834.5 487-825l338 337q10.04 10.08 15.52 22.93 5.48 12.86 5.48 25.9 0 13.41-5.72 25.59Q834.57-401.39 825-391ZM546-161l255-255q10-10 10-23.5T801-463L452.13-808H184q-14 0-23.5 9t-9.5 23v254.32q0 6 2 12.5t7 10.5L499-161q10 9 23.5 9t23.5-9ZM262.24-660q16.18 0 26.97-11.61Q300-683.21 300-698.65 300-715 289.33-726q-10.66-11-26.33-11-16.5 0-28.25 10.84T223-699.41q0 16.33 11.78 27.87Q246.55-660 262.24-660ZM482-479Z\"></path></svg>",
             "text": "Save 20% When You Subscribe",
             "text_size": 14,
-            "link": "shopify:\/\/pages\/subscriptions"
+            "link": "shopify://pages/subscriptions"
           }
         },
         "announcement_wxaHke": {
@@ -566,8 +575,8 @@
           "settings": {
             "icon": "clipboard",
             "icon_size": "large",
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"M147.77-228.77v-315.69 21.31V-731.23-228.77Zm557.61 99.39L576.92-258.85q-12.46-11.46-17.3-24.6-4.85-13.15-4.85-28.18 0-29.64 20.48-52.66 20.48-23.02 54.1-23.02 26.5 0 41.51 12.06 15.02 12.06 34.56 31.49 18.87-19.05 33.64-31.3 14.78-12.25 41.87-12.25 35.07 0 55.07 23.27t20 52.36q0 13.5-5.16 27.58-5.15 14.08-16.24 25.65L705.38-129.38ZM147.77-614.31h664.46v-92.31q0-9.23-7.69-16.92-7.69-7.69-16.92-7.69H172.38q-9.23 0-16.92 7.69-7.69 7.69-7.69 16.92v92.31ZM427.31-185H172.38q-27.78 0-48.08-20.3-20.3-20.3-20.3-48.08v-453.24q0-27.78 20.3-48.08 20.3-20.3 48.08-20.3h615.24q27.78 0 48.08 20.3 20.3 20.3 20.3 48.08v205.31q-32.51-19.62-71.04-31.38-38.54-11.77-79.58-11.77-33.69 0-65.11 8.31-31.41 8.32-58.12 23.38H147.77v259.39q0 9.23 7.69 16.92 7.69 7.69 16.92 7.69h250.27q.12 11.14 1.14 22.37 1.02 11.22 3.52 21.4Z\"><\/path><\/svg>",
-            "text": "Purchase May Be HSA\/FSA Eligible",
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"M147.77-228.77v-315.69 21.31V-731.23-228.77Zm557.61 99.39L576.92-258.85q-12.46-11.46-17.3-24.6-4.85-13.15-4.85-28.18 0-29.64 20.48-52.66 20.48-23.02 54.1-23.02 26.5 0 41.51 12.06 15.02 12.06 34.56 31.49 18.87-19.05 33.64-31.3 14.78-12.25 41.87-12.25 35.07 0 55.07 23.27t20 52.36q0 13.5-5.16 27.58-5.15 14.08-16.24 25.65L705.38-129.38ZM147.77-614.31h664.46v-92.31q0-9.23-7.69-16.92-7.69-7.69-16.92-7.69H172.38q-9.23 0-16.92 7.69-7.69 7.69-7.69 16.92v92.31ZM427.31-185H172.38q-27.78 0-48.08-20.3-20.3-20.3-20.3-48.08v-453.24q0-27.78 20.3-48.08 20.3-20.3 48.08-20.3h615.24q27.78 0 48.08 20.3 20.3 20.3 20.3 48.08v205.31q-32.51-19.62-71.04-31.38-38.54-11.77-79.58-11.77-33.69 0-65.11 8.31-31.41 8.32-58.12 23.38H147.77v259.39q0 9.23 7.69 16.92 7.69 7.69 16.92 7.69h250.27q.12 11.14 1.14 22.37 1.02 11.22 3.52 21.4Z\"></path></svg>",
+            "text": "Purchase May Be HSA/FSA Eligible",
             "text_size": 14,
             "link": ""
           }
@@ -637,7 +646,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p><strong>Trusted by physicians. Passed from friend to friend. Returned to again and again.<\/strong><\/p>",
+            "text": "<p><strong>Trusted by physicians. Passed from friend to friend. Returned to again and again.</strong></p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -645,7 +654,7 @@
         "custom_liquid_Qq6DDB": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\" width: 100vw; margin-left: calc(50% - 50vw); text-align: center; \"> <h2 style=\" margin: 0 auto; padding: 0 20px; font-size: 22px; text-align: center; font-family: var(--font-heading-family); font-style: var(--font-heading-style); font-weight: var(--font-heading-weight); line-height: 1.3; \"> Trusted by physicians.<br> Passed from friend to friend.<br> Returned to again and again. <\/h2> <\/div>"
+            "custom_liquid": "<div style=\" width: 100vw; margin-left: calc(50% - 50vw); text-align: center; \"> <h2 style=\" margin: 0 auto; padding: 0 20px; font-size: 22px; text-align: center; font-family: var(--font-heading-family); font-style: var(--font-heading-style); font-weight: var(--font-heading-weight); line-height: 1.3; \"> Trusted by physicians.<br> Passed from friend to friend.<br> Returned to again and again. </h2> </div>"
           }
         }
       },
@@ -682,11 +691,11 @@
             "collection": "best-sellers",
             "collection_title": "Best Sellers",
             "enable_collection_card": true,
-            "card_image": "shopify:\/\/shop_images\/1_c4167dd2-cd00-47eb-bf60-777332808f2f.png",
+            "card_image": "shopify://shop_images/1_c4167dd2-cd00-47eb-bf60-777332808f2f.png",
             "header": "Best Sellers",
             "subheader": "The ones people come back to. Every time.",
             "bottom_text": "Free Shipping & Handling on Orders $150+",
-            "link_override": "shopify:\/\/collections\/best-sellers",
+            "link_override": "shopify://collections/best-sellers",
             "link_text": "Learn More"
           }
         },
@@ -696,11 +705,11 @@
             "collection": "gut-health",
             "collection_title": "Gut Health and Digestion",
             "enable_collection_card": true,
-            "card_image": "shopify:\/\/shop_images\/Orenda_Ease_1026_1.jpg",
+            "card_image": "shopify://shop_images/Orenda_Ease_1026_1.jpg",
             "header": "Gut Health and Digestion",
             "subheader": "Gut health that goes deeper than a probiotic.",
             "bottom_text": "Free Shipping & Handling on Orders $150+",
-            "link_override": "shopify:\/\/collections\/gut-health",
+            "link_override": "shopify://collections/gut-health",
             "link_text": "Learn More"
           }
         },
@@ -710,11 +719,11 @@
             "collection": "immunity",
             "collection_title": "Immune + Detox Support",
             "enable_collection_card": true,
-            "card_image": "shopify:\/\/shop_images\/Orenda_Immune_Bogo_Header_1.png",
+            "card_image": "shopify://shop_images/Orenda_Immune_Bogo_Header_1.png",
             "header": "Immune + Detox Support",
             "subheader": "Immune support that actually addresses detoxification. Most never do.",
             "bottom_text": "Free Shipping & Handling on Orders $150+",
-            "link_override": "shopify:\/\/collections\/immunity",
+            "link_override": "shopify://collections/immunity",
             "link_text": "Learn More"
           }
         },
@@ -724,11 +733,11 @@
             "collection": "womens-health",
             "collection_title": "Women's Health",
             "enable_collection_card": true,
-            "card_image": "shopify:\/\/shop_images\/WOMEN-_20210424_Orenda_0069-_2.jpg",
+            "card_image": "shopify://shop_images/WOMEN-_20210424_Orenda_0069-_2.jpg",
             "header": "Women's Health",
             "subheader": "Women's health that takes you seriously.",
             "bottom_text": "Free Shipping & Handling on Orders $150+",
-            "link_override": "shopify:\/\/collections\/womens-health",
+            "link_override": "shopify://collections/womens-health",
             "link_text": "Learn More"
           }
         },
@@ -738,11 +747,11 @@
             "collection": "bundles",
             "collection_title": "Bundles",
             "enable_collection_card": true,
-            "card_image": "shopify:\/\/shop_images\/Cleanse_1080x1080_V2.png",
+            "card_image": "shopify://shop_images/Cleanse_1080x1080_V2.png",
             "header": "Bundles",
             "subheader": "Some things work better together. These are those combinations.",
             "bottom_text": "Free Shipping & Handling on Orders $150+",
-            "link_override": "shopify:\/\/collections\/bundles",
+            "link_override": "shopify://collections/bundles",
             "link_text": "Learn More"
           }
         }
@@ -791,7 +800,7 @@
         "text_9Gqk3r": {
           "type": "text",
           "settings": {
-            "text": "<p>You're tired — but not the kind of tired that sleep fixes. Your mind running before you open your eyes. An anxiousness sitting with you that you can't quite name. And somewhere underneath it all is this quiet thought: this isn't how I'm supposed to feel.<\/p><p>You're not wrong.<\/p><p>The physicians who recommend Orenda have been with us for years. They use the products. Their families use them. That's trust earned, over time, through results that show up in real life.<\/p><p>When your detoxification pathways are clear, and your gut microbiome is where it should be, something shifts. Some sleep better. Some think more clearly. Some just wake up one day feeling more like themselves again.<\/p><p>That's what Orenda is here to support.<\/p><p>Twenty years. The physicians stayed. The customers came back. That tells you everything.<\/p><p>When you're ready, we're here.<\/p>",
+            "text": "<p>You're tired — but not the kind of tired that sleep fixes. Your mind running before you open your eyes. An anxiousness sitting with you that you can't quite name. And somewhere underneath it all is this quiet thought: this isn't how I'm supposed to feel.</p><p>You're not wrong.</p><p>The physicians who recommend Orenda have been with us for years. They use the products. Their families use them. That's trust earned, over time, through results that show up in real life.</p><p>When your detoxification pathways are clear, and your gut microbiome is where it should be, something shifts. Some sleep better. Some think more clearly. Some just wake up one day feeling more like themselves again.</p><p>That's what Orenda is here to support.</p><p>Twenty years. The physicians stayed. The customers came back. That tells you everything.</p><p>When you're ready, we're here.</p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -800,7 +809,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p>Orenda's natural solutions work in sync with your body, starting at the cellular level. Our best sellers support cellular detoxification and a thriving gut microbiome, the two foundations that influence how you sleep, how you feel, and how much energy you bring to your day.*<\/p><p>And if you haven't discovered our newest addition yet, Orenda CreatinePLUS is quietly becoming one of our most talked about products, especially for women looking to support their strength, fuel sharper thinking, and sustain energy as they age.* <\/p><p>For over two decades, we've been dedicated to helping people rediscover their sense of vitality. Experience your very best with Orenda.<\/p>",
+            "text": "<p>Orenda's natural solutions work in sync with your body, starting at the cellular level. Our best sellers support cellular detoxification and a thriving gut microbiome, the two foundations that influence how you sleep, how you feel, and how much energy you bring to your day.*</p><p>And if you haven't discovered our newest addition yet, Orenda CreatinePLUS is quietly becoming one of our most talked about products, especially for women looking to support their strength, fuel sharper thinking, and sustain energy as they age.* </p><p>For over two decades, we've been dedicated to helping people rediscover their sense of vitality. Experience your very best with Orenda.</p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -855,7 +864,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP NUTRITIONAL PRODUCTS",
-            "button_link": "shopify:\/\/collections\/our-products",
+            "button_link": "shopify://collections/our-products",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -893,7 +902,7 @@
             "custom_icon": "",
             "title": "Good Manufacturing Practices (GMP)",
             "title_size": "h3",
-            "text": "<p>Our products are made in GMP-certified facilities right here in the USA, because where and how your supplements are made matters as much as what's in them.<\/p>"
+            "text": "<p>Our products are made in GMP-certified facilities right here in the USA, because where and how your supplements are made matters as much as what's in them.</p>"
           }
         },
         "3f7f80ea-7f4b-432d-ba57-637269fb603a": {
@@ -904,7 +913,7 @@
             "custom_icon": "",
             "title": "Validated by 3rd Party Lab Testing",
             "title_size": "h3",
-            "text": "<p>Every Orenda product is third-party tested in ISO-certified labs for quality and purity, so you know exactly what's in the bottle, and it's exactly what we say it is. Every batch is verified to confirm key ingredient quantities match our supplement facts, and tested to ensure safety from contaminants, including mold, yeast, and bacteria.<\/p>"
+            "text": "<p>Every Orenda product is third-party tested in ISO-certified labs for quality and purity, so you know exactly what's in the bottle, and it's exactly what we say it is. Every batch is verified to confirm key ingredient quantities match our supplement facts, and tested to ensure safety from contaminants, including mold, yeast, and bacteria.</p>"
           }
         },
         "5bb56f0f-4218-4238-900e-8a34b7f77135": {
@@ -916,7 +925,7 @@
             "custom_icon": "",
             "title": "Free Shipping & Handling",
             "title_size": "h3",
-            "text": "<p>Free shipping & handling on orders $150+<\/p>"
+            "text": "<p>Free shipping & handling on orders $150+</p>"
           }
         }
       },
@@ -958,28 +967,28 @@
         "857bacd9-bf15-4721-bf1c-e4e1b41ccf1b": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gmo.png",
+            "image": "shopify://shop_images/G094_web_icons_75__gmo.png",
             "link": ""
           }
         },
         "837d0feb-aa1c-45a9-80f4-34d334d2cec6": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__dairy.png",
+            "image": "shopify://shop_images/G094_web_icons_75__dairy.png",
             "link": ""
           }
         },
         "548189b2-3245-43f0-836f-f14fdf6bf8f2": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__gluten.png",
+            "image": "shopify://shop_images/G094_web_icons_75__gluten.png",
             "link": ""
           }
         },
         "130a1fb5-d9b0-4859-8e7a-1e7a0c23eee0": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/G094_web_icons_75__soy.png",
+            "image": "shopify://shop_images/G094_web_icons_75__soy.png",
             "link": ""
           }
         }
@@ -1014,39 +1023,39 @@
         "image-3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/PNG_of_Dr_Z._Customer_Review_v6_Web_92024.png",
+            "image": "shopify://shop_images/PNG_of_Dr_Z._Customer_Review_v6_Web_92024.png",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h5",
             "heading": "",
             "heading_size": "h3",
-            "link": "shopify:\/\/products\/orenda-immune",
+            "link": "shopify://products/orenda-immune",
             "text_box_position": "middle-center"
           }
         },
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Shanhong_Customer_Review_V4_Web_52023.jpg",
+            "image": "shopify://shop_images/Shanhong_Customer_Review_V4_Web_52023.jpg",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h4",
             "heading": "",
             "heading_size": "h3",
-            "link": "shopify:\/\/collections\/our-products",
+            "link": "shopify://collections/our-products",
             "text_box_position": "middle-center"
           }
         },
         "image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Brandy_H._Customer_Review_v3_Web_52023.jpg",
+            "image": "shopify://shop_images/Brandy_H._Customer_Review_v3_Web_52023.jpg",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h5",
             "heading": "",
             "heading_size": "h3",
-            "link": "shopify:\/\/products\/orenda-o-tropin",
+            "link": "shopify://products/orenda-o-tropin",
             "text_box_position": "middle-center"
           }
         },
@@ -1054,7 +1063,7 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/Laura_B._Customer_Review_v2_Web_52023.jpg",
+            "image": "shopify://shop_images/Laura_B._Customer_Review_v2_Web_52023.jpg",
             "image_position": "center center",
             "subheading": "",
             "subheading_size": "h5",
@@ -1107,7 +1116,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>All our reviews are written and provided by real, verified repeat customers or subscribers, honest and unfiltered. Unfortunately, we can't post every review that is submitted. These are our real reviews from verified buyers!<\/p>",
+            "text": "<p>All our reviews are written and provided by real, verified repeat customers or subscribers, honest and unfiltered. Unfortunately, we can't post every review that is submitted. These are our real reviews from verified buyers!</p>",
             "text_size": "typeset",
             "secondary_color": false
           }
@@ -1117,7 +1126,7 @@
           "disabled": true,
           "settings": {
             "button_label": "SHOP ALL",
-            "button_link": "shopify:\/\/collections\/our-products",
+            "button_link": "shopify://collections/our-products",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -1151,7 +1160,7 @@
       "type": "apps",
       "blocks": {
         "yotpo_product_reviews_reviews_carousel_dwFrbP": {
-          "type": "shopify:\/\/apps\/yotpo-product-reviews\/blocks\/reviews_carousel\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews_carousel/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
             "product": ""
           }
@@ -1175,7 +1184,7 @@
           "type": "button",
           "settings": {
             "button_label": "GET STARTED",
-            "button_link": "shopify:\/\/collections\/nutritional-supplements",
+            "button_link": "shopify://collections/nutritional-supplements",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -1217,7 +1226,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Standing in the supplement aisle — or scrolling through what feels like thousands of options online — wondering what's actually worth trusting.<\/p><p>That's exactly why Orenda exists.<\/p><p>What people notice most — better sleep, steadier energy, clearer thinking, and a gut that's finally working the way it should. All of it starting where it matters most: cellular detoxification and a healthy gut microbiome.<\/p><p>No overwhelm. Just what works.<\/p>",
+            "text": "<p>Standing in the supplement aisle — or scrolling through what feels like thousands of options online — wondering what's actually worth trusting.</p><p>That's exactly why Orenda exists.</p><p>What people notice most — better sleep, steadier energy, clearer thinking, and a gut that's finally working the way it should. All of it starting where it matters most: cellular detoxification and a healthy gut microbiome.</p><p>No overwhelm. Just what works.</p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -1228,7 +1237,7 @@
         "text"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/woman-mother-reads-composition-of-baby-food-examines-ingredients-in-supermarket.jpg_s_1024x1024_w_is_k_20_c_FfdXjfn4BR1U-qHMlkAoHvVEK3xxTCTetHydvHX5YeI.jpg",
+        "image": "shopify://shop_images/woman-mother-reads-composition-of-baby-food-examines-ingredients-in-supermarket.jpg_s_1024x1024_w_is_k_20_c_FfdXjfn4BR1U-qHMlkAoHvVEK3xxTCTetHydvHX5YeI.jpg",
         "image_position": "center center",
         "layout": "image_first",
         "text_box_position": "middle",
@@ -1237,7 +1246,7 @@
         "enlarge_content": false,
         "full_width": false,
         "show_divider": false,
-        "image_mobile": "shopify:\/\/shop_images\/woman-mother-reads-composition-of-baby-food-examines-ingredients-in-supermarket.jpg_s_1024x1024_w_is_k_20_c_FfdXjfn4BR1U-qHMlkAoHvVEK3xxTCTetHydvHX5YeI.jpg",
+        "image_mobile": "shopify://shop_images/woman-mother-reads-composition-of-baby-food-examines-ingredients-in-supermarket.jpg_s_1024x1024_w_is_k_20_c_FfdXjfn4BR1U-qHMlkAoHvVEK3xxTCTetHydvHX5YeI.jpg",
         "mobile_layout": "image_first",
         "mobile_text_alignment": "left",
         "mobile_image_ratio": "250px",
@@ -1275,7 +1284,7 @@
         "ebbe9417-4b68-4a1a-91cf-e3fec63b709c": {
           "type": "text",
           "settings": {
-            "text": "<p>We believe in what we make. If Orenda isn't everything you hoped for within 30 days, we'll make it right with a full refund. No hoops. No hassle. Just our word. <\/p>",
+            "text": "<p>We believe in what we make. If Orenda isn't everything you hoped for within 30 days, we'll make it right with a full refund. No hoops. No hassle. Just our word. </p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -1321,7 +1330,7 @@
         "ed92b94c-db8a-4b3b-9ef7-fabd04d73ad3": {
           "type": "text",
           "settings": {
-            "text": "<p>Have you ever felt lost and overwhelmed while navigating the crowded vitamin aisle? Or found yourself skeptical of the latest \"Nutrient of the Week\" hype, whether it's from online sources or flashy TV ads?<\/p><h4>LET'S SIMPLIFY THE PROCESS!<\/h4><p>At Orenda, we believe in making things easier for you. Our approach combines cutting-edge science with carefully crafted custom formulas, designed to naturally support and balance your body's vital systems.<\/p><h4>EMBRACE YOUR POTENTIAL!<\/h4><p>Orenda is here to uplift and empower you every step of the way. We're dedicated to restoring your confidence and helping you regain control of your well-being, so you can unlock your true potential and become the best version of yourself.<\/p>",
+            "text": "<p>Have you ever felt lost and overwhelmed while navigating the crowded vitamin aisle? Or found yourself skeptical of the latest \"Nutrient of the Week\" hype, whether it's from online sources or flashy TV ads?</p><h4>LET'S SIMPLIFY THE PROCESS!</h4><p>At Orenda, we believe in making things easier for you. Our approach combines cutting-edge science with carefully crafted custom formulas, designed to naturally support and balance your body's vital systems.</p><h4>EMBRACE YOUR POTENTIAL!</h4><p>Orenda is here to uplift and empower you every step of the way. We're dedicated to restoring your confidence and helping you regain control of your well-being, so you can unlock your true potential and become the best version of yourself.</p>",
             "text_size": "typeset",
             "secondary_color": false
           }
@@ -1334,7 +1343,7 @@
       "disabled": true,
       "custom_css": [],
       "settings": {
-        "image": "shopify:\/\/shop_images\/woman-mother-reads-composition-of-baby-food-examines-ingredients-in-supermarket.jpg_s_1024x1024_w_is_k_20_c_FfdXjfn4BR1U-qHMlkAoHvVEK3xxTCTetHydvHX5YeI.jpg",
+        "image": "shopify://shop_images/woman-mother-reads-composition-of-baby-food-examines-ingredients-in-supermarket.jpg_s_1024x1024_w_is_k_20_c_FfdXjfn4BR1U-qHMlkAoHvVEK3xxTCTetHydvHX5YeI.jpg",
         "image_position": "center center",
         "layout": "image_first",
         "text_box_position": "middle",
@@ -1394,7 +1403,7 @@
       "type": "apps",
       "blocks": {
         "yotpo_product_reviews_reviews_carousel_V9DybP": {
-          "type": "shopify:\/\/apps\/yotpo-product-reviews\/blocks\/reviews_carousel\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews_carousel/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
             "product": ""
           }
@@ -1416,6 +1425,7 @@
     },
     "recently_viewed_products_aD3YUX": {
       "type": "recently-viewed-products",
+      "disabled": true,
       "name": "t:sections.recently-viewed-products.presets.name",
       "settings": {
         "show_divider": false,
@@ -1446,7 +1456,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Your Favorites",
-            "button_link": "shopify:\/\/collections\/our-products",
+            "button_link": "shopify://collections/our-products",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -1496,7 +1506,7 @@
         "a9df8e3f-2fac-46f8-bc99-ee93601d41f7": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Your wellness routine, simplified. The right products delivered on your schedule, at a price that makes staying consistent easy. <\/strong><\/p><p>20% off every order, automatically. <\/p><p>Monthly delivery so you never run out, our \"no empties\" promise. <\/p><p>Control your own delivery date with every order. <\/p><p>Skip, pause, or cancel anytime. No hassle, no questions.<\/p><p><strong>We give you a heads up<\/strong>. A friendly reminder email arrives five days before every order processes giving you time to add products, skip a month, pause, or make any changes before anything ships. No surprises ever.<\/p>",
+            "text": "<p><strong>Your wellness routine, simplified. The right products delivered on your schedule, at a price that makes staying consistent easy. </strong></p><p>20% off every order, automatically. </p><p>Monthly delivery so you never run out, our \"no empties\" promise. </p><p>Control your own delivery date with every order. </p><p>Skip, pause, or cancel anytime. No hassle, no questions.</p><p><strong>We give you a heads up</strong>. A friendly reminder email arrives five days before every order processes giving you time to add products, skip a month, pause, or make any changes before anything ships. No surprises ever.</p>",
             "text_size": "typeset",
             "secondary_color": false
           }
@@ -1505,7 +1515,7 @@
           "type": "button",
           "settings": {
             "button_label": "Why Subscribe?",
-            "button_link": "shopify:\/\/pages\/subscriptions",
+            "button_link": "shopify://pages/subscriptions",
             "button_size": "medium",
             "button_style_secondary": false
           }
@@ -1521,7 +1531,7 @@
         "strong {color: #262626;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/excited-senior-woman-opens-package-delivery.jpg_s_1024x1024_w_is_k_20_c_0bNQxglwztoP3fBgKgLUMBu42GSuCVub4rf8DjjGFMU.jpg",
+        "image": "shopify://shop_images/excited-senior-woman-opens-package-delivery.jpg_s_1024x1024_w_is_k_20_c_0bNQxglwztoP3fBgKgLUMBu42GSuCVub4rf8DjjGFMU.jpg",
         "image_position": "center center",
         "layout": "text_first",
         "text_box_position": "middle",
@@ -1551,10 +1561,10 @@
           "settings": {
             "icon": "truck",
             "icon_size": "medium",
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"M286.38-184q-44.95 0-74.51-31.54-29.56-31.55-27.64-75.69H105l9.85-43.77h89.85q9.22-23.46 31.34-38.12 22.11-14.65 50.34-14.65 27.24 0 49.35 14.65 22.12 14.66 33.5 38.12H576l91.23-397.23H220l1.69-5.23Q224.38-754 237.85-765q13.46-11 31.77-11h453.46l-36.62 153.62h83.31l108.54 146.23-36.39 184.92h-35.15q.92 44.31-28.75 75.77Q748.34-184 704.38-184q-43.95 0-73.51-31.54-29.56-31.55-27.64-75.69H387.77q1.92 44.31-27.75 75.77Q330.34-184 286.38-184ZM641-429.38h185.54l6.54-33.47-85.7-115.77h-71.32L641-429.38Zm13.38-247.93 12.85-54.92L576-335l12.62-54.69 32.69-143.85 33.07-143.77ZM58.15-439.69l11.31-43.77h194.23l-11.31 43.77H58.15Zm84-143.85 11.31-43.77h230.23l-11.31 43.77H142.15Zm144.23 355.77q24.63 0 41.13-16.99 16.49-17 16.49-41.62 0-24.63-16.49-41.13Q311.01-344 286.38-344q-24.62 0-41.62 16.49-16.99 16.5-16.99 41.13 0 24.62 16.99 41.62 17 16.99 41.62 16.99Zm418 0q24.63 0 41.63-16.99 16.99-17 16.99-41.62 0-24.63-16.99-41.13-17-16.49-41.63-16.49-24.62 0-41.12 16.49-16.49 16.5-16.49 41.13 0 24.62 16.49 41.62 16.5 16.99 41.12 16.99Z\"><\/path><\/svg>",
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"M286.38-184q-44.95 0-74.51-31.54-29.56-31.55-27.64-75.69H105l9.85-43.77h89.85q9.22-23.46 31.34-38.12 22.11-14.65 50.34-14.65 27.24 0 49.35 14.65 22.12 14.66 33.5 38.12H576l91.23-397.23H220l1.69-5.23Q224.38-754 237.85-765q13.46-11 31.77-11h453.46l-36.62 153.62h83.31l108.54 146.23-36.39 184.92h-35.15q.92 44.31-28.75 75.77Q748.34-184 704.38-184q-43.95 0-73.51-31.54-29.56-31.55-27.64-75.69H387.77q1.92 44.31-27.75 75.77Q330.34-184 286.38-184ZM641-429.38h185.54l6.54-33.47-85.7-115.77h-71.32L641-429.38Zm13.38-247.93 12.85-54.92L576-335l12.62-54.69 32.69-143.85 33.07-143.77ZM58.15-439.69l11.31-43.77h194.23l-11.31 43.77H58.15Zm84-143.85 11.31-43.77h230.23l-11.31 43.77H142.15Zm144.23 355.77q24.63 0 41.13-16.99 16.49-17 16.49-41.62 0-24.63-16.49-41.13Q311.01-344 286.38-344q-24.62 0-41.62 16.49-16.99 16.5-16.99 41.13 0 24.62 16.99 41.62 17 16.99 41.62 16.99Zm418 0q24.63 0 41.63-16.99 16.99-17 16.99-41.62 0-24.63-16.99-41.13-17-16.49-41.63-16.49-24.62 0-41.12 16.49-16.49 16.5-16.49 41.13 0 24.62 16.49 41.62 16.5 16.99 41.12 16.99Z\"></path></svg>",
             "title": "Fast, Reliable Shipping",
             "title_size": "h3",
-            "text": "<p>Ships in 1–2 business days. Free standard shipping and handling are offered on U.S. orders with a minimum subtotal of $150, less discounts. <\/p>"
+            "text": "<p>Ships in 1–2 business days. Free standard shipping and handling are offered on U.S. orders with a minimum subtotal of $150, less discounts. </p>"
           }
         },
         "guarantee_peq6GY": {
@@ -1562,10 +1572,10 @@
           "settings": {
             "icon": "truck",
             "icon_size": "medium",
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"m355.15-90.77-69.77-119.85-137.28-28.85 14.48-137.75L72.85-480l89.73-102.55-14.48-136.98 137.28-29.62 69.77-120.08 124.85 55 124.85-55 70.77 120.08 137.05 29.62-15.25 136.98L887.15-480l-89.73 102.78 15.25 137.75-137.05 28.85-70.77 119.85-124.85-55-124.85 55Zm19.93-57.54L480-192l107.38 43.69L649.77-247l114.15-27.92-10.46-116.7 77.16-88.54-77.16-88.99 10.46-118.35-113.88-25.46-64.12-98.73L480-768l-107.38-43.69-62.05 98.76-114.49 25.46 10.4 118.38-77.1 89.01 77.1 88.57-10.4 118.05 113.84 26.26 65.16 98.89ZM480-480Zm-42.23 119.92 209.54-208.3-32.46-30-177.08 176.61-90.39-94.85-33.69 33.47 124.08 123.07Z\"><\/path><\/svg>",
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"48px\" viewbox=\"0 -960 960 960\" width=\"48px\" fill=\"#6e1273\"><path d=\"m355.15-90.77-69.77-119.85-137.28-28.85 14.48-137.75L72.85-480l89.73-102.55-14.48-136.98 137.28-29.62 69.77-120.08 124.85 55 124.85-55 70.77 120.08 137.05 29.62-15.25 136.98L887.15-480l-89.73 102.78 15.25 137.75-137.05 28.85-70.77 119.85-124.85-55-124.85 55Zm19.93-57.54L480-192l107.38 43.69L649.77-247l114.15-27.92-10.46-116.7 77.16-88.54-77.16-88.99 10.46-118.35-113.88-25.46-64.12-98.73L480-768l-107.38-43.69-62.05 98.76-114.49 25.46 10.4 118.38-77.1 89.01 77.1 88.57-10.4 118.05 113.84 26.26 65.16 98.89ZM480-480Zm-42.23 119.92 209.54-208.3-32.46-30-177.08 176.61-90.39-94.85-33.69 33.47 124.08 123.07Z\"></path></svg>",
             "title": "Our 30-Day promise to you",
             "title_size": "h3",
-            "text": "<p>We believe in what we make. If Orenda isn't everything you hoped for within 30 days, we'll make it right with a full refund. No hoops. No hassle. Just our word. <\/p>"
+            "text": "<p>We believe in what we make. If Orenda isn't everything you hoped for within 30 days, we'll make it right with a full refund. No hoops. No hassle. Just our word. </p>"
           }
         }
       },
