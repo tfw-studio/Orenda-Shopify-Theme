@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "6bf299cc-deb9-45c5-b7df-cce5b7952295": {
@@ -16,7 +25,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "text_size": "typeset2",
             "secondary_color": false
           }
@@ -38,16 +47,16 @@
         "template--14869665153105__6bf299cc-deb9-45c5-b7df-cce5b7952295-168738289833ed6d60-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/DAILY_WELLNESS_ESSENTIALS.png",
-        "image_position": "bottom center",
-        "text_box_position": "top-center",
+        "image": "shopify://shop_images/Untitled_1920_x_1080_px.png",
+        "image_position": "center center",
+        "text_box_position": "middle-center",
         "text_alignment": "center",
         "image_ratio": "400px",
         "show_text_box": false,
-        "full_width": false,
+        "full_width": true,
         "show_divider": false,
         "mobile_text_alignment": "center",
-        "mobile_image_ratio": "200px",
+        "mobile_image_ratio": "auto",
         "stack_images_on_mobile": true,
         "show_text_below": false,
         "colors_button_label": "#1a1b18",
@@ -55,8 +64,8 @@
         "colors_text": "#ffffff",
         "colors_overlay": "#000000",
         "colors_overlay_opacity": 0,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "b6f4bc34-e3af-4621-8266-45cb00992b11": {
@@ -73,7 +82,7 @@
         "template--14869665153105__b6f4bc34-e3af-4621-8266-45cb00992b11-1687383196f5540d12-1": {
           "type": "text",
           "settings": {
-            "text": "<p>These are the products Orenda customers come back to, month after month, year after year. Not because of a single promising ingredient, but because of what they consistently do over time.<\/p><p>Every product in this collection was built around the same conviction: that the body functions best when its key systems are genuinely supported. Gut health. Immune coordination and daily detoxification. Pituitary function and healthy aging. Muscle strength and cognitive clarity. Foundational nutrition for active men and women. Not one piece at a time, but as a complete picture of what daily support actually looks like.<\/p><p>Whether you're here for the first time or returning to reorder what's already working, this is where Orenda's most trusted formulas live.<\/p>",
+            "text": "<p>These are the products Orenda customers come back to, month after month, year after year. Not because of a single promising ingredient, but because of what they consistently do over time.</p><p>Every product in this collection was built around the same conviction: that the body functions best when its key systems are genuinely supported. Gut health. Immune coordination and daily detoxification. Pituitary function and healthy aging. Muscle strength and cognitive clarity. Foundational nutrition for active men and women. Not one piece at a time, but as a complete picture of what daily support actually looks like.</p><p>Whether you're here for the first time or returning to reorder what's already working, this is where Orenda's most trusted formulas live.</p>",
             "text_size": "typeset",
             "secondary_color": false
           }
@@ -176,7 +185,7 @@
         "enable_promo_strip": true,
         "promo_badge_text": "20%",
         "promo_heading": "off today — and every future delivery.",
-        "promo_body": "<p>Subscribe to save <strong>20%<\/strong> at checkout and <strong>ALL<\/strong> your future orders with your active subscription – zero commitment.<\/p>",
+        "promo_body": "<p>Subscribe to save <strong>20%</strong> at checkout and <strong>ALL</strong> your future orders with your active subscription – zero commitment.</p>",
         "promo_bg": "#fafafa",
         "promo_border": "#a5cf5b",
         "promo_badge_bg": "#cfea67",
