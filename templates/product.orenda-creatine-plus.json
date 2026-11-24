@@ -381,7 +381,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "How is the creatine in Orenda CreatinePLUS made?",
-            "row_content": "<p>Orenda CreatinePLUS uses Creavitalis® creatine monohydrate, produced in Germany through a patented, multi-step purification process that achieves a purity level of 99.9% or higher. Rather than harsh solvents, the process uses water-based purification, keeping the final ingredient clean and free of unnecessary residues.</p><p>Production takes place in a dedicated GMP-certified facility built specifically for creatine manufacturing, and every batch is tested against strict quality and purity standards before it leaves the facility.</p><p>The manufacturer behind Creavitalis® has also earned an EcoVadis Platinum rating,  placing them in the top 1% of companies globally for responsible and sustainable manufacturing practices. That's a credential that takes years to earn and doesn't come from cutting corners.</p><p>When Orenda chose Creavitalis® for CreatinePLUS, it was a deliberate decision — because what goes into the product matters as much as what the product does.</p>",
+            "row_content": "<p>Orenda CreatinePLUS uses Creavitalis® creatine monohydrate, produced in Germany through a patented, multi-step purification process that achieves a purity level of 99.9% or higher. Rather than harsh solvents, the process uses water-based purification, keeping the final ingredient clean and free of unnecessary residues.</p><p>Production takes place in a dedicated GMP-certified facility built specifically for creatine manufacturing, and every batch is tested against strict quality and purity standards before it leaves the facility.</p><p>The manufacturer behind Creavitalis® has also earned an EcoVadis Platinum rating, &nbsp;placing them in the top 1% of companies globally for responsible and sustainable manufacturing practices. That's a credential that takes years to earn and doesn't come from cutting corners.</p><p>When Orenda chose Creavitalis® for CreatinePLUS, it was a deliberate decision — because what goes into the product matters as much as what the product does.</p>",
             "page": ""
           }
         },
@@ -405,7 +405,7 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "How quickly will I see results with Creatine?",
-            "row_content": "<p>You may start noticing the effects of creatine within the first week. Most users will notice improved performance and recovery within 2-4 weeks of consistent use. Consistency of use and in your routine helps speed up the results. </p>",
+            "row_content": "<p>You may start noticing the effects of creatine within the first week. Most users will notice improved performance and recovery within 2-4 weeks of consistent use. Consistency of use and in your routine helps speed up the results.&nbsp;</p>",
             "page": ""
           }
         },
@@ -443,6 +443,7 @@
         },
         "collapsible_row_JGnCHj": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "heading": "Can I take Orenda CreatinePLUS with other Orenda supplements?",
             "row_content": "<p>Yes, CreatinePLUS works well alongside other Orenda supplements as part of a consistent daily routine.</p><p>Two pairings worth knowing about: Orenda Eaze® and Orenda Immune+Detox®. Eaze supports gut health and nutrient absorption,* which matters because a healthy digestive system helps your body make the most of everything you take, including creatine. Immune+Detox covers immune function, microbiome balance, and the body's natural cleansing processes*, a natural complement to the strength, recovery, and clarity that CreatinePLUS supports.*</p><p>Together, these three products address some of the most important foundations of daily wellness, from the inside out.</p><p>As always, if you are pregnant, nursing, or have a medical condition, consult with your healthcare provider before combining supplements or starting any new health routine.</p>",
