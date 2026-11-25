@@ -334,7 +334,6 @@
         },
         "heading_t434zG": {
           "type": "heading",
-          "disabled": true,
           "settings": {
             "heading": "Free YETI shaker bottle offer",
             "heading_size": "h1",
@@ -352,7 +351,6 @@
         },
         "text_t4TyWd": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "text": "<p><strong>Through September 15th, the first 50 people who purchase two Orenda CreatinePLUS in a single order will receive a YETI Yonder® 20 oz shaker bottle at no charge, one per customer and one per household, while supplies last.</strong></p>",
             "text_size": "typeset2",
@@ -379,9 +377,8 @@
         },
         "countdown_jXPAHz": {
           "type": "countdown",
-          "disabled": true,
           "settings": {
-            "date": "0915/2026",
+            "date": "11/30/2026",
             "number_size": "medium",
             "message": "<h3><strong>SORRY OFFER HAS NOW ENDED</strong></h3>",
             "message_size": "typeset2"
@@ -389,7 +386,6 @@
         },
         "subheading_8RGkJn": {
           "type": "subheading",
-          "disabled": true,
           "settings": {
             "subheading": "Limited Offer",
             "subheading_size": "h3",
@@ -416,6 +412,124 @@
         "countdown_jXPAHz",
         "subheading_8RGkJn",
         "button_MEAftX"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CreatinePLUS_with_Shaker_Image_82026.png",
+        "image_position": "center center",
+        "layout": "image_first",
+        "text_box_position": "middle",
+        "text_alignment": "center",
+        "image_ratio": "550px",
+        "enlarge_content": false,
+        "full_width": true,
+        "show_divider": false,
+        "image_mobile": "shopify://shop_images/CreatinePLUS_with_Shaker_Image_82026.png",
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "center",
+        "mobile_image_ratio": "adapt",
+        "use_custom_colors": true,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#6e1273",
+        "colors_text": "#6e1273",
+        "colors_background": "#fafafa",
+        "gradient_background": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "countdown_timer_J8Nqhj": {
+      "type": "countdown-timer",
+      "blocks": {
+        "custom_liquid_MFFzrE": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"\n  text-align: left;\n  max-width: 100%;\n\">\n\n  <h2 style=\"\n  color: #6E1273;\n  font-family: var(--font-heading-family);\n  font-style: var(--font-heading-style);\n  font-weight: var(--font-heading-weight);\n  text-align: center;\n  margin: 0 0 18px 0;\n\">\n  Free YETI Shaker Bottle Offer\n</h2>\n\n  <div style=\"\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: 700;\n    font-size: 18px;\n    line-height: 1.5;\n    margin: 0 0 18px 0;\n  \">\n    Through September 15th, the first 50 people who purchase two Orenda CreatinePLUS in a single order will receive a YETI Yonder<sup style=\"\n      font-size: 55%;\n      line-height: 0;\n      vertical-align: super;\n    \">®</sup> 20 oz shaker bottle at no charge, one per customer and one per household, while supplies last.\n  </div>\n\n  <div style=\"\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: var(--font-body-weight);\n    font-size: 18px;\n    line-height: 1.5;\n    margin: 0;\n  \">\n    Because CreatinePLUS works best with daily consistency, a shaker bottle makes it that much easier to keep that habit going.\n  </div>\n\n</div>"
+          }
+        },
+        "heading_D9y4gr": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Free YETI shaker bottle offer",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "heading_XGk8aa": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Buy Two",
+            "heading_size": "h1",
+            "heading_tag": "h3"
+          }
+        },
+        "text_mfjzUN": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Through September 15th, the first 50 people who purchase two Orenda CreatinePLUS in a single order will receive a YETI Yonder® 20 oz shaker bottle at no charge, one per customer and one per household, while supplies last.</strong></p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        },
+        "text_eHe7LR": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Because CreatinePLUS works best with daily consistency a shaker bottle makes it that much easier to keep that habit going.</p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        },
+        "subheading_JtLAHN": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Because that consistency is what actually matters, we wanted to make it easy to commit to it properly.",
+            "subheading_size": "h4",
+            "secondary_color": false
+          }
+        },
+        "countdown_yj3477": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "date": "0915/2026",
+            "number_size": "medium",
+            "message": "<h3><strong>SORRY OFFER HAS NOW ENDED</strong></h3>",
+            "message_size": "typeset2"
+          }
+        },
+        "subheading_8pmABN": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Limited Offer",
+            "subheading_size": "h3",
+            "secondary_color": false
+          }
+        },
+        "button_qBDawe": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop CreatinePLUS",
+            "button_link": "shopify://products/orenda-creatineplus",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_MFFzrE",
+        "heading_D9y4gr",
+        "heading_XGk8aa",
+        "text_mfjzUN",
+        "text_eHe7LR",
+        "subheading_JtLAHN",
+        "countdown_yj3477",
+        "subheading_8pmABN",
+        "button_qBDawe"
       ],
       "disabled": true,
       "settings": {
@@ -1515,6 +1629,7 @@
     "countdown_timer_KNGPfa",
     "bdb5b64a-820d-4f03-955e-85ead8691dd5",
     "countdown_timer_8DrLfK",
+    "countdown_timer_J8Nqhj",
     "scrolling_promotion_drxaKE",
     "rich_text_C6xBEG",
     "featured_collection_tabs_8L8Dip",
