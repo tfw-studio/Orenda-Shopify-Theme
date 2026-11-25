@@ -44,12 +44,11 @@
         },
         "countdown": {
           "type": "countdown",
-          "disabled": true,
           "settings": {
             "heading": "BOGO ends at 11:59 p.m. on Monday, December 1st",
             "number_size": "small",
             "colors_heading": "#da3f3f",
-            "colors_text": "#FAFAFA",
+            "colors_text": "#DA3F3F",
             "colors_background": "#ffeeee"
           }
         },
