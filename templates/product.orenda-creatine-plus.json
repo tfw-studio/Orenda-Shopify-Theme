@@ -42,6 +42,17 @@
             "price_size": "medium"
           }
         },
+        "countdown": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "heading": "BOGO ends at 11:59 p.m. on Monday, December 1st",
+            "number_size": "small",
+            "colors_heading": "#da3f3f",
+            "colors_text": "#FAFAFA",
+            "colors_background": "#ffeeee"
+          }
+        },
         "rating": {
           "type": "rating",
           "settings": {}
@@ -84,17 +95,6 @@
           "settings": {
             "price_size": "large",
             "show_badges": false
-          }
-        },
-        "countdown": {
-          "type": "countdown",
-          "disabled": true,
-          "settings": {
-            "heading": "Hurry up ! Sale end in:",
-            "number_size": "compact",
-            "colors_heading": "#da3f3f",
-            "colors_text": "#da3f3f",
-            "colors_background": "#ffeeee"
           }
         },
         "variant_picker": {
@@ -226,13 +226,13 @@
         "breadcrumb",
         "custom_liquid_UqNPLa",
         "title",
+        "countdown",
         "rating",
         "text_qC9kVa",
         "vendor",
         "text_T7hrRD",
         "text_RhVXjL",
         "price",
-        "countdown",
         "variant_picker",
         "buy_buttons",
         "description",
