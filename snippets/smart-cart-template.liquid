@@ -1031,7 +1031,10 @@
 
     // Performs at most ONE cart mutation; returns true if it changed the cart.
     async function step() {
-      const { items } = await fetch("/cart.js").then(r => r.json());
+      const cart = await fetch("/cart.js").then(r => r.json());
+      // Skip Awtomic bundle components — bundle BOGOs are handled separately
+      // (data-bogo-* row attributes + Discounts.apply), never by this pairing.
+      const items = cart.items.filter(i => !i.properties?._bundleUid);
       const bases = items.filter(i => i.properties?.[BASE]);
       const frees = items.filter(i => i.properties?.[FREE]);
 
