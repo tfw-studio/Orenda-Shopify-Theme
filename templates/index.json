@@ -323,84 +323,6 @@
         "padding_bottom": 0
       }
     },
-    "58dcbc79-602c-4d95-a3db-f9b0d916059c": {
-      "type": "countdown-timer",
-      "blocks": {
-        "template--14869576056913__58dcbc79-602c-4d95-a3db-f9b0d916059c-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "ENDING SOON -SPECIAL FEBRUARY BOGO",
-            "heading_size": "h2",
-            "heading_tag": "h2"
-          }
-        },
-        "2e0a281d-9563-4f48-90fb-b5bf50f6e273": {
-          "type": "heading",
-          "settings": {
-            "heading": "Buy One, Get One Orenda Oki Chocolate",
-            "heading_size": "h1",
-            "heading_tag": "h2"
-          }
-        },
-        "7294cc4a-c5c8-4fcf-8277-509a2f1ae8ce": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "SPECIAL LIMITED TIME OFFER",
-            "subheading_size": "h3",
-            "secondary_color": false
-          }
-        },
-        "template--14869576056913__58dcbc79-602c-4d95-a3db-f9b0d916059c-countdown-1": {
-          "type": "countdown",
-          "settings": {
-            "date": "02/08/2024",
-            "number_size": "medium",
-            "message": "<h3><strong>SORRY BOGO HAS NOW ENDED</strong></h3>",
-            "message_size": "typeset2"
-          }
-        },
-        "template--14869576056913__58dcbc79-602c-4d95-a3db-f9b0d916059c-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "SHOP BOGO",
-            "button_link": "shopify://products/orenda-oki-chocolate",
-            "button_size": "medium",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "template--14869576056913__58dcbc79-602c-4d95-a3db-f9b0d916059c-heading-1",
-        "2e0a281d-9563-4f48-90fb-b5bf50f6e273",
-        "7294cc4a-c5c8-4fcf-8277-509a2f1ae8ce",
-        "template--14869576056913__58dcbc79-602c-4d95-a3db-f9b0d916059c-countdown-1",
-        "template--14869576056913__58dcbc79-602c-4d95-a3db-f9b0d916059c-button-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/FEB_BOGO_2024.png",
-        "image_position": "center center",
-        "layout": "image_first",
-        "text_box_position": "middle",
-        "text_alignment": "center",
-        "image_ratio": "550px",
-        "enlarge_content": false,
-        "full_width": false,
-        "show_divider": false,
-        "image_mobile": "shopify://shop_images/FEB_BOGO_2024.png",
-        "mobile_layout": "image_first",
-        "mobile_text_alignment": "center",
-        "mobile_image_ratio": "adapt",
-        "use_custom_colors": true,
-        "colors_button_label": "#ffffff",
-        "colors_button_background": "#6e1273",
-        "colors_text": "#6e1273",
-        "colors_background": "#f3f3f3",
-        "gradient_background": "",
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
-    },
     "countdown_timer_8DrLfK": {
       "type": "countdown-timer",
       "blocks": {
@@ -1592,7 +1514,6 @@
     "slideshow",
     "countdown_timer_KNGPfa",
     "bdb5b64a-820d-4f03-955e-85ead8691dd5",
-    "58dcbc79-602c-4d95-a3db-f9b0d916059c",
     "countdown_timer_8DrLfK",
     "scrolling_promotion_drxaKE",
     "rich_text_C6xBEG",
