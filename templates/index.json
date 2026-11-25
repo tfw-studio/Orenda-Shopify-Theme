@@ -718,6 +718,7 @@
         },
         "collection_tab_mckPA9": {
           "type": "collection_tab",
+          "disabled": true,
           "settings": {
             "collection": "bundles",
             "collection_title": "Bundles",
