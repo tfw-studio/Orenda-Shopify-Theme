@@ -395,7 +395,7 @@
         "button_MEAftX": {
           "type": "button",
           "settings": {
-            "button_label": "Shop CreatinePLUS",
+            "button_label": "Claim your BOGO",
             "button_link": "shopify://products/orenda-creatineplus",
             "button_size": "medium",
             "button_style_secondary": false
