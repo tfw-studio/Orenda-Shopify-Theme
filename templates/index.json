@@ -114,6 +114,7 @@
         "slide-2",
         "slide-0"
       ],
+      "disabled": true,
       "custom_css": [
         "@media only screen and (max-width: 768px) {.button {font-size: 15px !important; }}"
       ],
@@ -415,7 +416,6 @@
         "subheading_8RGkJn",
         "button_MEAftX"
       ],
-      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/CreatinePLUS_with_Shaker_Image_82026.png",
         "image_position": "bottom center",
