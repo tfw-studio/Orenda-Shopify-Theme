@@ -418,7 +418,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/CreatinePLUS_with_Shaker_Image_82026.png",
-        "image_position": "center center",
+        "image_position": "bottom center",
         "layout": "image_first",
         "text_box_position": "middle",
         "text_alignment": "center",
