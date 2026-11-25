@@ -978,7 +978,7 @@
       patchFSHelpers(smartcart);
 
       // Initial run
-      BOGO.check(smartcart.cart.items);
+      BOGO.check();
       Discounts.apply(smartcart.cart.items);
       UI.wireTerms();
       UI.wireCheckout();
@@ -991,15 +991,18 @@
         else if (e.target.closest(".rebuy-cart__flyout-item-remove")) UI.setCheckoutDisabled(true);
       });
 
-      // Re-run when Rebuy notifies cart changes (wait for DOM parity)
+      // Re-run when Rebuy notifies cart changes (wait for DOM parity).
+      // Only one poll at a time so stale snapshots can't stack up.
+      let poll = null;
       window.Rebuy.Cart.watchCart((ev) => {
-        const poll = setInterval(() => {
+        clearInterval(poll);
+        BOGO.check();
+        poll = setInterval(() => {
           const rows = $$(CONFIG.SELECTORS.itemRow);
           if (rows.length === ev.items.length) {
-            BOGO.check(ev.items);
+            clearInterval(poll);
             Discounts.apply(ev.items);
             pushSubtotal(smartcart, State.discountedSubtotal);
-            clearInterval(poll);
           }
         }, 50);
       });
@@ -1009,92 +1012,81 @@
   })();
 
   // ---------------------------------------------------------------------------
-  // 6) BOGO pairing helpers (compare against lastQty)
+  // 6) BOGO pairing — serialized, reads the live cart, self-healing
+  //    - Only one reconcile pass runs at a time (calls during a run are queued)
+  //    - Always reads fresh /cart.js instead of a stale event snapshot
+  //    - Removes duplicate/orphaned free lines; edits lines by KEY (base and
+  //      free can be the same variant, so variant-id edits are ambiguous)
   // ---------------------------------------------------------------------------
   const BOGO = (() => {
-    let lastKnownQuantities = {};
+    const FREE = "_bogo-free-product";
+    const BASE = "_bogo-base-product";
+    let busy = false, rerun = false;
 
-    function check(items) {
-      let found = false;
+    const post = (url, body) => fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    }).then(r => r.json());
 
-      items.forEach((item) => {
-        const freeId = item.properties?.["_bogo-base-product"];
-        const baseId = item.properties?.["_bogo-free-product"];
-        if (baseId && freeId) found = true;
-        if (freeId)  ensureFreeMatchesBase(item, freeId, items);
-        if (baseId)  ensureBaseStillPresent(item, baseId, items);
-      });
+    // Performs at most ONE cart mutation; returns true if it changed the cart.
+    async function step() {
+      const { items } = await fetch("/cart.js").then(r => r.json());
+      const bases = items.filter(i => i.properties?.[BASE]);
+      const frees = items.filter(i => i.properties?.[FREE]);
 
-      if (found) removeSubscriptions(items);
-      UI.toggleSubscriptionUpgrades(!found);
-    }
-
-    function ensureFreeMatchesBase(baseItem, freeVariantId, items) {
-      const existingFree = items.find(
-        (itm) => itm.properties?.["_bogo-free-product"] == baseItem.variant_id &&
-                 itm.variant_id == freeVariantId
-      );
-
-      const maxQty = +baseItem.properties?.["_max_bogo_quantity"] || Infinity;
-      const newQty = Math.min(baseItem.quantity, maxQty);
-      const trackingKey = `${baseItem.variant_id}_${freeVariantId}`;
-      const lastQty = lastKnownQuantities[trackingKey];
-
-      if (!existingFree) {
-        lastKnownQuantities[trackingKey] = newQty;
-
-        fetch("/cart/add.js", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            id: freeVariantId,
-            quantity: newQty,
-            properties: { "_bogo-free-product": baseItem.variant_id }
-          })
-        }).then(r => r.json()).catch(console.error);
-
-      } else {
-        const isDecrease = lastQty !== undefined && newQty < lastQty;
-        const isIncrease = lastQty !== undefined && newQty > lastQty;
-
-        if (isDecrease) {
-          lastKnownQuantities[trackingKey] = newQty;
-          window.Rebuy.Cart.removeItem(existingFree);
-
-        } else if (isIncrease) {
-          lastKnownQuantities[trackingKey] = newQty;
-
-          fetch("/cart/change.js", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              id: freeVariantId,
-              quantity: newQty
-            })
-          }).then(r => r.json()).catch(console.error);
-
-        } else {
-          lastKnownQuantities[trackingKey] = newQty;
+      // Free lines whose base is gone -> remove
+      for (const f of frees) {
+        const hasBase = bases.some(b =>
+          b.variant_id == f.properties[FREE] && b.properties[BASE] == f.variant_id
+        );
+        if (!hasBase) {
+          await post("/cart/change.js", { id: f.key, quantity: 0 });
+          return true;
         }
       }
-    }
 
-    function ensureBaseStillPresent(freeItem, baseVariantId, items) {
-      const baseExists = items.find(
-        (itm) => itm.properties?.["_bogo-base-product"] == freeItem.variant_id &&
-                 itm.variant_id == baseVariantId
-      );
-      if (!baseExists) {
-        window.Rebuy.Cart.removeItem(freeItem);
-        const trackingKey = `${baseVariantId}_${freeItem.variant_id}`;
-        delete lastKnownQuantities[trackingKey];
+      // Each base -> exactly one free line at the right quantity
+      for (const b of bases) {
+        const freeVariant = b.properties[BASE];
+        const want = Math.min(b.quantity, +b.properties["_max_bogo_quantity"] || Infinity);
+        const matches = frees.filter(f =>
+          f.variant_id == freeVariant && f.properties[FREE] == b.variant_id
+        );
+
+        if (!matches.length) {
+          await post("/cart/add.js", {
+            items: [{ id: +freeVariant, quantity: want, properties: { [FREE]: String(b.variant_id) } }]
+          });
+          return true;
+        }
+        if (matches.length > 1) {
+          await post("/cart/change.js", { id: matches[1].key, quantity: 0 });
+          return true;
+        }
+        if (matches[0].quantity !== want) {
+          await post("/cart/change.js", { id: matches[0].key, quantity: want });
+          return true;
+        }
       }
+      return false;
     }
 
-    function removeSubscriptions(items) {
-      items.forEach((item) => {
-        if (item?.product?.subscription) window.Rebuy.Cart.removeItem(item);
-      });
+    // `items` arg kept for call-site compatibility; the live cart is used instead.
+    async function check(_items) {
+      UI.toggleSubscriptionUpgrades(true); // same as previous behavior
+      if (busy) { rerun = true; return; }
+      busy = true;
+      try {
+        let changed = false;
+        for (let i = 0; i < 5 && await step(); i++) changed = true;
+        if (changed) window.Rebuy?.Cart?.fetchCart?.(); // refresh Smart Cart UI
+      } catch (e) {
+        console.error("[BOGO]", e);
+      } finally {
+        busy = false;
+        if (rerun) { rerun = false; check(); }
+      }
     }
 
     return { check };
