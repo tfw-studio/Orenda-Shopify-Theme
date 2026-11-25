@@ -45,7 +45,7 @@
         "countdown": {
           "type": "countdown",
           "settings": {
-            "heading": "BOGO ends at 11:59 p.m. on Monday, November 30th",
+            "heading": "BOGO ends at 8:00 p.m. on Monday, November 30th",
             "number_size": "small",
             "colors_heading": "#da3f3f",
             "colors_text": "#DA3F3F",
