@@ -328,9 +328,8 @@
       "blocks": {
         "custom_liquid_bxCp8k": {
           "type": "custom_liquid",
-          "disabled": true,
           "settings": {
-            "custom_liquid": "<div style=\"\n  text-align: left;\n  max-width: 100%;\n\">\n\n  <h2 style=\"\n  color: #6E1273;\n  font-family: var(--font-heading-family);\n  font-style: var(--font-heading-style);\n  font-weight: var(--font-heading-weight);\n  text-align: center;\n  margin: 0 0 18px 0;\n\">\n  Buy One, Get One\n</h2>\n\n  <div style=\"\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: 700;\n    font-size: 18px;\n    line-height: 1.5;\n    margin: 0 0 18px 0;\n  \">\n    Orenda CreatinePLUS<sup style=\"\n      font-size: 55%;\n      line-height: 0;\n      vertical-align: super;\n    \">®</sup> 20 oz shaker bottle at no charge, one per customer and one per household, while supplies last.\n  </div>\n\n  <div style=\"\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: var(--font-body-weight);\n    font-size: 18px;\n    line-height: 1.5;\n    margin: 0;\n  \">\n    Because CreatinePLUS works best with daily consistency, a shaker bottle makes it that much easier to keep that habit going.\n  </div>\n\n</div>"
+            "custom_liquid": "<div style=\"\n  text-align: left;\n  max-width: 100%;\n\">\n\n  <h2 style=\"\n    color: #6E1273;\n    font-family: var(--font-heading-family);\n    font-style: var(--font-heading-style);\n    font-weight: var(--font-heading-weight);\n    text-align: center;\n    margin: 0 0 18px 0;\n  \">\n    Black Friday is pulling double duty, the way you always do\n  </h2>\n\n  <div style=\"\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 1.5;\n    text-align: center;\n    margin: 0 0 18px 0;\n  \">\n    Buy one Orenda CreatinePLUS<sup style=\"\n      font-size: 55%;\n      line-height: 0;\n      vertical-align: super;\n    \">®</sup> and get one free, now through Cyber Monday.\n  </div>\n\n</div>"
           }
         },
         "heading_t434zG": {
@@ -416,7 +415,6 @@
         "subheading_8RGkJn",
         "button_MEAftX"
       ],
-      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/CreatinePLUS_with_Shaker_Image_82026.png",
         "image_position": "center center",
