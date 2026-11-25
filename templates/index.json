@@ -674,20 +674,6 @@
             "link_text": "Learn More"
           }
         },
-        "collection_tab_TmYY3K": {
-          "type": "collection_tab",
-          "settings": {
-            "collection": "gut-health",
-            "collection_title": "Gut Health and Digestion",
-            "enable_collection_card": true,
-            "card_image": "shopify://shop_images/Orenda_Ease_1026_1.jpg",
-            "header": "Gut Health and Digestion",
-            "subheader": "Gut health that goes deeper than a probiotic.",
-            "bottom_text": "Free Shipping & Handling on Orders $150+",
-            "link_override": "shopify://collections/gut-health",
-            "link_text": "Learn More"
-          }
-        },
         "collection_tab_GUaUA7": {
           "type": "collection_tab",
           "settings": {
@@ -699,6 +685,20 @@
             "subheader": "Immune support that actually addresses detoxification. Most never do.",
             "bottom_text": "Free Shipping & Handling on Orders $150+",
             "link_override": "shopify://collections/immunity",
+            "link_text": "Learn More"
+          }
+        },
+        "collection_tab_TmYY3K": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "gut-health",
+            "collection_title": "Gut Health and Digestion",
+            "enable_collection_card": true,
+            "card_image": "shopify://shop_images/Orenda_Ease_1026_1.jpg",
+            "header": "Gut Health and Digestion",
+            "subheader": "Gut health that goes deeper than a probiotic.",
+            "bottom_text": "Free Shipping & Handling on Orders $150+",
+            "link_override": "shopify://collections/gut-health",
             "link_text": "Learn More"
           }
         },
@@ -734,8 +734,8 @@
       },
       "block_order": [
         "collection_tab_dKtRPf",
-        "collection_tab_TmYY3K",
         "collection_tab_GUaUA7",
+        "collection_tab_TmYY3K",
         "collection_tab_KyzdCL",
         "collection_tab_mckPA9"
       ],
